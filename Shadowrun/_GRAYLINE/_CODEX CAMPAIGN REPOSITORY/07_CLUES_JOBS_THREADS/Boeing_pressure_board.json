@@ -1,0 +1,453 @@
+{
+  "ok": true,
+  "pressure_board_version": "0.1.0",
+  "saved_at": "2026-06-17T22:39:59.156029+00:00",
+  "board_id": "PRESSURE-BOARD-20260617T223959Z-Boeing Reconstruction Pressure",
+  "board_name": "Boeing Reconstruction Pressure",
+  "scope": "Faction heat, corporate pressure, and consequences around Boeing's reconstruction activity.",
+  "truth": "Boeing activity is a pressure source that can affect jobs, territory, investigations, and faction behavior.",
+  "player_belief": "The table may see only visible signals: contractors, security movement, rumors, resource shifts, or new obstacles.",
+  "factions": [
+    {
+      "id": "3ecc018d-1c17-4b99-a1f8-3c9327cbd7ad",
+      "name": "Boeing",
+      "goal": "Recover control, reconstruct the movement chain, contain exposure, and keep crate involvement hidden from Kestrel.",
+      "method": "Traffic cameras, aerial drone observation, route correlation, vehicle descriptions, Lone Star-linked systems, quiet extraction, and information-first containment.",
+      "constraint": "Boeing is avoiding open warfare and has incomplete live certainty; reconstruction is procedural, delayed, and evidence-based.",
+      "heat": "4 - escalating",
+      "notes": "Primary active tracing faction. Play as precise, quiet, and procedural."
+    },
+    {
+      "id": "47af37ff-de7b-44c7-afb1-94ce77ad5aac",
+      "name": "Ares",
+      "goal": "Acquire Graham or his information through an independent convergence chain.",
+      "method": "Act on Graham's contact, metadata, phone data, and mountain/lake clues.",
+      "constraint": "Ares pressure is not the same shape as Boeing pressure and may not share Boeing's full picture.",
+      "heat": "2 - probing",
+      "notes": "Ares becomes a separate pressure after Graham reaches out."
+    },
+    {
+      "id": "8250a875-e723-4bff-a8ae-cb42d02beeee",
+      "name": "Bourgeoisie / Oleg / Tsar chain",
+      "goal": "Exploit Graham, protect their own control, and decide whether to sell or leverage him.",
+      "method": "Chateau control, criminal negotiation, betrayal offers, and controlled handoff.",
+      "constraint": "Internal criminal politics may split Tsar authority, Oleg's offer, and Bourgeoisie profit motive.",
+      "heat": "3 - active",
+      "notes": "Creates the chateau pressure lane and Graham custody uncertainty."
+    },
+    {
+      "id": "fe70fd7b-f0d0-4394-ad2d-7291fe4e7ab4",
+      "name": "Kestrel",
+      "goal": "Continue historical reconstruction without yet connecting directly to Boeing's live pressure.",
+      "method": "Interrogation, investigation, fallout around Blackjack and Rusty Spade, and prior crate-chain reconstruction.",
+      "constraint": "Boeing is trying to keep its crate involvement minimal and hidden from Kestrel.",
+      "heat": "2 - probing",
+      "notes": "Relevant because Boeing concealment risk matters."
+    },
+    {
+      "id": "001df7ab-2cbf-4b0d-afbd-864260c526b4",
+      "name": "Street support network",
+      "goal": "Interpret, survive, and route fallout around Donnie, Blackjack, Snacks, Toggle, Hubcap, and Dr. Wong.",
+      "method": "Local knowledge, medical routing, evidence discovery, forensic support, and word-of-mouth signals.",
+      "constraint": "They can reveal useful signals but also create exposure if mishandled.",
+      "heat": "2 - probing",
+      "notes": "Useful for surfacing pressure to the table without making it all corporate exposition."
+    }
+  ],
+  "clocks": [
+    {
+      "id": "9371781c-d57a-4055-9d2c-a03f63c79df3",
+      "name": "Boeing Vehicle Reconstruction Tightens",
+      "linked_factions": "Boeing",
+      "status": "active",
+      "use_now": true,
+      "heat": "4 - escalating",
+      "current_step": "Boeing is reconstructing the team vehicle through cameras, timestamps, descriptions, route analysis, and traffic-system access.",
+      "stakes": "The team is not necessarily live-tracked everywhere, but the net keeps tightening.",
+      "signal": "Drone observation, corporate vehicles, traffic-camera anomalies, or a matching vehicle description appears in play.",
+      "next_pressure": "Boeing narrows the route window and connects a movement chain to a person, place, or vehicle.",
+      "steps": [
+        {
+          "label": "Reconstruct",
+          "trigger": "Boeing reviews post-extraction movement data.",
+          "change": "Vehicle description and route probability are established.",
+          "actors": "Boeing analysts"
+        },
+        {
+          "label": "Correlate",
+          "trigger": "Traffic data or witness details align.",
+          "change": "Movement windows narrow and likely stops become searchable.",
+          "actors": "Boeing surveillance team"
+        },
+        {
+          "label": "Pressure",
+          "trigger": "A connected vehicle, contact, or location is found.",
+          "change": "Quiet corporate pressure reaches the table through drones, vehicles, or questions.",
+          "actors": "Boeing field assets"
+        },
+        {
+          "label": "Contain",
+          "trigger": "Boeing has enough certainty to act.",
+          "change": "A person, route, or safe location becomes unsafe.",
+          "actors": "Boeing containment team"
+        }
+      ]
+    },
+    {
+      "id": "1501d06a-e672-4ed3-8811-7907436c965f",
+      "name": "Motorcycle Trace Remains Live",
+      "linked_factions": "Boeing, The Chin, Kilmer, chateau",
+      "status": "active",
+      "use_now": true,
+      "heat": "4 - escalating",
+      "current_step": "The motorcycle is the cleaner active trace chain and becomes distinct from broader team-vehicle reconstruction.",
+      "stakes": "The traced motorcycle can compromise otherwise safe movement or expose the chateau.",
+      "signal": "The motorcycle path draws corporate attention even when the team vehicle route stays fuzzier.",
+      "next_pressure": "Boeing uses the motorcycle trace to pressure a location, contact, or chateau exposure point.",
+      "steps": [
+        {
+          "label": "Trace active",
+          "trigger": "The motorcycle remains in use.",
+          "change": "Boeing has a separate exposure line.",
+          "actors": "Boeing tracker chain"
+        },
+        {
+          "label": "Route split",
+          "trigger": "The team separates vehicles.",
+          "change": "Motorcycle pressure separates from the Ford Americar/team vehicle.",
+          "actors": "Boeing surveillance"
+        },
+        {
+          "label": "Site risk",
+          "trigger": "The trace reaches the chateau or a sensitive stop.",
+          "change": "A secure location becomes vulnerable.",
+          "actors": "Boeing and chateau chain"
+        },
+        {
+          "label": "Direct action",
+          "trigger": "The trace is ignored or confirmed.",
+          "change": "Boeing can stage observation, contact, or containment near the traced site.",
+          "actors": "Boeing field assets"
+        }
+      ]
+    },
+    {
+      "id": "87943587-d8ca-46a1-8929-c5ae5ea33065",
+      "name": "Donnie Containment And Interrogation",
+      "linked_factions": "Boeing, Donnie, Hubcap, Oldsmobile 2035",
+      "status": "active",
+      "use_now": true,
+      "heat": "3 - active",
+      "current_step": "Donnie is missing and was extracted by Boeing for information, movement-chain reconstruction, and containment.",
+      "stakes": "What Boeing learns from Donnie can accelerate reconstruction or expose the Oldsmobile 2035 chain.",
+      "signal": "Donnie's phone and cigarettes appear in the Oldsmobile 2035 console; the scene feels professional and deliberate.",
+      "next_pressure": "Boeing converts Donnie's information into a new route, person, or contact lead.",
+      "steps": [
+        {
+          "label": "Extract",
+          "trigger": "Donnie is tied to the movement chain.",
+          "change": "Boeing removes him quietly.",
+          "actors": "Boeing containment"
+        },
+        {
+          "label": "Question",
+          "trigger": "Boeing needs route and contact detail.",
+          "change": "Donnie becomes an information source.",
+          "actors": "Boeing interrogators"
+        },
+        {
+          "label": "Stage",
+          "trigger": "The Oldsmobile scene is used as pressure or misdirection.",
+          "change": "The team receives a controlled signal.",
+          "actors": "Boeing or attributed proxy"
+        },
+        {
+          "label": "Exploit",
+          "trigger": "Donnie gives useful information.",
+          "change": "A new pressure lead activates.",
+          "actors": "Boeing reconstruction team"
+        }
+      ]
+    },
+    {
+      "id": "72204c67-0ef7-4f8d-b2f7-79d0520d0df3",
+      "name": "Graham / Ares Convergence",
+      "linked_factions": "Ares, Graham Voss, Boeing, Bourgeoisie",
+      "status": "watching",
+      "use_now": true,
+      "heat": "2 - probing",
+      "current_step": "Graham contacted Ares and gave them enough to begin independent convergence.",
+      "stakes": "Graham can move from rescue target to leverage object, sale asset, or corporate collision point.",
+      "signal": "Ares receives Graham description, communication metadata, phone triangulation, and the two-hours-north mountain/lake clue.",
+      "next_pressure": "Ares acts independently while Boeing and the Bourgeoisie are already in motion.",
+      "steps": [
+        {
+          "label": "Contact",
+          "trigger": "Graham reaches Ares.",
+          "change": "Ares enters the situation.",
+          "actors": "Graham and Ares"
+        },
+        {
+          "label": "Locate",
+          "trigger": "Metadata and clues are analyzed.",
+          "change": "Ares gets a direction without matching Boeing's full picture.",
+          "actors": "Ares analysts"
+        },
+        {
+          "label": "Bid",
+          "trigger": "Bourgeoisie considers selling Graham.",
+          "change": "Graham becomes a transaction object.",
+          "actors": "Ares and Bourgeoisie"
+        },
+        {
+          "label": "Collision",
+          "trigger": "Ares and Boeing both press toward Graham.",
+          "change": "Corporate pressure splits or collides.",
+          "actors": "Ares, Boeing, Graham chain"
+        }
+      ]
+    },
+    {
+      "id": "798602a8-5f8c-47f2-982e-6e64a1f9b730",
+      "name": "Chateau Exposure Pressure",
+      "linked_factions": "Boeing, Bourgeoisie, Oleg, Tsar, Ares",
+      "status": "watching",
+      "use_now": false,
+      "heat": "3 - active",
+      "current_step": "The chateau feels secure on the surface but is vulnerable through motorcycle trace, Graham clues, and Oleg's betrayal vector.",
+      "stakes": "A safehouse can become a convergence site if too many pressure lanes point at it.",
+      "signal": "Corporate vehicles approaching, Oleg's offer, mountain/lake clue, or tracer exposure.",
+      "next_pressure": "The chateau becomes a decision point rather than a safe pause.",
+      "steps": [
+        {
+          "label": "Shelter",
+          "trigger": "The team reaches the chateau.",
+          "change": "Surface safety is established.",
+          "actors": "Bourgeoisie chain"
+        },
+        {
+          "label": "Leak",
+          "trigger": "Tracer or Graham clue points north.",
+          "change": "The compound becomes searchable.",
+          "actors": "Boeing or Ares"
+        },
+        {
+          "label": "Betray",
+          "trigger": "Oleg acts independently.",
+          "change": "Internal criminal pressure rises.",
+          "actors": "Oleg and Bourgeoisie"
+        },
+        {
+          "label": "Converge",
+          "trigger": "Corporate and criminal pressure overlap.",
+          "change": "The chateau stops being safe.",
+          "actors": "Boeing, Ares, Bourgeoisie"
+        }
+      ]
+    },
+    {
+      "id": "40769486-81cf-4c73-b2d3-03a5f6fabfd6",
+      "name": "Boeing Hides From Kestrel",
+      "linked_factions": "Boeing, Kestrel",
+      "status": "parked",
+      "use_now": false,
+      "heat": "2 - probing",
+      "current_step": "Boeing wants its crate involvement kept minimal and hidden from Kestrel.",
+      "stakes": "If Kestrel connects Boeing to the crate chain, historical reconstruction can become a new corporate conflict.",
+      "signal": "Boeing avoids open moves and uses containment, deniability, and quiet cleanup.",
+      "next_pressure": "Kestrel finds a contradiction or missing link in the crate/reconstruction chain.",
+      "steps": [
+        {
+          "label": "Deniability",
+          "trigger": "Boeing acts quietly.",
+          "change": "Direct exposure stays low.",
+          "actors": "Boeing"
+        },
+        {
+          "label": "Gap",
+          "trigger": "Kestrel reconstruction finds an inconsistency.",
+          "change": "Boeing's hidden involvement becomes vulnerable.",
+          "actors": "Kestrel"
+        },
+        {
+          "label": "Cover",
+          "trigger": "Boeing detects possible Kestrel attention.",
+          "change": "Cleanup or misdirection increases.",
+          "actors": "Boeing"
+        },
+        {
+          "label": "Conflict",
+          "trigger": "Kestrel gets enough evidence.",
+          "change": "Corporate pressure expands beyond the runners.",
+          "actors": "Boeing and Kestrel"
+        }
+      ]
+    }
+  ],
+  "active_story_clocks": [
+    {
+      "id": "9371781c-d57a-4055-9d2c-a03f63c79df3",
+      "name": "Boeing Vehicle Reconstruction Tightens",
+      "linked_factions": "Boeing",
+      "status": "active",
+      "use_now": true,
+      "heat": "4 - escalating",
+      "current_step": "Boeing is reconstructing the team vehicle through cameras, timestamps, descriptions, route analysis, and traffic-system access.",
+      "stakes": "The team is not necessarily live-tracked everywhere, but the net keeps tightening.",
+      "signal": "Drone observation, corporate vehicles, traffic-camera anomalies, or a matching vehicle description appears in play.",
+      "next_pressure": "Boeing narrows the route window and connects a movement chain to a person, place, or vehicle.",
+      "steps": [
+        {
+          "label": "Reconstruct",
+          "trigger": "Boeing reviews post-extraction movement data.",
+          "change": "Vehicle description and route probability are established.",
+          "actors": "Boeing analysts"
+        },
+        {
+          "label": "Correlate",
+          "trigger": "Traffic data or witness details align.",
+          "change": "Movement windows narrow and likely stops become searchable.",
+          "actors": "Boeing surveillance team"
+        },
+        {
+          "label": "Pressure",
+          "trigger": "A connected vehicle, contact, or location is found.",
+          "change": "Quiet corporate pressure reaches the table through drones, vehicles, or questions.",
+          "actors": "Boeing field assets"
+        },
+        {
+          "label": "Contain",
+          "trigger": "Boeing has enough certainty to act.",
+          "change": "A person, route, or safe location becomes unsafe.",
+          "actors": "Boeing containment team"
+        }
+      ]
+    },
+    {
+      "id": "1501d06a-e672-4ed3-8811-7907436c965f",
+      "name": "Motorcycle Trace Remains Live",
+      "linked_factions": "Boeing, The Chin, Kilmer, chateau",
+      "status": "active",
+      "use_now": true,
+      "heat": "4 - escalating",
+      "current_step": "The motorcycle is the cleaner active trace chain and becomes distinct from broader team-vehicle reconstruction.",
+      "stakes": "The traced motorcycle can compromise otherwise safe movement or expose the chateau.",
+      "signal": "The motorcycle path draws corporate attention even when the team vehicle route stays fuzzier.",
+      "next_pressure": "Boeing uses the motorcycle trace to pressure a location, contact, or chateau exposure point.",
+      "steps": [
+        {
+          "label": "Trace active",
+          "trigger": "The motorcycle remains in use.",
+          "change": "Boeing has a separate exposure line.",
+          "actors": "Boeing tracker chain"
+        },
+        {
+          "label": "Route split",
+          "trigger": "The team separates vehicles.",
+          "change": "Motorcycle pressure separates from the Ford Americar/team vehicle.",
+          "actors": "Boeing surveillance"
+        },
+        {
+          "label": "Site risk",
+          "trigger": "The trace reaches the chateau or a sensitive stop.",
+          "change": "A secure location becomes vulnerable.",
+          "actors": "Boeing and chateau chain"
+        },
+        {
+          "label": "Direct action",
+          "trigger": "The trace is ignored or confirmed.",
+          "change": "Boeing can stage observation, contact, or containment near the traced site.",
+          "actors": "Boeing field assets"
+        }
+      ]
+    },
+    {
+      "id": "87943587-d8ca-46a1-8929-c5ae5ea33065",
+      "name": "Donnie Containment And Interrogation",
+      "linked_factions": "Boeing, Donnie, Hubcap, Oldsmobile 2035",
+      "status": "active",
+      "use_now": true,
+      "heat": "3 - active",
+      "current_step": "Donnie is missing and was extracted by Boeing for information, movement-chain reconstruction, and containment.",
+      "stakes": "What Boeing learns from Donnie can accelerate reconstruction or expose the Oldsmobile 2035 chain.",
+      "signal": "Donnie's phone and cigarettes appear in the Oldsmobile 2035 console; the scene feels professional and deliberate.",
+      "next_pressure": "Boeing converts Donnie's information into a new route, person, or contact lead.",
+      "steps": [
+        {
+          "label": "Extract",
+          "trigger": "Donnie is tied to the movement chain.",
+          "change": "Boeing removes him quietly.",
+          "actors": "Boeing containment"
+        },
+        {
+          "label": "Question",
+          "trigger": "Boeing needs route and contact detail.",
+          "change": "Donnie becomes an information source.",
+          "actors": "Boeing interrogators"
+        },
+        {
+          "label": "Stage",
+          "trigger": "The Oldsmobile scene is used as pressure or misdirection.",
+          "change": "The team receives a controlled signal.",
+          "actors": "Boeing or attributed proxy"
+        },
+        {
+          "label": "Exploit",
+          "trigger": "Donnie gives useful information.",
+          "change": "A new pressure lead activates.",
+          "actors": "Boeing reconstruction team"
+        }
+      ]
+    },
+    {
+      "id": "72204c67-0ef7-4f8d-b2f7-79d0520d0df3",
+      "name": "Graham / Ares Convergence",
+      "linked_factions": "Ares, Graham Voss, Boeing, Bourgeoisie",
+      "status": "watching",
+      "use_now": true,
+      "heat": "2 - probing",
+      "current_step": "Graham contacted Ares and gave them enough to begin independent convergence.",
+      "stakes": "Graham can move from rescue target to leverage object, sale asset, or corporate collision point.",
+      "signal": "Ares receives Graham description, communication metadata, phone triangulation, and the two-hours-north mountain/lake clue.",
+      "next_pressure": "Ares acts independently while Boeing and the Bourgeoisie are already in motion.",
+      "steps": [
+        {
+          "label": "Contact",
+          "trigger": "Graham reaches Ares.",
+          "change": "Ares enters the situation.",
+          "actors": "Graham and Ares"
+        },
+        {
+          "label": "Locate",
+          "trigger": "Metadata and clues are analyzed.",
+          "change": "Ares gets a direction without matching Boeing's full picture.",
+          "actors": "Ares analysts"
+        },
+        {
+          "label": "Bid",
+          "trigger": "Bourgeoisie considers selling Graham.",
+          "change": "Graham becomes a transaction object.",
+          "actors": "Ares and Bourgeoisie"
+        },
+        {
+          "label": "Collision",
+          "trigger": "Ares and Boeing both press toward Graham.",
+          "change": "Corporate pressure splits or collides.",
+          "actors": "Ares, Boeing, Graham chain"
+        }
+      ]
+    }
+  ],
+  "board_notes": "Use active clocks as table pressure. Parked clocks remain available without forcing them into the next session.",
+  "visibility": "GM-facing",
+  "status": "draft",
+  "boundary": {
+    "draft_saved": true,
+    "canon_promoted": false,
+    "repository_modified": false,
+    "session_note_modified": false,
+    "registry_write_authorized": false,
+    "arbitrary_clock_limit_removed": true,
+    "owner_selects_story_clocks": true
+  }
+}

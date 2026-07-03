@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1448" height="1086" viewBox="0 0 1448 1086">
+  <defs>
+    <pattern id="deckgrid" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M22 0 L0 0 L0 22" fill="none" stroke="#ececec" stroke-width="1"/>
+    </pattern>
+    <pattern id="grate" width="18" height="18" patternUnits="userSpaceOnUse">
+      <path d="M0 0 L18 18 M18 0 L0 18" stroke="#d9d9d9" stroke-width="1.2"/>
+    </pattern>
+    <style>
+      .page{fill:#fbfbfa}
+      .ghost{fill:#f8f8f6;stroke:#d0d0d0;stroke-width:3;stroke-dasharray:14 8}
+      .deck{fill:url(#deckgrid);stroke:#111;stroke-width:7;stroke-linejoin:miter}
+      .edge{fill:none;stroke:#111;stroke-width:7;stroke-linejoin:miter}
+      .void{fill:#f7f7f7;stroke:#111;stroke-width:4;stroke-dasharray:10 7}
+      .bearing{stroke:#111;stroke-width:9;fill:none;stroke-linecap:square}
+      .rail{stroke:#111;stroke-width:4;fill:none}
+      .railpost{fill:#111}
+      .scaffold{fill:url(#grate);stroke:#111;stroke-width:5;stroke-linejoin:miter}
+      .cage{fill:#fff;stroke:#111;stroke-width:3}
+      .mesh{stroke:#111;stroke-width:1.4;fill:none;opacity:.75}
+      .case{fill:#fff;stroke:#111;stroke-width:2.5}
+      .speaker{fill:#111;stroke:#111;stroke-width:2}
+      .speakercone{fill:#fff;stroke:#111;stroke-width:2}
+      .lift{fill:#fff;stroke:#111;stroke-width:6}
+      .liftline{stroke:#111;stroke-width:3;fill:none}
+      .shadow{fill:#f1f1f1;stroke:none}
+    </style>
+  </defs>
+
+  <rect class="page" width="1448" height="1086"/>
+
+  <!-- Ghost of Floor 1 footprint for orientation only. -->
+  <path class="ghost" d="M285 80 L805 80 L805 112 L985 112 L985 80 L1210 80 L1210 690 L1268 690 L1268 815 L795 815 L795 745 L715 745 L715 930 L465 930 L465 745 L285 745 L285 610 L205 610 L205 475 L285 475 Z"/>
+
+  <!-- Locked upper accessible storage deck. -->
+  <path class="deck" d="M285 80 L1210 80 L1210 475 L285 475 Z"/>
+  <path class="edge" d="M985 80 L1210 80 L1210 475 L985 475"/>
+
+  <!-- Storage cages and road-case clusters. -->
+  <g id="west-storage-cages">
+    <g>
+      <rect class="cage" x="315" y="110" width="75" height="80"/>
+      <path class="mesh" d="M325 118 L382 182 M382 118 L325 182 M352 112 L352 188"/>
+      <rect class="case" x="325" y="125" width="26" height="18"/><rect class="case" x="355" y="125" width="24" height="18"/>
+      <rect class="case" x="325" y="150" width="54" height="20"/>
+    </g>
+    <g>
+      <rect class="cage" x="395" y="110" width="75" height="80"/>
+      <path class="mesh" d="M405 118 L462 182 M462 118 L405 182 M432 112 L432 188"/>
+      <rect class="speaker" x="410" y="126" width="20" height="48"/><circle class="speakercone" cx="420" cy="140" r="5"/><circle class="speakercone" cx="420" cy="160" r="8"/>
+      <rect class="case" x="438" y="132" width="22" height="34"/>
+    </g>
+    <g>
+      <rect class="cage" x="315" y="220" width="75" height="80"/>
+      <path class="mesh" d="M325 228 L382 292 M382 228 L325 292 M352 222 L352 298"/>
+      <rect class="case" x="325" y="235" width="55" height="18"/><rect class="case" x="325" y="260" width="26" height="22"/><rect class="case" x="356" y="260" width="24" height="22"/>
+    </g>
+    <g>
+      <rect class="cage" x="395" y="220" width="75" height="80"/>
+      <path class="mesh" d="M405 228 L462 292 M462 228 L405 292 M432 222 L432 298"/>
+      <rect class="case" x="408" y="238" width="48" height="18"/><rect class="case" x="408" y="262" width="48" height="18"/>
+      <circle class="case" cx="458" cy="288" r="5"/>
+    </g>
+    <g>
+      <rect class="cage" x="315" y="330" width="75" height="80"/>
+      <path class="mesh" d="M325 338 L382 402 M382 338 L325 402 M352 332 L352 408"/>
+      <rect class="speaker" x="328" y="346" width="22" height="50"/><circle class="speakercone" cx="339" cy="362" r="6"/><circle class="speakercone" cx="339" cy="383" r="8"/>
+      <rect class="speaker" x="356" y="346" width="22" height="50"/><circle class="speakercone" cx="367" cy="362" r="6"/><circle class="speakercone" cx="367" cy="383" r="8"/>
+    </g>
+    <g>
+      <rect class="cage" x="395" y="330" width="75" height="80"/>
+      <path class="mesh" d="M405 338 L462 402 M462 338 L405 402 M432 332 L432 408"/>
+      <rect class="case" x="408" y="345" width="22" height="42"/><rect class="case" x="435" y="345" width="22" height="42"/>
+      <path class="mesh" d="M410 392 L458 392"/>
+    </g>
+  </g>
+
+  <g id="elevator-flanking-cages">
+    <rect class="cage" x="510" y="110" width="75" height="90"/>
+    <path class="mesh" d="M522 120 L573 190 M573 120 L522 190 M547 112 L547 198"/>
+    <rect class="case" x="523" y="132" width="48" height="22"/><rect class="case" x="523" y="162" width="48" height="22"/>
+    <rect class="cage" x="585" y="110" width="75" height="90"/>
+    <path class="mesh" d="M597 120 L648 190 M648 120 L597 190 M622 112 L622 198"/>
+    <rect class="speaker" x="602" y="128" width="20" height="52"/><circle class="speakercone" cx="612" cy="144" r="5"/><circle class="speakercone" cx="612" cy="166" r="8"/>
+    <rect class="case" x="630" y="136" width="20" height="38"/>
+
+    <rect class="cage" x="835" y="110" width="75" height="90"/>
+    <path class="mesh" d="M847 120 L898 190 M898 120 L847 190 M872 112 L872 198"/>
+    <rect class="case" x="848" y="130" width="50" height="20"/><rect class="case" x="848" y="158" width="22" height="24"/><rect class="case" x="875" y="158" width="23" height="24"/>
+    <rect class="cage" x="910" y="110" width="75" height="90"/>
+    <path class="mesh" d="M922 120 L973 190 M973 120 L922 190 M947 112 L947 198"/>
+    <rect class="speaker" x="928" y="130" width="20" height="50"/><circle class="speakercone" cx="938" cy="145" r="5"/><circle class="speakercone" cx="938" cy="166" r="8"/>
+    <rect class="speaker" x="954" y="130" width="20" height="50"/><circle class="speakercone" cx="964" cy="145" r="5"/><circle class="speakercone" cx="964" cy="166" r="8"/>
+  </g>
+
+  <g id="east-storage-cages">
+    <g>
+      <rect class="cage" x="1010" y="110" width="75" height="70"/><path class="mesh" d="M1020 118 L1078 172 M1078 118 L1020 172"/>
+      <rect class="case" x="1023" y="128" width="50" height="16"/><rect class="case" x="1023" y="150" width="22" height="18"/><rect class="case" x="1050" y="150" width="23" height="18"/>
+    </g>
+    <g>
+      <rect class="cage" x="1090" y="110" width="75" height="70"/><path class="mesh" d="M1100 118 L1158 172 M1158 118 L1100 172"/>
+      <rect class="speaker" x="1105" y="126" width="20" height="42"/><circle class="speakercone" cx="1115" cy="140" r="5"/><circle class="speakercone" cx="1115" cy="158" r="7"/>
+      <rect class="case" x="1132" y="132" width="22" height="30"/>
+    </g>
+    <g>
+      <rect class="cage" x="1010" y="190" width="75" height="70"/><path class="mesh" d="M1020 198 L1078 252 M1078 198 L1020 252"/>
+      <rect class="case" x="1022" y="205" width="52" height="18"/><rect class="case" x="1022" y="230" width="52" height="16"/>
+    </g>
+    <g>
+      <rect class="cage" x="1090" y="190" width="75" height="70"/><path class="mesh" d="M1100 198 L1158 252 M1158 198 L1100 252"/>
+      <rect class="case" x="1105" y="205" width="22" height="36"/><rect class="case" x="1132" y="205" width="22" height="36"/>
+    </g>
+    <g>
+      <rect class="cage" x="1010" y="270" width="75" height="70"/><path class="mesh" d="M1020 278 L1078 332 M1078 278 L1020 332"/>
+      <rect class="speaker" x="1027" y="286" width="20" height="42"/><circle class="speakercone" cx="1037" cy="300" r="5"/><circle class="speakercone" cx="1037" cy="318" r="7"/>
+      <rect class="speaker" x="1052" y="286" width="20" height="42"/><circle class="speakercone" cx="1062" cy="300" r="5"/><circle class="speakercone" cx="1062" cy="318" r="7"/>
+    </g>
+    <g>
+      <rect class="cage" x="1090" y="270" width="75" height="70"/><path class="mesh" d="M1100 278 L1158 332 M1158 278 L1100 332"/>
+      <rect class="case" x="1103" y="288" width="52" height="18"/><rect class="case" x="1103" y="312" width="52" height="16"/>
+    </g>
+    <g>
+      <rect class="cage" x="1010" y="350" width="75" height="70"/><path class="mesh" d="M1020 358 L1078 412 M1078 358 L1020 412"/>
+      <rect class="case" x="1022" y="366" width="24" height="36"/><rect class="case" x="1050" y="366" width="24" height="36"/>
+    </g>
+    <g>
+      <rect class="cage" x="1090" y="350" width="75" height="70"/><path class="mesh" d="M1100 358 L1158 412 M1158 358 L1100 412"/>
+      <rect class="case" x="1103" y="365" width="52" height="18"/><rect class="case" x="1103" y="390" width="52" height="16"/>
+    </g>
+  </g>
+
+  <!-- Freight elevator and scaffold. -->
+  <rect class="lift" x="680" y="80" width="115" height="125"/>
+  <line class="liftline" x1="692" y1="98" x2="783" y2="98"/>
+  <line class="liftline" x1="692" y1="115" x2="783" y2="115"/>
+  <line class="liftline" x1="737" y1="80" x2="737" y2="205"/>
+  <rect class="shadow" x="705" y="184" width="65" height="10"/>
+  <path class="liftline" d="M705 184 L770 184"/>
+
+  <path class="scaffold" d="M595 205 L985 205 L985 475 L900 475 L900 295 L680 295 L680 475 L595 475 Z"/>
+  <g id="scaffold-railings">
+    <path class="rail" d="M595 205 L985 205 M985 205 L985 475 M900 475 L900 295 M680 295 L680 475 M595 475 L595 205"/>
+    <g>
+      <rect class="railpost" x="615" y="201" width="6" height="14"/><rect class="railpost" x="700" y="201" width="6" height="14"/>
+      <rect class="railpost" x="785" y="201" width="6" height="14"/><rect class="railpost" x="870" y="201" width="6" height="14"/>
+      <rect class="railpost" x="955" y="201" width="6" height="14"/><rect class="railpost" x="981" y="270" width="14" height="6"/>
+      <rect class="railpost" x="981" y="360" width="14" height="6"/><rect class="railpost" x="981" y="450" width="14" height="6"/>
+      <rect class="railpost" x="896" y="340" width="14" height="6"/><rect class="railpost" x="896" y="430" width="14" height="6"/>
+      <rect class="railpost" x="676" y="340" width="14" height="6"/><rect class="railpost" x="676" y="430" width="14" height="6"/>
+    </g>
+  </g>
+
+  <line class="bearing" x1="285" y1="475" x2="1210" y2="475"/>
+
+  <rect class="void" x="795" y="475" width="415" height="215"/>
+  <rect class="void" x="795" y="690" width="473" height="125"/>
+  <path class="rail" d="M795 475 L1210 475 L1210 690 L795 690 Z"/>
+</svg>

@@ -1,0 +1,14 @@
+node_modules/
+**/node_modules/
+.pnpm-store/
+**/.pnpm-store/
+dist/
+build/
+.cache/
+*.log
+*.inspect.ndjson
+
+# Keep large third-party reference libraries local.
+**/System_Reference/
+**/*.pdf
+**/*.zip

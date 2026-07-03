@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Shadowrun 3rd Edition Fillable Character Sheet</title>
+<style>
+    :root {
+      --ink: #151515;
+      --muted: #5c5c5c;
+      --line: #939393;
+      --panel: #242424;
+      --paper: #f7f7f2;
+      --field: #fff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #d9d9d3;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+    }
+
+    .sheet {
+      width: 8.5in;
+      min-height: 11in;
+      margin: 18px auto;
+      padding: 0.35in;
+      background: var(--paper);
+      box-shadow: 0 3px 20px rgba(0, 0, 0, 0.22);
+      page-break-after: always;
+    }
+
+    header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin: -0.35in -0.35in 18px;
+      padding: 18px 0.35in 14px;
+      color: #fff;
+      background: #111;
+    }
+
+    .save-tools {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px;
+      background: #111;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.28);
+    }
+
+    .save-tools button,
+    .save-tools label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 6px 10px;
+      border: 1px solid #777;
+      border-radius: 4px;
+      background: #f7f7f2;
+      color: #151515;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: none;
+      cursor: pointer;
+    }
+
+    .save-tools input[type="file"] {
+      position: absolute;
+      inline-size: 1px;
+      block-size: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .save-status {
+      display: inline-flex;
+      align-items: center;
+      color: #ddd;
+      font-size: 11px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      color: #ddd;
+      font-size: 11px;
+      text-align: right;
+    }
+
+    .grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .cols-2 { grid-template-columns: 1fr 1fr; }
+    .cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+    .identity { grid-template-columns: 1.6fr 1fr 1.5fr; }
+    .identity-small { grid-template-columns: 0.9fr 1.35fr 0.45fr 0.45fr 0.55fr 0.55fr 0.85fr; }
+    .main-top { grid-template-columns: 1.08fr 1.28fr; }
+
+    section {
+      border: 1px solid var(--ink);
+      border-radius: 4px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    h2 {
+      margin: 0;
+      padding: 4px 7px;
+      color: #fff;
+      background: var(--panel);
+      font-size: 12px;
+      letter-spacing: 0;
+    }
+
+    .content {
+      padding: 8px;
+    }
+
+    .fields {
+      display: grid;
+      gap: 8px;
+    }
+
+    label {
+      display: block;
+      min-width: 0;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      min-width: 0;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      padding: 3px 4px 2px;
+      background: var(--field);
+      color: var(--ink);
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 56px;
+      resize: vertical;
+      border: 1px solid var(--line);
+      line-height: 1.25;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th {
+      color: var(--muted);
+      font-size: 9px;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    td,
+    th {
+      padding: 2px;
+      vertical-align: bottom;
+    }
+
+    td input {
+      height: 21px;
+    }
+
+    .attribute-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 14px;
+    }
+
+    .attribute-table th:first-child,
+    .attribute-table td:first-child {
+      width: 44%;
+    }
+
+    .attribute-table td:first-child {
+      font-weight: 700;
+    }
+
+    .derived-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 12px;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid #c9c9c2;
+    }
+
+    .mini-field {
+      display: grid;
+      grid-template-columns: 78px 1fr;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mini-field label {
+      color: var(--ink);
+      font-size: 10px;
+      text-transform: none;
+    }
+
+    .monitor-group {
+      display: grid;
+      gap: 10px;
+    }
+
+    .monitor-line {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .monitor-title {
+      font-weight: 700;
+    }
+
+    .boxes {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 5px;
+      align-items: start;
+    }
+
+    .box-wrap {
+      display: grid;
+      grid-template-rows: 18px 10px;
+      justify-items: center;
+      align-items: start;
+      gap: 2px;
+      color: var(--muted);
+      font-size: 8px;
+      line-height: 1;
+      min-height: 30px;
+    }
+
+    input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      display: block;
+      margin: 0;
+      padding: 0;
+      border: 1px solid var(--line);
+      accent-color: #111;
+    }
+
+    .footer-note {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 9px;
+    }
+
+    .mt { margin-top: 10px; }
+    .tall-text { min-height: 100px; }
+    .gear-text { min-height: 230px; }
+
+    .range-row td {
+      padding-top: 0;
+      padding-bottom: 5px;
+    }
+
+    .ranges {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      padding: 2px 0 4px 18px;
+      border-bottom: 1px solid #c9c9c2;
+    }
+
+    .ranges label {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      align-items: center;
+      gap: 4px;
+      color: var(--ink);
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: none;
+    }
+
+    @media print {
+      .save-tools { display: none; }
+
+      body { background: #fff; }
+      .sheet {
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="save-tools">
+<button id="saveData" type="button">Save Character Data</button>
+<label for="loadData">Load Character Data</label>
+<input accept="application/json,.json" id="loadData" type="file" value=""/>
+<button id="clearData" type="button">Clear Sheet</button>
+<span class="save-status" id="saveStatus">Autosaves in this browser</span>
+</div>
+<main class="sheet">
+<header>
+<h1>Shadowrun 3rd Edition<br/>Character Sheet</h1>
+<div class="subtitle">Original fillable fan worksheet<br/>Core character record</div>
+</header>
+<section>
+<h2>Character Identity</h2>
+<div class="content fields">
+<div class="fields identity">
+<label>Character Name<input name="character_name" value="Sergei Chinakhov"/></label>
+<label>Player<input name="player" value=""/></label>
+<label>Campaign<input name="campaign" value="Shadowrun 3E — Grayline / Siberian Wolf"/></label>
+</div>
+<div class="fields identity-small">
+<label>Metatype<input name="metatype" value="Human"/></label>
+<label>Archetype / Concept<input name="archetype" value="PC / Runner / Bar Owner / Former Operator"/></label>
+<label>Sex<input name="sex" value="M"/></label>
+<label>Age<input name="age" value=""/></label>
+<label>Height<input name="height" value=""/></label>
+<label>Weight<input name="weight" value=""/></label>
+<label>Street Name<input name="street_name" value="The Chin"/></label>
+</div>
+<label>Description / Style<input name="description" value="Controlled Siberian Wolf bar owner, former Russian military operator, and Brigata 12 second-in-command; keeps Grayline functioning through pressure, contacts, and violence when required."/></label>
+</div>
+</section>
+<div class="grid main-top mt">
+<section>
+<h2>Core Attributes</h2>
+<div class="content">
+<table class="attribute-table">
+<thead>
+<tr><th>Attribute</th><th>Natural</th><th>Modified</th></tr>
+</thead>
+<tbody>
+<tr><td>Body</td><td><input name="body_natural" value="5"/></td><td><input name="body_modified" value="7 (Dermal Plating 2)"/></td></tr>
+<tr><td>Quickness</td><td><input name="quickness_natural" value="5"/></td><td><input name="quickness_modified" value="5"/></td></tr>
+<tr><td>Strength</td><td><input name="strength_natural" value="5"/></td><td><input name="strength_modified" value="5"/></td></tr>
+<tr><td>Charisma</td><td><input name="charisma_natural" value="3"/></td><td><input name="charisma_modified" value="3"/></td></tr>
+<tr><td>Intelligence</td><td><input name="intelligence_natural" value="3"/></td><td><input name="intelligence_modified" value="3"/></td></tr>
+<tr><td>Willpower</td><td><input name="willpower_natural" value="3"/></td><td><input name="willpower_modified" value="3"/></td></tr>
+<tr><td>Essence</td><td><input name="essence_natural" value="6"/></td><td><input name="essence_modified" value="0.80"/></td></tr>
+<tr><td>Bio Index</td><td><input name="bio_index_natural" value="0"/></td><td><input name="bio_index_modified" value="0"/></td></tr>
+<tr><td>Magic</td><td><input name="magic_natural" value="0"/></td><td><input name="magic_modified" value="0"/></td></tr>
+</tbody>
+</table>
+<div class="derived-grid">
+<div class="mini-field"><label>Reaction</label><input name="reaction" value="8"/></div>
+<div class="mini-field"><label>Reaction Bonus</label><input name="reaction_bonus" value="4"/></div>
+<div class="mini-field"><label>Initiative</label><input name="initiative" value="8 + 3D6"/></div>
+<div class="mini-field"><label>Init. Dice</label><input name="initiative_dice" value="3"/></div>
+<div class="mini-field"><label>Init. Bonus</label><input name="initiative_bonus" value="0"/></div>
+<div class="mini-field"><label>Combat Pool</label><input name="combat_pool" value="5"/></div>
+<div class="mini-field"><label>Karma Pool</label><input name="karma_pool" value="1"/></div>
+<div class="mini-field"><label>Astral Pool</label><input name="astral_pool" value=""/></div>
+<div class="mini-field"><label>Control Pool</label><input name="control_pool" value=""/></div>
+<div class="mini-field"><label>Hacking Pool</label><input name="hacking_pool" value="1"/></div>
+<div class="mini-field"><label>Task Pool</label><input name="task_pool" value=""/></div>
+</div>
+</div>
+</section>
+<section>
+<h2>Condition Monitors</h2>
+<div class="content monitor-group">
+<div class="monitor-line">
+<div class="monitor-title">Physical Damage</div>
+<div class="boxes">
+<label class="box-wrap"><input name="physical_1" type="checkbox"/></label>
+<label class="box-wrap"><input name="physical_2" type="checkbox"/></label>
+<label class="box-wrap"><input name="physical_3" type="checkbox"/>+1</label>
+<label class="box-wrap"><input name="physical_4" type="checkbox"/></label>
+<label class="box-wrap"><input name="physical_5" type="checkbox"/></label>
+<label class="box-wrap"><input name="physical_6" type="checkbox"/>+2</label>
+<label class="box-wrap"><input name="physical_7" type="checkbox"/></label>
+<label class="box-wrap"><input name="physical_8" type="checkbox"/></label>
+<label class="box-wrap"><input name="physical_9" type="checkbox"/>+3</label>
+<label class="box-wrap"><input name="physical_10" type="checkbox"/></label>
+</div>
+</div>
+<div class="monitor-line">
+<div class="monitor-title">Stun Damage</div>
+<div class="boxes">
+<label class="box-wrap"><input name="stun_1" type="checkbox"/></label>
+<label class="box-wrap"><input name="stun_2" type="checkbox"/></label>
+<label class="box-wrap"><input name="stun_3" type="checkbox"/>+1</label>
+<label class="box-wrap"><input name="stun_4" type="checkbox"/></label>
+<label class="box-wrap"><input name="stun_5" type="checkbox"/></label>
+<label class="box-wrap"><input name="stun_6" type="checkbox"/>+2</label>
+<label class="box-wrap"><input name="stun_7" type="checkbox"/></label>
+<label class="box-wrap"><input name="stun_8" type="checkbox"/></label>
+<label class="box-wrap"><input name="stun_9" type="checkbox"/>+3</label>
+<label class="box-wrap"><input name="stun_10" type="checkbox"/></label>
+</div>
+</div>
+<div class="fields cols-3">
+<label>Overflow<input name="overflow" value="7"/></label>
+<label>Wound Modifiers<input name="wound_modifiers" value="L +1 TN/-1 Init; M +2/-2; S +3/-3"/></label>
+<label>Damage Notes<input name="damage_notes" value="No current damage recorded."/></label>
+</div>
+</div>
+</section>
+</div>
+<section class="mt">
+<h2>Movement</h2>
+<div class="content">
+<table>
+<thead><tr><th style="width:22%">Mode</th><th style="width:16%">Rate</th><th style="width:16%">Multiplier</th><th style="width:18%">Terrain / Modifier</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Walking</td><td><input name="movement_walking_rate" value="5"/></td><td><input name="movement_walking_multiplier" value="1"/></td><td><input name="movement_walking_modifier" value=""/></td><td><input name="movement_walking_notes" value="Base Quickness 5"/></td></tr>
+<tr><td>Running</td><td><input name="movement_running_rate" value="15"/></td><td><input name="movement_running_multiplier" value="3"/></td><td><input name="movement_running_modifier" value=""/></td><td><input name="movement_running_notes" value="Human running rate"/></td></tr>
+<tr><td>Sprinting</td><td><input name="movement_sprinting_rate" value="20"/></td><td><input name="movement_sprinting_multiplier" value="4"/></td><td><input name="movement_sprinting_modifier" value=""/></td><td><input name="movement_sprinting_notes" value="Sprint estimate from Quickness ×4"/></td></tr>
+<tr><td>Swimming</td><td><input name="movement_swimming_rate" value="2.5"/></td><td><input name="movement_swimming_multiplier" value="0.5"/></td><td><input name="movement_swimming_modifier" value=""/></td><td><input name="movement_swimming_notes" value="Swim estimate from Quickness ×0.5"/></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="mt">
+<h2>Active Skills</h2>
+<div class="content">
+<table>
+<thead><tr><th style="width:34%">Skill</th><th style="width:12%">Rating</th><th style="width:20%">Specialization</th><th style="width:14%">Pool</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><input value="Pistols"/></td><td><input value="5"/></td><td><input value=""/></td><td><input value="Combat"/></td><td><input value="Ruger Super Warhawk / smartlink"/></td></tr>
+<tr><td><input value="Shotguns"/></td><td><input value="5"/></td><td><input value=""/></td><td><input value="Combat"/></td><td><input value="Close-range bar defense"/></td></tr>
+<tr><td><input value="Assault Rifles"/></td><td><input value="5"/></td><td><input value=""/></td><td><input value="Combat"/></td><td><input value="FN HAR"/></td></tr>
+<tr><td><input value="Launch Weapons"/></td><td><input value="5"/></td><td><input value=""/></td><td><input value="Combat"/></td><td><input value="Grenade launcher / area denial"/></td></tr>
+<tr><td><input value="Edged Weapons"/></td><td><input value="2"/></td><td><input value=""/></td><td><input value="Combat"/></td><td><input value="Katana"/></td></tr>
+<tr><td><input value="Athletics"/></td><td><input value="3"/></td><td><input value=""/></td><td><input value="Physical"/></td><td><input value="Movement / climbing"/></td></tr>
+<tr><td><input value="Stealth"/></td><td><input value="4"/></td><td><input value=""/></td><td><input value="Physical"/></td><td><input value="Grapnel stealth entry"/></td></tr>
+<tr><td><input value="Throwing Weapons"/></td><td><input value="3"/></td><td><input value=""/></td><td><input value="Physical"/></td><td><input value="Grenades / thrown weapons"/></td></tr>
+<tr><td><input value="Etiquette"/></td><td><input value="3"/></td><td><input value=""/></td><td><input value="Social"/></td><td><input value="Underworld / bar owner"/></td></tr>
+<tr><td><input value="Negotiation"/></td><td><input value="3"/></td><td><input value=""/></td><td><input value="Social"/></td><td><input value="Deals / contacts"/></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="mt">
+<h2>Knowledge / Language Skills</h2>
+<div class="content">
+<table>
+<thead><tr><th style="width:38%">Skill</th><th style="width:13%">Rating</th><th style="width:24%">Specialization</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><input value="Criminal Organizations"/></td><td><input value="1"/></td><td><input value=""/></td><td><input value="Knowledge"/></td></tr>
+<tr><td><input value="Local Neighborhood"/></td><td><input value="3"/></td><td><input value=""/></td><td><input value="Grayline / Wolf area"/></td></tr>
+<tr><td><input value="Redmond"/></td><td><input value="3"/></td><td><input value=""/></td><td><input value="Knowledge"/></td></tr>
+<tr><td><input value="Mafia Establishments"/></td><td><input value="3"/></td><td><input value=""/></td><td><input value="Knowledge"/></td></tr>
+<tr><td><input value="Gang Turf"/></td><td><input value="2"/></td><td><input value=""/></td><td><input value="Knowledge"/></td></tr>
+<tr><td><input value="Underworld Politics"/></td><td><input value="3"/></td><td><input value=""/></td><td><input value="Knowledge"/></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<div class="footer-note">This is an original, unofficial fan worksheet for use with Shadowrun 3rd Edition campaigns.</div>
+</main>
+<main class="sheet">
+<header>
+<h1>Contacts and Weapons</h1>
+<div class="subtitle">Shadowrun 3E Fillable Character Sheet<br/>Page 2</div>
+</header>
+<section>
+<h2>Contacts</h2>
+<div class="content">
+<table>
+<thead><tr><th style="width:22%">Name</th><th style="width:18%">Type</th><th style="width:12%">Loyalty</th><th style="width:12%">Connection</th><th style="width:16%">Location</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><input value="Blackjack"/></td><td><input value="Fixer"/></td><td><input value="3–4"/></td><td><input value="1"/></td><td><input value="Primary job source"/></td><td><input value="Current status: recovering after Rusty Spade attack"/></td></tr>
+<tr><td><input value="Ivan"/></td><td><input value="Russian influence contact"/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Tsar network"/></td><td><input value="Contact chain to Tsar / Bourgeoisie warning"/></td></tr>
+<tr><td><input value="Dr. Samuel Wong"/></td><td><input value="Street Doctor"/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Tacoma / Wong’s Meat Market"/></td><td><input value="Took Blackjack as incoming patient"/></td></tr>
+<tr><td><input value="Lockjaw"/></td><td><input value="Brigata 12 leader"/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Gang leadership"/></td><td><input value="Checked Donnie status; texted “Donnie MIA”"/></td></tr>
+<tr><td><input value="Louie"/></td><td><input value="Dockworker / shift supervisor"/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Grayline docks"/></td><td><input value="Provided box truck / dock support"/></td></tr>
+<tr><td><input value="Slim Jim"/></td><td><input value="Transport contact"/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Discreet taxi / transport"/></td><td><input value="Provided transport toward safehouse"/></td></tr>
+<tr><td><input value="Hubcap"/></td><td><input value="Street informant / scavenger"/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Siberian Wolf regular"/></td><td><input value="Rumor source and salvage channel"/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="mt">
+<h2>Weapons</h2>
+<div class="content">
+<table>
+<thead><tr><th style="width:20%">Weapon</th><th style="width:10%">Conc.</th><th style="width:12%">Damage</th><th style="width:10%">Mode</th><th style="width:10%">Ammo</th><th style="width:8%">RC</th><th style="width:8%">Reach</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><input value="Ruger Super Warhawk"/></td><td><input value="5"/></td><td><input value="10M"/></td><td><input value="SS"/></td><td><input value="6(cyl)"/></td><td><input value="0"/></td><td><input value=""/></td><td><input value="Primary sidearm; smartlink capable"/></td></tr>
+<tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input value="0–5"/></label><label>Medium<input value="6–20"/></label><label>Long<input value="21–40"/></label><label>Extreme<input value="41–60"/></label></div></td></tr>
+<tr><td><input value="FN HAR"/></td><td><input value="5"/></td><td><input value="8M"/></td><td><input value="SA/BF/FA"/></td><td><input value="35(c)"/></td><td><input value="?"/></td><td><input value=""/></td><td><input value="Assault rifle; primary long gun"/></td></tr>
+<tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input value="0–50"/></label><label>Medium<input value="51–150"/></label><label>Long<input value="151–350"/></label><label>Extreme<input value="351–550"/></label></div></td></tr>
+<tr><td><input value="Grenade Launcher"/></td><td><input value="5"/></td><td><input value="By grenade"/></td><td><input value="SS"/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Area denial / grenade link"/></td></tr>
+<tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input value=""/></label><label>Medium<input value=""/></label><label>Long<input value=""/></label><label>Extreme<input value=""/></label></div></td></tr>
+<tr><td><input value="Katana"/></td><td><input value="2"/></td><td><input value="(STR+3)M"/></td><td><input value="Melee"/></td><td><input value=""/></td><td><input value=""/></td><td><input value="1"/></td><td><input value="Close combat option"/></td></tr>
+<tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input value=""/></label><label>Medium<input value=""/></label><label>Long<input value=""/></label><label>Extreme<input value=""/></label></div></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input value=""/></label><label>Medium<input value=""/></label><label>Long<input value=""/></label><label>Extreme<input value=""/></label></div></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input value=""/></label><label>Medium<input value=""/></label><label>Long<input value=""/></label><label>Extreme<input value=""/></label></div></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input value=""/></label><label>Medium<input value=""/></label><label>Long<input value=""/></label><label>Extreme<input value=""/></label></div></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input value=""/></label><label>Medium<input value=""/></label><label>Long<input value=""/></label><label>Extreme<input value=""/></label></div></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input value=""/></label><label>Medium<input value=""/></label><label>Long<input value=""/></label><label>Extreme<input value=""/></label></div></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input value=""/></label><label>Medium<input value=""/></label><label>Long<input value=""/></label><label>Extreme<input value=""/></label></div></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="mt">
+<h2>Armor, Gear, and Lifestyle</h2>
+<div class="content fields">
+<div class="fields cols-3">
+<label>Armor / Ballistic / Impact<input name="armor" value="Armor Jacket 5 / 3"/></label>
+<label>Lifestyle<input name="lifestyle" value="Siberian Wolf / Grayline operational base"/></label>
+<label>Monthly Cost<input name="monthly_cost" value="Undefined in current master"/></label>
+</div>
+<label>Gear<textarea class="gear-text" name="gear">Grenade Link
+Smartlink system
+DocWagon Platinum
+Grapple Gun
+Grapple Lines (100m ×6)
+Stimulant Patches [3] ×2
+Medkit Rating 3 ×2
+BMW Blitzen 2025</textarea></label>
+</div>
+</section>
+</main>
+<main class="sheet">
+<header>
+<h1>Cyberware, Bioware, and Vehicles</h1>
+<div class="subtitle">Shadowrun 3E Fillable Character Sheet<br/>Page 3</div>
+</header>
+<section>
+<h2>Cyberware / Bioware</h2>
+<div class="content">
+<table>
+<thead><tr><th style="width:28%">Implant</th><th style="width:12%">Rating</th><th style="width:13%">Essence</th><th style="width:13%">Bio Index</th><th style="width:14%">Grade</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><input value="Wired Reflexes"/></td><td><input value="2"/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Standard"/></td><td><input value="+4 Reaction; +2 Initiative dice"/></td></tr>
+<tr><td><input value="Skillwires"/></td><td><input value="2"/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Standard"/></td><td><input value="Skillwire system rating 2"/></td></tr>
+<tr><td><input value="Smartlink"/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Standard"/></td><td><input value="-2 TN with smartlinked weapons"/></td></tr>
+<tr><td><input value="Cyber Eyes"/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Standard"/></td><td><input value="Thermographic, Flare Compensation, Low-Light, Display Link"/></td></tr>
+<tr><td><input value="Dermal Plating"/></td><td><input value="2"/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Standard"/></td><td><input value="+2 Body; Body 5 → 7"/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+</tbody>
+</table>
+<div class="fields cols-3 mt">
+<label>Essence Remaining<input name="essence_remaining" value="0.80"/></label>
+<label>Total Bio Index<input name="bio_index" value="0"/></label>
+<label>Implant Notes<input name="implant_notes" value="Known cyberware: Wired Reflexes 2, Skillwires 2, Smartlink, Cyber Eyes (Thermographic, Flare Compensation, Low-Light, Display Link), Dermal Plating 2. Essence from Master The Chin: 0.80."/></label>
+</div>
+</div>
+</section>
+<section class="mt">
+<h2>Vehicles / Drones</h2>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th style="width:16%">Vehicle / Drone</th>
+<th>Handling</th>
+<th>Speed</th>
+<th>Accel</th>
+<th>Body</th>
+<th>Armor</th>
+<th>Sig</th>
+<th>Autonav</th>
+<th>Pilot</th>
+<th>Sensor</th>
+<th>Cargo / Load</th>
+<th style="width:14%">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr><td><input value="BMW Blitzen 2025"/></td><td><input value="Motorcycle"/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Listed in gear; traced vehicle concern in campaign logs"/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="mt">
+<h2>Vehicle / Drone Modifications and Notes</h2>
+<div class="content">
+<textarea class="tall-text" name="vehicle_notes">BMW Blitzen 2025 listed in gear. Motorcycle trace pressure is active in campaign logs; The Chin owns the motorcycle used in the chateau sequence.</textarea>
+</div>
+</section>
+</main>
+<main class="sheet">
+<header>
+<h1>Advancement and Campaign Log</h1>
+<div class="subtitle">Shadowrun 3E Fillable Character Sheet<br/>Page 4</div>
+</header>
+<section>
+<h2>Advancement</h2>
+<div class="content fields">
+<div class="fields" style="grid-template-columns: repeat(5, 1fr);">
+<label>Karma Earned<input name="karma_earned" value="Undefined in current master"/></label>
+<label>Karma Spent<input name="karma_spent" value=""/></label>
+<label>Current Nuyen<input name="current_nuyen" value="Undefined in current master"/></label>
+<label>Reputation / Heat<input name="reputation" value="Siberian Wolf owner; Brigata 12 second-in-command; Grayline stabilizing force; reputation increased after Kestrel incident."/></label>
+<label>Last Updated<input name="last_updated" value="2026-06-03"/></label>
+</div>
+<label>Campaign Log<textarea class="tall-text" name="campaign_log">Session 0: Operated Siberian Wolf during Kestrel incident; engaged Kestrel team; assisted cleanup and containment.
+Session 1: Participated in warehouse recovery; grapnel stealth entry; used incendiary grenade against Burnout motorcycles; secured crate.
+Session 2: Involved in Grayline transport operation; coordinated movement through dock routes.
+Session 3: Participated in Graham extraction; contacted Slim Jim; secured operational movement.
+Session 5: Contacted Dr. Samuel Wong for Blackjack; contacted Lockjaw for Donnie status; remained connected to bar and gang obligations.</textarea></label>
+</div>
+</section>
+<section class="mt">
+<h2>Lifestyles</h2>
+<div class="content">
+<table>
+<thead><tr><th style="width:18%">Lifestyle / Safehouse</th><th style="width:13%">Type</th><th style="width:13%">Monthly Cost</th><th style="width:14%">Paid Through</th><th style="width:17%">Location</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><input value="Siberian Wolf"/></td><td><input value="Owned / operated"/></td><td><input value="Undefined"/></td><td><input value="Current"/></td><td><input value="Grayline"/></td><td><input value="Dive bar, safehouse, information hub"/></td></tr>
+<tr><td><input value="Brigata 12"/></td><td><input value="Second-in-command"/></td><td><input value="Operational"/></td><td><input value="Current"/></td><td><input value="Grayline Docks"/></td><td><input value="Russian-affiliated dockside gang"/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="mt">
+<h2>SINs, IDs, and Licenses</h2>
+<div class="content">
+<table>
+<thead><tr><th style="width:18%">Name / Identity</th><th style="width:13%">SIN Rating</th><th style="width:15%">Issuer</th><th style="width:17%">Licenses</th><th style="width:13%">Status</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><input value="The Chin / Sergei Chinakhov"/></td><td><input value="Human"/></td><td><input value="Former Russian military"/></td><td><input value="Bar owner / operator"/></td><td><input value="Brigata 12 second-in-command"/></td><td><input value="Maintains Grayline operational stability"/></td></tr>
+<tr><td><input value="Siberian Wolf"/></td><td><input value="Home base"/></td><td><input value="Neutral ground / community hub"/></td><td><input value="Hidden weapons / armed regulars"/></td><td><input value="Kestrel incident history"/></td><td><input value="Violence inside the Wolf does not go the way outsiders expect"/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+<tr><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="mt">
+<h2>Additional Notes</h2>
+<div class="content">
+<textarea class="gear-text" name="additional_notes">Background: Former Russian military; immigrated to the United States; current second-in-command of Brigata 12; owns and operates the Siberian Wolf. Concept: controlled, grounded bar owner on the surface; highly capable and dangerous professional underneath. Current status: maintains control of the Wolf, active influence within Brigata 12, and Grayline operational stability. Active pressure: Boeing/Kestrel/Ares threads, motorcycle trace exposure, Donnie missing, Blackjack recovering through Dr. Wong.</textarea>
+</div>
+</section>
+<div class="footer-note">Tip: fill this in your browser, then use Print and choose Save as PDF to preserve a completed copy.</div>
+</main>
+<script>
+(() => {
+  const filledData = {"id:loadData": "", "name:character_name": "Sergei Chinakhov", "name:player": "", "name:campaign": "Shadowrun 3E — Grayline / Siberian Wolf", "name:metatype": "Human", "name:archetype": "PC / Runner / Bar Owner / Former Operator", "name:sex": "M", "name:age": "", "name:height": "", "name:weight": "", "name:street_name": "The Chin", "name:description": "Controlled Siberian Wolf bar owner, former Russian military operator, and Brigata 12 second-in-command; keeps Grayline functioning through pressure, contacts, and violence when required.", "name:body_natural": "5", "name:body_modified": "7 (Dermal Plating 2)", "name:quickness_natural": "5", "name:quickness_modified": "5", "name:strength_natural": "5", "name:strength_modified": "5", "name:charisma_natural": "3", "name:charisma_modified": "3", "name:intelligence_natural": "3", "name:intelligence_modified": "3", "name:willpower_natural": "3", "name:willpower_modified": "3", "name:essence_natural": "6", "name:essence_modified": "0.80", "name:bio_index_natural": "0", "name:bio_index_modified": "0", "name:magic_natural": "0", "name:magic_modified": "0", "name:reaction": "8", "name:reaction_bonus": "4", "name:initiative": "8 + 3D6", "name:initiative_dice": "3", "name:initiative_bonus": "0", "name:combat_pool": "5", "name:karma_pool": "1", "name:astral_pool": "", "name:control_pool": "", "name:hacking_pool": "1", "name:task_pool": "", "name:physical_1": false, "name:physical_2": false, "name:physical_3": false, "name:physical_4": false, "name:physical_5": false, "name:physical_6": false, "name:physical_7": false, "name:physical_8": false, "name:physical_9": false, "name:physical_10": false, "name:stun_1": false, "name:stun_2": false, "name:stun_3": false, "name:stun_4": false, "name:stun_5": false, "name:stun_6": false, "name:stun_7": false, "name:stun_8": false, "name:stun_9": false, "name:stun_10": false, "name:overflow": "7", "name:wound_modifiers": "L +1 TN/-1 Init; M +2/-2; S +3/-3", "name:damage_notes": "No current damage recorded.", "name:movement_walking_rate": "5", "name:movement_walking_multiplier": "1", "name:movement_walking_modifier": "", "name:movement_walking_notes": "Base Quickness 5", "name:movement_running_rate": "15", "name:movement_running_multiplier": "3", "name:movement_running_modifier": "", "name:movement_running_notes": "Human running rate", "name:movement_sprinting_rate": "20", "name:movement_sprinting_multiplier": "4", "name:movement_sprinting_modifier": "", "name:movement_sprinting_notes": "Sprint estimate from Quickness ×4", "name:movement_swimming_rate": "2.5", "name:movement_swimming_multiplier": "0.5", "name:movement_swimming_modifier": "", "name:movement_swimming_notes": "Swim estimate from Quickness ×0.5", "field:80": "Pistols", "field:81": "5", "field:82": "", "field:83": "Combat", "field:84": "Ruger Super Warhawk / smartlink", "field:85": "Shotguns", "field:86": "5", "field:87": "", "field:88": "Combat", "field:89": "Close-range bar defense", "field:90": "Assault Rifles", "field:91": "5", "field:92": "", "field:93": "Combat", "field:94": "FN HAR", "field:95": "Launch Weapons", "field:96": "5", "field:97": "", "field:98": "Combat", "field:99": "Grenade launcher / area denial", "field:100": "Edged Weapons", "field:101": "2", "field:102": "", "field:103": "Combat", "field:104": "Katana", "field:105": "Athletics", "field:106": "3", "field:107": "", "field:108": "Physical", "field:109": "Movement / climbing", "field:110": "Stealth", "field:111": "4", "field:112": "", "field:113": "Physical", "field:114": "Grapnel stealth entry", "field:115": "Throwing Weapons", "field:116": "3", "field:117": "", "field:118": "Physical", "field:119": "Grenades / thrown weapons", "field:120": "Etiquette", "field:121": "3", "field:122": "", "field:123": "Social", "field:124": "Underworld / bar owner", "field:125": "Negotiation", "field:126": "3", "field:127": "", "field:128": "Social", "field:129": "Deals / contacts", "field:130": "Criminal Organizations", "field:131": "1", "field:132": "", "field:133": "Knowledge", "field:134": "Local Neighborhood", "field:135": "3", "field:136": "", "field:137": "Grayline / Wolf area", "field:138": "Redmond", "field:139": "3", "field:140": "", "field:141": "Knowledge", "field:142": "Mafia Establishments", "field:143": "3", "field:144": "", "field:145": "Knowledge", "field:146": "Gang Turf", "field:147": "2", "field:148": "", "field:149": "Knowledge", "field:150": "Underworld Politics", "field:151": "3", "field:152": "", "field:153": "Knowledge", "field:154": "Blackjack", "field:155": "Fixer", "field:156": "3–4", "field:157": "1", "field:158": "Primary job source", "field:159": "Current status: recovering after Rusty Spade attack", "field:160": "Ivan", "field:161": "Russian influence contact", "field:162": "", "field:163": "", "field:164": "Tsar network", "field:165": "Contact chain to Tsar / Bourgeoisie warning", "field:166": "Dr. Samuel Wong", "field:167": "Street Doctor", "field:168": "", "field:169": "", "field:170": "Tacoma / Wong’s Meat Market", "field:171": "Took Blackjack as incoming patient", "field:172": "Lockjaw", "field:173": "Brigata 12 leader", "field:174": "", "field:175": "", "field:176": "Gang leadership", "field:177": "Checked Donnie status; texted “Donnie MIA”", "field:178": "Louie", "field:179": "Dockworker / shift supervisor", "field:180": "", "field:181": "", "field:182": "Grayline docks", "field:183": "Provided box truck / dock support", "field:184": "Slim Jim", "field:185": "Transport contact", "field:186": "", "field:187": "", "field:188": "Discreet taxi / transport", "field:189": "Provided transport toward safehouse", "field:190": "Hubcap", "field:191": "Street informant / scavenger", "field:192": "", "field:193": "", "field:194": "Siberian Wolf regular", "field:195": "Rumor source and salvage channel", "field:196": "", "field:197": "", "field:198": "", "field:199": "", "field:200": "", "field:201": "", "field:202": "", "field:203": "", "field:204": "", "field:205": "", "field:206": "", "field:207": "", "field:208": "", "field:209": "", "field:210": "", "field:211": "", "field:212": "", "field:213": "", "field:214": "", "field:215": "", "field:216": "", "field:217": "", "field:218": "", "field:219": "", "field:220": "", "field:221": "", "field:222": "", "field:223": "", "field:224": "", "field:225": "", "field:226": "", "field:227": "", "field:228": "", "field:229": "", "field:230": "", "field:231": "", "field:232": "", "field:233": "", "field:234": "", "field:235": "", "field:236": "", "field:237": "", "field:238": "", "field:239": "", "field:240": "", "field:241": "", "field:242": "", "field:243": "", "field:244": "Ruger Super Warhawk", "field:245": "5", "field:246": "10M", "field:247": "SS", "field:248": "6(cyl)", "field:249": "0", "field:250": "", "field:251": "Primary sidearm; smartlink capable", "field:252": "0–5", "field:253": "6–20", "field:254": "21–40", "field:255": "41–60", "field:256": "FN HAR", "field:257": "5", "field:258": "8M", "field:259": "SA/BF/FA", "field:260": "35(c)", "field:261": "?", "field:262": "", "field:263": "Assault rifle; primary long gun", "field:264": "0–50", "field:265": "51–150", "field:266": "151–350", "field:267": "351–550", "field:268": "Grenade Launcher", "field:269": "5", "field:270": "By grenade", "field:271": "SS", "field:272": "", "field:273": "", "field:274": "", "field:275": "Area denial / grenade link", "field:276": "", "field:277": "", "field:278": "", "field:279": "", "field:280": "Katana", "field:281": "2", "field:282": "(STR+3)M", "field:283": "Melee", "field:284": "", "field:285": "", "field:286": "1", "field:287": "Close combat option", "field:288": "", "field:289": "", "field:290": "", "field:291": "", "field:292": "", "field:293": "", "field:294": "", "field:295": "", "field:296": "", "field:297": "", "field:298": "", "field:299": "", "field:300": "", "field:301": "", "field:302": "", "field:303": "", "field:304": "", "field:305": "", "field:306": "", "field:307": "", "field:308": "", "field:309": "", "field:310": "", "field:311": "", "field:312": "", "field:313": "", "field:314": "", "field:315": "", "field:316": "", "field:317": "", "field:318": "", "field:319": "", "field:320": "", "field:321": "", "field:322": "", "field:323": "", "field:324": "", "field:325": "", "field:326": "", "field:327": "", "field:328": "", "field:329": "", "field:330": "", "field:331": "", "field:332": "", "field:333": "", "field:334": "", "field:335": "", "field:336": "", "field:337": "", "field:338": "", "field:339": "", "field:340": "", "field:341": "", "field:342": "", "field:343": "", "field:344": "", "field:345": "", "field:346": "", "field:347": "", "field:348": "", "field:349": "", "field:350": "", "field:351": "", "field:352": "", "field:353": "", "field:354": "", "field:355": "", "field:356": "", "field:357": "", "field:358": "", "field:359": "", "field:360": "", "field:361": "", "field:362": "", "field:363": "", "name:armor": "Armor Jacket 5 / 3", "name:lifestyle": "Siberian Wolf / Grayline operational base", "name:monthly_cost": "Undefined in current master", "name:gear": "Grenade Link\nSmartlink system\nDocWagon Platinum\nGrapple Gun\nGrapple Lines (100m ×6)\nStimulant Patches [3] ×2\nMedkit Rating 3 ×2\nBMW Blitzen 2025", "field:368": "Wired Reflexes", "field:369": "2", "field:370": "", "field:371": "", "field:372": "Standard", "field:373": "+4 Reaction; +2 Initiative dice", "field:374": "Skillwires", "field:375": "2", "field:376": "", "field:377": "", "field:378": "Standard", "field:379": "Skillwire system rating 2", "field:380": "Smartlink", "field:381": "", "field:382": "", "field:383": "", "field:384": "Standard", "field:385": "-2 TN with smartlinked weapons", "field:386": "Cyber Eyes", "field:387": "", "field:388": "", "field:389": "", "field:390": "Standard", "field:391": "Thermographic, Flare Compensation, Low-Light, Display Link", "field:392": "Dermal Plating", "field:393": "2", "field:394": "", "field:395": "", "field:396": "Standard", "field:397": "+2 Body; Body 5 → 7", "field:398": "", "field:399": "", "field:400": "", "field:401": "", "field:402": "", "field:403": "", "field:404": "", "field:405": "", "field:406": "", "field:407": "", "field:408": "", "field:409": "", "field:410": "", "field:411": "", "field:412": "", "field:413": "", "field:414": "", "field:415": "", "field:416": "", "field:417": "", "field:418": "", "field:419": "", "field:420": "", "field:421": "", "field:422": "", "field:423": "", "field:424": "", "field:425": "", "field:426": "", "field:427": "", "name:essence_remaining": "0.80", "name:bio_index": "0", "name:implant_notes": "Known cyberware: Wired Reflexes 2, Skillwires 2, Smartlink, Cyber Eyes (Thermographic, Flare Compensation, Low-Light, Display Link), Dermal Plating 2. Essence from Master The Chin: 0.80.", "field:431": "BMW Blitzen 2025", "field:432": "Motorcycle", "field:433": "", "field:434": "", "field:435": "", "field:436": "Listed in gear; traced vehicle concern in campaign logs", "field:437": "", "field:438": "", "field:439": "", "field:440": "", "field:441": "", "field:442": "", "field:443": "", "field:444": "", "field:445": "", "field:446": "", "field:447": "", "field:448": "", "field:449": "", "field:450": "", "field:451": "", "field:452": "", "field:453": "", "field:454": "", "field:455": "", "field:456": "", "field:457": "", "field:458": "", "field:459": "", "field:460": "", "field:461": "", "field:462": "", "field:463": "", "field:464": "", "field:465": "", "field:466": "", "field:467": "", "field:468": "", "field:469": "", "field:470": "", "field:471": "", "field:472": "", "field:473": "", "field:474": "", "field:475": "", "field:476": "", "field:477": "", "field:478": "", "field:479": "", "field:480": "", "field:481": "", "field:482": "", "field:483": "", "field:484": "", "field:485": "", "field:486": "", "field:487": "", "field:488": "", "field:489": "", "field:490": "", "field:491": "", "field:492": "", "field:493": "", "field:494": "", "field:495": "", "field:496": "", "field:497": "", "field:498": "", "field:499": "", "field:500": "", "field:501": "", "field:502": "", "name:vehicle_notes": "BMW Blitzen 2025 listed in gear. Motorcycle trace pressure is active in campaign logs; The Chin owns the motorcycle used in the chateau sequence.", "name:karma_earned": "Undefined in current master", "name:karma_spent": "", "name:current_nuyen": "Undefined in current master", "name:reputation": "Siberian Wolf owner; Brigata 12 second-in-command; Grayline stabilizing force; reputation increased after Kestrel incident.", "name:last_updated": "2026-06-03", "name:campaign_log": "Session 0: Operated Siberian Wolf during Kestrel incident; engaged Kestrel team; assisted cleanup and containment.\nSession 1: Participated in warehouse recovery; grapnel stealth entry; used incendiary grenade against Burnout motorcycles; secured crate.\nSession 2: Involved in Grayline transport operation; coordinated movement through dock routes.\nSession 3: Participated in Graham extraction; contacted Slim Jim; secured operational movement.\nSession 5: Contacted Dr. Samuel Wong for Blackjack; contacted Lockjaw for Donnie status; remained connected to bar and gang obligations.", "field:510": "Siberian Wolf", "field:511": "Owned / operated", "field:512": "Undefined", "field:513": "Current", "field:514": "Grayline", "field:515": "Dive bar, safehouse, information hub", "field:516": "Brigata 12", "field:517": "Second-in-command", "field:518": "Operational", "field:519": "Current", "field:520": "Grayline Docks", "field:521": "Russian-affiliated dockside gang", "field:522": "", "field:523": "", "field:524": "", "field:525": "", "field:526": "", "field:527": "", "field:528": "", "field:529": "", "field:530": "", "field:531": "", "field:532": "", "field:533": "", "field:534": "", "field:535": "", "field:536": "", "field:537": "", "field:538": "", "field:539": "", "field:540": "The Chin / Sergei Chinakhov", "field:541": "Human", "field:542": "Former Russian military", "field:543": "Bar owner / operator", "field:544": "Brigata 12 second-in-command", "field:545": "Maintains Grayline operational stability", "field:546": "Siberian Wolf", "field:547": "Home base", "field:548": "Neutral ground / community hub", "field:549": "Hidden weapons / armed regulars", "field:550": "Kestrel incident history", "field:551": "Violence inside the Wolf does not go the way outsiders expect", "field:552": "", "field:553": "", "field:554": "", "field:555": "", "field:556": "", "field:557": "", "field:558": "", "field:559": "", "field:560": "", "field:561": "", "field:562": "", "field:563": "", "field:564": "", "field:565": "", "field:566": "", "field:567": "", "field:568": "", "field:569": "", "field:570": "", "field:571": "", "field:572": "", "field:573": "", "field:574": "", "field:575": "", "name:additional_notes": "Background: Former Russian military; immigrated to the United States; current second-in-command of Brigata 12; owns and operates the Siberian Wolf. Concept: controlled, grounded bar owner on the surface; highly capable and dangerous professional underneath. Current status: maintains control of the Wolf, active influence within Brigata 12, and Grayline operational stability. Active pressure: Boeing/Kestrel/Ares threads, motorcycle trace exposure, Donnie missing, Blackjack recovering through Dr. Wong."};
+  const key = "shadowrun3e-character-sheet-data-v1";
+  try { localStorage.setItem(key, JSON.stringify(filledData)); } catch(e) {}
+})();
+</script><script>
+    (() => {
+      const storageKey = "shadowrun3e-character-sheet-data-v1";
+      const fields = Array.from(document.querySelectorAll("input, textarea"));
+      const status = document.getElementById("saveStatus");
+
+      function fieldKey(field, index) {
+        if (field.id) return `id:${field.id}`;
+        if (field.name) return `name:${field.name}`;
+        return `field:${index}`;
+      }
+
+      function collectData() {
+        const data = {};
+        fields.forEach((field, index) => {
+          const key = fieldKey(field, index);
+          data[key] = field.type === "checkbox" ? field.checked : field.value;
+        });
+        return data;
+      }
+
+      function applyData(data) {
+        fields.forEach((field, index) => {
+          const key = fieldKey(field, index);
+          if (!(key in data)) return;
+          if (field.type === "checkbox") field.checked = Boolean(data[key]);
+          else field.value = data[key];
+        });
+      }
+
+      function autosave() {
+        calculateDerived();
+        localStorage.setItem(storageKey, JSON.stringify(collectData()));
+        status.textContent = "Autosaved";
+      }
+
+      function numberFrom(name) {
+        const raw = document.querySelector(`[name="${name}"]`)?.value || "";
+        const found = raw.match(/-?\d+(\.\d+)?/);
+        return found ? Number(found[0]) : 0;
+      }
+
+      function setValue(name, value) {
+        const field = document.querySelector(`[name="${name}"]`);
+        if (field) field.value = value;
+      }
+
+      function formatNumber(value) {
+        return Number.isInteger(value) ? String(value) : String(Math.round(value * 10) / 10);
+      }
+
+      function calculateDerived() {
+        const quicknessForReaction = numberFrom("quickness_modified") || numberFrom("quickness_natural");
+        const intelligenceForReaction = numberFrom("intelligence_modified") || numberFrom("intelligence_natural");
+        const reactionBonus = numberFrom("reaction_bonus");
+        if (quicknessForReaction || intelligenceForReaction || reactionBonus) {
+          setValue("reaction", formatNumber(Math.floor((quicknessForReaction + intelligenceForReaction) / 2) + reactionBonus));
+        }
+
+        const reaction = numberFrom("reaction");
+        const dice = numberFrom("initiative_dice") || 1;
+        const bonus = numberFrom("initiative_bonus");
+        if (reaction || bonus || dice) {
+          setValue("initiative", `${formatNumber(reaction + bonus)} + ${formatNumber(dice)}d6`);
+        }
+
+        const quickness = numberFrom("quickness_modified") || numberFrom("quickness_natural");
+        [
+          ["walking", "movement_walking_rate", "movement_walking_multiplier"],
+          ["running", "movement_running_rate", "movement_running_multiplier"],
+          ["sprinting", "movement_sprinting_rate", "movement_sprinting_multiplier"],
+          ["swimming", "movement_swimming_rate", "movement_swimming_multiplier"],
+        ].forEach(([, rateName, multiplierName]) => {
+          const multiplier = numberFrom(multiplierName);
+          if (quickness && multiplier) {
+            setValue(rateName, formatNumber(quickness * multiplier));
+          }
+        });
+      }
+
+      function characterName() {
+        const name = document.querySelector('[name="character_name"]')?.value.trim();
+        return (name || "shadowrun_character").replace(/[^a-z0-9_-]+/gi, "_");
+      }
+
+      const saved = localStorage.getItem(storageKey);
+      if (saved) {
+        try {
+          applyData(JSON.parse(saved));
+          calculateDerived();
+          status.textContent = "Loaded autosave";
+        } catch {
+          status.textContent = "Autosave unavailable";
+        }
+      }
+      calculateDerived();
+
+      fields.forEach((field) => {
+        field.addEventListener("input", autosave);
+        field.addEventListener("change", autosave);
+      });
+
+      document.getElementById("saveData").addEventListener("click", () => {
+        const blob = new Blob([JSON.stringify(collectData(), null, 2)], { type: "application/json" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = `${characterName()}_data.json`;
+        link.click();
+        URL.revokeObjectURL(link.href);
+        status.textContent = "Character data saved";
+      });
+
+      document.getElementById("loadData").addEventListener("change", async (event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+        try {
+          applyData(JSON.parse(await file.text()));
+          autosave();
+          status.textContent = "Character data loaded";
+        } catch {
+          status.textContent = "Could not load file";
+        } finally {
+          event.target.value = "";
+        }
+      });
+
+      document.getElementById("clearData").addEventListener("click", () => {
+        if (!confirm("Clear all fields on this sheet?")) return;
+        fields.forEach((field) => {
+          if (field.type === "checkbox") field.checked = false;
+          else if (field.type !== "file") field.value = "";
+        });
+        autosave();
+        status.textContent = "Sheet cleared";
+      });
+    })();
+  </script>
+</body>
+</html>

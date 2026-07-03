@@ -1,0 +1,106 @@
+{
+  "record_type": "report_request_export_package",
+  "package_version": "1.0.0",
+  "saved_at": "2026-06-17T22:57:29.943996+00:00",
+  "campaign": "Grayline",
+  "topic": "Boeing Pressure Board",
+  "audience": "gm",
+  "output_shape": "table",
+  "optional_question": "Smoke test: active pressure recall for table prep.",
+  "matched_source_count": 14,
+  "matched_sources": [
+    {
+      "title": "Boeing Pressure Board",
+      "folder": "07_CLUES_JOBS_THREADS",
+      "audience": "gm",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/07_CLUES_JOBS_THREADS/Boeing_pressure_board.md"
+    },
+    {
+      "title": "Session 2 Canon: Crate Delivery and Gray Line Pressure",
+      "folder": "01_CANON",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/01_CANON/SESSION_002_CANON.md"
+    },
+    {
+      "title": "Session 003 - Graham Extraction And Hard Drive Recovery",
+      "folder": "02_SESSIONS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/02_SESSIONS/SESSION_003.md"
+    },
+    {
+      "title": "Session 004 - Consolidated Session 4",
+      "folder": "02_SESSIONS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/02_SESSIONS/SESSION_004.md"
+    },
+    {
+      "title": "Session 005 - Corporate Surveillance And Street Fallout",
+      "folder": "02_SESSIONS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/02_SESSIONS/SESSION_005.md"
+    },
+    {
+      "title": "Faust Pressure Theory",
+      "folder": "07_CLUES_JOBS_THREADS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/07_CLUES_JOBS_THREADS/Faust_pressure_theory.md"
+    },
+    {
+      "title": "Triad Pressure",
+      "folder": "07_CLUES_JOBS_THREADS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/07_CLUES_JOBS_THREADS/Triad_pressure.md"
+    },
+    {
+      "title": "Session 003 Canon Summary",
+      "folder": "01_CANON",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/01_CANON/SESSION_003_CANON.md"
+    },
+    {
+      "title": "Kilmer",
+      "folder": "06_PCS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/06_PCS/Kilmer.md"
+    },
+    {
+      "title": "SESSION 000",
+      "folder": "02_SESSIONS",
+      "audience": "gm",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/02_SESSIONS/SESSION_000.md"
+    },
+    {
+      "title": "SESSION 001",
+      "folder": "02_SESSIONS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/02_SESSIONS/SESSION_001.MD"
+    },
+    {
+      "title": "SESSION 002",
+      "folder": "02_SESSIONS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/02_SESSIONS/SESSION_002.MD"
+    },
+    {
+      "title": "Switch",
+      "folder": "06_PCS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/06_PCS/Switch.md"
+    },
+    {
+      "title": "The Chin",
+      "folder": "06_PCS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/06_PCS/The_Chin.md"
+    }
+  ],
+  "repository_write_authorized": false,
+  "package_boundary": "Preview/export copy only. Does not promote, overwrite, or alter campaign repository files.",
+  "output_text": "Smoke test: active pressure recall for table prep.\nWhat This Is\nCLUES JOBS THREADS\nKnown Details\nBoeing activity is a pressure source that can affect jobs, territory, investigations, and faction behavior.\nFaction heat, corporate pressure, and consequences around Boeing's reconstruction activity.\nBoeing Vehicle Reconstruction Tightens\nLinked factions:\nBoeing\nHeat:\n4 - escalating\nCurrent step:\nBoeing is reconstructing the team vehicle through cameras, timestamps, descriptions, route analysis, and traffic-system access.\nStakes:\nThe team is not necessarily live-tracked everywhere, but the net keeps tightening.\nSignal:\nDrone observation, corporate vehicles, traffic-camera anomalies, or a matching vehicle description appears in play.\nNext pressure:\nBoeing narrows the route window and connects a movement chain to a person, place, or vehicle.\nEscalation:\nReconstruct: Boeing reviews post-extraction movement data. Vehicle description and route probability are established.\nCorrelate: Traffic data or witness details align. Movement windows narrow and likely stops become searchable.\nPressure: A connected vehicle, contact, or location is found. Quiet corporate pressure reaches the table through drones, vehicles, or questions.\nContain: Boeing has enough certainty to act. A person, route, or safe location becomes unsafe.\nMotorcycle Trace Remains Live\nLinked factions:\nBoeing, The Chin, Kilmer, chateau\nHeat:\n4 - escalating\nCurrent step:\nThe motorcycle is the cleaner active trace chain and becomes distinct from broader team-vehicle reconstruction.\nStakes:\nThe traced motorcycle can compromise otherwise safe movement or expose the chateau.\nSignal:\nThe motorcycle path draws corporate attention even when the team vehicle route stays fuzzier.\nNext pressure:\nBoeing uses the motorcycle trace to pressure a location, contact, or chateau exposure point.\nEscalation:\nTrace active: The motorcycle remains in use. Boeing has a separate exposure line.\nRoute split: The team separates vehicles. Motorcycle pressure separates from the Ford Americar/team vehicle.\nSite risk: The trace reaches the chateau or a sensitive stop. A secure location becomes vulnerable.\nDirect action: The trace is ignored or confirmed. Boeing can stage observation, contact, or containment near the traced site.\nDonnie Containment And Interrogation\nLinked factions:\nBoeing, Donnie, Hubcap, Oldsmobile 2035\nHeat:\n3 - active\nCurrent step:\nDonnie is missing and was extracted by Boeing for information, movement-chain reconstruction, and containment.\nStakes:\nWhat Boeing learns from Donnie can accelerate reconstruction or expose the Oldsmobile 2035 chain.\nSignal:\nHistory And Connections\nSession 2 Canon: Crate Delivery and Gray Line Pressure\nKestrel pressure continues after the crate delivery. Blackjack survives interrogation and does not betray the runners. Hubcap recovers the hidden hard drive from the Siberian Wolf bathroom and returns it to the runners.\nGraham and the hard drive are in runner possession. Boeing reconstruction is active. The motorcycle tracer is active. Ares begins independent convergence. Kestrel remains disconnected from live convergence but continues historical reconstruction.\nThe runners accept the Bourgeoisie's terms for Graham, leave the chateau under corporate pressure, identify Boeing's surveillance and motorcycle trace behavior, avoid or test staged pressure, and begin processing the street-level fallout around Donnie, Blackjack, Hubcap, Lockjaw, and Snacks.\nThe chain of responsibility is explicitly marked inferred: Mara as Boeing handler, Blackjack as fixer hired by Mara, team as external recovery, Toggle as retrieval transport asset.\nFaust pushes Kilmer toward the larger value and danger of the information. The team identifies Graham Voss as a likely target, improvises an extraction, and extracts Graham from Boeing-linked surveillance.\nOpen Notes\nNo open follow-up notes recorded.\nSource Records\nBoeing Pressure Board\n07_CLUES_JOBS_THREADS \u00b7 GM-facing\nSession 2 Canon: Crate Delivery and Gray Line Pressure\n01_CANON \u00b7 Full table control\nSession 003 - Graham Extraction And Hard Drive Recovery\n02_SESSIONS \u00b7 Full table control\nSession 004 - Consolidated Session 4\n02_SESSIONS \u00b7 Full table control\nMap Links\n\nNo matching map records found.\n\nAid Links\nOpen Burnouts Focused Registry Report (08_TABLE_READY)\nOpen Hubcap Focused Registry Report (08_TABLE_READY)\nOpen Session 005 - Corporate Surveillance And Street Fallout (08_TABLE_READY)",
+  "ok": true,
+  "saved_markdown_path": "C:\\ROLE_PLAYING GAMES\\Shadowrun\\_GRAYLINE\\_CODEX TABLE OUTPUTS\\01_Table_Ready_Aids_And_Reports\\REPORT_Boeing Pressure Board_gm_table_20260617T225729Z.md",
+  "saved_package_path": "C:\\ROLE_PLAYING GAMES\\Shadowrun\\_GRAYLINE\\_CODEX TABLE OUTPUTS\\00_Report_Package_Records\\REPORT_Boeing Pressure Board_gm_table_20260617T225729Z.json",
+  "owner_output_root": "C:\\ROLE_PLAYING GAMES\\Shadowrun\\_GRAYLINE\\_CODEX TABLE OUTPUTS",
+  "canon_modified": false,
+  "session_6_used": false
+}

@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1200" viewBox="0 0 1800 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Grayline Commercial District - Siberian Wolf Area Map</title>
+  <desc id="desc">Area-scale zoom of the colored Grayline map around the Siberian Wolf, anchored to the commercial district block east of dock support and south of the checkpoint bridge road.</desc>
+  <defs>
+    <pattern id="paperGrid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0 L0 0 L0 64" fill="none" stroke="#d3d0c8" stroke-width="1"/>
+    </pattern>
+    <pattern id="dockHatch" width="34" height="34" patternUnits="userSpaceOnUse">
+      <rect width="34" height="34" fill="#d8c9ad"/>
+      <path d="M0 17 H34 M17 0 V34" stroke="#bda984" stroke-width="1.4"/>
+    </pattern>
+    <pattern id="warehouseGrid" width="58" height="58" patternUnits="userSpaceOnUse">
+      <rect width="58" height="58" fill="#e3e3e0"/>
+      <path d="M58 0 L0 0 L0 58" fill="none" stroke="#a7a7a2" stroke-width="2"/>
+    </pattern>
+    <pattern id="containerRows" width="72" height="40" patternUnits="userSpaceOnUse">
+      <rect width="72" height="40" fill="#d5d4cf"/>
+      <rect x="5" y="5" width="62" height="30" fill="none" stroke="#a0a09a" stroke-width="2"/>
+      <line x1="23" y1="5" x2="23" y2="35" stroke="#a0a09a" stroke-width="1.5"/>
+      <line x1="46" y1="5" x2="46" y2="35" stroke="#a0a09a" stroke-width="1.5"/>
+    </pattern>
+    <filter id="softShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity=".16"/>
+    </filter>
+    <style>
+      .paper { fill:#f7f4ed; }
+      .grid { fill:url(#paperGrid); opacity:.5; }
+      .river { fill:#d6e3e5; stroke:#6c858b; stroke-width:4; }
+      .dock-edge { stroke:#111; stroke-width:8; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+      .rail { stroke:#111; stroke-width:4; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+      .rail-tie { stroke:#111; stroke-width:2; fill:none; }
+      .major-road { stroke:#111; stroke-width:16; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+      .major-gap { stroke:#f7f4ed; stroke-width:5; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+      .local-road { stroke:#6f6f6a; stroke-width:5; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+      .service { stroke:#55514b; stroke-width:4; stroke-dasharray:12 10; fill:none; stroke-linecap:round; }
+      .zone { stroke:#494640; stroke-width:3; opacity:.92; }
+      .dock-support { fill:url(#dockHatch); }
+      .commercial { fill:#f4e6ae; }
+      .housing { fill:#f0c49d; }
+      .warehouse { fill:url(#warehouseGrid); }
+      .container { fill:url(#containerRows); }
+      .flood { fill:#d6e0df; stroke:#7b918f; stroke-width:3; opacity:.85; }
+      .flooded-building { fill:#d7d7d3; stroke:#565652; stroke-width:3; }
+      .building { fill:#c8c0b1; stroke:#474139; stroke-width:3; }
+      .wolf-building { fill:#733631; stroke:#241311; stroke-width:5; }
+      .wolf-presence { stroke:#4c4a46; stroke-width:4; fill:none; opacity:.75; }
+      .poi { fill:#f7f4ed; stroke:#111; stroke-width:3; }
+      .label { font-family:Arial, Helvetica, sans-serif; fill:#111; font-weight:900; letter-spacing:0; }
+      .h1 { font-size:38px; }
+      .h2 { font-size:24px; }
+      .body { font-size:17px; font-weight:800; }
+      .tiny { font-size:13px; font-weight:800; }
+      .white { fill:#fff8eb; }
+      .muted { fill:#514d47; }
+    </style>
+  </defs>
+
+  <rect width="1800" height="1200" class="paper"/>
+  <rect width="1800" height="1200" class="grid"/>
+
+  <text x="64" y="70" class="label h1">GRAYLINE COMMERCIAL DISTRICT</text>
+  <text x="66" y="106" class="label body muted">Area-scale zoom anchored to the colored map: Wolf hub in the commercial block, not across the street</text>
+
+  <!-- Western context: river, dock edge, rail, and dock support strip. -->
+  <path d="M80 0 C62 160 110 290 92 450 C72 620 126 785 105 960 C96 1045 112 1125 124 1200 L330 1200 C315 1080 300 1005 318 890 C346 710 280 585 312 420 C338 285 300 150 318 0 Z" class="river"/>
+  <text x="164" y="590" class="label h2" transform="rotate(-90 164 590)">DUWAMISH RIVER</text>
+
+  <path d="M356 0 C338 150 356 285 344 420 C326 595 360 740 346 910 C338 1015 350 1100 362 1200" class="dock-edge"/>
+  <g>
+    <path d="M410 0 C392 145 410 282 398 422 C382 592 414 742 402 920 C394 1024 405 1108 418 1200" class="rail"/>
+    <path d="M436 0 C418 145 436 282 424 422 C408 592 440 742 428 920 C420 1024 431 1108 444 1200" class="rail"/>
+    <path d="M402 50 L444 50 M405 105 L447 105 M407 160 L449 160 M405 215 L447 215 M401 270 L443 270 M398 325 L440 325 M395 380 L437 380 M392 435 L434 435 M392 490 L434 490 M396 545 L438 545 M402 600 L444 600 M407 655 L449 655 M410 710 L452 710 M408 765 L450 765 M404 820 L446 820 M400 875 L442 875 M398 930 L440 930 M400 985 L442 985 M405 1040 L447 1040 M410 1095 L452 1095 M416 1150 L458 1150" class="rail-tie"/>
+  </g>
+
+  <path d="M520 260 L520 910 L680 910 L680 260 Z" class="zone dock-support"/>
+  <text x="600" y="575" text-anchor="middle" class="label h2">DOCK</text>
+  <text x="600" y="604" text-anchor="middle" class="label h2">SUPPORT</text>
+  <path d="M542 310 L660 310 M542 390 L660 390 M542 470 L660 470 M542 550 L660 550 M542 630 L660 630 M542 710 L660 710 M542 790 L660 790" class="service"/>
+
+  <!-- Roads from the colored map crop. -->
+  <path d="M470 210 C710 205 1020 218 1510 260 C1585 266 1658 262 1742 252" class="major-road"/>
+  <path d="M470 210 C710 205 1020 218 1510 260 C1585 266 1658 262 1742 252" class="major-gap"/>
+  <text x="1135" y="197" class="label body">CHECKPOINT BRIDGE ROAD</text>
+
+  <path d="M1330 0 C1342 170 1240 245 1205 340 C1170 436 1030 442 965 500 C890 566 888 746 910 896 C932 1046 1085 1138 1235 1200" class="major-road"/>
+  <path d="M1330 0 C1342 170 1240 245 1205 340 C1170 436 1030 442 965 500 C890 566 888 746 910 896 C932 1046 1085 1138 1235 1200" class="major-gap"/>
+  <text x="1228" y="452" class="label body" transform="rotate(-30 1228 452)">EAST INDUSTRIAL ARTERIAL</text>
+
+  <path d="M710 445 C890 438 1110 440 1450 442" class="local-road"/>
+  <path d="M710 590 C925 584 1170 586 1450 590" class="local-road"/>
+  <path d="M710 745 C925 740 1170 742 1450 744" class="local-road"/>
+  <path d="M790 260 C784 412 792 650 788 910" class="local-road"/>
+  <path d="M980 260 C974 412 982 650 978 910" class="local-road"/>
+  <path d="M1170 260 C1164 412 1172 650 1168 910" class="local-road"/>
+
+  <!-- Neighboring zones, matching the colored map relationships. -->
+  <path d="M700 260 L1290 260 L1290 445 L700 445 Z" class="zone warehouse"/>
+  <text x="995" y="355" text-anchor="middle" class="label h2">WAREHOUSE DISTRICT</text>
+
+  <path d="M700 445 L1170 445 L1170 910 L700 910 Z" class="zone commercial"/>
+  <text x="935" y="855" text-anchor="middle" class="label h2">COMMERCIAL DISTRICT</text>
+
+  <path d="M1170 445 L1500 445 L1500 910 L1170 910 Z" class="zone housing"/>
+  <text x="1335" y="625" text-anchor="middle" class="label h2">LOW-RENT</text>
+  <text x="1335" y="655" text-anchor="middle" class="label h2">HOUSING</text>
+
+  <path d="M700 910 L1500 910 L1500 1090 L820 1090 L700 990 Z" class="zone container"/>
+  <text x="1120" y="1012" text-anchor="middle" class="label h2">CONTAINER MAZE EDGE</text>
+
+  <path d="M520 910 C600 870 700 905 746 982 C784 1045 790 1110 790 1200 L520 1200 Z" class="flood"/>
+  <rect x="600" y="985" width="210" height="132" class="flooded-building"/>
+  <text x="705" y="1042" text-anchor="middle" class="label body">FLOODED</text>
+  <text x="705" y="1068" text-anchor="middle" class="label body">OFFICE BLOCK</text>
+
+  <!-- Commercial district detail. The Wolf stays inside this block. -->
+  <rect x="742" y="478" width="180" height="78" rx="4" class="building"/>
+  <rect x="944" y="474" width="168" height="84" rx="4" class="building"/>
+  <rect x="742" y="616" width="166" height="78" rx="4" class="building"/>
+  <rect x="945" y="606" width="210" height="92" rx="4" class="wolf-building" filter="url(#softShadow)"/>
+  <rect x="742" y="736" width="180" height="78" rx="4" class="building"/>
+  <rect x="965" y="736" width="175" height="78" rx="4" class="building"/>
+
+  <text x="765" y="523" class="label tiny">Freight brokers</text>
+  <text x="966" y="522" class="label tiny">Pawn / parts</text>
+  <text x="765" y="662" class="label tiny">Cheap food</text>
+  <text x="978" y="652" class="label body white">SIBERIAN WOLF</text>
+  <text x="979" y="678" class="label tiny white">bar / meeting place / neutral ground</text>
+  <text x="765" y="782" class="label tiny">Clinic rooms</text>
+  <text x="986" y="782" class="label tiny">Electronics repair</text>
+
+  <!-- Hub marker and influence lines, copied conceptually from the colored map. -->
+  <g transform="translate(1048 595)">
+    <circle r="33" fill="#111"/>
+    <circle cx="-12" cy="2" r="5" fill="#f7f4ed"/>
+    <circle cx="12" cy="2" r="5" fill="#f7f4ed"/>
+    <path d="M-16 20 L-8 10 L0 24 L8 10 L16 20" stroke="#f7f4ed" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M-18 -26 L-28 -58 M0 -30 L0 -64 M18 -26 L28 -58" stroke="#111" stroke-width="8" fill="none" stroke-linecap="round"/>
+  </g>
+  <text x="1095" y="604" class="label body">Siberian Wolf hub</text>
+  <path d="M1048 595 C915 510 790 470 655 440" class="wolf-presence"/>
+  <path d="M1048 595 C1148 548 1262 505 1390 455" class="wolf-presence"/>
+  <path d="M1048 595 C998 735 930 842 830 958" class="wolf-presence"/>
+  <text x="1185" y="528" class="label tiny muted">crew presence / watched streets</text>
+
+  <!-- Points of interest in the same block and adjacent context. -->
+  <rect x="1152" y="736" width="24" height="24" class="poi"/>
+  <text x="1187" y="756" class="label tiny">Telecom kiosk</text>
+  <rect x="1188" y="784" width="72" height="28" rx="4" fill="#333" stroke="#111" stroke-width="2"/>
+  <circle cx="1204" cy="814" r="6" fill="#111"/>
+  <circle cx="1244" cy="814" r="6" fill="#111"/>
+  <text x="1274" y="805" class="label tiny">Donnie's car location</text>
+
+  <circle cx="530" cy="212" r="20" fill="#111"/>
+  <text x="524" y="220" class="label body white">5</text>
+  <text x="560" y="235" class="label body">Checkpoint bridge</text>
+
+  <!-- Legend. -->
+  <rect x="64" y="1120" width="1672" height="54" fill="#eee7d8" stroke="#111" stroke-width="2"/>
+  <rect x="88" y="1136" width="28" height="18" class="zone commercial"/>
+  <text x="128" y="1150" class="label tiny">commercial district / Wolf block</text>
+  <rect x="380" y="1136" width="28" height="18" class="zone dock-support"/>
+  <text x="420" y="1150" class="label tiny">dock support</text>
+  <rect x="600" y="1136" width="28" height="18" class="zone warehouse"/>
+  <text x="640" y="1150" class="label tiny">warehouse district</text>
+  <rect x="860" y="1136" width="28" height="18" class="zone housing"/>
+  <text x="900" y="1150" class="label tiny">low-rent housing</text>
+  <line x1="1110" y1="1145" x2="1175" y2="1145" class="wolf-presence"/>
+  <text x="1190" y="1150" class="label tiny">Siberian Wolf crew presence</text>
+  <line x1="1490" y1="1145" x2="1560" y2="1145" class="major-road"/>
+  <line x1="1490" y1="1145" x2="1560" y2="1145" class="major-gap"/>
+  <text x="1576" y="1150" class="label tiny">major road</text>
+</svg>

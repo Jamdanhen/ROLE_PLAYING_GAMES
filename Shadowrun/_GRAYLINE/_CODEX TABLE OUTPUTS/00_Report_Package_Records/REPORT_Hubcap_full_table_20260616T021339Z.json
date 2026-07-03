@@ -1,0 +1,70 @@
+{
+  "record_type": "report_request_export_package",
+  "package_version": "1.0.0",
+  "saved_at": "2026-06-16T02:13:39.387839+00:00",
+  "campaign": "Grayline",
+  "topic": "Hubcap",
+  "audience": "full",
+  "output_shape": "table",
+  "optional_question": "",
+  "matched_source_count": 8,
+  "matched_sources": [
+    {
+      "title": "Hubcap",
+      "folder": "03_NPCS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/03_NPCS/Hubcap.md"
+    },
+    {
+      "title": "Hubcap Focused Registry Report",
+      "folder": "08_TABLE_READY",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/08_TABLE_READY/REPORT_Hubcap.md"
+    },
+    {
+      "title": "Calendar Date-Range Query Test",
+      "folder": "11_CALENDAR",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/11_CALENDAR/CALENDAR_DATE_RANGE_QUERY_TEST_2057-05-24_TO_2057-06-01.md"
+    },
+    {
+      "title": "Calendar Timeline Report 000-005",
+      "folder": "11_CALENDAR",
+      "audience": "gm",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/11_CALENDAR/CALENDAR_TIMELINE_REPORT_000_005.md"
+    },
+    {
+      "title": "Campaign Repository Index",
+      "folder": "00_INDEX",
+      "audience": "player",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/00_INDEX/REPOSITORY_INDEX.md"
+    },
+    {
+      "title": "Codex Extraction Specification 001",
+      "folder": "00_INDEX",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/00_INDEX/Codex_Extraction_Specification_001.md"
+    },
+    {
+      "title": "Kilmer",
+      "folder": "06_PCS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/06_PCS/Kilmer.md"
+    },
+    {
+      "title": "NPC And Entity Update Summary",
+      "folder": "03_NPCS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/03_NPCS/NPC_UPDATE_SUMMARY.md"
+    }
+  ],
+  "repository_write_authorized": false,
+  "package_boundary": "Preview/export copy only. Does not promote, overwrite, or alter campaign repository files.",
+  "output_text": "Table-ready aid for Hubcap.\nAt The Table\nHubcap\nSources:\n02_SESSIONS/SESSION_000.md\n02_SESSIONS/SESSION_001.MD\nType\nHubcap Focused Registry Report\nProvide a quick table-facing and GM-facing recall report for Hubcap from approved registry content.\nControl Notes\nHubcap is a local scavenger / Siberian Wolf regular who repeatedly becomes useful around hidden objects, improvised support, and street-level discovery.\nActive local contact/regular near the Siberian Wolf. In Session 005, Hubcap finds Donnie's phone and cigarettes in the Oldsmobile 2035 console and alerts the team to the vehicle.\nHubcap survives the Siberian Wolf firefight.\nHubcap fires a concealed support shot during the incident.\nHubcap recovered the hidden hard drive and later found Donnie's phone and cigarettes in the Oldsmobile 2035 console.\nSource Records\nHubcap\n03_NPCS \u00b7 Full table control\nHubcap Focused Registry Report\n08_TABLE_READY \u00b7 Full table control\nCalendar Date-Range Query Test\n11_CALENDAR \u00b7 Full table control\nCalendar Timeline Report 000-005\n11_CALENDAR \u00b7 GM-facing\nCampaign Repository Index\n00_INDEX \u00b7 Player-facing\nCodex Extraction Specification 001\n00_INDEX \u00b7 Full table control",
+  "ok": true,
+  "saved_markdown_path": "C:\\ROLE_PLAYING GAMES\\Shadowrun\\_GRAYLINE\\_CODEX TABLE OUTPUTS\\01_Table_Ready_Aids_And_Reports\\REPORT_Hubcap_full_table_20260616T021339Z.md",
+  "saved_package_path": "C:\\ROLE_PLAYING GAMES\\Shadowrun\\_GRAYLINE\\_CODEX TABLE OUTPUTS\\00_Report_Package_Records\\REPORT_Hubcap_full_table_20260616T021339Z.json",
+  "owner_output_root": "C:\\ROLE_PLAYING GAMES\\Shadowrun\\_GRAYLINE\\_CODEX TABLE OUTPUTS",
+  "canon_modified": false,
+  "session_6_used": false
+}

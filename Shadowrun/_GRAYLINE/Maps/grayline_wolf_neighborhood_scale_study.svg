@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Grayline Wolf Neighborhood Scale Study</title>
+  <desc id="desc">A simplified neighborhood-scale study for the east bank around the Siberian Wolf, emphasizing block scale, roads, rail, docks, and block IDs.</desc>
+  <defs>
+    <style>
+      .bg { fill: #eee8dc; }
+      .water { fill: #6c94a6; stroke: #2f4650; stroke-width: 4; }
+      .dock { fill: #8d8478; stroke: #2f2924; stroke-width: 3; }
+      .block { fill: #c7beaa; stroke: #2f2d27; stroke-width: 3; }
+      .road { stroke: #3f3f3c; stroke-width: 24; fill: none; stroke-linecap: square; }
+      .avenue { stroke: #5d584f; stroke-width: 16; fill: none; stroke-linecap: square; }
+      .rail { stroke: #1f1f1f; stroke-width: 7; stroke-dasharray: 20 12; fill: none; }
+      .service { stroke: #857d70; stroke-width: 5; stroke-dasharray: 10 8; fill: none; }
+      .wolf { fill: #733631; stroke: #2d1714; stroke-width: 4; }
+      .venue { fill: #b5ad9f; stroke: #3d3832; stroke-width: 3; }
+      .label { font-family: Arial, Helvetica, sans-serif; fill: #171717; font-size: 34px; font-weight: 800; letter-spacing: 0; }
+      .sub { font-family: Arial, Helvetica, sans-serif; fill: #222; font-size: 20px; font-weight: 700; letter-spacing: 0; }
+      .small { font-family: Arial, Helvetica, sans-serif; fill: #222; font-size: 16px; font-weight: 700; letter-spacing: 0; }
+      .tiny { font-family: Arial, Helvetica, sans-serif; fill: #222; font-size: 13px; font-weight: 700; letter-spacing: 0; }
+      .block-id { font-family: Arial, Helvetica, sans-serif; fill: #111; font-size: 32px; font-weight: 900; opacity: .62; }
+      .white { fill: #f8f5ec; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1100" class="bg"/>
+  <text x="70" y="70" class="label">WOLF NEIGHBORHOOD SCALE STUDY</text>
+  <text x="72" y="104" class="sub">East bank grid test, simplified</text>
+
+  <!-- Waterfront and dock strip -->
+  <rect x="80" y="130" width="220" height="910" class="water"/>
+  <rect x="300" y="130" width="120" height="910" class="dock"/>
+  <rect x="210" y="240" width="140" height="34" rx="3" class="dock"/>
+  <rect x="200" y="405" width="155" height="34" rx="3" class="dock"/>
+  <rect x="215" y="570" width="130" height="34" rx="3" class="dock"/>
+  <rect x="195" y="765" width="160" height="34" rx="3" class="dock"/>
+
+  <!-- Rail and main streets -->
+  <path d="M480 130 L480 1040" class="rail"/>
+  <path d="M610 130 L610 1040" class="road"/>
+  <path d="M980 130 L980 1040" class="road"/>
+  <path d="M300 240 L1490 240" class="road"/>
+  <path d="M610 520 L1490 520" class="avenue"/>
+  <path d="M610 790 L1490 790" class="avenue"/>
+
+  <!-- Large block fields -->
+  <rect x="640" y="270" width="330" height="230" class="block"/>
+  <rect x="1010" y="270" width="430" height="230" class="block"/>
+  <rect x="640" y="550" width="330" height="240" class="block"/>
+  <rect x="1010" y="550" width="430" height="240" class="block"/>
+  <rect x="640" y="820" width="330" height="180" class="block"/>
+  <rect x="1010" y="820" width="430" height="180" class="block"/>
+
+  <!-- Service alleys, only to suggest depth -->
+  <path d="M670 380 L940 380" class="service"/>
+  <path d="M1040 380 L1410 380" class="service"/>
+  <path d="M670 670 L940 670" class="service"/>
+  <path d="M1040 670 L1410 670" class="service"/>
+
+  <!-- Wolf frontage: one block-face element, not seven detailed lots yet -->
+  <rect x="1000" y="300" width="175" height="195" rx="4" fill="#b7afa1" stroke="#3d3832" stroke-width="3"/>
+  <rect x="1000" y="382" width="175" height="55" rx="3" class="wolf"/>
+  <text x="1022" y="415" class="small white">Siberian Wolf</text>
+  <text x="1015" y="326" class="tiny">garage / freight / shops</text>
+  <text x="1015" y="468" class="tiny">storage / welder / electronics</text>
+
+  <!-- Labels -->
+  <text x="130" y="580" class="sub white" transform="rotate(-90 130 580)">DUWAMISH RIVER</text>
+  <text x="315" y="165" class="small white">Dock Frontage</text>
+  <text x="435" y="158" class="small">Rail Spur</text>
+  <text x="630" y="158" class="small">Dockside Street</text>
+  <text x="1000" y="158" class="small">Front Street</text>
+  <text x="1040" y="225" class="small">East Bridge Avenue</text>
+  <text x="1040" y="505" class="small">East Anchor Avenue</text>
+  <text x="1040" y="775" class="small">East Port Avenue</text>
+
+  <text x="675" y="330" class="block-id">E1</text>
+  <text x="1050" y="330" class="block-id">E2 / E4</text>
+  <text x="675" y="610" class="block-id">E3</text>
+  <text x="1050" y="610" class="block-id">E5 / E6</text>
+  <text x="675" y="875" class="block-id">E7</text>
+  <text x="1050" y="875" class="block-id">E8</text>
+
+  <text x="675" y="480" class="tiny">industrial / commercial split can be decided later</text>
+  <text x="1050" y="480" class="tiny">Wolf frontage lives on Front Street side</text>
+  <text x="675" y="760" class="tiny">industrial / residential split can be decided later</text>
+  <text x="1050" y="760" class="tiny">residential apartments candidate</text>
+  <text x="675" y="980" class="tiny">industrial</text>
+  <text x="1050" y="980" class="tiny">squatter residential north / industrial south</text>
+</svg>

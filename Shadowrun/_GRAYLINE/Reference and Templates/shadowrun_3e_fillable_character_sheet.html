@@ -1,0 +1,907 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shadowrun 3rd Edition Fillable Character Sheet</title>
+  <style>
+    :root {
+      --ink: #151515;
+      --muted: #5c5c5c;
+      --line: #939393;
+      --panel: #242424;
+      --paper: #f7f7f2;
+      --field: #fff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #d9d9d3;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+    }
+
+    .sheet {
+      width: 8.5in;
+      min-height: 11in;
+      margin: 18px auto;
+      padding: 0.35in;
+      background: var(--paper);
+      box-shadow: 0 3px 20px rgba(0, 0, 0, 0.22);
+      page-break-after: always;
+    }
+
+    header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin: -0.35in -0.35in 18px;
+      padding: 18px 0.35in 14px;
+      color: #fff;
+      background: #111;
+    }
+
+    .save-tools {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px;
+      background: #111;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.28);
+    }
+
+    .save-tools button,
+    .save-tools label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 6px 10px;
+      border: 1px solid #777;
+      border-radius: 4px;
+      background: #f7f7f2;
+      color: #151515;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: none;
+      cursor: pointer;
+    }
+
+    .save-tools input[type="file"] {
+      position: absolute;
+      inline-size: 1px;
+      block-size: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .save-status {
+      display: inline-flex;
+      align-items: center;
+      color: #ddd;
+      font-size: 11px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      color: #ddd;
+      font-size: 11px;
+      text-align: right;
+    }
+
+    .grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .cols-2 { grid-template-columns: 1fr 1fr; }
+    .cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+    .identity { grid-template-columns: 1.6fr 1fr 1.5fr; }
+    .identity-small { grid-template-columns: 0.9fr 1.35fr 0.45fr 0.45fr 0.55fr 0.55fr 0.85fr; }
+    .main-top { grid-template-columns: 1.08fr 1.28fr; }
+
+    section {
+      border: 1px solid var(--ink);
+      border-radius: 4px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    h2 {
+      margin: 0;
+      padding: 4px 7px;
+      color: #fff;
+      background: var(--panel);
+      font-size: 12px;
+      letter-spacing: 0;
+    }
+
+    .content {
+      padding: 8px;
+    }
+
+    .fields {
+      display: grid;
+      gap: 8px;
+    }
+
+    label {
+      display: block;
+      min-width: 0;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      min-width: 0;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      padding: 3px 4px 2px;
+      background: var(--field);
+      color: var(--ink);
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 56px;
+      resize: vertical;
+      border: 1px solid var(--line);
+      line-height: 1.25;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th {
+      color: var(--muted);
+      font-size: 9px;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    td,
+    th {
+      padding: 2px;
+      vertical-align: bottom;
+    }
+
+    td input {
+      height: 21px;
+    }
+
+    .attribute-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 14px;
+    }
+
+    .attribute-table th:first-child,
+    .attribute-table td:first-child {
+      width: 44%;
+    }
+
+    .attribute-table td:first-child {
+      font-weight: 700;
+    }
+
+    .derived-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 12px;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid #c9c9c2;
+    }
+
+    .mini-field {
+      display: grid;
+      grid-template-columns: 78px 1fr;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mini-field label {
+      color: var(--ink);
+      font-size: 10px;
+      text-transform: none;
+    }
+
+    .monitor-group {
+      display: grid;
+      gap: 10px;
+    }
+
+    .monitor-line {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .monitor-title {
+      font-weight: 700;
+    }
+
+    .boxes {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 5px;
+      align-items: start;
+    }
+
+    .box-wrap {
+      display: grid;
+      grid-template-rows: 18px 10px;
+      justify-items: center;
+      align-items: start;
+      gap: 2px;
+      color: var(--muted);
+      font-size: 8px;
+      line-height: 1;
+      min-height: 30px;
+    }
+
+    input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      display: block;
+      margin: 0;
+      padding: 0;
+      border: 1px solid var(--line);
+      accent-color: #111;
+    }
+
+    .footer-note {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 9px;
+    }
+
+    .mt { margin-top: 10px; }
+    .tall-text { min-height: 100px; }
+    .gear-text { min-height: 230px; }'
+
+    .skill-table th {
+      white-space: nowrap;
+      font-size: 8px;
+    }
+
+    .skill-table input[maxlength="3"] {
+      text-align: center;
+      padding-left: 1px;
+      padding-right: 1px;
+    }
+'
+
+    .range-row td {
+      padding-top: 0;
+      padding-bottom: 5px;
+    }
+
+    .ranges {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      padding: 2px 0 4px 18px;
+      border-bottom: 1px solid #c9c9c2;
+    }
+
+    .ranges label {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      align-items: center;
+      gap: 4px;
+      color: var(--ink);
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: none;
+    }
+
+    @media print {
+      .save-tools { display: none; }
+
+      body { background: #fff; }
+      .sheet {
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="save-tools">
+    <button type="button" id="saveData">Save Character Data</button>
+    <label for="loadData">Load Character Data</label>
+    <input type="file" id="loadData" accept="application/json,.json">
+    <button type="button" id="clearData">Clear Sheet</button>
+    <span class="save-status" id="saveStatus">Autosaves in this browser</span>
+  </div>
+
+  <main class="sheet">
+    <header>
+      <h1>Shadowrun 3rd Edition<br>Character Sheet</h1>
+      <div class="subtitle">Original fillable fan worksheet<br>Core character record</div>
+    </header>
+
+    <section>
+      <h2>Character Identity</h2>
+      <div class="content fields">
+        <div class="fields identity">
+          <label>Character Name<input name="character_name"></label>
+          <label>Player<input name="player"></label>
+          <label>Campaign<input name="campaign"></label>
+        </div>
+        <div class="fields identity-small">
+          <label>Metatype<input name="metatype"></label>
+          <label>Archetype / Concept<input name="archetype"></label>
+          <label>Sex<input name="sex"></label>
+          <label>Age<input name="age"></label>
+          <label>Height<input name="height"></label>
+          <label>Weight<input name="weight"></label>
+          <label>Street Name<input name="street_name"></label>
+        </div>
+        <label>Description / Style<input name="description"></label>
+      </div>
+    </section>
+
+    <div class="grid main-top mt">
+      <section>
+        <h2>Core Attributes</h2>
+        <div class="content">
+          <table class="attribute-table">
+            <thead>
+              <tr><th>Attribute</th><th>Natural</th><th>Modified</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Body</td><td><input name="body_natural"></td><td><input name="body_modified"></td></tr>
+              <tr><td>Quickness</td><td><input name="quickness_natural"></td><td><input name="quickness_modified"></td></tr>
+              <tr><td>Strength</td><td><input name="strength_natural"></td><td><input name="strength_modified"></td></tr>
+              <tr><td>Charisma</td><td><input name="charisma_natural"></td><td><input name="charisma_modified"></td></tr>
+              <tr><td>Intelligence</td><td><input name="intelligence_natural"></td><td><input name="intelligence_modified"></td></tr>
+              <tr><td>Willpower</td><td><input name="willpower_natural"></td><td><input name="willpower_modified"></td></tr>
+              <tr><td>Essence</td><td><input name="essence_natural"></td><td><input name="essence_modified"></td></tr>
+              <tr><td>Bio Index</td><td><input name="bio_index_natural"></td><td><input name="bio_index_modified"></td></tr>
+              <tr><td>Magic</td><td><input name="magic_natural"></td><td><input name="magic_modified"></td></tr>
+            </tbody>
+          </table>
+          <div class="derived-grid">
+            <div class="mini-field"><label>Reaction</label><input name="reaction"></div>
+            <div class="mini-field"><label>Reaction Bonus</label><input name="reaction_bonus" value="0"></div>
+            <div class="mini-field"><label>Initiative</label><input name="initiative"></div>
+            <div class="mini-field"><label>Init. Dice</label><input name="initiative_dice" value="1"></div>
+            <div class="mini-field"><label>Init. Bonus</label><input name="initiative_bonus" value="0"></div>
+            <div class="mini-field"><label>Combat Pool</label><input name="combat_pool"></div>
+            <div class="mini-field"><label>Karma Pool</label><input name="karma_pool"></div>
+            <div class="mini-field"><label>Astral Pool</label><input name="astral_pool"></div>
+            <div class="mini-field"><label>Control Pool</label><input name="control_pool"></div>
+            <div class="mini-field"><label>Hacking Pool</label><input name="hacking_pool"></div>
+            <div class="mini-field"><label>Task Pool</label><input name="task_pool"></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Condition Monitors</h2>
+        <div class="content monitor-group">
+          <div class="monitor-line">
+            <div class="monitor-title">Physical Damage</div>
+            <div class="boxes">
+              <label class="box-wrap"><input type="checkbox" name="physical_1"></label>
+              <label class="box-wrap"><input type="checkbox" name="physical_2"></label>
+              <label class="box-wrap"><input type="checkbox" name="physical_3">+1</label>
+              <label class="box-wrap"><input type="checkbox" name="physical_4"></label>
+              <label class="box-wrap"><input type="checkbox" name="physical_5"></label>
+              <label class="box-wrap"><input type="checkbox" name="physical_6">+2</label>
+              <label class="box-wrap"><input type="checkbox" name="physical_7"></label>
+              <label class="box-wrap"><input type="checkbox" name="physical_8"></label>
+              <label class="box-wrap"><input type="checkbox" name="physical_9">+3</label>
+              <label class="box-wrap"><input type="checkbox" name="physical_10"></label>
+            </div>
+          </div>
+          <div class="monitor-line">
+            <div class="monitor-title">Stun Damage</div>
+            <div class="boxes">
+              <label class="box-wrap"><input type="checkbox" name="stun_1"></label>
+              <label class="box-wrap"><input type="checkbox" name="stun_2"></label>
+              <label class="box-wrap"><input type="checkbox" name="stun_3">+1</label>
+              <label class="box-wrap"><input type="checkbox" name="stun_4"></label>
+              <label class="box-wrap"><input type="checkbox" name="stun_5"></label>
+              <label class="box-wrap"><input type="checkbox" name="stun_6">+2</label>
+              <label class="box-wrap"><input type="checkbox" name="stun_7"></label>
+              <label class="box-wrap"><input type="checkbox" name="stun_8"></label>
+              <label class="box-wrap"><input type="checkbox" name="stun_9">+3</label>
+              <label class="box-wrap"><input type="checkbox" name="stun_10"></label>
+            </div>
+          </div>
+          <div class="fields cols-3">
+            <label>Overflow<input name="overflow"></label>
+            <label>Wound Modifiers<input name="wound_modifiers"></label>
+            <label>Damage Notes<input name="damage_notes"></label>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="mt">
+      <h2>Movement</h2>
+      <div class="content">
+        <table>
+          <thead><tr><th style="width:22%">Mode</th><th style="width:16%">Rate</th><th style="width:16%">Multiplier</th><th style="width:18%">Terrain / Modifier</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Walking</td><td><input name="movement_walking_rate"></td><td><input name="movement_walking_multiplier" value="1"></td><td><input name="movement_walking_modifier"></td><td><input name="movement_walking_notes"></td></tr>
+            <tr><td>Running</td><td><input name="movement_running_rate"></td><td><input name="movement_running_multiplier" value="3"></td><td><input name="movement_running_modifier"></td><td><input name="movement_running_notes"></td></tr>
+            <tr><td>Sprinting</td><td><input name="movement_sprinting_rate"></td><td><input name="movement_sprinting_multiplier" value="4"></td><td><input name="movement_sprinting_modifier"></td><td><input name="movement_sprinting_notes"></td></tr>
+            <tr><td>Swimming</td><td><input name="movement_swimming_rate"></td><td><input name="movement_swimming_multiplier" value="0.5"></td><td><input name="movement_swimming_modifier"></td><td><input name="movement_swimming_notes"></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mt">
+      <h2>Active Skills</h2>
+      <div class="content">
+        <table class="skill-table">
+          <thead><tr><th style="width:36%">Skill</th><th style="width:6%">Rtg</th><th style="width:27%">Specialization</th><th style="width:6%">Spec Rtg</th><th style="width:7%">Pool</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><input name="active_skill_1_name"></td><td><input name="active_skill_1_rating" maxlength="3" size="3"></td><td><input name="active_skill_1_specialization"></td><td><input name="active_skill_1_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_1_pool"></td><td><input name="active_skill_1_notes"></td></tr>
+            <tr><td><input name="active_skill_2_name"></td><td><input name="active_skill_2_rating" maxlength="3" size="3"></td><td><input name="active_skill_2_specialization"></td><td><input name="active_skill_2_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_2_pool"></td><td><input name="active_skill_2_notes"></td></tr>
+            <tr><td><input name="active_skill_3_name"></td><td><input name="active_skill_3_rating" maxlength="3" size="3"></td><td><input name="active_skill_3_specialization"></td><td><input name="active_skill_3_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_3_pool"></td><td><input name="active_skill_3_notes"></td></tr>
+            <tr><td><input name="active_skill_4_name"></td><td><input name="active_skill_4_rating" maxlength="3" size="3"></td><td><input name="active_skill_4_specialization"></td><td><input name="active_skill_4_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_4_pool"></td><td><input name="active_skill_4_notes"></td></tr>
+            <tr><td><input name="active_skill_5_name"></td><td><input name="active_skill_5_rating" maxlength="3" size="3"></td><td><input name="active_skill_5_specialization"></td><td><input name="active_skill_5_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_5_pool"></td><td><input name="active_skill_5_notes"></td></tr>
+            <tr><td><input name="active_skill_6_name"></td><td><input name="active_skill_6_rating" maxlength="3" size="3"></td><td><input name="active_skill_6_specialization"></td><td><input name="active_skill_6_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_6_pool"></td><td><input name="active_skill_6_notes"></td></tr>
+            <tr><td><input name="active_skill_7_name"></td><td><input name="active_skill_7_rating" maxlength="3" size="3"></td><td><input name="active_skill_7_specialization"></td><td><input name="active_skill_7_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_7_pool"></td><td><input name="active_skill_7_notes"></td></tr>
+            <tr><td><input name="active_skill_8_name"></td><td><input name="active_skill_8_rating" maxlength="3" size="3"></td><td><input name="active_skill_8_specialization"></td><td><input name="active_skill_8_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_8_pool"></td><td><input name="active_skill_8_notes"></td></tr>
+            <tr><td><input name="active_skill_9_name"></td><td><input name="active_skill_9_rating" maxlength="3" size="3"></td><td><input name="active_skill_9_specialization"></td><td><input name="active_skill_9_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_9_pool"></td><td><input name="active_skill_9_notes"></td></tr>
+            <tr><td><input name="active_skill_10_name"></td><td><input name="active_skill_10_rating" maxlength="3" size="3"></td><td><input name="active_skill_10_specialization"></td><td><input name="active_skill_10_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_10_pool"></td><td><input name="active_skill_10_notes"></td></tr>
+            <tr><td><input name="active_skill_11_name"></td><td><input name="active_skill_11_rating" maxlength="3" size="3"></td><td><input name="active_skill_11_specialization"></td><td><input name="active_skill_11_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_11_pool"></td><td><input name="active_skill_11_notes"></td></tr>
+            <tr><td><input name="active_skill_12_name"></td><td><input name="active_skill_12_rating" maxlength="3" size="3"></td><td><input name="active_skill_12_specialization"></td><td><input name="active_skill_12_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_12_pool"></td><td><input name="active_skill_12_notes"></td></tr>
+            <tr><td><input name="active_skill_13_name"></td><td><input name="active_skill_13_rating" maxlength="3" size="3"></td><td><input name="active_skill_13_specialization"></td><td><input name="active_skill_13_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_13_pool"></td><td><input name="active_skill_13_notes"></td></tr>
+            <tr><td><input name="active_skill_14_name"></td><td><input name="active_skill_14_rating" maxlength="3" size="3"></td><td><input name="active_skill_14_specialization"></td><td><input name="active_skill_14_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_14_pool"></td><td><input name="active_skill_14_notes"></td></tr>
+            <tr><td><input name="active_skill_15_name"></td><td><input name="active_skill_15_rating" maxlength="3" size="3"></td><td><input name="active_skill_15_specialization"></td><td><input name="active_skill_15_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_15_pool"></td><td><input name="active_skill_15_notes"></td></tr>
+            <tr><td><input name="active_skill_16_name"></td><td><input name="active_skill_16_rating" maxlength="3" size="3"></td><td><input name="active_skill_16_specialization"></td><td><input name="active_skill_16_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_16_pool"></td><td><input name="active_skill_16_notes"></td></tr>
+            <tr><td><input name="active_skill_17_name"></td><td><input name="active_skill_17_rating" maxlength="3" size="3"></td><td><input name="active_skill_17_specialization"></td><td><input name="active_skill_17_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_17_pool"></td><td><input name="active_skill_17_notes"></td></tr>
+            <tr><td><input name="active_skill_18_name"></td><td><input name="active_skill_18_rating" maxlength="3" size="3"></td><td><input name="active_skill_18_specialization"></td><td><input name="active_skill_18_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_18_pool"></td><td><input name="active_skill_18_notes"></td></tr>
+            <tr><td><input name="active_skill_19_name"></td><td><input name="active_skill_19_rating" maxlength="3" size="3"></td><td><input name="active_skill_19_specialization"></td><td><input name="active_skill_19_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_19_pool"></td><td><input name="active_skill_19_notes"></td></tr>
+            <tr><td><input name="active_skill_20_name"></td><td><input name="active_skill_20_rating" maxlength="3" size="3"></td><td><input name="active_skill_20_specialization"></td><td><input name="active_skill_20_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_20_pool"></td><td><input name="active_skill_20_notes"></td></tr>
+            <tr><td><input name="active_skill_21_name"></td><td><input name="active_skill_21_rating" maxlength="3" size="3"></td><td><input name="active_skill_21_specialization"></td><td><input name="active_skill_21_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_21_pool"></td><td><input name="active_skill_21_notes"></td></tr>
+            <tr><td><input name="active_skill_22_name"></td><td><input name="active_skill_22_rating" maxlength="3" size="3"></td><td><input name="active_skill_22_specialization"></td><td><input name="active_skill_22_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_22_pool"></td><td><input name="active_skill_22_notes"></td></tr>
+            <tr><td><input name="active_skill_23_name"></td><td><input name="active_skill_23_rating" maxlength="3" size="3"></td><td><input name="active_skill_23_specialization"></td><td><input name="active_skill_23_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_23_pool"></td><td><input name="active_skill_23_notes"></td></tr>
+            <tr><td><input name="active_skill_24_name"></td><td><input name="active_skill_24_rating" maxlength="3" size="3"></td><td><input name="active_skill_24_specialization"></td><td><input name="active_skill_24_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_24_pool"></td><td><input name="active_skill_24_notes"></td></tr>
+            <tr><td><input name="active_skill_25_name"></td><td><input name="active_skill_25_rating" maxlength="3" size="3"></td><td><input name="active_skill_25_specialization"></td><td><input name="active_skill_25_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_25_pool"></td><td><input name="active_skill_25_notes"></td></tr>
+            <tr><td><input name="active_skill_26_name"></td><td><input name="active_skill_26_rating" maxlength="3" size="3"></td><td><input name="active_skill_26_specialization"></td><td><input name="active_skill_26_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_26_pool"></td><td><input name="active_skill_26_notes"></td></tr>
+            <tr><td><input name="active_skill_27_name"></td><td><input name="active_skill_27_rating" maxlength="3" size="3"></td><td><input name="active_skill_27_specialization"></td><td><input name="active_skill_27_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_27_pool"></td><td><input name="active_skill_27_notes"></td></tr>
+            <tr><td><input name="active_skill_28_name"></td><td><input name="active_skill_28_rating" maxlength="3" size="3"></td><td><input name="active_skill_28_specialization"></td><td><input name="active_skill_28_spec_rating" maxlength="3" size="3"></td><td><input name="active_skill_28_pool"></td><td><input name="active_skill_28_notes"></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mt">
+      <h2>Knowledge / Language Skills</h2>
+      <div class="content">
+        <table class="skill-table">
+          <thead><tr><th style="width:41%">Skill</th><th style="width:6%">Rtg</th><th style="width:33%">Specialization</th><th style="width:6%">Spec Rtg</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><input name="knowledge_skill_1_name"></td><td><input name="knowledge_skill_1_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_1_specialization"></td><td><input name="knowledge_skill_1_spec_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_1_notes"></td></tr>
+            <tr><td><input name="knowledge_skill_2_name"></td><td><input name="knowledge_skill_2_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_2_specialization"></td><td><input name="knowledge_skill_2_spec_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_2_notes"></td></tr>
+            <tr><td><input name="knowledge_skill_3_name"></td><td><input name="knowledge_skill_3_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_3_specialization"></td><td><input name="knowledge_skill_3_spec_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_3_notes"></td></tr>
+            <tr><td><input name="knowledge_skill_4_name"></td><td><input name="knowledge_skill_4_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_4_specialization"></td><td><input name="knowledge_skill_4_spec_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_4_notes"></td></tr>
+            <tr><td><input name="knowledge_skill_5_name"></td><td><input name="knowledge_skill_5_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_5_specialization"></td><td><input name="knowledge_skill_5_spec_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_5_notes"></td></tr>
+            <tr><td><input name="knowledge_skill_6_name"></td><td><input name="knowledge_skill_6_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_6_specialization"></td><td><input name="knowledge_skill_6_spec_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_6_notes"></td></tr>
+            <tr><td><input name="knowledge_skill_7_name"></td><td><input name="knowledge_skill_7_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_7_specialization"></td><td><input name="knowledge_skill_7_spec_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_7_notes"></td></tr>
+            <tr><td><input name="knowledge_skill_8_name"></td><td><input name="knowledge_skill_8_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_8_specialization"></td><td><input name="knowledge_skill_8_spec_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_8_notes"></td></tr>
+            <tr><td><input name="knowledge_skill_9_name"></td><td><input name="knowledge_skill_9_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_9_specialization"></td><td><input name="knowledge_skill_9_spec_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_9_notes"></td></tr>
+            <tr><td><input name="knowledge_skill_10_name"></td><td><input name="knowledge_skill_10_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_10_specialization"></td><td><input name="knowledge_skill_10_spec_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_10_notes"></td></tr>
+            <tr><td><input name="knowledge_skill_11_name"></td><td><input name="knowledge_skill_11_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_11_specialization"></td><td><input name="knowledge_skill_11_spec_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_11_notes"></td></tr>
+            <tr><td><input name="knowledge_skill_12_name"></td><td><input name="knowledge_skill_12_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_12_specialization"></td><td><input name="knowledge_skill_12_spec_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_12_notes"></td></tr>
+            <tr><td><input name="knowledge_skill_13_name"></td><td><input name="knowledge_skill_13_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_13_specialization"></td><td><input name="knowledge_skill_13_spec_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_13_notes"></td></tr>
+            <tr><td><input name="knowledge_skill_14_name"></td><td><input name="knowledge_skill_14_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_14_specialization"></td><td><input name="knowledge_skill_14_spec_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_14_notes"></td></tr>
+            <tr><td><input name="knowledge_skill_15_name"></td><td><input name="knowledge_skill_15_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_15_specialization"></td><td><input name="knowledge_skill_15_spec_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_15_notes"></td></tr>
+            <tr><td><input name="knowledge_skill_16_name"></td><td><input name="knowledge_skill_16_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_16_specialization"></td><td><input name="knowledge_skill_16_spec_rating" maxlength="3" size="3"></td><td><input name="knowledge_skill_16_notes"></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="footer-note">This is an original, unofficial fan worksheet for use with Shadowrun 3rd Edition campaigns.</div>
+  </main>
+
+  <main class="sheet">
+    <header>
+      <h1>Contacts and Weapons</h1>
+      <div class="subtitle">Shadowrun 3E Fillable Character Sheet<br>Page 2</div>
+    </header>
+
+    <section>
+      <h2>Contacts</h2>
+      <div class="content">
+        <table>
+          <thead><tr><th style="width:22%">Name</th><th style="width:18%">Type</th><th style="width:12%">Loyalty</th><th style="width:12%">Connection</th><th style="width:16%">Location</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><input name="contact_1_name"></td><td><input name="contact_1_type"></td><td><input name="contact_1_loyalty"></td><td><input name="contact_1_connection"></td><td><input name="contact_1_location"></td><td><input name="contact_1_notes"></td></tr>
+            <tr><td><input name="contact_2_name"></td><td><input name="contact_2_type"></td><td><input name="contact_2_loyalty"></td><td><input name="contact_2_connection"></td><td><input name="contact_2_location"></td><td><input name="contact_2_notes"></td></tr>
+            <tr><td><input name="contact_3_name"></td><td><input name="contact_3_type"></td><td><input name="contact_3_loyalty"></td><td><input name="contact_3_connection"></td><td><input name="contact_3_location"></td><td><input name="contact_3_notes"></td></tr>
+            <tr><td><input name="contact_4_name"></td><td><input name="contact_4_type"></td><td><input name="contact_4_loyalty"></td><td><input name="contact_4_connection"></td><td><input name="contact_4_location"></td><td><input name="contact_4_notes"></td></tr>
+            <tr><td><input name="contact_5_name"></td><td><input name="contact_5_type"></td><td><input name="contact_5_loyalty"></td><td><input name="contact_5_connection"></td><td><input name="contact_5_location"></td><td><input name="contact_5_notes"></td></tr>
+            <tr><td><input name="contact_6_name"></td><td><input name="contact_6_type"></td><td><input name="contact_6_loyalty"></td><td><input name="contact_6_connection"></td><td><input name="contact_6_location"></td><td><input name="contact_6_notes"></td></tr>
+            <tr><td><input name="contact_7_name"></td><td><input name="contact_7_type"></td><td><input name="contact_7_loyalty"></td><td><input name="contact_7_connection"></td><td><input name="contact_7_location"></td><td><input name="contact_7_notes"></td></tr>
+            <tr><td><input name="contact_8_name"></td><td><input name="contact_8_type"></td><td><input name="contact_8_loyalty"></td><td><input name="contact_8_connection"></td><td><input name="contact_8_location"></td><td><input name="contact_8_notes"></td></tr>
+            <tr><td><input name="contact_9_name"></td><td><input name="contact_9_type"></td><td><input name="contact_9_loyalty"></td><td><input name="contact_9_connection"></td><td><input name="contact_9_location"></td><td><input name="contact_9_notes"></td></tr>
+            <tr><td><input name="contact_10_name"></td><td><input name="contact_10_type"></td><td><input name="contact_10_loyalty"></td><td><input name="contact_10_connection"></td><td><input name="contact_10_location"></td><td><input name="contact_10_notes"></td></tr>
+            <tr><td><input name="contact_11_name"></td><td><input name="contact_11_type"></td><td><input name="contact_11_loyalty"></td><td><input name="contact_11_connection"></td><td><input name="contact_11_location"></td><td><input name="contact_11_notes"></td></tr>
+            <tr><td><input name="contact_12_name"></td><td><input name="contact_12_type"></td><td><input name="contact_12_loyalty"></td><td><input name="contact_12_connection"></td><td><input name="contact_12_location"></td><td><input name="contact_12_notes"></td></tr>
+            <tr><td><input name="contact_13_name"></td><td><input name="contact_13_type"></td><td><input name="contact_13_loyalty"></td><td><input name="contact_13_connection"></td><td><input name="contact_13_location"></td><td><input name="contact_13_notes"></td></tr>
+            <tr><td><input name="contact_14_name"></td><td><input name="contact_14_type"></td><td><input name="contact_14_loyalty"></td><td><input name="contact_14_connection"></td><td><input name="contact_14_location"></td><td><input name="contact_14_notes"></td></tr>
+            <tr><td><input name="contact_15_name"></td><td><input name="contact_15_type"></td><td><input name="contact_15_loyalty"></td><td><input name="contact_15_connection"></td><td><input name="contact_15_location"></td><td><input name="contact_15_notes"></td></tr>
+            <tr><td><input name="contact_16_name"></td><td><input name="contact_16_type"></td><td><input name="contact_16_loyalty"></td><td><input name="contact_16_connection"></td><td><input name="contact_16_location"></td><td><input name="contact_16_notes"></td></tr>
+            <tr><td><input name="contact_17_name"></td><td><input name="contact_17_type"></td><td><input name="contact_17_loyalty"></td><td><input name="contact_17_connection"></td><td><input name="contact_17_location"></td><td><input name="contact_17_notes"></td></tr>
+            <tr><td><input name="contact_18_name"></td><td><input name="contact_18_type"></td><td><input name="contact_18_loyalty"></td><td><input name="contact_18_connection"></td><td><input name="contact_18_location"></td><td><input name="contact_18_notes"></td></tr>
+            <tr><td><input name="contact_19_name"></td><td><input name="contact_19_type"></td><td><input name="contact_19_loyalty"></td><td><input name="contact_19_connection"></td><td><input name="contact_19_location"></td><td><input name="contact_19_notes"></td></tr>
+            <tr><td><input name="contact_20_name"></td><td><input name="contact_20_type"></td><td><input name="contact_20_loyalty"></td><td><input name="contact_20_connection"></td><td><input name="contact_20_location"></td><td><input name="contact_20_notes"></td></tr>
+            <tr><td><input name="contact_21_name"></td><td><input name="contact_21_type"></td><td><input name="contact_21_loyalty"></td><td><input name="contact_21_connection"></td><td><input name="contact_21_location"></td><td><input name="contact_21_notes"></td></tr>
+            <tr><td><input name="contact_22_name"></td><td><input name="contact_22_type"></td><td><input name="contact_22_loyalty"></td><td><input name="contact_22_connection"></td><td><input name="contact_22_location"></td><td><input name="contact_22_notes"></td></tr>
+            <tr><td><input name="contact_23_name"></td><td><input name="contact_23_type"></td><td><input name="contact_23_loyalty"></td><td><input name="contact_23_connection"></td><td><input name="contact_23_location"></td><td><input name="contact_23_notes"></td></tr>
+            <tr><td><input name="contact_24_name"></td><td><input name="contact_24_type"></td><td><input name="contact_24_loyalty"></td><td><input name="contact_24_connection"></td><td><input name="contact_24_location"></td><td><input name="contact_24_notes"></td></tr>
+            <tr><td><input name="contact_25_name"></td><td><input name="contact_25_type"></td><td><input name="contact_25_loyalty"></td><td><input name="contact_25_connection"></td><td><input name="contact_25_location"></td><td><input name="contact_25_notes"></td></tr>
+            <tr><td><input name="contact_26_name"></td><td><input name="contact_26_type"></td><td><input name="contact_26_loyalty"></td><td><input name="contact_26_connection"></td><td><input name="contact_26_location"></td><td><input name="contact_26_notes"></td></tr>
+            <tr><td><input name="contact_27_name"></td><td><input name="contact_27_type"></td><td><input name="contact_27_loyalty"></td><td><input name="contact_27_connection"></td><td><input name="contact_27_location"></td><td><input name="contact_27_notes"></td></tr>
+            <tr><td><input name="contact_28_name"></td><td><input name="contact_28_type"></td><td><input name="contact_28_loyalty"></td><td><input name="contact_28_connection"></td><td><input name="contact_28_location"></td><td><input name="contact_28_notes"></td></tr>
+            <tr><td><input name="contact_29_name"></td><td><input name="contact_29_type"></td><td><input name="contact_29_loyalty"></td><td><input name="contact_29_connection"></td><td><input name="contact_29_location"></td><td><input name="contact_29_notes"></td></tr>
+            <tr><td><input name="contact_30_name"></td><td><input name="contact_30_type"></td><td><input name="contact_30_loyalty"></td><td><input name="contact_30_connection"></td><td><input name="contact_30_location"></td><td><input name="contact_30_notes"></td></tr>
+            <tr><td><input name="contact_31_name"></td><td><input name="contact_31_type"></td><td><input name="contact_31_loyalty"></td><td><input name="contact_31_connection"></td><td><input name="contact_31_location"></td><td><input name="contact_31_notes"></td></tr>
+            <tr><td><input name="contact_32_name"></td><td><input name="contact_32_type"></td><td><input name="contact_32_loyalty"></td><td><input name="contact_32_connection"></td><td><input name="contact_32_location"></td><td><input name="contact_32_notes"></td></tr>
+            <tr><td><input name="contact_33_name"></td><td><input name="contact_33_type"></td><td><input name="contact_33_loyalty"></td><td><input name="contact_33_connection"></td><td><input name="contact_33_location"></td><td><input name="contact_33_notes"></td></tr>
+            <tr><td><input name="contact_34_name"></td><td><input name="contact_34_type"></td><td><input name="contact_34_loyalty"></td><td><input name="contact_34_connection"></td><td><input name="contact_34_location"></td><td><input name="contact_34_notes"></td></tr>
+            <tr><td><input name="contact_35_name"></td><td><input name="contact_35_type"></td><td><input name="contact_35_loyalty"></td><td><input name="contact_35_connection"></td><td><input name="contact_35_location"></td><td><input name="contact_35_notes"></td></tr>
+            <tr><td><input name="contact_36_name"></td><td><input name="contact_36_type"></td><td><input name="contact_36_loyalty"></td><td><input name="contact_36_connection"></td><td><input name="contact_36_location"></td><td><input name="contact_36_notes"></td></tr>
+            <tr><td><input name="contact_37_name"></td><td><input name="contact_37_type"></td><td><input name="contact_37_loyalty"></td><td><input name="contact_37_connection"></td><td><input name="contact_37_location"></td><td><input name="contact_37_notes"></td></tr>
+            <tr><td><input name="contact_38_name"></td><td><input name="contact_38_type"></td><td><input name="contact_38_loyalty"></td><td><input name="contact_38_connection"></td><td><input name="contact_38_location"></td><td><input name="contact_38_notes"></td></tr>
+            <tr><td><input name="contact_39_name"></td><td><input name="contact_39_type"></td><td><input name="contact_39_loyalty"></td><td><input name="contact_39_connection"></td><td><input name="contact_39_location"></td><td><input name="contact_39_notes"></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mt">
+      <h2>Weapons</h2>
+      <div class="content">
+        <table>
+          <thead><tr><th style="width:20%">Weapon</th><th style="width:10%">Conc.</th><th style="width:12%">Damage</th><th style="width:10%">Mode</th><th style="width:10%">Ammo</th><th style="width:8%">RC</th><th style="width:8%">Reach</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input></label><label>Medium<input></label><label>Long<input></label><label>Extreme<input></label></div></td></tr>
+            <tr><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input></label><label>Medium<input></label><label>Long<input></label><label>Extreme<input></label></div></td></tr>
+            <tr><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input></label><label>Medium<input></label><label>Long<input></label><label>Extreme<input></label></div></td></tr>
+            <tr><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input></label><label>Medium<input></label><label>Long<input></label><label>Extreme<input></label></div></td></tr>
+            <tr><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input></label><label>Medium<input></label><label>Long<input></label><label>Extreme<input></label></div></td></tr>
+            <tr><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input></label><label>Medium<input></label><label>Long<input></label><label>Extreme<input></label></div></td></tr>
+            <tr><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input></label><label>Medium<input></label><label>Long<input></label><label>Extreme<input></label></div></td></tr>
+            <tr><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input></label><label>Medium<input></label><label>Long<input></label><label>Extreme<input></label></div></td></tr>
+            <tr><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input></label><label>Medium<input></label><label>Long<input></label><label>Extreme<input></label></div></td></tr>
+            <tr><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input></label><label>Medium<input></label><label>Long<input></label><label>Extreme<input></label></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mt">
+      <h2>Armor, Gear, and Lifestyle</h2>
+      <div class="content fields">
+        <div class="fields cols-3">
+          <label>Armor / Ballistic / Impact<input name="armor"></label>
+          <label>Lifestyle<input name="lifestyle"></label>
+          <label>Monthly Cost<input name="monthly_cost"></label>
+        </div>
+        <label>Gear<textarea class="gear-text" name="gear"></textarea></label>
+      </div>
+    </section>
+  </main>
+
+  <main class="sheet">
+    <header>
+      <h1>Cyberware, Bioware, and Vehicles</h1>
+      <div class="subtitle">Shadowrun 3E Fillable Character Sheet<br>Page 3</div>
+    </header>
+
+    <section>
+      <h2>Cyberware / Bioware</h2>
+      <div class="content">
+        <table>
+          <thead><tr><th style="width:34%">Implant</th><th style="width:6%">Rtg</th><th style="width:12%">Essence</th><th style="width:12%">Bio Index</th><th style="width:12%">Grade</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><input></td><td><input maxlength="3" size="3"></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr><td><input></td><td><input maxlength="3" size="3"></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr><td><input></td><td><input maxlength="3" size="3"></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr><td><input></td><td><input maxlength="3" size="3"></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr><td><input></td><td><input maxlength="3" size="3"></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr><td><input></td><td><input maxlength="3" size="3"></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr><td><input></td><td><input maxlength="3" size="3"></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr><td><input></td><td><input maxlength="3" size="3"></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr><td><input></td><td><input maxlength="3" size="3"></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr><td><input></td><td><input maxlength="3" size="3"></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+          </tbody>
+        </table>
+        <div class="fields cols-3 mt">
+          <label>Essence Remaining<input name="essence_remaining"></label>
+          <label>Total Bio Index<input name="bio_index"></label>
+          <label>Implant Notes<input name="implant_notes"></label>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt">
+      <h2>Vehicles / Drones</h2>
+      <div class="content">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:16%">Vehicle / Drone</th>
+              <th>Handling</th>
+              <th>Speed</th>
+              <th>Accel</th>
+              <th>Body</th>
+              <th>Armor</th>
+              <th>Sig</th>
+              <th>Autonav</th>
+              <th>Pilot</th>
+              <th>Sensor</th>
+              <th>Cargo / Load</th>
+              <th style="width:14%">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mt">
+      <h2>Vehicle / Drone Modifications and Notes</h2>
+      <div class="content">
+        <textarea class="tall-text" name="vehicle_notes"></textarea>
+      </div>
+    </section>
+  </main>
+
+  <main class="sheet">
+    <header>
+      <h1>Advancement and Campaign Log</h1>
+      <div class="subtitle">Shadowrun 3E Fillable Character Sheet<br>Page 4</div>
+    </header>
+
+    <section>
+      <h2>Advancement</h2>
+      <div class="content fields">
+        <div class="fields" style="grid-template-columns: repeat(5, 1fr);">
+          <label>Karma Earned<input name="karma_earned"></label>
+          <label>Karma Spent<input name="karma_spent"></label>
+          <label>Current Nuyen<input name="current_nuyen"></label>
+          <label>Reputation / Heat<input name="reputation"></label>
+          <label>Last Updated<input name="last_updated"></label>
+        </div>
+        <label>Campaign Log<textarea class="tall-text" name="campaign_log"></textarea></label>
+      </div>
+    </section>
+
+    <section class="mt">
+      <h2>Lifestyles</h2>
+      <div class="content">
+        <table>
+          <thead><tr><th style="width:18%">Lifestyle / Safehouse</th><th style="width:13%">Type</th><th style="width:13%">Monthly Cost</th><th style="width:14%">Paid Through</th><th style="width:17%">Location</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mt">
+      <h2>SINs, IDs, and Licenses</h2>
+      <div class="content">
+        <table>
+          <thead><tr><th style="width:24%">Name / Identity</th><th style="width:6%">SIN Rtg</th><th style="width:16%">Issuer</th><th style="width:18%">Licenses</th><th style="width:12%">Status</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><input></td><td><input maxlength="3" size="3"></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr><td><input></td><td><input maxlength="3" size="3"></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr><td><input></td><td><input maxlength="3" size="3"></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr><td><input></td><td><input maxlength="3" size="3"></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr><td><input></td><td><input maxlength="3" size="3"></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+            <tr><td><input></td><td><input maxlength="3" size="3"></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mt">
+      <h2>Additional Notes</h2>
+      <div class="content">
+        <textarea class="gear-text" name="additional_notes"></textarea>
+      </div>
+    </section>
+
+    <div class="footer-note">Tip: fill this in your browser, then use Print and choose Save as PDF to preserve a completed copy.</div>
+  </main>
+
+  <script>
+    (() => {
+      const storageKey = "shadowrun3e-character-sheet-data-v1";
+      const fields = Array.from(document.querySelectorAll("input, textarea"));
+      const status = document.getElementById("saveStatus");
+
+      function fieldKey(field, index) {
+        if (field.id) return `id:${field.id}`;
+        if (field.name) return `name:${field.name}`;
+        return `field:${index}`;
+      }
+
+      function collectData() {
+        const data = {};
+        fields.forEach((field, index) => {
+          const key = fieldKey(field, index);
+          data[key] = field.type === "checkbox" ? field.checked : field.value;
+        });
+        return data;
+      }
+
+      function applyData(data) {
+        fields.forEach((field, index) => {
+          const key = fieldKey(field, index);
+          if (!(key in data)) return;
+          if (field.type === "checkbox") field.checked = Boolean(data[key]);
+          else field.value = data[key];
+        });
+      }
+
+      function autosave() {
+        calculateDerived();
+        localStorage.setItem(storageKey, JSON.stringify(collectData()));
+        status.textContent = "Autosaved";
+      }
+
+      function numberFrom(name) {
+        const raw = document.querySelector(`[name="${name}"]`)?.value || "";
+        const found = raw.match(/-?\d+(\.\d+)?/);
+        return found ? Number(found[0]) : 0;
+      }
+
+      function setValue(name, value) {
+        const field = document.querySelector(`[name="${name}"]`);
+        if (field) field.value = value;
+      }
+
+      function formatNumber(value) {
+        return Number.isInteger(value) ? String(value) : String(Math.round(value * 10) / 10);
+      }
+
+      function calculateDerived() {
+        const quicknessForReaction = numberFrom("quickness_modified") || numberFrom("quickness_natural");
+        const intelligenceForReaction = numberFrom("intelligence_modified") || numberFrom("intelligence_natural");
+        const reactionBonus = numberFrom("reaction_bonus");
+        if (quicknessForReaction || intelligenceForReaction || reactionBonus) {
+          setValue("reaction", formatNumber(Math.floor((quicknessForReaction + intelligenceForReaction) / 2) + reactionBonus));
+        }
+
+        const reaction = numberFrom("reaction");
+        const dice = numberFrom("initiative_dice") || 1;
+        const bonus = numberFrom("initiative_bonus");
+        if (reaction || bonus || dice) {
+          setValue("initiative", `${formatNumber(reaction + bonus)} + ${formatNumber(dice)}d6`);
+        }
+
+        const quickness = numberFrom("quickness_modified") || numberFrom("quickness_natural");
+        [
+          ["walking", "movement_walking_rate", "movement_walking_multiplier"],
+          ["running", "movement_running_rate", "movement_running_multiplier"],
+          ["sprinting", "movement_sprinting_rate", "movement_sprinting_multiplier"],
+          ["swimming", "movement_swimming_rate", "movement_swimming_multiplier"],
+        ].forEach(([, rateName, multiplierName]) => {
+          const multiplier = numberFrom(multiplierName);
+          if (quickness && multiplier) {
+            setValue(rateName, formatNumber(quickness * multiplier));
+          }
+        });
+      }
+
+      function characterName() {
+        const name = document.querySelector('[name="character_name"]')?.value.trim();
+        return (name || "shadowrun_character").replace(/[^a-z0-9_-]+/gi, "_");
+      }
+
+      const saved = localStorage.getItem(storageKey);
+      if (saved) {
+        try {
+          applyData(JSON.parse(saved));
+          calculateDerived();
+          status.textContent = "Loaded autosave";
+        } catch {
+          status.textContent = "Autosave unavailable";
+        }
+      }
+      calculateDerived();
+
+      fields.forEach((field) => {
+        field.addEventListener("input", autosave);
+        field.addEventListener("change", autosave);
+      });
+
+      document.getElementById("saveData").addEventListener("click", () => {
+        const blob = new Blob([JSON.stringify(collectData(), null, 2)], { type: "application/json" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = `${characterName()}_data.json`;
+        link.click();
+        URL.revokeObjectURL(link.href);
+        status.textContent = "Character data saved";
+      });
+
+      document.getElementById("loadData").addEventListener("change", async (event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+        try {
+          applyData(JSON.parse(await file.text()));
+          autosave();
+          status.textContent = "Character data loaded";
+        } catch {
+          status.textContent = "Could not load file";
+        } finally {
+          event.target.value = "";
+        }
+      });
+
+      document.getElementById("clearData").addEventListener("click", () => {
+        if (!confirm("Clear all fields on this sheet?")) return;
+        fields.forEach((field) => {
+          if (field.type === "checkbox") field.checked = false;
+          else if (field.type !== "file") field.value = "";
+        });
+        autosave();
+        status.textContent = "Sheet cleared";
+      });
+    })();
+  </script>
+</body>
+</html>
+
+
+
+

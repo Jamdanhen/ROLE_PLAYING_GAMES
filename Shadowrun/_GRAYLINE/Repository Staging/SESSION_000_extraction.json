@@ -1,0 +1,363 @@
+{
+  "artifact_status": {
+    "artifact_type": "SESSION_EXTRACTION",
+    "session_id": "SESSION_000",
+    "status": "EXTRACTION_COMPLETE",
+    "created_as": "process/reference output only",
+    "not_canon": true,
+    "not_repository_source_of_truth": true,
+    "repository_write_execution_authorized": false,
+    "authorized_next_state": "PACKAGE_READY"
+  },
+  "source_control": {
+    "primary_source": "C:\\Users\\MrJam\\OneDrive\\Desktop\\RPG\\Shadowrun 3e\\Master notes\\Sessions\\Master_Session log 0.docx",
+    "approval_result": "C:\\CAMPAIGN_REPOSITORY_REBUILD_STAGING\\10_ARCHIVE\\workflow_runs\\SESSION_000\\SESSION_000_APPROVAL_RESULT.md",
+    "approval_validation_status": "VALID_RESPONSES",
+    "approved_next_state_before_extraction": "APPROVED_FOR_EXTRACTION",
+    "direct_user_response_superseded_failed_worksheet": true,
+    "worksheet_usability_failure_recorded": true
+  },
+  "session_identity": {
+    "session_number": "0",
+    "session_id": "SESSION_000",
+    "session_title": "Siberian Wolf Incident",
+    "real_world_date": "03/13/2026",
+    "in_game_date": "March 18, 2057",
+    "approximate_start_time": "3:00 PM",
+    "approximate_end_time": "UNDEFINED / NOT NEEDED",
+    "time_anchor": [
+      "Siberian Wolf opens at 3:00 PM.",
+      "Spectre enters approximately one hour after opening, around 4:00 PM.",
+      "Firefight occurs shortly after Spectre enters, uses restroom, plants hard drive, and escapes.",
+      "Session 1 begins on May 24, 2057.",
+      "A time jump from March 18, 2057 to May 24, 2057 is canonically appropriate."
+    ],
+    "primary_locations": [
+      "Siberian Wolf",
+      "Grayline Docks",
+      "Seattle Metroplex"
+    ],
+    "participating_pcs": [
+      "The Chin",
+      "Switch",
+      "Kilmer"
+    ]
+  },
+  "approved_user_decisions": {
+    "S000-D01": "APPROVE",
+    "S000-D02": "APPROVE",
+    "S000-D03": "APPROVE",
+    "S000-GM01": "GM-ONLY",
+    "S000-GM02": "GM-ONLY",
+    "S000-GM03": "GM-ONLY",
+    "S000-GM04": "GM-ONLY",
+    "S000-PF01": "PLAYER-FACING SAFE",
+    "S000-PF02": "GM-ONLY",
+    "S000-E01": "APPROVE",
+    "S000-E02": "APPROVE",
+    "S000-E03": "APPROVE",
+    "S000-CLEANUP": "DEFER"
+  },
+  "approved_facts": [
+    "Session 000 is the Siberian Wolf Incident.",
+    "The in-game date is March 18, 2057.",
+    "The real-world session date is 03/13/2026.",
+    "The Siberian Wolf opens at 3:00 PM.",
+    "Spectre enters around 4:00 PM as a nervous elf.",
+    "Spectre orders seltzer and requests restroom access.",
+    "Spectre escapes through the bathroom window before contact.",
+    "A Kestrel Defense Systems tactical retrieval team enters the Wolf aggressively to recover Spectre.",
+    "The Kestrel force consists of one captain and three enforcers in professional tactical gear.",
+    "Tension escalates into a close-quarters firefight shortly after Spectre escapes.",
+    "The Chin, Switch, Kilmer, Hubcap, and the Kestrel team are involved in the incident.",
+    "Hubcap remains concealed and fires one controlled support shot.",
+    "All Kestrel operatives are killed.",
+    "The Siberian Wolf suffers significant internal damage.",
+    "The runners avoid casualties.",
+    "The Chin organizes containment, suppresses panic, coordinates cleanup, and restores local control.",
+    "Bodies are removed, evidence is cleaned, visible traces are minimized, and the bar is stabilized.",
+    "Rumors begin in Grayline; details remain fragmented.",
+    "Session 1 begins May 24, 2057.",
+    "The March 18 to May 24 time jump explains cleanup, body disposal, repairs, and Grayline damage control.",
+    "By Session 1, the Siberian Wolf is open and operating again.",
+    "The Wolf reputation increases.",
+    "Brigada 12 presence helps stabilize the area.",
+    "Kestrel attention has been triggered but has not yet openly landed on the runners."
+  ],
+  "gm_only_facts": [
+    "The nervous elf is Spectre.",
+    "Spectre plants a concealed hard drive in the Wolf restroom.",
+    "The hard drive contains Kestrel project schematics.",
+    "The hard drive contains AI tactical architecture.",
+    "The hard drive contains shipment routing intelligence.",
+    "The hard drive contains manipulation evidence.",
+    "The hard drive contains operational data.",
+    "The hard drive has an embedded trace callback.",
+    "The trace callback activates when accessed.",
+    "The trace callback pings Spectre.",
+    "The trace callback transmits access location.",
+    "The hard drive supports the hidden AI emergence path.",
+    "Kestrel investigation is initiated quietly.",
+    "The Wolf is quietly flagged by Kestrel.",
+    "Kestrel surveillance reconstruction begins.",
+    "Kestrel traffic and movement review begins."
+  ],
+  "player_facing_safe_facts": [
+    "A nervous elf entered the Siberian Wolf shortly after opening.",
+    "Kestrel tactical operatives followed him.",
+    "Kestrel escalated inside the Wolf.",
+    "A close-quarters firefight broke out.",
+    "The Kestrel team was killed.",
+    "The Wolf was damaged but stabilized.",
+    "Cleanup, repairs, and damage control occurred before the next session.",
+    "Rumors spread through Grayline.",
+    "The Wolf reputation increased."
+  ],
+  "entities": {
+    "pcs": [
+      {
+        "name": "The Chin",
+        "classification": "PC",
+        "approved_boundary": "PC-only; never NPC",
+        "notes": "Owner/operator of Siberian Wolf; Brigada 12 second-in-command; coordinates containment and damage control."
+      },
+      {
+        "name": "Switch",
+        "classification": "PC",
+        "notes": "Former Lone Star officer; engages in firefight using tactical instincts."
+      },
+      {
+        "name": "Kilmer",
+        "classification": "PC",
+        "notes": "Recently arrived in Seattle; engages with controlled precision."
+      }
+    ],
+    "npcs_opposition_entities": [
+      {
+        "name": "Hubcap",
+        "classification": "NPC",
+        "notes": "Witnesses incident and fires one concealed support shot."
+      },
+      {
+        "name": "Spectre",
+        "classification": "NPC / GM-only identity boundary",
+        "notes": "Identity remains GM-only at this stage; entered Wolf, planted hard drive, escaped, remains missing."
+      },
+      {
+        "name": "Kestrel Captain",
+        "classification": "opposition / NPC record approved for now",
+        "notes": "Killed during failed retrieval; optional table-ready/deceased reference supported."
+      },
+      {
+        "name": "Kestrel Enforcers",
+        "classification": "opposition group / NPC record approved for now",
+        "notes": "Three killed during failed retrieval; optional table-ready/deceased reference supported."
+      }
+    ],
+    "factions": [
+      {
+        "name": "Brigada 12",
+        "notes": "Correct spelling locked; stabilizing role reinforced through The Chin."
+      },
+      {
+        "name": "Kestrel Defense Systems",
+        "notes": "Retrieval team killed; investigation/reconstruction begins quietly."
+      },
+      {
+        "name": "Grayline local network",
+        "notes": "Approved as faction/network record for now; rumors spread and local caution develops."
+      },
+      {
+        "name": "Burnout Gang",
+        "notes": "Mentioned only as low-level/distant; no clock movement."
+      }
+    ],
+    "locations": [
+      {
+        "name": "Siberian Wolf",
+        "notes": "Firefight, damage, cleanup, repairs, and reputation increase."
+      },
+      {
+        "name": "Wolf restroom",
+        "notes": "GM-only hidden hard drive location."
+      },
+      {
+        "name": "Bathroom window / rear route",
+        "notes": "Spectre escape route; approved placement for now."
+      },
+      {
+        "name": "Grayline Docks",
+        "notes": "Rumor spread and damage control during time jump."
+      },
+      {
+        "name": "Seattle Metroplex",
+        "notes": "Broader location context."
+      }
+    ]
+  },
+  "clues_jobs_threads": [
+    {
+      "name": "Spectre thread",
+      "status": "new / active",
+      "protection": "internal; identity GM-only for player-facing boundary",
+      "evidence": "Spectre escapes and remains unlocated."
+    },
+    {
+      "name": "GM-only hidden hard drive",
+      "status": "new / dormant",
+      "protection": "GM-only",
+      "evidence": "Planted in restroom, not discovered."
+    },
+    {
+      "name": "GM-only trace callback",
+      "status": "new / dormant",
+      "protection": "GM-only",
+      "evidence": "Activates when accessed."
+    },
+    {
+      "name": "Kestrel investigation",
+      "status": "new / active",
+      "protection": "GM-only/internal until revealed",
+      "evidence": "Retrieval team killed; investigation begins."
+    },
+    {
+      "name": "GM-only AI emergence path",
+      "status": "new / dormant",
+      "protection": "GM-only",
+      "evidence": "Hard drive contents support hidden AI emergence path."
+    },
+    {
+      "name": "Siberian Wolf reputation",
+      "status": "advanced",
+      "protection": "player-facing safe at visible boundary",
+      "evidence": "Outsiders killed inside Wolf; repairs complete by Session 1."
+    },
+    {
+      "name": "Grayline rumor spread",
+      "status": "new / active",
+      "protection": "player-facing safe at visible boundary",
+      "evidence": "Local dock network becomes aware; details fragmented."
+    },
+    {
+      "name": "Brigada 12 stabilizing role",
+      "status": "reinforced",
+      "protection": "internal/source-compatible",
+      "evidence": "The Chin contains aftermath and stabilizes area during time jump."
+    },
+    {
+      "name": "March 18 to May 24 cleanup / repair / damage-control time jump",
+      "status": "canonically appropriate",
+      "protection": "source-compatible",
+      "evidence": "Time jump explains cleanup, body disposal, repairs, and local damage control."
+    }
+  ],
+  "unresolved_or_deferred_items": [
+    {
+      "item": "Exact end time",
+      "status": "UNDEFINED / NOT NEEDED",
+      "handling": "preserve without inventing."
+    },
+    {
+      "item": "Damage/ammo tracking",
+      "status": "not recorded",
+      "handling": "do not invent."
+    },
+    {
+      "item": "Whether Spectre name is player-known",
+      "status": "not player-known at this point unless later revealed",
+      "handling": "preserve GM-only boundary."
+    },
+    {
+      "item": "Kestrel investigation",
+      "status": "unresolved",
+      "handling": "preserve as ongoing internal/GM-only pressure."
+    },
+    {
+      "item": "Burnout Gang",
+      "status": "low-level/distant mention only; no clock movement",
+      "handling": "do not over-promote."
+    }
+  ],
+  "cleanup_consolidation_deferred_items": [
+    {
+      "item": "Kestrel Captain / Kestrel Enforcers record granularity",
+      "decision": "approved for now; cleanup/consolidation deferred."
+    },
+    {
+      "item": "Wolf restroom / bathroom window / rear route granularity",
+      "decision": "approved for now; cleanup/consolidation deferred."
+    },
+    {
+      "item": "Grayline local network placement",
+      "decision": "approved for now; placement review deferred if needed."
+    },
+    {
+      "item": "All cleanup and consolidation",
+      "decision": "DEFER; separate cleanup task required."
+    }
+  ],
+  "protected_boundaries": {
+    "the_chin_pc_only": true,
+    "do_not_create_the_chin_npc": true,
+    "correct_faction_spelling": "Brigada 12",
+    "gm_only_material_excluded_from_player_facing": true,
+    "player_facing_output_derived_only": true,
+    "extraction_artifacts_not_canon": true,
+    "cleanup_deletion_not_authorized": true,
+    "repository_write_execution_not_authorized": true
+  },
+  "proposed_repository_targets_for_later_package_planning": {
+    "01_CANON": [
+      "SESSION_000_CANON.md"
+    ],
+    "02_SESSIONS": [
+      "SESSION_000.md"
+    ],
+    "03_NPCS": [
+      "Hubcap.md",
+      "Spectre.md",
+      "Kestrel_Captain.md",
+      "Kestrel_Enforcers.md"
+    ],
+    "04_FACTIONS": [
+      "Brigada_12.md",
+      "Kestrel_Defense_Systems.md",
+      "Grayline_local_network.md"
+    ],
+    "05_LOCATIONS": [
+      "Siberian_Wolf.md",
+      "Wolf_restroom.md",
+      "Bathroom_window_rear_route.md",
+      "Grayline_Docks.md"
+    ],
+    "06_PCS": [
+      "The_Chin.md",
+      "Switch.md",
+      "Kilmer.md"
+    ],
+    "07_CLUES_JOBS_THREADS": [
+      "Spectre_thread.md",
+      "GM_ONLY_hidden_hard_drive.md",
+      "GM_ONLY_trace_callback.md",
+      "Kestrel_investigation.md",
+      "GM_ONLY_AI_emergence_path.md",
+      "Siberian_Wolf_reputation.md",
+      "Grayline_rumor_spread.md",
+      "Brigada_12_stabilizing_role.md",
+      "March_18_to_May_24_cleanup_repair_damage_control.md"
+    ],
+    "08_TABLE_READY": [
+      "Kestrel_tactical_team_deceased_reference.md"
+    ],
+    "09_PLAYER_FACING": [
+      "SESSION_000_player_facing.md"
+    ]
+  },
+  "extraction_warnings": [
+    "Extraction artifacts are process/reference outputs only, not canon.",
+    "Do not promote content from this extraction without a later authorized package/build step.",
+    "Do not expose Spectre identity, hidden hard drive, trace callback, AI emergence, or Kestrel internal reconstruction in player-facing output.",
+    "Cleanup and consolidation remain deferred.",
+    "The previous worksheet usability failure is recorded and must not be treated as user error."
+  ]
+}

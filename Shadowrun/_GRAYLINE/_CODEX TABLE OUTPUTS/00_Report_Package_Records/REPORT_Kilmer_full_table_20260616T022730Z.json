@@ -1,0 +1,70 @@
+{
+  "record_type": "report_request_export_package",
+  "package_version": "1.0.0",
+  "saved_at": "2026-06-16T02:27:30.178125+00:00",
+  "campaign": "Grayline",
+  "topic": "Kilmer",
+  "audience": "full",
+  "output_shape": "table",
+  "optional_question": "",
+  "matched_source_count": 8,
+  "matched_sources": [
+    {
+      "title": "Kilmer",
+      "folder": "06_PCS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/06_PCS/Kilmer.md"
+    },
+    {
+      "title": "The Chin",
+      "folder": "06_PCS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/06_PCS/The_Chin.md"
+    },
+    {
+      "title": "Switch",
+      "folder": "06_PCS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/06_PCS/Switch.md"
+    },
+    {
+      "title": "Blackjack",
+      "folder": "03_NPCS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/03_NPCS/Blackjack.md"
+    },
+    {
+      "title": "Faust",
+      "folder": "03_NPCS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/03_NPCS/Faust.md"
+    },
+    {
+      "title": "Hubcap",
+      "folder": "03_NPCS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/03_NPCS/Hubcap.md"
+    },
+    {
+      "title": "Firefighter",
+      "folder": "03_NPCS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/03_NPCS/Firefighter.md"
+    },
+    {
+      "title": "Ivan",
+      "folder": "03_NPCS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/03_NPCS/Ivan.md"
+    }
+  ],
+  "repository_write_authorized": false,
+  "package_boundary": "Preview/export copy only. Does not promote, overwrite, or alter campaign repository files.",
+  "output_text": "Table-ready aid for Kilmer.\nAt The Table\nParticipates in Session 0.\nRecently arrived in Seattle.\nNew to Seattle shadows.\nConnected indirectly through Faust.\nCautious, observant, low-profile, emotionally controlled, and distrustful of systems.\nEngages in the Session 0 firefight with controlled precision fire.\nShows disciplined engagement behavior with minimal wasted movement.\nIn Session 1, resides upstairs at Siberian Wolf, funded by The Chin.\nIs social / observing during opening state.\nControl Notes\nEngages Hubcap in casual banter.\nEstablishes elevated sniper perch across street during recon phase.\nProvides overwatch support.\nForms overwatch angle in the multi-angle assault.\nReceives 2 Karma base award.\nSource Records\nKilmer\n06_PCS \u00b7 Full table control\nThe Chin\n06_PCS \u00b7 Full table control\nSwitch\n06_PCS \u00b7 Full table control\nBlackjack\n03_NPCS \u00b7 Full table control",
+  "ok": true,
+  "saved_markdown_path": "C:\\ROLE_PLAYING GAMES\\Shadowrun\\_GRAYLINE\\_CODEX TABLE OUTPUTS\\01_Table_Ready_Aids_And_Reports\\REPORT_Kilmer_full_table_20260616T022730Z.md",
+  "saved_package_path": "C:\\ROLE_PLAYING GAMES\\Shadowrun\\_GRAYLINE\\_CODEX TABLE OUTPUTS\\00_Report_Package_Records\\REPORT_Kilmer_full_table_20260616T022730Z.json",
+  "owner_output_root": "C:\\ROLE_PLAYING GAMES\\Shadowrun\\_GRAYLINE\\_CODEX TABLE OUTPUTS",
+  "canon_modified": false,
+  "session_6_used": false
+}

@@ -1,0 +1,367 @@
+GRAYLINE DISTRICT
+TACOMA INDUSTRIAL SECTOR
+CANON DISTRICT DESCRIPTION
+
+============================================================
+OVERVIEW
+============================================================
+
+Grayline sits along the Duwamish River in Tacoma's industrial
+district.
+
+The river divides the district into two distinct zones:
+
+WEST BANK
+- Burnout territory
+- decaying industrial infrastructure
+- abandoned facilities
+- low oversight
+
+EAST BANK
+- active dock operations
+- Grayline rail spur
+- industrial businesses
+- Brigata 12 influence
+- Siberian Wolf neighborhood
+
+Grayline is not prosperous.
+
+Grayline is not dead.
+
+It survives through cargo, labor, smuggling, repair work,
+and the people who refuse to leave.
+
+============================================================
+WEST BANK
+============================================================
+
+GENERAL CHARACTER
+------------------------------------------------------------
+
+The west bank is the older, declining side of Grayline.
+
+Large portions of the district have fallen into disrepair.
+
+Utility reliability is poor.
+
+Many structures sit partially abandoned.
+
+Street lighting is inconsistent.
+
+The area is heavily influenced by Burnout gang presence.
+
+FEATURES
+------------------------------------------------------------
+
+- Burnout territory
+- burned warehouse (crate recovery site)
+- abandoned industrial buildings
+- scrap lots
+- vacant loading yards
+- deteriorated road network
+- scattered squat locations
+
+NORTHERN COMMERCIAL STRIP
+------------------------------------------------------------
+
+Located along the northern dockfront area.
+
+Surviving businesses include:
+
+- Stuffer Shack
+- pawn shop
+- liquor store
+- small service businesses
+
+These locations serve:
+
+- dock workers
+- truckers
+- Burnout members
+- bridge traffic
+- local residents
+
+WEST SIDE DOCKS
+------------------------------------------------------------
+
+Smaller dock operations remain active.
+
+Limited freight movement.
+
+Some independent shipping activity.
+
+============================================================
+DUWAMISH RIVER
+============================================================
+
+Wide industrial waterway.
+
+Primary defining feature of Grayline.
+
+Supports cargo traffic.
+
+Visually separates the west and east bank districts.
+
+PRIMARY CROSSING
+------------------------------------------------------------
+
+Bridge crossing.
+
+Major choke point.
+
+Connects both sides of Grayline.
+
+Natural observation point.
+
+Natural smuggling route.
+
+Natural territorial boundary.
+
+============================================================
+EAST BANK
+============================================================
+
+GENERAL CHARACTER
+------------------------------------------------------------
+
+Working industrial waterfront.
+
+Active but aging.
+
+Most economic activity in Grayline occurs here.
+
+FEATURES
+------------------------------------------------------------
+
+- Grayline docks
+- cargo operations
+- rail spur
+- industrial businesses
+- loading facilities
+- freight traffic
+- Brigata 12 influence
+
+============================================================
+DOCK CORRIDOR
+============================================================
+
+WATERFRONT TO INLAND
+
+1. Grayline Docks
+2. Rail Spur
+3. Dock Access Road
+4. Industrial Business Fronts
+5. Alley Network
+6. Rear Service Access
+7. Inland Street Grid
+
+Businesses include:
+
+- freight companies
+- machine shops
+- repair facilities
+- loading contractors
+- warehouse offices
+- dock support services
+
+============================================================
+WOLF BLOCK
+============================================================
+
+POSITION
+------------------------------------------------------------
+
+One block inland from the east-bank docks.
+
+Separated from the waterfront by:
+
+- industrial business fronts
+- alleys
+- service access routes
+- street network
+
+GENERAL CHARACTER
+------------------------------------------------------------
+
+Working neighborhood block.
+
+Mixed-use industrial structures.
+
+Predominantly two-story buildings.
+
+Ground floors:
+- businesses
+- workshops
+- storage
+- offices
+
+Upper floors:
+- apartments
+- lofts
+- temporary housing
+
+COMMON OCCUPANTS
+------------------------------------------------------------
+
+- mechanics
+- dock workers
+- truck drivers
+- freight brokers
+- electricians
+- small smugglers
+- independent contractors
+
+============================================================
+SIBERIAN WOLF
+============================================================
+
+POSITION
+------------------------------------------------------------
+
+Located mid-block within Wolf Block.
+
+FUNCTION
+------------------------------------------------------------
+
+- dive bar
+- community hub
+- neutral ground
+- meeting place
+- information exchange point
+- operational anchor
+
+REPUTATION
+------------------------------------------------------------
+
+Known throughout Grayline.
+
+Respected.
+
+Watched.
+
+Trusted more than it should be.
+
+============================================================
+SOUTH END OF WOLF BLOCK
+============================================================
+
+ELECTRONICS REPAIR STORE
+------------------------------------------------------------
+
+Notable neighborhood landmark.
+
+FEATURES
+------------------------------------------------------------
+
+- electronics repair services
+- telecom kiosk outside
+
+SIGNIFICANCE
+------------------------------------------------------------
+
+Location where Donnie's vehicle was located.
+
+Frequently used local reference point.
+
+============================================================
+SOUTHERN WATERFRONT
+============================================================
+
+Traveling south along the east-bank docks:
+
+1. Cargo Pier
+2. Container Maze
+
+============================================================
+CARGO PIER
+============================================================
+
+Large waterfront cargo facility.
+
+FEATURES
+------------------------------------------------------------
+
+- cargo staging areas
+- warehouse structures
+- loading zones
+- dock frontage
+- freight access roads
+
+Acts as transition point between
+main Grayline dock operations and
+the southern container district.
+
+============================================================
+CONTAINER MAZE
+============================================================
+
+POSITION
+------------------------------------------------------------
+
+South of Cargo Pier.
+
+Located directly along the waterfront.
+
+GENERAL CHARACTER
+------------------------------------------------------------
+
+Massive container storage district.
+
+Dense shipping container stacks.
+
+Narrow corridors.
+
+Limited sight lines.
+
+Difficult navigation.
+
+FEATURES
+------------------------------------------------------------
+
+- stacked containers
+- hidden pathways
+- service roads
+- blind corners
+- storage areas
+- smuggling opportunities
+- concealed meeting locations
+
+LOCAL KNOWLEDGE
+------------------------------------------------------------
+
+Locals know routes.
+
+Outsiders get lost.
+
+============================================================
+BRIGATA 12 TERRITORIAL LIMIT
+============================================================
+
+The beginning of the Container Maze marks the southern edge
+of established Brigata 12 territory.
+
+North of this line:
+- regular presence
+- active influence
+- predictable response
+
+South of this line:
+- weaker control
+- less oversight
+- greater uncertainty
+
+============================================================
+DISTRICT IDENTITY
+============================================================
+
+Grayline exists between two worlds.
+
+The west bank is what industry leaves behind.
+
+The east bank is what industry still uses.
+
+The Wolf is where people gather.
+
+The docks are where people work.
+
+The Container Maze is where things disappear.

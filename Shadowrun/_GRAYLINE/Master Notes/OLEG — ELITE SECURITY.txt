@@ -1,0 +1,56 @@
+OLEG — ELITE SECURITY
+────────────────────
+Race: Human
+Threat Level: Elite Corporate/Organized Crime Security
+
+BOD:5 QUI:6 STR:5
+CHA:4 INT:5 WIL:6
+ESS:3.8 REA:7(9) INIT:9+2D6
+
+Combat Pool:8
+Karma Pool:4
+
+Armor:
+• Secure Long Coat (5/3)
+• Armor Vest (+3/+1)
+
+Primary Weapons:
+• HK MP-5 TX
+  Damage:8M
+  Conceal:3
+  Ammo:30(c)
+
+• Ares Predator III
+  Damage:9M
+  Conceal:4
+  Ammo:15(c)
+
+Skills:
+• SMGs:7
+• Pistols:5
+• Assault Rifles:5
+• Unarmed Combat:5
+• Athletics:4
+• Stealth:4
+• Intimidation:5
+• Etiquette:4
+
+Cyberware:
+• Wired Reflexes 1
+• Smartlink-2
+• Datajack
+
+Gear:
+• Radio w/ subvocal mic
+• Flash-pak
+• Trauma patch
+• Restraints
+
+Combat Notes:
+• Disciplined and tactical
+• Prioritizes containment over aggression
+• Uses cover and coordinated fire
+• Protects principals first
+
+Condition Monitor:
+[ ]Light [ ]Moderate [ ]Serious [ ]Deadly

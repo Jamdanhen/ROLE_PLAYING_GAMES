@@ -1,0 +1,70 @@
+{
+  "record_type": "report_request_export_package",
+  "package_version": "1.0.0",
+  "saved_at": "2026-06-16T02:23:05.746439+00:00",
+  "campaign": "Grayline",
+  "topic": "Hubcap",
+  "audience": "full",
+  "output_shape": "table",
+  "optional_question": "",
+  "matched_source_count": 8,
+  "matched_sources": [
+    {
+      "title": "Hubcap",
+      "folder": "03_NPCS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/03_NPCS/Hubcap.md"
+    },
+    {
+      "title": "Hubcap Focused Registry Report",
+      "folder": "08_TABLE_READY",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/08_TABLE_READY/REPORT_Hubcap.md"
+    },
+    {
+      "title": "Kilmer",
+      "folder": "06_PCS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/06_PCS/Kilmer.md"
+    },
+    {
+      "title": "Prototype Bug Detector",
+      "folder": "07_CLUES_JOBS_THREADS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/07_CLUES_JOBS_THREADS/Prototype_Bug_Detector.md"
+    },
+    {
+      "title": "Session 0 Canon: Siberian Wolf Incident",
+      "folder": "01_CANON",
+      "audience": "gm",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/01_CANON/SESSION_000_CANON.md"
+    },
+    {
+      "title": "SESSION 000",
+      "folder": "02_SESSIONS",
+      "audience": "gm",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/02_SESSIONS/SESSION_000.md"
+    },
+    {
+      "title": "SESSION 001",
+      "folder": "02_SESSIONS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/02_SESSIONS/SESSION_001.MD"
+    },
+    {
+      "title": "Session 003 - Graham Extraction And Hard Drive Recovery",
+      "folder": "02_SESSIONS",
+      "audience": "full",
+      "source_path": "C:/ROLE_PLAYING GAMES/Shadowrun/_GRAYLINE/_CODEX CAMPAIGN REPOSITORY/02_SESSIONS/SESSION_003.md"
+    }
+  ],
+  "repository_write_authorized": false,
+  "package_boundary": "Preview/export copy only. Does not promote, overwrite, or alter campaign repository files.",
+  "output_text": "Table-ready aid for Hubcap.\nAt The Table\nLocal scavenger, information drifter, and Siberian Wolf regular.\nPresent inside the Siberian Wolf during Session 0.\nMostly ignored before the incident and observing everything.\nDuring the firefight, remains concealed and fires one controlled support shot.\nAvoids exposing himself fully.\nOutcome covers Hubcap back debt, ongoing drinks, and secured squatter status at Siberian Wolf.\nTrack what Hubcap observed and whether he becomes an information source or liability.\nControl Notes\nHubcap is a local scavenger / Siberian Wolf regular who repeatedly becomes useful around hidden objects, improvised support, and street-level discovery.\nActive local contact/regular near the Siberian Wolf. In Session 005, Hubcap finds Donnie's phone and cigarettes in the Oldsmobile 2035 console and alerts the team to the vehicle.\nHubcap survives the Siberian Wolf firefight.\nHubcap fires a concealed support shot during the incident.\nHubcap produces the Prototype Bug Detector.\nSource Records\nHubcap\n03_NPCS \u00b7 Full table control\nHubcap Focused Registry Report\n08_TABLE_READY \u00b7 Full table control\nKilmer\n06_PCS \u00b7 Full table control\nPrototype Bug Detector\n07_CLUES_JOBS_THREADS \u00b7 Full table control",
+  "ok": true,
+  "saved_markdown_path": "C:\\ROLE_PLAYING GAMES\\Shadowrun\\_GRAYLINE\\_CODEX TABLE OUTPUTS\\01_Table_Ready_Aids_And_Reports\\REPORT_Hubcap_full_table_20260616T022305Z.md",
+  "saved_package_path": "C:\\ROLE_PLAYING GAMES\\Shadowrun\\_GRAYLINE\\_CODEX TABLE OUTPUTS\\00_Report_Package_Records\\REPORT_Hubcap_full_table_20260616T022305Z.json",
+  "owner_output_root": "C:\\ROLE_PLAYING GAMES\\Shadowrun\\_GRAYLINE\\_CODEX TABLE OUTPUTS",
+  "canon_modified": false,
+  "session_6_used": false
+}

@@ -1,0 +1,518 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Grayline Docks Grid Base</title>
+  <desc id="desc">Simplified Grayline Docks planning base with coordinate grid, left key panel, Duwamish River width, east-bank dock edge, district outline, Burnout territory shape, bridge anchor, and directional route arrows.</desc>
+  <defs>
+    <pattern id="coordGrid" width="52" height="52" patternUnits="userSpaceOnUse">
+      <path d="M52 0 L0 0 L0 52" fill="none" stroke="#d1d1d1" stroke-width="1"/>
+    </pattern>
+    <pattern id="burnoutHatch" width="11" height="11" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <line x1="0" y1="0" x2="0" y2="11" stroke="#b5b5b5" stroke-width="2.2"/>
+    </pattern>
+    <pattern id="lightZoneHatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <line x1="0" y1="0" x2="0" y2="12" stroke="#c9c9c9" stroke-width="1.2"/>
+    </pattern>
+    <filter id="paperNoise" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="18"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.07"/>
+      </feComponentTransfer>
+    </filter>
+    <style>
+      .paper { fill:#fbfbfb; }
+      .panel { fill:#fafafa; stroke:#111; stroke-width:1.4; }
+      .gridFill { fill:none; opacity:0; }
+      .gridLabel { font-family:Arial, Helvetica, sans-serif; fill:#555; font-size:12px; font-weight:700; letter-spacing:0; text-anchor:middle; }
+      .rowLabel { font-family:Arial, Helvetica, sans-serif; fill:#555; font-size:12px; font-weight:700; letter-spacing:0; text-anchor:end; dominant-baseline:middle; }
+      .water { fill:#dce5e7; stroke:#111; stroke-width:2.2; }
+      .waterEdge { stroke:#111; stroke-width:2.2; fill:none; }
+      .waterTexture { stroke:#b4c0c3; stroke-width:1.1; fill:none; opacity:.55; }
+      .swamp { fill:#d7e1df; stroke:#5e7775; stroke-width:1.6; opacity:.78; }
+      .swampTexture { stroke:#7e9290; stroke-width:1; fill:none; opacity:.55; }
+      .floodedBlock { fill:#dcdcdc; stroke:#111; stroke-width:1.3; opacity:.78; }
+      .floodedBlockLine { stroke:#777; stroke-width:1; fill:none; opacity:.75; }
+      .district { fill:#f8f8f8; stroke:#111; stroke-width:4; }
+      .districtInner { fill:none; stroke:#111; stroke-width:1.5; opacity:.85; }
+      .dockEdge { stroke:#111; stroke-width:4; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+      .railLine { stroke:#111; stroke-width:2; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+      .railTie { stroke:#111; stroke-width:1.4; fill:none; stroke-linecap:round; }
+      .railSpur { stroke:#111; stroke-width:2; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+      .railSpurTie { stroke:#111; stroke-width:1.3; fill:none; stroke-linecap:round; }
+      .pier { fill:#e8e8e8; stroke:#111; stroke-width:1.4; }
+      .avenueCasing { stroke:#fbfbfb; stroke-width:9; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+      .avenue { stroke:#111; stroke-width:8; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+      .roadCasing { stroke:#fbfbfb; stroke-width:9; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+      .road { stroke:#111; stroke-width:8; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+      .majorRoadGap { stroke:#fbfbfb; stroke-width:3.2; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+      .localStreetCasing { stroke:#fbfbfb; stroke-width:2.8; fill:none; stroke-linecap:round; stroke-linejoin:round; opacity:.68; }
+      .localStreet { stroke:#6f6f6f; stroke-width:1.15; fill:none; stroke-linecap:round; stroke-linejoin:round; opacity:.55; }
+      .bridgeDeck { fill:#ececec; stroke:#111; stroke-width:1.7; }
+      .bridgeDeckLine { stroke:#8f8f8f; stroke-width:1.1; fill:none; }
+      .zoneSample { fill:url(#lightZoneHatch); stroke:#777; stroke-width:1.2; opacity:.65; }
+      .zoneCommercial { fill:#ffeaa0; stroke:#9a7c21; stroke-width:1.2; opacity:.42; }
+      .zoneLowRent { fill:#ffd0a6; stroke:#9b693c; stroke-width:1.2; opacity:.42; }
+      .zoneSquatter { fill:#e9a36f; stroke:#7c563d; stroke-width:1.2; opacity:.34; }
+      .zoneWorker { fill:#f5b16f; stroke:#8f5b26; stroke-width:1.2; opacity:.34; }
+      .zoneLightIndustrial { fill:#dddddd; stroke:#777; stroke-width:1.2; opacity:.38; }
+      .zoneDockSupport { fill:#d7bc8b; stroke:#7c6848; stroke-width:1.2; opacity:.38; }
+      .zoneCargo { fill:#bc9660; stroke:#6d5634; stroke-width:1.2; opacity:.38; }
+      .zoneWarehouse { fill:#d9d9d9; stroke:#777; stroke-width:1.2; opacity:.36; }
+      .zoneContainer { fill:#c9c9c9; stroke:#777; stroke-width:1.2; opacity:.32; }
+      .zoneScrap { fill:#cfd2bd; stroke:#6f745d; stroke-width:1.2; opacity:.42; }
+      .zoneDecay { fill:#c8c8c8; stroke:#777; stroke-width:1.2; opacity:.35; }
+      .zoneBrokenWaterfront { fill:#c7d4d0; stroke:#6b817d; stroke-width:1.2; opacity:.42; }
+      .zoneDilapidated { fill:#d2c9bd; stroke:#756a5f; stroke-width:1.2; opacity:.38; }
+      .zoneBurned { fill:#d9b8aa; stroke:#7c5b4e; stroke-width:1.2; opacity:.42; }
+      .zoneLabel { font-family:Arial, Helvetica, sans-serif; fill:#111; font-size:13px; font-weight:800; letter-spacing:0; }
+      .bridge { stroke:#111; stroke-width:5.4; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+      .bridgeRail { stroke:#111; stroke-width:1.5; fill:none; }
+      .burnout { fill:#f2b6b6; stroke:#8a2020; stroke-width:2.4; opacity:.58; }
+      .blockOutline { stroke:#666; stroke-width:1.15; fill:none; opacity:.5; stroke-linecap:round; stroke-linejoin:round; }
+      .faintRoad { stroke:#8e8e8e; stroke-width:1.4; fill:none; stroke-linecap:round; stroke-linejoin:round; opacity:.75; }
+      .hubStar { fill:#111; stroke:#fbfbfb; stroke-width:1.4; }
+      .label { font-family:Arial, Helvetica, sans-serif; fill:#111; font-weight:800; letter-spacing:0; }
+      .regular { font-family:Arial, Helvetica, sans-serif; fill:#111; font-weight:400; letter-spacing:0; }
+      .h1 { font-size:34px; }
+      .h2 { font-size:19px; }
+      .body { font-size:15px; }
+      .tiny { font-size:12px; }
+      .legend { font-family:Arial, Helvetica, sans-serif; fill:#111; font-size:13px; font-weight:700; letter-spacing:0; }
+      .arrow { stroke:#111; stroke-width:4; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+    </style>
+  </defs>
+
+  <rect width="1536" height="1024" class="paper"/>
+  <rect width="1536" height="1024" filter="url(#paperNoise)" opacity=".55"/>
+
+  <!-- Left reference/key panel. -->
+  <rect x="6" y="6" width="322" height="1012" class="panel"/>
+  <text x="28" y="55" class="label h1">SEATTLE, 2057</text>
+  <text x="30" y="81" class="label h2">TACOMA INDUSTRIAL DISTRICT</text>
+
+  <rect x="16" y="97" width="294" height="185" class="panel"/>
+  <text x="67" y="122" class="label h2">DISTRICT OVERVIEW</text>
+  <text x="31" y="153" class="legend">1</text><text x="54" y="153" class="legend">GRAYLINE DOCKS BASE</text>
+  <text x="31" y="177" class="legend">2</text><text x="54" y="177" class="legend">DUWAMISH RIVER</text>
+  <text x="31" y="201" class="legend">3</text><text x="54" y="201" class="legend">EAST DOCK EDGE</text>
+  <text x="31" y="225" class="legend">4</text><text x="54" y="225" class="legend">BURNOUT TERRITORY</text>
+  <text x="31" y="249" class="legend">5</text><text x="54" y="249" class="legend">GRID COORDINATES</text>
+
+  <rect x="16" y="296" width="294" height="420" class="panel"/>
+  <text x="68" y="321" class="label h2">MAP LEGEND</text>
+  <line x1="30" y1="331" x2="296" y2="331" stroke="#111" stroke-width="1.1"/>
+  <line x1="31" y1="353" x2="66" y2="353" class="road"/><line x1="31" y1="353" x2="66" y2="353" class="majorRoadGap"/><text x="82" y="358" class="legend">MAJOR ROAD</text>
+  <line x1="31" y1="381" x2="66" y2="381" class="localStreet"/><text x="82" y="386" class="legend">LOCAL / SERVICE STREET</text>
+  <line x1="31" y1="409" x2="66" y2="409" class="bridge"/><text x="82" y="414" class="legend">BRIDGE / MAJOR CROSSING</text>
+  <g>
+    <path d="M31 437 L66 437 M31 446 L66 446" class="railLine"/>
+    <path d="M35 432 L35 451 M45 432 L45 451 M55 432 L55 451 M65 432 L65 451" class="railTie"/>
+  </g>
+  <text x="82" y="446" class="legend">RAIL LINE / SPUR</text>
+  <path d="M31 474 L66 474" class="dockEdge"/><text x="82" y="479" class="legend">DOCK EDGE</text>
+  <rect x="31" y="496" width="34" height="13" class="pier"/><text x="82" y="508" class="legend">PIER / DOCK FINGER</text>
+  <rect x="31" y="526" width="34" height="16" class="zoneSample"/><text x="82" y="539" class="legend">DISTRICT / ZONE</text>
+  <rect x="31" y="558" width="34" height="16" fill="url(#burnoutHatch)" stroke="#111"/><text x="82" y="571" class="legend">BURNOUT TERRITORY</text>
+  <path d="M31 592 C42 582 58 586 66 600 L66 614 L31 614 Z" class="swamp"/>
+  <path d="M36 601 C44 595 56 598 63 606" class="swampTexture"/>
+  <text x="82" y="607" class="legend">SWAMP / FLOOD ZONE</text>
+  <rect x="31" y="626" width="34" height="24" class="floodedBlock"/>
+  <path d="M48 626 L48 650 M31 638 L65 638" class="floodedBlockLine"/>
+  <text x="82" y="643" class="legend">FLOODED BLOCK</text>
+  <polygon points="48,666 52,674 61,674 54,680 57,689 48,684 39,689 42,680 35,674 44,674" class="hubStar"/>
+  <text x="82" y="681" class="legend">KEY LOCATION / HUB</text>
+  <rect x="31" y="696" width="34" height="12" fill="url(#coordGrid)" stroke="#111"/><text x="82" y="707" class="legend">COORDINATE GRID</text>
+
+  <text x="31" y="750" class="legend">GRID SCALE</text>
+  <text x="31" y="774" class="legend">1 CELL = 1 CITY BLOCK</text>
+  <text x="31" y="798" class="legend">APPROX. 100 METERS</text>
+  <text x="270" y="872" class="label h2">N</text>
+  <path d="M276 899 L276 868 M264 880 L276 868 L288 880" class="arrow"/>
+
+  <line x1="328" y1="6" x2="328" y2="1018" stroke="#111" stroke-width="2"/>
+
+  <!-- Coordinate grid over the map field only. -->
+  <rect x="328" y="6" width="1208" height="1018" class="gridFill"/>
+  <g>
+    <text x="354" y="22" class="gridLabel">A</text>
+    <text x="406" y="22" class="gridLabel">B</text>
+    <text x="458" y="22" class="gridLabel">C</text>
+    <text x="510" y="22" class="gridLabel">D</text>
+    <text x="562" y="22" class="gridLabel">E</text>
+    <text x="614" y="22" class="gridLabel">F</text>
+    <text x="666" y="22" class="gridLabel">G</text>
+    <text x="718" y="22" class="gridLabel">H</text>
+    <text x="770" y="22" class="gridLabel">I</text>
+    <text x="822" y="22" class="gridLabel">J</text>
+    <text x="874" y="22" class="gridLabel">K</text>
+    <text x="926" y="22" class="gridLabel">L</text>
+    <text x="978" y="22" class="gridLabel">M</text>
+    <text x="1030" y="22" class="gridLabel">N</text>
+    <text x="1082" y="22" class="gridLabel">O</text>
+    <text x="1134" y="22" class="gridLabel">P</text>
+    <text x="1186" y="22" class="gridLabel">Q</text>
+    <text x="1238" y="22" class="gridLabel">R</text>
+    <text x="1290" y="22" class="gridLabel">S</text>
+    <text x="1342" y="22" class="gridLabel">T</text>
+    <text x="1394" y="22" class="gridLabel">U</text>
+    <text x="1446" y="22" class="gridLabel">V</text>
+    <text x="1498" y="22" class="gridLabel">W</text>
+  </g>
+  <g>
+    <text x="344" y="58" class="rowLabel">1</text>
+    <text x="344" y="162" class="rowLabel">3</text>
+    <text x="344" y="266" class="rowLabel">5</text>
+    <text x="344" y="370" class="rowLabel">7</text>
+    <text x="344" y="474" class="rowLabel">9</text>
+    <text x="344" y="578" class="rowLabel">11</text>
+    <text x="344" y="682" class="rowLabel">13</text>
+    <text x="344" y="786" class="rowLabel">15</text>
+    <text x="344" y="890" class="rowLabel">17</text>
+    <text x="344" y="994" class="rowLabel">19</text>
+  </g>
+
+  <!-- Duwamish River width, retained as the main structural divider. -->
+  <path d="M704 0 C678 100 717 170 692 270 C654 423 725 510 701 653 C678 790 737 875 726 1024 L912 1024 C936 900 892 801 925 675 C967 519 888 432 927 294 C959 181 910 105 934 0 Z" class="water"/>
+  <path d="M766 32 C748 165 770 275 754 395 C735 541 772 700 760 999" class="waterTexture"/>
+  <text x="777" y="318" class="label h2">DUWAMISH</text>
+  <text x="807" y="343" class="label h2">RIVER</text>
+
+  <!-- East-bank swamp: connected to the Duwamish and running beneath the lower rail yard. -->
+  <path d="M918 890 C948 864 992 862 1028 886 C1070 914 1101 966 1122 1024 L934 1024 C934 980 926 934 918 890 Z" class="swamp"/>
+  <path d="M944 904 C982 886 1038 900 1070 936" class="swampTexture"/>
+  <path d="M956 964 C994 946 1052 960 1092 1002" class="swampTexture"/>
+  <path d="M1004 916 L1108 916 L1108 1020 L1004 1020 Z" class="floodedBlock"/>
+  <path d="M1056 916 L1056 1020 M1004 968 L1108 968" class="floodedBlockLine"/>
+  <text x="1056" y="963" class="zoneLabel" text-anchor="middle">FLOODED</text>
+  <text x="1056" y="981" class="zoneLabel" text-anchor="middle">OFFICE BLOCK</text>
+
+  <!-- Burnout reference shape only. -->
+  <path d="M430 380 L596 470 L640 610 L596 801 L492 743 L420 604 Z" class="burnout"/>
+  <text x="516" y="570" class="label h2" text-anchor="middle">BURNOUT</text>
+  <text x="516" y="595" class="label h2" text-anchor="middle">TERRITORY</text>
+  <path d="M354 484 L430 468 L430 604 L492 743 L596 801 L572 850 L430 806 L354 760 Z" class="zoneDilapidated"/>
+  <text x="430" y="672" class="zoneLabel" text-anchor="middle">DILAPIDATED</text>
+  <text x="430" y="690" class="zoneLabel" text-anchor="middle">WAREHOUSES</text>
+  <path d="M372 708 L476 708 L476 812 L372 812 Z" class="zoneBurned"/>
+  <text x="424" y="754" class="zoneLabel" text-anchor="middle">BURNED</text>
+  <text x="424" y="772" class="zoneLabel" text-anchor="middle">WAREHOUSE</text>
+  <path d="M510 316 L624 294 L666 398 L562 398 L466 362 Z" class="zoneScrap"/>
+  <text x="560" y="362" class="zoneLabel" text-anchor="middle">SCRAPYARD</text>
+  <path d="M432 86 L620 80 L666 174 L624 294 L510 316 L432 270 Z" class="zoneDecay"/>
+  <text x="550" y="186" class="zoneLabel" text-anchor="middle">DERELICT</text>
+  <text x="550" y="204" class="zoneLabel" text-anchor="middle">RAIL YARD</text>
+  <path d="M620 80 C664 134 680 220 660 320 L704 300 C718 214 700 132 672 72 Z" class="zoneBrokenWaterfront"/>
+  <text x="664" y="224" class="zoneLabel" text-anchor="middle">BROKEN</text>
+  <text x="664" y="242" class="zoneLabel" text-anchor="middle">WATERFRONT</text>
+  <path d="M486 396 L562 398 L666 398 L666 470 L596 470 L540 448 Z" class="zoneCommercial"/>
+  <text x="614" y="428" class="zoneLabel" text-anchor="middle">COMMERCIAL</text>
+  <text x="614" y="446" class="zoneLabel" text-anchor="middle">STRIP</text>
+  <path d="M354 812 L610 812 L610 984 L354 984 Z" class="zoneSquatter"/>
+  <text x="482" y="862" class="zoneLabel" text-anchor="middle">SQUATTER</text>
+  <text x="482" y="880" class="zoneLabel" text-anchor="middle">RESIDENTIAL</text>
+
+  <!-- Smaller west-bank dockfront: rougher and less continuous than the east docks. -->
+  <path d="M692 270 C676 350 701 434 687 520 C673 616 700 718 690 858" class="dockEdge"/>
+  <g id="west-bank-docks">
+    <rect x="682" y="292" width="80" height="12" class="pier"/>
+    <rect x="676" y="350" width="90" height="12" class="pier"/>
+    <rect x="688" y="414" width="76" height="12" class="pier"/>
+    <rect x="684" y="562" width="82" height="12" class="pier"/>
+    <rect x="676" y="646" width="90" height="12" class="pier"/>
+    <rect x="688" y="728" width="78" height="12" class="pier"/>
+    <rect x="682" y="812" width="84" height="12" class="pier"/>
+  </g>
+
+  <!-- East-bank dock edge. -->
+  <path d="M930 42 C918 105 925 170 918 230 C908 310 923 390 912 470 C902 555 918 645 906 780" class="dockEdge"/>
+
+  <!-- Sample zone: waterfront dock operations along the east-bank rail and docks. -->
+  <path d="M904 38 C892 112 903 190 896 258 C888 345 904 414 892 492 C884 570 900 666 888 784 L980 784 C968 666 984 570 976 492 C966 414 982 345 974 258 C968 190 980 112 970 38 Z" class="zoneDockSupport"/>
+
+  <!-- East-side functional blockouts. -->
+  <path d="M1020 46 L1134 46 L1134 266 L1020 266 Z" class="zoneCargo"/>
+  <text x="1077" y="145" class="zoneLabel" text-anchor="middle">CARGO PIER</text>
+  <text x="1077" y="163" class="zoneLabel" text-anchor="middle">SHIPPING</text>
+  <path d="M1020 266 L1134 266 L1134 492 L1020 492 Z" class="zoneDockSupport"/>
+  <text x="1077" y="365" class="zoneLabel" text-anchor="middle">NORTH DOCK</text>
+  <text x="1077" y="383" class="zoneLabel" text-anchor="middle">SUPPORT</text>
+  <path d="M1134 58 L1238 58 L1238 266 L1134 266 Z" class="zoneLightIndustrial"/>
+  <text x="1186" y="151" class="zoneLabel" text-anchor="middle">INDUSTRIAL</text>
+  <text x="1186" y="169" class="zoneLabel" text-anchor="middle">SUPPORT</text>
+  <path d="M1134 266 L1290 266 L1290 620 L1238 620 L1238 520 L1134 520 Z" class="zoneWarehouse"/>
+  <text x="1212" y="418" class="zoneLabel" text-anchor="middle">WAREHOUSE</text>
+  <text x="1212" y="436" class="zoneLabel" text-anchor="middle">DISTRICT</text>
+  <path d="M1238 58 L1498 58 L1498 266 L1238 266 Z" class="zoneWorker"/>
+  <path d="M1290 266 L1446 266 L1446 520 L1290 520 Z" class="zoneLightIndustrial"/>
+  <path d="M1446 266 L1498 266 L1498 520 L1446 520 Z" class="zoneWorker"/>
+  <text x="1368" y="386" class="zoneLabel" text-anchor="middle">LIGHT</text>
+  <text x="1368" y="404" class="zoneLabel" text-anchor="middle">INDUSTRIAL</text>
+  <path d="M1238 520 L1498 520 L1498 890 L1342 890 L1342 786 L1394 786 L1394 620 L1238 620 Z" class="zoneWorker"/>
+  <text x="1420" y="620" class="zoneLabel" text-anchor="middle">WORKER</text>
+  <text x="1420" y="638" class="zoneLabel" text-anchor="middle">RESIDENTIAL</text>
+  <path d="M1030 548 L1134 548 L1134 786 L1082 786 L1028 792 C1038 700 1022 622 1030 548 Z" class="zoneDockSupport"/>
+  <text x="1084" y="681" class="zoneLabel" text-anchor="middle">DOCK</text>
+  <text x="1084" y="699" class="zoneLabel" text-anchor="middle">SUPPORT</text>
+  <path d="M1134 520 L1238 520 L1238 786 L1134 786 Z" class="zoneCommercial"/>
+  <text x="1186" y="658" class="zoneLabel" text-anchor="middle">COMMERCIAL</text>
+  <text x="1186" y="676" class="zoneLabel" text-anchor="middle">DISTRICT</text>
+  <polygon points="1186,582 1190,590 1199,590 1192,596 1195,605 1186,600 1177,605 1180,596 1173,590 1182,590" class="hubStar"/>
+  <path d="M1238 620 L1394 620 L1394 786 L1238 786 Z" class="zoneLowRent"/>
+  <text x="1316" y="688" class="zoneLabel" text-anchor="middle">LOW-RENT</text>
+  <text x="1316" y="706" class="zoneLabel" text-anchor="middle">HOUSING</text>
+  <path d="M1082 838 L1134 890 L1342 890 L1342 786 L1082 786 Z" class="zoneContainer"/>
+  <text x="1212" y="843" class="zoneLabel" text-anchor="middle">CONTAINER MAZE</text>
+
+  <!-- Bridge deck: over the river, below Bridge Avenue and the Grayline rail crossing. -->
+  <path d="M690 482 L976 482 L976 548 L690 548 Z" class="bridgeDeck"/>
+  <path d="M704 501 L962 501 M704 530 L962 530" class="bridgeDeckLine"/>
+
+  <!-- Railroad: follows the dock contour while roughly tracking column M. -->
+  <g id="m-line-railroad">
+    <path d="M973 4 C970 82 981 145 974 222 C966 306 987 375 976 452 C966 524 981 584 972 662 C963 742 978 825 972 914 C969 962 974 1000 973 1024" class="railLine"/>
+    <path d="M985 4 C982 82 993 145 986 222 C978 306 999 375 988 452 C978 524 993 584 984 662 C975 742 990 825 984 914 C981 962 986 1000 985 1024" class="railLine"/>
+    <path d="M965 37 L992 37 M966 74 L993 74 M968 111 L995 111 M970 148 L997 148 M969 185 L996 185 M966 222 L993 222 M965 259 L992 259 M968 296 L995 296 M974 333 L1001 333 M978 370 L1005 370 M976 407 L1003 407 M970 444 L997 444 M967 481 L994 481 M969 518 L996 518 M974 555 L1001 555 M977 592 L1004 592 M974 629 L1001 629 M967 666 L994 666 M965 703 L992 703 M967 740 L994 740 M972 777 L999 777 M975 814 L1002 814 M974 851 L1001 851 M971 888 L998 888 M968 925 L995 925 M970 962 L997 962 M972 999 L999 999" class="railTie"/>
+  </g>
+
+  <!-- Western / north Grayline spur: one smooth branch from the dock rail to D0. -->
+  <g id="grayline-west-north-spur">
+    <path d="M974 523 L692 523 C586 523 497 500 452 438 C405 369 430 270 477 190 C508 137 517 68 511 4" class="railSpur"/>
+    <path d="M974 535 L692 535 C580 535 488 510 442 444 C396 371 420 265 468 184 C498 132 508 67 499 4" class="railSpur"/>
+    <path d="M940 513 L940 545 M902 512 L902 546 M864 512 L864 546 M826 512 L826 546 M788 512 L788 546 M750 512 L750 546 M712 512 L712 546 M674 522 L671 550 M636 522 L633 550 M596 518 L594 546 M557 509 L554 537 M520 493 L513 521 M486 469 L477 496 M459 438 L433 453 M437 399 L409 408 M428 359 L399 361 M433 318 L404 313 M446 279 L418 268 M463 240 L437 222 M483 202 L457 184 M500 164 L474 147 M510 124 L481 116 M515 84 L486 80 M513 44 L484 44" class="railSpurTie"/>
+  </g>
+
+  <!-- Southern west-bank dock rail access: branches near F10 and follows Burnout's southeast edge. -->
+  <g id="grayline-west-south-dock-spur">
+    <path d="M646 524 C650 566 658 604 648 648 C637 694 617 750 602 824 C592 878 606 944 622 1024" class="railSpur"/>
+    <path d="M658 524 C662 568 670 610 660 652 C649 700 629 756 614 826 C604 878 618 944 634 1024" class="railSpur"/>
+    <path d="M632 548 L664 548 M638 588 L668 593 M638 628 L668 635 M630 668 L660 675 M620 708 L650 716 M610 748 L640 756 M602 788 L632 794 M596 828 L626 832 M596 870 L625 866 M602 912 L631 904 M610 954 L639 945 M618 996 L647 987" class="railSpurTie"/>
+  </g>
+
+  <!-- North-south dock fingers along the east-bank waterfront. -->
+  <g>
+    <rect x="900" y="36" width="76" height="14" class="pier"/>
+    <rect x="884" y="78" width="92" height="14" class="pier"/>
+    <rect x="896" y="120" width="82" height="14" class="pier"/>
+    <rect x="888" y="164" width="90" height="14" class="pier"/>
+    <rect x="898" y="208" width="80" height="14" class="pier"/>
+    <rect x="880" y="252" width="94" height="14" class="pier"/>
+    <rect x="886" y="304" width="92" height="16" class="pier"/>
+    <rect x="898" y="366" width="76" height="16" class="pier"/>
+    <rect x="882" y="438" width="92" height="15" class="pier"/>
+    <rect x="896" y="588" width="76" height="15" class="pier"/>
+    <rect x="882" y="668" width="92" height="15" class="pier"/>
+    <rect x="896" y="744" width="78" height="15" class="pier"/>
+    <rect x="906" y="820" width="70" height="15" class="pier"/>
+  </g>
+
+  <!-- Bridge Avenue: A9 to W10, lightly S-curved through the bridge crossing. -->
+  <path d="M1342 4 C1350 96 1314 176 1262 236 C1210 296 1234 388 1190 444 C1162 476 1142 492 1134 501" class="roadCasing"/>
+  <path d="M1342 4 C1350 96 1314 176 1262 236 C1210 296 1234 388 1190 444 C1162 476 1142 492 1134 501" class="road"/>
+  <path d="M1342 4 C1350 96 1314 176 1262 236 C1210 296 1234 388 1190 444 C1162 476 1142 492 1134 501" class="majorRoadGap"/>
+  <path d="M1004 4 C1000 82 1019 154 1006 231 C994 305 1018 386 997 498" class="roadCasing"/>
+  <path d="M1004 4 C1000 82 1019 154 1006 231 C994 305 1018 386 997 498" class="road"/>
+  <path d="M1004 4 C1000 82 1019 154 1006 231 C994 305 1018 386 997 498" class="majorRoadGap"/>
+  <path d="M1030 498 C1022 608 1038 718 1048 835 C1098 890 1195 958 1290 1024" class="roadCasing"/>
+  <path d="M1030 498 C1022 608 1038 718 1048 835 C1098 890 1195 958 1290 1024" class="road"/>
+  <path d="M1030 498 C1022 608 1038 718 1048 835 C1098 890 1195 958 1290 1024" class="majorRoadGap"/>
+  <path d="M1082 916 C1050 912 1014 920 984 946 C976 954 970 964 966 976" class="localStreetCasing"/>
+  <path d="M1082 916 C1050 912 1014 920 984 946 C976 954 970 964 966 976" class="localStreet"/>
+  <path d="M354 474 C512 440 598 522 690 498 L976 498 C1130 492 1322 548 1498 526" class="avenue"/>
+  <path d="M354 474 C512 440 598 522 690 498 L976 498 C1130 492 1322 548 1498 526" class="majorRoadGap"/>
+
+  <!-- Block outline layer: rough city-block parcels without labels. -->
+  <g id="block-outline-overlay">
+    <!-- Burnout territory and west-bank built-up blocks. -->
+    <path d="M432 520 L520 520 L520 604 L432 604 Z" class="blockOutline"/>
+    <path d="M520 520 L616 520 L616 608 L520 608 Z" class="blockOutline"/>
+    <path d="M432 604 L520 604 L520 704 L466 704 L432 640 Z" class="blockOutline"/>
+    <path d="M520 608 L616 608 L600 704 L520 704 Z" class="blockOutline"/>
+    <path d="M466 704 L520 704 L520 784 L492 764 L466 744 Z" class="blockOutline"/>
+    <path d="M520 704 L600 704 L596 801 L520 784 Z" class="blockOutline"/>
+    <path d="M486 396 L562 398 L562 448 L540 448 Z" class="blockOutline"/>
+    <path d="M540 448 L562 398 L614 398 L614 470 L596 470 Z" class="blockOutline"/>
+    <path d="M614 398 L666 398 L666 470 L614 470 Z" class="blockOutline"/>
+    <path d="M562 398 L614 398 L614 470 L562 470 Z" class="blockOutline"/>
+    <path d="M354 812 L430 812 L430 900 L354 900 Z" class="blockOutline"/>
+    <path d="M430 812 L520 812 L520 900 L430 900 Z" class="blockOutline"/>
+    <path d="M520 812 L596 812 L596 900 L520 900 Z" class="blockOutline"/>
+    <path d="M354 900 L430 900 L430 984 L354 984 Z" class="blockOutline"/>
+    <path d="M430 900 L520 900 L520 984 L430 984 Z" class="blockOutline"/>
+    <path d="M520 900 L610 900 L610 984 L520 984 Z" class="blockOutline"/>
+
+    <!-- East-bank cargo, industrial, warehouse, housing, and dock-support blocks. -->
+    <path d="M1020 46 L1077 46 L1077 156 L1020 156 Z" class="blockOutline"/>
+    <path d="M1077 46 L1134 46 L1134 156 L1077 156 Z" class="blockOutline"/>
+    <path d="M1020 156 L1077 156 L1077 266 L1020 266 Z" class="blockOutline"/>
+    <path d="M1077 156 L1134 156 L1134 266 L1077 266 Z" class="blockOutline"/>
+    <path d="M1134 58 L1186 58 L1186 162 L1134 162 Z" class="blockOutline"/>
+    <path d="M1186 58 L1238 58 L1238 162 L1186 162 Z" class="blockOutline"/>
+    <path d="M1134 162 L1186 162 L1186 266 L1134 266 Z" class="blockOutline"/>
+    <path d="M1186 162 L1238 162 L1238 266 L1186 266 Z" class="blockOutline"/>
+    <path d="M1238 58 L1290 58 L1290 162 L1238 162 Z" class="blockOutline"/>
+    <path d="M1290 58 L1342 58 L1342 162 L1290 162 Z" class="blockOutline"/>
+    <path d="M1342 58 L1394 58 L1394 162 L1342 162 Z" class="blockOutline"/>
+    <path d="M1394 58 L1446 58 L1446 162 L1394 162 Z" class="blockOutline"/>
+    <path d="M1446 58 L1498 58 L1498 162 L1446 162 Z" class="blockOutline"/>
+    <path d="M1238 162 L1290 162 L1290 266 L1238 266 Z" class="blockOutline"/>
+    <path d="M1290 162 L1342 162 L1342 266 L1290 266 Z" class="blockOutline"/>
+    <path d="M1342 162 L1394 162 L1394 266 L1342 266 Z" class="blockOutline"/>
+    <path d="M1394 162 L1446 162 L1446 266 L1394 266 Z" class="blockOutline"/>
+    <path d="M1446 162 L1498 162 L1498 266 L1446 266 Z" class="blockOutline"/>
+    <path d="M1020 266 L1077 266 L1077 379 L1020 379 Z" class="blockOutline"/>
+    <path d="M1077 266 L1134 266 L1134 379 L1077 379 Z" class="blockOutline"/>
+    <path d="M1020 379 L1077 379 L1077 492 L1020 492 Z" class="blockOutline"/>
+    <path d="M1077 379 L1134 379 L1134 492 L1077 492 Z" class="blockOutline"/>
+    <path d="M1134 266 L1212 266 L1212 354 L1134 354 Z" class="blockOutline"/>
+    <path d="M1212 266 L1290 266 L1290 354 L1212 354 Z" class="blockOutline"/>
+    <path d="M1290 266 L1368 266 L1368 354 L1290 354 Z" class="blockOutline"/>
+    <path d="M1368 266 L1446 266 L1446 354 L1368 354 Z" class="blockOutline"/>
+    <path d="M1134 354 L1212 354 L1212 442 L1134 442 Z" class="blockOutline"/>
+    <path d="M1212 354 L1290 354 L1290 442 L1212 442 Z" class="blockOutline"/>
+    <path d="M1290 354 L1368 354 L1368 442 L1290 442 Z" class="blockOutline"/>
+    <path d="M1368 354 L1446 354 L1446 442 L1368 442 Z" class="blockOutline"/>
+    <path d="M1134 442 L1212 442 L1212 520 L1134 520 Z" class="blockOutline"/>
+    <path d="M1212 442 L1290 442 L1290 520 L1212 520 Z" class="blockOutline"/>
+    <path d="M1290 442 L1368 442 L1368 520 L1290 520 Z" class="blockOutline"/>
+    <path d="M1368 442 L1446 442 L1446 520 L1368 520 Z" class="blockOutline"/>
+    <path d="M1446 266 L1498 266 L1498 354 L1446 354 Z" class="blockOutline"/>
+    <path d="M1446 354 L1498 354 L1498 442 L1446 442 Z" class="blockOutline"/>
+    <path d="M1446 442 L1498 442 L1498 520 L1446 520 Z" class="blockOutline"/>
+    <path d="M1030 548 L1082 548 L1082 650 L1030 650 Z" class="blockOutline"/>
+    <path d="M1082 548 L1134 548 L1134 650 L1082 650 Z" class="blockOutline"/>
+    <path d="M1030 650 L1082 650 L1082 786 L1030 786 Z" class="blockOutline"/>
+    <path d="M1082 650 L1134 650 L1134 786 L1082 786 Z" class="blockOutline"/>
+    <path d="M1134 520 L1186 520 L1186 650 L1134 650 Z" class="blockOutline"/>
+    <path d="M1186 520 L1238 520 L1238 650 L1186 650 Z" class="blockOutline"/>
+    <path d="M1134 650 L1186 650 L1186 786 L1134 786 Z" class="blockOutline"/>
+    <path d="M1186 650 L1238 650 L1238 786 L1186 786 Z" class="blockOutline"/>
+    <path d="M1238 520 L1290 520 L1290 620 L1238 620 Z" class="blockOutline"/>
+    <path d="M1290 520 L1342 520 L1342 620 L1290 620 Z" class="blockOutline"/>
+    <path d="M1342 520 L1394 520 L1394 620 L1342 620 Z" class="blockOutline"/>
+    <path d="M1394 520 L1446 520 L1446 620 L1394 620 Z" class="blockOutline"/>
+    <path d="M1446 520 L1498 520 L1498 620 L1446 620 Z" class="blockOutline"/>
+    <path d="M1238 620 L1290 620 L1290 724 L1238 724 Z" class="blockOutline"/>
+    <path d="M1290 620 L1342 620 L1342 724 L1290 724 Z" class="blockOutline"/>
+    <path d="M1342 620 L1394 620 L1394 724 L1342 724 Z" class="blockOutline"/>
+    <path d="M1394 620 L1446 620 L1446 724 L1394 724 Z" class="blockOutline"/>
+    <path d="M1446 620 L1498 620 L1498 724 L1446 724 Z" class="blockOutline"/>
+    <path d="M1238 724 L1290 724 L1290 786 L1238 786 Z" class="blockOutline"/>
+    <path d="M1290 724 L1342 724 L1342 786 L1290 786 Z" class="blockOutline"/>
+    <path d="M1342 724 L1394 724 L1394 786 L1342 786 Z" class="blockOutline"/>
+    <path d="M1394 724 L1446 724 L1446 890 L1394 890 Z" class="blockOutline"/>
+    <path d="M1446 724 L1498 724 L1498 890 L1446 890 Z" class="blockOutline"/>
+  </g>
+
+  <!-- Street fabric test: block-scale local streets and service lanes. -->
+  <g id="street-fabric-overlay">
+    <!-- East-bank upper warehouse/light industrial blocks. -->
+    <path d="M1134 318 C1222 314 1358 320 1446 318" class="localStreetCasing"/>
+    <path d="M1134 318 C1222 314 1358 320 1446 318" class="localStreet"/>
+    <path d="M1134 390 C1224 386 1356 392 1446 390" class="localStreetCasing"/>
+    <path d="M1134 390 C1224 386 1356 392 1446 390" class="localStreet"/>
+    <path d="M1134 462 C1222 458 1358 464 1446 462" class="localStreetCasing"/>
+    <path d="M1134 462 C1222 458 1358 464 1446 462" class="localStreet"/>
+    <path d="M1186 266 C1182 340 1190 446 1186 520" class="localStreetCasing"/>
+    <path d="M1186 266 C1182 340 1190 446 1186 520" class="localStreet"/>
+    <path d="M1238 266 C1234 340 1242 446 1238 520" class="localStreetCasing"/>
+    <path d="M1238 266 C1234 340 1242 446 1238 520" class="localStreet"/>
+    <path d="M1290 266 C1286 340 1294 446 1290 520" class="localStreetCasing"/>
+    <path d="M1290 266 C1286 340 1294 446 1290 520" class="localStreet"/>
+    <path d="M1342 266 C1338 340 1346 446 1342 520" class="localStreetCasing"/>
+    <path d="M1342 266 C1338 340 1346 446 1342 520" class="localStreet"/>
+    <path d="M1394 266 C1390 340 1398 446 1394 520" class="localStreetCasing"/>
+    <path d="M1394 266 C1390 340 1398 446 1394 520" class="localStreet"/>
+
+    <!-- East-bank lower commercial/housing blocks. Roads stop at the container maze. -->
+    <path d="M1030 548 C1080 544 1120 546 1134 548" class="localStreetCasing"/>
+    <path d="M1030 548 C1080 544 1120 546 1134 548" class="localStreet"/>
+    <path d="M1134 572 C1218 568 1380 574 1498 572" class="localStreetCasing"/>
+    <path d="M1134 572 C1218 568 1380 574 1498 572" class="localStreet"/>
+    <path d="M1030 650 C1120 646 1258 650 1498 646" class="localStreetCasing"/>
+    <path d="M1030 650 C1120 646 1258 650 1498 646" class="localStreet"/>
+    <path d="M1030 724 C1120 722 1260 726 1498 724" class="localStreetCasing"/>
+    <path d="M1030 724 C1120 722 1260 726 1498 724" class="localStreet"/>
+    <path d="M1342 806 C1396 802 1452 808 1498 806" class="localStreetCasing"/>
+    <path d="M1342 806 C1396 802 1452 808 1498 806" class="localStreet"/>
+    <path d="M1342 862 C1396 858 1452 864 1498 862" class="localStreetCasing"/>
+    <path d="M1342 862 C1396 858 1452 864 1498 862" class="localStreet"/>
+    <path d="M1082 520 C1078 594 1086 710 1082 786" class="localStreetCasing"/>
+    <path d="M1082 520 C1078 594 1086 710 1082 786" class="localStreet"/>
+    <path d="M1134 520 C1130 594 1138 710 1134 786" class="localStreetCasing"/>
+    <path d="M1134 520 C1130 594 1138 710 1134 786" class="localStreet"/>
+    <path d="M1186 520 C1182 594 1190 710 1186 786" class="localStreetCasing"/>
+    <path d="M1186 520 C1182 594 1190 710 1186 786" class="localStreet"/>
+    <path d="M1238 520 C1234 594 1242 710 1238 786" class="localStreetCasing"/>
+    <path d="M1238 520 C1234 594 1242 710 1238 786" class="localStreet"/>
+    <path d="M1290 520 C1286 594 1294 710 1290 786" class="localStreetCasing"/>
+    <path d="M1290 520 C1286 594 1294 710 1290 786" class="localStreet"/>
+    <path d="M1342 520 C1338 594 1346 710 1342 786" class="localStreetCasing"/>
+    <path d="M1342 520 C1338 594 1346 710 1342 786" class="localStreet"/>
+    <path d="M1394 520 C1390 618 1398 790 1394 890" class="localStreetCasing"/>
+    <path d="M1394 520 C1390 618 1398 790 1394 890" class="localStreet"/>
+    <path d="M1446 520 C1442 618 1450 790 1446 890" class="localStreetCasing"/>
+    <path d="M1446 520 C1442 618 1450 790 1446 890" class="localStreet"/>
+
+    <!-- Maze edge access stubs: entry points without through streets. -->
+    <path d="M1082 806 C1102 802 1118 804 1134 806" class="localStreetCasing"/>
+    <path d="M1082 806 C1102 802 1118 804 1134 806" class="localStreet"/>
+    <path d="M1342 838 C1360 834 1378 836 1394 838" class="localStreetCasing"/>
+    <path d="M1342 838 C1360 834 1378 836 1394 838" class="localStreet"/>
+
+    <!-- West-bank rough block fabric. -->
+    <path d="M432 280 C500 282 584 282 666 306" class="localStreetCasing"/>
+    <path d="M432 280 C500 282 584 282 666 306" class="localStreet"/>
+    <path d="M466 362 C526 372 598 392 666 432" class="localStreetCasing"/>
+    <path d="M466 362 C526 372 598 392 666 432" class="localStreet"/>
+    <path d="M420 604 C490 600 560 610 640 610" class="localStreetCasing"/>
+    <path d="M420 604 C490 600 560 610 640 610" class="localStreet"/>
+    <path d="M392 690 C458 684 532 698 612 714" class="localStreetCasing"/>
+    <path d="M392 690 C458 684 532 698 612 714" class="localStreet"/>
+    <path d="M372 760 C430 748 522 766 596 801" class="localStreetCasing"/>
+    <path d="M372 760 C430 748 522 766 596 801" class="localStreet"/>
+    <path d="M458 318 C454 408 458 520 448 642 C442 728 456 790 452 840" class="localStreetCasing"/>
+    <path d="M458 318 C454 408 458 520 448 642 C442 728 456 790 452 840" class="localStreet"/>
+    <path d="M562 304 C558 410 566 524 558 650 C552 736 568 804 564 858" class="localStreetCasing"/>
+    <path d="M562 304 C558 410 566 524 558 650 C552 736 568 804 564 858" class="localStreet"/>
+    <path d="M614 390 C610 478 618 570 612 714" class="localStreetCasing"/>
+    <path d="M614 390 C610 478 618 570 612 714" class="localStreet"/>
+  </g>
+
+  <!-- Direction markers retained from the reference map. -->
+  <path d="M360 64 L360 24 M349 36 L360 24 L371 36" class="arrow"/>
+  <text x="376" y="45" class="label body">TO DOWNTOWN</text><text x="376" y="66" class="label body">SEATTLE</text><text x="376" y="84" class="regular tiny">(6.2 KM)</text>
+  <path d="M378 432 L344 432 M358 420 L344 432 L358 444" class="arrow"/>
+  <text x="381" y="431" class="label body">TO SODO</text><text x="381" y="450" class="regular tiny">(3.8 KM)</text>
+  <path d="M410 972 L410 1000 M398 988 L410 1000 L422 988" class="arrow"/>
+  <text x="356" y="940" class="label body">TO TACOMA PORTS</text><text x="378" y="959" class="regular tiny">(16.5 KM)</text>
+  <path d="M1508 405 L1522 405 M1510 393 L1522 405 L1510 417" class="arrow"/>
+  <text x="1435" y="407" class="label body">TO TACOMA</text><text x="1432" y="426" class="label body">CORE</text><text x="1437" y="445" class="regular tiny">(2.4 KM)</text>
+  <path d="M1508 789 L1522 789 M1510 777 L1522 789 L1510 801" class="arrow"/>
+  <text x="1423" y="777" class="label body">TO BARRIENS</text><text x="1446" y="796" class="regular tiny">(1.8 KM)</text>
+
+  <!-- Coordinate labels repeated on top of the map so river/district fills do not hide them. -->
+  <g>
+    <text x="354" y="22" class="gridLabel">A</text>
+    <text x="406" y="22" class="gridLabel">B</text>
+    <text x="458" y="22" class="gridLabel">C</text>
+    <text x="510" y="22" class="gridLabel">D</text>
+    <text x="562" y="22" class="gridLabel">E</text>
+    <text x="614" y="22" class="gridLabel">F</text>
+    <text x="666" y="22" class="gridLabel">G</text>
+    <text x="718" y="22" class="gridLabel">H</text>
+    <text x="770" y="22" class="gridLabel">I</text>
+    <text x="822" y="22" class="gridLabel">J</text>
+    <text x="874" y="22" class="gridLabel">K</text>
+    <text x="926" y="22" class="gridLabel">L</text>
+    <text x="978" y="22" class="gridLabel">M</text>
+    <text x="1030" y="22" class="gridLabel">N</text>
+    <text x="1082" y="22" class="gridLabel">O</text>
+    <text x="1134" y="22" class="gridLabel">P</text>
+    <text x="1186" y="22" class="gridLabel">Q</text>
+    <text x="1238" y="22" class="gridLabel">R</text>
+    <text x="1290" y="22" class="gridLabel">S</text>
+    <text x="1342" y="22" class="gridLabel">T</text>
+    <text x="1394" y="22" class="gridLabel">U</text>
+    <text x="1446" y="22" class="gridLabel">V</text>
+    <text x="1498" y="22" class="gridLabel">W</text>
+  </g>
+</svg>

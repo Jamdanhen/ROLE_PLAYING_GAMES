@@ -1,0 +1,72 @@
+{
+  "calendar_model_id": "GRAYLINE_CALENDAR_MODEL_DRAFT_000_005",
+  "status": "CONTROLLED DRAFT / NO REPOSITORY WRITE",
+  "created_date": "2026-06-13",
+  "source_inputs": {
+    "approved_registry_timeline": "C:\\CAMPAIGN_PROJECT_DEVELOPMENT\\Project_Architect\\campaign_registry_database\\sessions\\SESSION_TIMELINE_000_005.md",
+    "uploaded_calendar": "CAL-20260613T013128Z-Grayline campaign calendar",
+    "reconciliation": "C:\\CAMPAIGN_PROJECT_DEVELOPMENT\\Project_Architect\\calendar_model\\CALENDAR_RECONCILIATION_000_005.md"
+  },
+  "rules": {
+    "real_world_session_date": "The day the game session happened, not the day notes were recorded.",
+    "in_game_date": "The date or date range when events occurred inside the campaign world.",
+    "uploaded_calendar_label": "Supporting evidence for in-game placement, not a replacement for approved registry dates.",
+    "missing_uploaded_label": "Pending field, not a blocker."
+  },
+  "events": [
+    {
+      "session": "000",
+      "real_world_session_date": "2026-03-13",
+      "in_game_date": "2057-03-18",
+      "in_game_date_display": "March 18, 2057",
+      "uploaded_calendar_label_status": "found",
+      "status": "ready_after_approval"
+    },
+    {
+      "session": "001",
+      "real_world_session_date": "2026-03-27",
+      "in_game_date": "2057-05-24",
+      "in_game_date_display": "May 24, 2057",
+      "uploaded_calendar_label_status": "found",
+      "status": "ready_after_approval"
+    },
+    {
+      "session": "002",
+      "real_world_session_date": "2026-04-10",
+      "in_game_date": "2057-05-24/2057-05-27",
+      "in_game_date_display": "May 24-27, 2057",
+      "uploaded_calendar_label_status": "pending",
+      "status": "registry_date_carries_forward"
+    },
+    {
+      "session": "003",
+      "real_world_session_date": "2026-05-01",
+      "in_game_date": "2057-05-31",
+      "in_game_date_display": "May 31, 2057",
+      "uploaded_calendar_label_status": "pending",
+      "status": "registry_date_carries_forward"
+    },
+    {
+      "session": "004",
+      "real_world_session_date": "2026-05-01",
+      "in_game_date": "2057-06-01",
+      "in_game_date_display": "June 1, 2057",
+      "uploaded_calendar_label_status": "pending",
+      "status": "registry_date_carries_forward"
+    },
+    {
+      "session": "005",
+      "real_world_session_date": "2026-05-22",
+      "in_game_date": "2057-06-01",
+      "in_game_date_display": "June 1, 2057",
+      "uploaded_calendar_label_status": "pending",
+      "status": "registry_date_carries_forward"
+    }
+  ],
+  "boundary": {
+    "repository_write": false,
+    "registry_write": false,
+    "canon_promotion": false,
+    "session_6_used": false
+  }
+}

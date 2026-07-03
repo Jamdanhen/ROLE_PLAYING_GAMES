@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Shadowrun 3rd Edition Fillable Character Sheet</title>
+<style>
+    :root {
+      --ink: #151515;
+      --muted: #5c5c5c;
+      --line: #939393;
+      --panel: #242424;
+      --paper: #f7f7f2;
+      --field: #fff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #d9d9d3;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+    }
+
+    .sheet {
+      width: 8.5in;
+      min-height: 11in;
+      margin: 18px auto;
+      padding: 0.35in;
+      background: var(--paper);
+      box-shadow: 0 3px 20px rgba(0, 0, 0, 0.22);
+      page-break-after: always;
+    }
+
+    header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin: -0.35in -0.35in 18px;
+      padding: 18px 0.35in 14px;
+      color: #fff;
+      background: #111;
+    }
+
+    .save-tools {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px;
+      background: #111;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.28);
+    }
+
+    .save-tools button,
+    .save-tools label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 6px 10px;
+      border: 1px solid #777;
+      border-radius: 4px;
+      background: #f7f7f2;
+      color: #151515;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: none;
+      cursor: pointer;
+    }
+
+    .save-tools input[type="file"] {
+      position: absolute;
+      inline-size: 1px;
+      block-size: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .save-status {
+      display: inline-flex;
+      align-items: center;
+      color: #ddd;
+      font-size: 11px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      color: #ddd;
+      font-size: 11px;
+      text-align: right;
+    }
+
+    .grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .cols-2 { grid-template-columns: 1fr 1fr; }
+    .cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+    .identity { grid-template-columns: 1.6fr 1fr 1.5fr; }
+    .identity-small { grid-template-columns: 0.9fr 1.35fr 0.45fr 0.45fr 0.55fr 0.55fr 0.85fr; }
+    .main-top { grid-template-columns: 1.08fr 1.28fr; }
+
+    section {
+      border: 1px solid var(--ink);
+      border-radius: 4px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    h2 {
+      margin: 0;
+      padding: 4px 7px;
+      color: #fff;
+      background: var(--panel);
+      font-size: 12px;
+      letter-spacing: 0;
+    }
+
+    .content {
+      padding: 8px;
+    }
+
+    .fields {
+      display: grid;
+      gap: 8px;
+    }
+
+    label {
+      display: block;
+      min-width: 0;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      min-width: 0;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      padding: 3px 4px 2px;
+      background: var(--field);
+      color: var(--ink);
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 56px;
+      resize: vertical;
+      border: 1px solid var(--line);
+      line-height: 1.25;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th {
+      color: var(--muted);
+      font-size: 9px;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    td,
+    th {
+      padding: 2px;
+      vertical-align: bottom;
+    }
+
+    td input {
+      height: 21px;
+    }
+
+    .attribute-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 14px;
+    }
+
+    .attribute-table th:first-child,
+    .attribute-table td:first-child {
+      width: 44%;
+    }
+
+    .attribute-table td:first-child {
+      font-weight: 700;
+    }
+
+    .derived-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 12px;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid #c9c9c2;
+    }
+
+    .mini-field {
+      display: grid;
+      grid-template-columns: 78px 1fr;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mini-field label {
+      color: var(--ink);
+      font-size: 10px;
+      text-transform: none;
+    }
+
+    .monitor-group {
+      display: grid;
+      gap: 10px;
+    }
+
+    .monitor-line {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .monitor-title {
+      font-weight: 700;
+    }
+
+    .boxes {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 5px;
+      align-items: start;
+    }
+
+    .box-wrap {
+      display: grid;
+      grid-template-rows: 18px 10px;
+      justify-items: center;
+      align-items: start;
+      gap: 2px;
+      color: var(--muted);
+      font-size: 8px;
+      line-height: 1;
+      min-height: 30px;
+    }
+
+    input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      display: block;
+      margin: 0;
+      padding: 0;
+      border: 1px solid var(--line);
+      accent-color: #111;
+    }
+
+    .footer-note {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 9px;
+    }
+
+    .mt { margin-top: 10px; }
+    .tall-text { min-height: 100px; }
+    .gear-text { min-height: 230px; }
+
+    .range-row td {
+      padding-top: 0;
+      padding-bottom: 5px;
+    }
+
+    .ranges {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      padding: 2px 0 4px 18px;
+      border-bottom: 1px solid #c9c9c2;
+    }
+
+    .ranges label {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      align-items: center;
+      gap: 4px;
+      color: var(--ink);
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: none;
+    }
+
+    @media print {
+      .save-tools { display: none; }
+
+      body { background: #fff; }
+      .sheet {
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="save-tools">
+<button id="saveData" type="button">Save Character Data</button>
+<label for="loadData">Load Character Data</label>
+<input accept="application/json,.json" id="loadData" type="file"/>
+<button id="clearData" type="button">Clear Sheet</button>
+<span class="save-status" id="saveStatus">Autosaves in this browser</span>
+</div>
+<main class="sheet">
+<header>
+<h1>Shadowrun 3rd Edition<br/>Character Sheet</h1>
+<div class="subtitle">Original fillable fan worksheet<br/>Core character record</div>
+</header>
+<section>
+<h2>Character Identity</h2>
+<div class="content fields">
+<div class="fields identity">
+<label>Character Name<input name="character_name" value="Marcus Hale"/></label>
+<label>Player<input name="player" value=""/></label>
+<label>Campaign<input name="campaign" value="Shadowrun 3E — Grayline / Siberian Wolf"/></label>
+</div>
+<div class="fields identity-small">
+<label>Metatype<input name="metatype" value="Human"/></label>
+<label>Archetype / Concept<input name="archetype" value="Ex-Lone Star / Street Operator"/></label>
+<label>Sex<input name="sex" value="M"/></label>
+<label>Age<input name="age" value="23"/></label>
+<label>Height<input name="height" value=""/></label>
+<label>Weight<input name="weight" value=""/></label>
+<label>Street Name<input name="street_name" value="Switch"/></label>
+</div>
+<label>Description / Style<input name="description" value="Disgraced Lone Star officer turned street-level operator; armed, observant, procedural instincts under pressure."/></label>
+</div>
+</section>
+<div class="grid main-top mt">
+<section>
+<h2>Core Attributes</h2>
+<div class="content">
+<table class="attribute-table">
+<thead>
+<tr><th>Attribute</th><th>Natural</th><th>Modified</th></tr>
+</thead>
+<tbody>
+<tr><td>Body</td><td><input name="body_natural" value="5"/></td><td><input name="body_modified" value="7 (Dermal Plating 2)"/></td></tr>
+<tr><td>Quickness</td><td><input name="quickness_natural" value="5"/></td><td><input name="quickness_modified" value="5"/></td></tr>
+<tr><td>Strength</td><td><input name="strength_natural" value="5"/></td><td><input name="strength_modified" value="5"/></td></tr>
+<tr><td>Charisma</td><td><input name="charisma_natural" value="5"/></td><td><input name="charisma_modified" value="5"/></td></tr>
+<tr><td>Intelligence</td><td><input name="intelligence_natural" value="5"/></td><td><input name="intelligence_modified" value="5"/></td></tr>
+<tr><td>Willpower</td><td><input name="willpower_natural" value="5"/></td><td><input name="willpower_modified" value="5"/></td></tr>
+<tr><td>Essence</td><td><input name="essence_natural" value="6"/></td><td><input name="essence_modified" value="2.8"/></td></tr>
+<tr><td>Bio Index</td><td><input name="bio_index_natural" value="0"/></td><td><input name="bio_index_modified" value="0"/></td></tr>
+<tr><td>Magic</td><td><input name="magic_natural" value="0"/></td><td><input name="magic_modified" value="0"/></td></tr>
+</tbody>
+</table>
+<div class="derived-grid">
+<div class="mini-field"><label>Reaction</label><input name="reaction" value="7"/></div>
+<div class="mini-field"><label>Reaction Bonus</label><input name="reaction_bonus" value="2"/></div>
+<div class="mini-field"><label>Initiative</label><input name="initiative" value="7 + 2D6"/></div>
+<div class="mini-field"><label>Init. Dice</label><input name="initiative_dice" value="2"/></div>
+<div class="mini-field"><label>Init. Bonus</label><input name="initiative_bonus" value="0"/></div>
+<div class="mini-field"><label>Combat Pool</label><input name="combat_pool" value="7"/></div>
+<div class="mini-field"><label>Karma Pool</label><input name="karma_pool" value=""/></div>
+<div class="mini-field"><label>Astral Pool</label><input name="astral_pool" value=""/></div>
+<div class="mini-field"><label>Control Pool</label><input name="control_pool" value=""/></div>
+<div class="mini-field"><label>Hacking Pool</label><input name="hacking_pool" value="7"/></div>
+<div class="mini-field"><label>Task Pool</label><input name="task_pool" value=""/></div>
+</div>
+</div>
+</section>
+<section>
+<h2>Condition Monitors</h2>
+<div class="content monitor-group">
+<div class="monitor-line">
+<div class="monitor-title">Physical Damage</div>
+<div class="boxes">
+<label class="box-wrap"><input name="physical_1" type="checkbox"/></label>
+<label class="box-wrap"><input name="physical_2" type="checkbox"/></label>
+<label class="box-wrap"><input name="physical_3" type="checkbox"/>+1</label>
+<label class="box-wrap"><input name="physical_4" type="checkbox"/></label>
+<label class="box-wrap"><input name="physical_5" type="checkbox"/></label>
+<label class="box-wrap"><input name="physical_6" type="checkbox"/>+2</label>
+<label class="box-wrap"><input name="physical_7" type="checkbox"/></label>
+<label class="box-wrap"><input name="physical_8" type="checkbox"/></label>
+<label class="box-wrap"><input name="physical_9" type="checkbox"/>+3</label>
+<label class="box-wrap"><input name="physical_10" type="checkbox"/></label>
+</div>
+</div>
+<div class="monitor-line">
+<div class="monitor-title">Stun Damage</div>
+<div class="boxes">
+<label class="box-wrap"><input name="stun_1" type="checkbox"/></label>
+<label class="box-wrap"><input name="stun_2" type="checkbox"/></label>
+<label class="box-wrap"><input name="stun_3" type="checkbox"/>+1</label>
+<label class="box-wrap"><input name="stun_4" type="checkbox"/></label>
+<label class="box-wrap"><input name="stun_5" type="checkbox"/></label>
+<label class="box-wrap"><input name="stun_6" type="checkbox"/>+2</label>
+<label class="box-wrap"><input name="stun_7" type="checkbox"/></label>
+<label class="box-wrap"><input name="stun_8" type="checkbox"/></label>
+<label class="box-wrap"><input name="stun_9" type="checkbox"/>+3</label>
+<label class="box-wrap"><input name="stun_10" type="checkbox"/></label>
+</div>
+</div>
+<div class="fields cols-3">
+<label>Overflow<input name="overflow" value="7"/></label>
+<label>Wound Modifiers<input name="wound_modifiers" value="L +1 TN/-1 Init; M +2/-2; S +3/-3"/></label>
+<label>Damage Notes<input name="damage_notes" value="No current damage recorded."/></label>
+</div>
+</div>
+</section>
+</div>
+<section class="mt">
+<h2>Movement</h2>
+<div class="content">
+<table>
+<thead><tr><th style="width:22%">Mode</th><th style="width:16%">Rate</th><th style="width:16%">Multiplier</th><th style="width:18%">Terrain / Modifier</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Walking</td><td><input name="movement_walking_rate" value="5"/></td><td><input name="movement_walking_multiplier" value="1"/></td><td><input name="movement_walking_modifier" value=""/></td><td><input name="movement_walking_notes" value="Base Quickness 5"/></td></tr>
+<tr><td>Running</td><td><input name="movement_running_rate" value="15"/></td><td><input name="movement_running_multiplier" value="3"/></td><td><input name="movement_running_modifier" value=""/></td><td><input name="movement_running_notes" value="Human running rate"/></td></tr>
+<tr><td>Sprinting</td><td><input name="movement_sprinting_rate" value="20"/></td><td><input name="movement_sprinting_multiplier" value="4"/></td><td><input name="movement_sprinting_modifier" value=""/></td><td><input name="movement_sprinting_notes" value="Sprint estimate from Quickness ×4"/></td></tr>
+<tr><td>Swimming</td><td><input name="movement_swimming_rate" value="2.5"/></td><td><input name="movement_swimming_multiplier" value="0.5"/></td><td><input name="movement_swimming_modifier" value=""/></td><td><input name="movement_swimming_notes" value="Swim estimate from Quickness ×0.5"/></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="mt">
+<h2>Active Skills</h2>
+<div class="content">
+<table>
+<thead><tr><th style="width:34%">Skill</th><th style="width:12%">Rating</th><th style="width:20%">Specialization</th><th style="width:14%">Pool</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><input value="Heavy Pistols"/></td><td><input value="6"/></td><td><input value="Ruger Super Warhawk"/></td><td><input value="Combat"/></td><td><input value="Primary firearm"/></td></tr>
+<tr><td><input value="Assault Rifles"/></td><td><input value="4"/></td><td><input value=""/></td><td><input value="Combat"/></td><td><input value="AK-97"/></td></tr>
+<tr><td><input value="Athletics"/></td><td><input value="6"/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Movement / physical"/></td></tr>
+<tr><td><input value="Stealth"/></td><td><input value="6"/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Infiltration"/></td></tr>
+<tr><td><input value="Interrogation"/></td><td><input value="4"/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Former Lone Star skillset"/></td></tr>
+<tr><td><input value="Negotiation"/></td><td><input value="3"/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Street / procedure crossover"/></td></tr>
+<tr><td><input value="Car"/></td><td><input value="3"/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Driving"/></td></tr>
+<tr><td><input value="Edged Combat"/></td><td><input value="3"/></td><td><input value=""/></td><td><input value="Combat"/></td><td><input value="Katana"/></td></tr>
+<tr><td><input value="Biotech"/></td><td><input value="3"/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Medical basics"/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="mt">
+<h2>Knowledge / Language Skills</h2>
+<div class="content">
+<table>
+<thead><tr><th style="width:38%">Skill</th><th style="width:13%">Rating</th><th style="width:24%">Specialization</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><input value="Gang ID"/></td><td><input value="5"/></td><td><input value=""/></td><td><input value="Street knowledge"/></td></tr>
+<tr><td><input value="Lone Star Procedure / Protection"/></td><td><input value="5"/></td><td><input value=""/></td><td><input value="Former employer knowledge"/></td></tr>
+<tr><td><input value="Threat Response"/></td><td><input value="5"/></td><td><input value=""/></td><td><input value="Tactical / security knowledge"/></td></tr>
+<tr><td><input value="The Beat"/></td><td><input value="5"/></td><td><input value=""/></td><td><input value="Police-street overlap"/></td></tr>
+<tr><td><input value="Redmond"/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Knowledge rating undefined in master"/></td></tr>
+<tr><td><input value="English / Sioux"/></td><td><input value="4 / 3"/></td><td><input value=""/></td><td><input value="Languages"/></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<div class="footer-note">This is an original, unofficial fan worksheet for use with Shadowrun 3rd Edition campaigns.</div>
+</main>
+<main class="sheet">
+<header>
+<h1>Contacts and Weapons</h1>
+<div class="subtitle">Shadowrun 3E Fillable Character Sheet<br/>Page 2</div>
+</header>
+<section>
+<h2>Contacts</h2>
+<div class="content">
+<table>
+<thead><tr><th style="width:22%">Name</th><th style="width:18%">Type</th><th style="width:12%">Loyalty</th><th style="width:12%">Connection</th><th style="width:16%">Location</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><input value="Blackjack"/></td><td><input value="Fixer"/></td><td><input value="2 (+1 with Switch)"/></td><td><input value="3"/></td><td><input value="Seattle / Rusty Spade chain"/></td><td><input value="Job source; currently endangered in campaign logs"/></td></tr>
+<tr><td><input value="Snacks / Joseph Shoeman"/></td><td><input value="Lone Star Dispatcher"/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Lone Star"/></td><td><input value="Friend/contact; warning and info channel"/></td></tr>
+<tr><td><input value="Former Lone Star Contacts"/></td><td><input value="Hidden contacts"/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Lone Star"/></td><td><input value="Not fully exposed"/></td></tr>
+<tr><td><input value="Former Lieutenant"/></td><td><input value="Enemy"/></td><td><input value="Rating 3"/></td><td><input value=""/></td><td><input value="Lone Star"/></td><td><input value="Threat / blackmail vector"/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="mt">
+<h2>Weapons</h2>
+<div class="content">
+<table>
+<thead><tr><th style="width:20%">Weapon</th><th style="width:10%">Conc.</th><th style="width:12%">Damage</th><th style="width:10%">Mode</th><th style="width:10%">Ammo</th><th style="width:8%">RC</th><th style="width:8%">Reach</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><input value="Ruger Super Warhawk"/></td><td><input value="2"/></td><td><input value="10M"/></td><td><input value="SS"/></td><td><input value="6(cyl)"/></td><td><input value="0"/></td><td><input value=""/></td><td><input value="Primary; specialization"/></td></tr>
+<tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input value="0–5"/></label><label>Medium<input value="6–20"/></label><label>Long<input value="21–40"/></label><label>Extreme<input value="41–60"/></label></div></td></tr>
+<tr><td><input value="Ares Predator"/></td><td><input value="5"/></td><td><input value="9M"/></td><td><input value="SA"/></td><td><input value="15(c)"/></td><td><input value="0"/></td><td><input value=""/></td><td><input value="Heavy pistol backup"/></td></tr>
+<tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input value="0–5"/></label><label>Medium<input value="6–20"/></label><label>Long<input value="21–40"/></label><label>Extreme<input value="41–60"/></label></div></td></tr>
+<tr><td><input value="Ares Slivergun"/></td><td><input value="4"/></td><td><input value="8S(f)"/></td><td><input value="BF"/></td><td><input value="30(c)"/></td><td><input value="0"/></td><td><input value=""/></td><td><input value="Machine pistol / flechette"/></td></tr>
+<tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input value="0–5"/></label><label>Medium<input value="6–15"/></label><label>Long<input value="16–30"/></label><label>Extreme<input value="31–50"/></label></div></td></tr>
+<tr><td><input value="AK-97"/></td><td><input value="4"/></td><td><input value="8M"/></td><td><input value="SA/BF/FA"/></td><td><input value="38(c)"/></td><td><input value="0"/></td><td><input value=""/></td><td><input value="Assault rifle"/></td></tr>
+<tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input value="0–50"/></label><label>Medium<input value="51–150"/></label><label>Long<input value="151–350"/></label><label>Extreme<input value="351–550"/></label></div></td></tr>
+<tr><td><input value="Katana"/></td><td><input value=""/></td><td><input value="(STR+3)M"/></td><td><input value="Melee"/></td><td><input value=""/></td><td><input value=""/></td><td><input value="1"/></td><td><input value="Edged Combat 3"/></td></tr>
+<tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input value=""/></label><label>Medium<input value=""/></label><label>Long<input value=""/></label><label>Extreme<input value=""/></label></div></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input/></label><label>Medium<input/></label><label>Long<input/></label><label>Extreme<input/></label></div></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input/></label><label>Medium<input/></label><label>Long<input/></label><label>Extreme<input/></label></div></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input/></label><label>Medium<input/></label><label>Long<input/></label><label>Extreme<input/></label></div></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input/></label><label>Medium<input/></label><label>Long<input/></label><label>Extreme<input/></label></div></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr class="range-row"><td colspan="8"><div class="ranges"><label>Short<input/></label><label>Medium<input/></label><label>Long<input/></label><label>Extreme<input/></label></div></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="mt">
+<h2>Armor, Gear, and Lifestyle</h2>
+<div class="content fields">
+<div class="fields cols-3">
+<label>Armor / Ballistic / Impact<input name="armor" value="Body Armor 4 / 1"/></label>
+<label>Lifestyle<input name="lifestyle" value="Street / Wolf-adjacent unstable footing"/></label>
+<label>Monthly Cost<input name="monthly_cost" value="Undefined / covered informally by The Chin"/></label>
+</div>
+<label>Gear<textarea class="gear-text" name="gear">Medkits (11)
+Suppressors (+4)
+Conceal holster (+2)
+Body Armor (Ballistic 4 / Impact 1)
+The Doughnut communications/tracker device (campaign gear)
+Burner phone / street communication gear</textarea></label>
+</div>
+</section>
+</main>
+<main class="sheet">
+<header>
+<h1>Cyberware, Bioware, and Vehicles</h1>
+<div class="subtitle">Shadowrun 3E Fillable Character Sheet<br/>Page 3</div>
+</header>
+<section>
+<h2>Cyberware / Bioware</h2>
+<div class="content">
+<table>
+<thead><tr><th style="width:28%">Implant</th><th style="width:12%">Rating</th><th style="width:13%">Essence</th><th style="width:13%">Bio Index</th><th style="width:14%">Grade</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><input value="Dermal Plating"/></td><td><input value="2"/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Standard"/></td><td><input value="Body 5 (7) listed in master"/></td></tr>
+<tr><td><input value="Wired Reflexes"/></td><td><input value="1"/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Standard"/></td><td><input value="Reaction bonus +2; Initiative 7+2D6"/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+</tbody>
+</table>
+<div class="fields cols-3 mt">
+<label>Essence Remaining<input name="essence_remaining" value="2.8"/></label>
+<label>Total Bio Index<input name="bio_index" value="0"/></label>
+<label>Implant Notes<input name="implant_notes" value="Known cyberware: Dermal Plating 2, Wired Reflexes 1. Essence total from Master Switch: 2.8."/></label>
+</div>
+</div>
+</section>
+<section class="mt">
+<h2>Vehicles / Drones</h2>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th style="width:16%">Vehicle / Drone</th>
+<th>Handling</th>
+<th>Speed</th>
+<th>Accel</th>
+<th>Body</th>
+<th>Armor</th>
+<th>Sig</th>
+<th>Autonav</th>
+<th>Pilot</th>
+<th>Sensor</th>
+<th>Cargo / Load</th>
+<th style="width:14%">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr><td><input value="No owned vehicle confirmed"/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value=""/></td><td><input value="Current master does not list vehicle/drone ownership"/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="mt">
+<h2>Vehicle / Drone Modifications and Notes</h2>
+<div class="content">
+<textarea class="tall-text" name="vehicle_notes">No owned vehicle confirmed in current character master. Has used team/borrowed transport during runs. Motorcycle trace concern belongs to current campaign events, not listed as Switch-owned gear here.</textarea>
+</div>
+</section>
+</main>
+<main class="sheet">
+<header>
+<h1>Advancement and Campaign Log</h1>
+<div class="subtitle">Shadowrun 3E Fillable Character Sheet<br/>Page 4</div>
+</header>
+<section>
+<h2>Advancement</h2>
+<div class="content fields">
+<div class="fields" style="grid-template-columns: repeat(5, 1fr);">
+<label>Karma Earned<input name="karma_earned" value="9 noted (4 Session 0 + 5 Session 1) / later totals undefined"/></label>
+<label>Karma Spent<input name="karma_spent" value=""/></label>
+<label>Current Nuyen<input name="current_nuyen" value="Undefined in current master"/></label>
+<label>Reputation / Heat<input name="reputation" value="Wolf-associated; Lone Star past active; former lieutenant enemy Rating 3"/></label>
+<label>Last Updated<input name="last_updated" value="2026-06-03"/></label>
+</div>
+<label>Campaign Log<textarea class="tall-text" name="campaign_log">Session 0: Kestrel firefight at Siberian Wolf; +4 Karma recorded.
+Session 1: Double Down; Switch breached front entrance after stealth collapse; team recovered crate; +4 mission Karma and +1 for sharing Lone Star background.
+Active threads: Lone Star past, Former Lieutenant threat, Burnout awareness, Blackjack job chain, Boeing/Kestrel surveillance pressure.</textarea></label>
+</div>
+</section>
+<section class="mt">
+<h2>Lifestyles</h2>
+<div class="content">
+<table>
+<thead><tr><th style="width:18%">Lifestyle / Safehouse</th><th style="width:13%">Type</th><th style="width:13%">Monthly Cost</th><th style="width:14%">Paid Through</th><th style="width:17%">Location</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><input value="Siberian Wolf upstairs / street-adjacent"/></td><td><input value="Temporary / informal"/></td><td><input value="Undefined"/></td><td><input value="Current"/></td><td><input value="Grayline / Siberian Wolf"/></td><td><input value="Homeless / unstable footing; staying near Wolf"/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="mt">
+<h2>SINs, IDs, and Licenses</h2>
+<div class="content">
+<table>
+<thead><tr><th style="width:18%">Name / Identity</th><th style="width:13%">SIN Rating</th><th style="width:15%">Issuer</th><th style="width:17%">Licenses</th><th style="width:13%">Status</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><input value="Marcus Hale / Switch"/></td><td><input value="Undefined"/></td><td><input value="Former Lone Star tie"/></td><td><input value="Weapons unclear"/></td><td><input value="Compromised / hidden past"/></td><td><input value="Past not fully exposed; former lieutenant active threat"/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td><td><input/></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="mt">
+<h2>Additional Notes</h2>
+<div class="content">
+<textarea class="gear-text" name="additional_notes">Background: Former Lone Star officer disgraced after protest incident; ordered to deploy gas by lieutenant; civilian fatality blamed on him while superiors were protected.
+Current state: Homeless / unstable footing near Siberian Wolf; armed and dangerous; past not fully exposed.
+Contacts: Blackjack, Snacks/Joseph Shoeman, hidden former Lone Star contacts. Enemy: Former Lieutenant (Rating 3).
+Role notes: Strong street + law enforcement crossover; understands escalation; dangerous mix of training and desperation.</textarea>
+</div>
+</section>
+<div class="footer-note">Tip: fill this in your browser, then use Print and choose Save as PDF to preserve a completed copy.</div>
+</main>
+<script>
+    (() => {
+      const storageKey = "shadowrun3e-character-sheet-data-v1";
+      const fields = Array.from(document.querySelectorAll("input, textarea"));
+      const status = document.getElementById("saveStatus");
+
+      function fieldKey(field, index) {
+        if (field.id) return `id:${field.id}`;
+        if (field.name) return `name:${field.name}`;
+        return `field:${index}`;
+      }
+
+      function collectData() {
+        const data = {};
+        fields.forEach((field, index) => {
+          const key = fieldKey(field, index);
+          data[key] = field.type === "checkbox" ? field.checked : field.value;
+        });
+        return data;
+      }
+
+      function applyData(data) {
+        fields.forEach((field, index) => {
+          const key = fieldKey(field, index);
+          if (!(key in data)) return;
+          if (field.type === "checkbox") field.checked = Boolean(data[key]);
+          else field.value = data[key];
+        });
+      }
+
+      function autosave() {
+        calculateDerived();
+        localStorage.setItem(storageKey, JSON.stringify(collectData()));
+        status.textContent = "Autosaved";
+      }
+
+      function numberFrom(name) {
+        const raw = document.querySelector(`[name="${name}"]`)?.value || "";
+        const found = raw.match(/-?\d+(\.\d+)?/);
+        return found ? Number(found[0]) : 0;
+      }
+
+      function setValue(name, value) {
+        const field = document.querySelector(`[name="${name}"]`);
+        if (field) field.value = value;
+      }
+
+      function formatNumber(value) {
+        return Number.isInteger(value) ? String(value) : String(Math.round(value * 10) / 10);
+      }
+
+      function calculateDerived() {
+        const quicknessForReaction = numberFrom("quickness_modified") || numberFrom("quickness_natural");
+        const intelligenceForReaction = numberFrom("intelligence_modified") || numberFrom("intelligence_natural");
+        const reactionBonus = numberFrom("reaction_bonus");
+        if (quicknessForReaction || intelligenceForReaction || reactionBonus) {
+          setValue("reaction", formatNumber(Math.floor((quicknessForReaction + intelligenceForReaction) / 2) + reactionBonus));
+        }
+
+        const reaction = numberFrom("reaction");
+        const dice = numberFrom("initiative_dice") || 1;
+        const bonus = numberFrom("initiative_bonus");
+        if (reaction || bonus || dice) {
+          setValue("initiative", `${formatNumber(reaction + bonus)} + ${formatNumber(dice)}d6`);
+        }
+
+        const quickness = numberFrom("quickness_modified") || numberFrom("quickness_natural");
+        [
+          ["walking", "movement_walking_rate", "movement_walking_multiplier"],
+          ["running", "movement_running_rate", "movement_running_multiplier"],
+          ["sprinting", "movement_sprinting_rate", "movement_sprinting_multiplier"],
+          ["swimming", "movement_swimming_rate", "movement_swimming_multiplier"],
+        ].forEach(([, rateName, multiplierName]) => {
+          const multiplier = numberFrom(multiplierName);
+          if (quickness && multiplier) {
+            setValue(rateName, formatNumber(quickness * multiplier));
+          }
+        });
+      }
+
+      function characterName() {
+        const name = document.querySelector('[name="character_name"]')?.value.trim();
+        return (name || "shadowrun_character").replace(/[^a-z0-9_-]+/gi, "_");
+      }
+
+      const saved = localStorage.getItem(storageKey);
+      if (saved) {
+        try {
+          applyData(JSON.parse(saved));
+          calculateDerived();
+          status.textContent = "Loaded autosave";
+        } catch {
+          status.textContent = "Autosave unavailable";
+        }
+      }
+      calculateDerived();
+
+      fields.forEach((field) => {
+        field.addEventListener("input", autosave);
+        field.addEventListener("change", autosave);
+      });
+
+      document.getElementById("saveData").addEventListener("click", () => {
+        const blob = new Blob([JSON.stringify(collectData(), null, 2)], { type: "application/json" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = `${characterName()}_data.json`;
+        link.click();
+        URL.revokeObjectURL(link.href);
+        status.textContent = "Character data saved";
+      });
+
+      document.getElementById("loadData").addEventListener("change", async (event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+        try {
+          applyData(JSON.parse(await file.text()));
+          autosave();
+          status.textContent = "Character data loaded";
+        } catch {
+          status.textContent = "Could not load file";
+        } finally {
+          event.target.value = "";
+        }
+      });
+
+      document.getElementById("clearData").addEventListener("click", () => {
+        if (!confirm("Clear all fields on this sheet?")) return;
+        fields.forEach((field) => {
+          if (field.type === "checkbox") field.checked = false;
+          else if (field.type !== "file") field.value = "";
+        });
+        autosave();
+        status.textContent = "Sheet cleared";
+      });
+    })();
+  </script>
+</body>
+</html>

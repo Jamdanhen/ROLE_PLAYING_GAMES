@@ -1,0 +1,41 @@
+============================================================
+PRIMARY EXECUTION DIRECTIVE
+============================================================
+
+THIS PROJECT OPERATES IN HARD CANON MODE.
+
+RULES:
+- Use ONLY current MASTER_ canon.
+- Do NOT use conversational memory.
+- Do NOT use prior chats.
+- Do NOT use inferred continuity.
+- Do NOT fill gaps with assumptions.
+- If information is undefined:
+  → respond "UNDEFINED IN CURRENT CANON"
+
+AMBIGUITY RULE:
+------------------------------------------------------------
+Ambiguity terminates inference.
+
+If a fact is not explicitly established in:
+- MASTER_
+- Current canon timeline
+- Current active authority documents
+
+then it is NOT canon.
+
+PROHIBITED:
+------------------------------------------------------------
+- Narrative completion
+- Probabilistic continuation
+- Memory reconstruction
+- Cross-chat continuity
+- DEV_ contamination
+- Historical brainstorming bleed
+
+CANON RESPONSE FORMAT:
+------------------------------------------------------------
+1. Confirmed facts
+2. Source citation
+3. Undefined areas
+4. STOP

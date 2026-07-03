@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Grayline Docks Skeleton Map</title>
+  <desc id="desc">A simplified black-and-white skeleton map preserving the general layout, river, docks, roads, rail, bridge, and hex scale of the Grayline Docks reference map.</desc>
+  <defs>
+    <pattern id="hex" width="52" height="45" patternUnits="userSpaceOnUse">
+      <path d="M13 0 L39 0 L52 22.5 L39 45 L13 45 L0 22.5 Z" fill="none" stroke="#d7d7d7" stroke-width="1"/>
+    </pattern>
+    <pattern id="burnoutHatch" width="11" height="11" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <line x1="0" y1="0" x2="0" y2="11" stroke="#b2b2b2" stroke-width="2.4"/>
+    </pattern>
+    <pattern id="dockHatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <line x1="0" y1="0" x2="0" y2="12" stroke="#cfcfcf" stroke-width="1.5"/>
+    </pattern>
+    <filter id="paperNoise" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="12"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.08"/>
+      </feComponentTransfer>
+    </filter>
+    <style>
+      .paper { fill:#fbfbfb; }
+      .panel { fill:#fafafa; stroke:#111; stroke-width:1.4; }
+      .thin { stroke:#777; stroke-width:1.2; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+      .faint { stroke:#b9b9b9; stroke-width:1; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+      .road { stroke:#111; stroke-width:5.2; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+      .secondary { stroke:#444; stroke-width:2.2; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+      .service { stroke:#111; stroke-width:1.8; stroke-dasharray:4 5; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+      .rail { stroke:#111; stroke-width:2.4; fill:none; stroke-dasharray:9 7; stroke-linecap:round; }
+      .railTick { stroke:#111; stroke-width:1.5; }
+      .water { fill:#dce5e7; stroke:#111; stroke-width:2; }
+      .shore { stroke:#111; stroke-width:2.3; fill:none; }
+      .district { fill:#f8f8f8; stroke:#111; stroke-width:4; }
+      .innerDistrict { fill:none; stroke:#111; stroke-width:1.5; }
+      .dock { fill:#e8e8e8; stroke:#111; stroke-width:1.3; }
+      .pier { fill:#ededed; stroke:#111; stroke-width:1.4; }
+      .zone { fill:url(#dockHatch); stroke:#111; stroke-width:1.4; }
+      .burnout { fill:url(#burnoutHatch); stroke:#111; stroke-width:2.4; }
+      .label { font-family:Arial, Helvetica, sans-serif; fill:#111; font-weight:800; letter-spacing:0; }
+      .regular { font-family:Arial, Helvetica, sans-serif; fill:#111; font-weight:400; letter-spacing:0; }
+      .h1 { font-size:34px; }
+      .h2 { font-size:20px; }
+      .body { font-size:15px; }
+      .tiny { font-size:12px; }
+      .legend { font-family:Arial, Helvetica, sans-serif; fill:#111; font-size:13px; font-weight:700; letter-spacing:0; }
+      .callout { fill:#111; }
+      .calloutText { font-family:Arial, Helvetica, sans-serif; fill:#fff; font-size:17px; font-weight:800; text-anchor:middle; dominant-baseline:central; }
+      .arrow { stroke:#111; stroke-width:4; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+    </style>
+  </defs>
+
+  <rect width="1536" height="1024" class="paper"/>
+  <rect width="1536" height="1024" fill="url(#hex)" opacity=".78"/>
+  <rect width="1536" height="1024" filter="url(#paperNoise)" opacity=".55"/>
+
+  <!-- Left reference panel kept from the source layout. -->
+  <rect x="6" y="6" width="322" height="1012" class="panel"/>
+  <text x="28" y="55" class="label h1">SEATTLE, 2057</text>
+  <text x="30" y="81" class="label h2">TACOMA INDUSTRIAL DISTRICT</text>
+
+  <rect x="16" y="97" width="294" height="185" class="panel"/>
+  <text x="67" y="122" class="label h2">DISTRICT OVERVIEW</text>
+  <text x="31" y="153" class="legend">1</text><text x="54" y="153" class="legend">GRAYLINE DOCKS</text>
+  <text x="31" y="177" class="legend">2</text><text x="54" y="177" class="legend">INDUSTRIAL SPRAWL</text>
+  <text x="31" y="201" class="legend">3</text><text x="54" y="201" class="legend">COMMERCIAL ZONE</text>
+  <text x="31" y="225" class="legend">4</text><text x="54" y="225" class="legend">BARRIENS EDGE</text>
+  <text x="31" y="249" class="legend">5</text><text x="54" y="249" class="legend">TRANSIT CORRIDOR</text>
+
+  <rect x="16" y="296" width="294" height="332" class="panel"/>
+  <text x="68" y="321" class="label h2">MAP LEGEND</text>
+  <line x1="30" y1="331" x2="296" y2="331" stroke="#111" stroke-width="1.1"/>
+  <line x1="31" y1="353" x2="66" y2="353" class="road"/><text x="82" y="358" class="legend">PRIMARY ROAD</text>
+  <line x1="31" y1="378" x2="66" y2="378" class="secondary"/><text x="82" y="383" class="legend">SECONDARY ROAD</text>
+  <line x1="31" y1="403" x2="66" y2="403" class="rail"/><text x="82" y="408" class="legend">RAIL LINE</text>
+  <line x1="31" y1="428" x2="66" y2="428" class="service"/><text x="82" y="433" class="legend">SERVICE / FOOTPATH</text>
+  <rect x="31" y="446" width="34" height="10" class="pier"/><text x="82" y="457" class="legend">DOCK / PIER</text>
+  <rect x="31" y="527" width="34" height="14" fill="url(#burnoutHatch)" stroke="#111"/><text x="82" y="539" class="legend">GANG TERRITORY</text>
+  <rect x="31" y="591" width="34" height="14" fill="url(#dockHatch)" stroke="#111"/><text x="82" y="603" class="legend">DOCK CONTROL</text>
+  <polygon points="42,648 59,648 70,666 59,684 42,684 31,666" fill="none" stroke="#111" stroke-width="1.3"/>
+  <text x="80" y="659" class="legend">HEX SCALE</text>
+  <text x="80" y="677" class="legend">1 HEX = 188 METERS</text>
+  <text x="270" y="657" class="label h2">N</text>
+  <path d="M276 684 L276 653 M264 665 L276 653 L288 665" class="arrow"/>
+
+  <line x1="328" y1="6" x2="328" y2="1018" stroke="#111" stroke-width="2"/>
+
+  <!-- Regional faint road traces, keeping the reference-map feel without overbuilding it. -->
+  <path d="M333 590 C430 610 505 695 568 816 C603 880 618 958 650 1018" class="faint"/>
+  <path d="M405 20 C425 72 480 120 600 143 C690 160 688 235 625 285 C545 351 535 420 600 487 C673 563 635 678 575 748 C520 812 492 920 500 1010" class="faint"/>
+  <path d="M338 210 C440 229 515 270 642 313" class="thin"/>
+  <path d="M1430 135 C1280 174 1230 230 1218 305 C1210 355 1254 421 1340 453 C1440 491 1470 560 1466 630" class="faint"/>
+  <path d="M1170 6 C1195 94 1160 145 1124 203 C1070 290 1114 377 1245 421 C1350 456 1375 520 1398 620" class="faint"/>
+
+  <!-- Duwamish River skeleton shape. -->
+  <path d="M704 0 C678 100 717 170 692 270 C654 423 725 510 701 653 C678 790 737 875 726 1024 L912 1024 C936 900 892 801 925 675 C967 519 888 432 927 294 C959 181 910 105 934 0 Z" class="water"/>
+  <path d="M752 30 C735 145 765 230 748 328 C722 476 766 573 748 715 C735 825 766 910 760 999" class="faint"/>
+  <path d="M842 16 C854 119 824 209 844 302 C878 455 833 551 858 694 C878 810 834 910 844 1012" class="faint"/>
+  <text x="777" y="318" class="label h2">DUWAMISH</text>
+  <text x="807" y="343" class="label h2">RIVER</text>
+
+  <!-- West bank rail corridor and roads. -->
+  <path d="M472 0 C458 145 445 256 456 356 C470 481 424 670 405 820 C396 895 404 965 418 1024" class="rail"/>
+  <path d="M505 0 C486 148 491 260 498 375 C508 526 456 704 440 812 C428 895 442 960 464 1024" class="rail"/>
+  <path d="M348 435 C427 403 483 393 542 429 C585 457 606 495 649 500 L708 500" class="road"/>
+  <path d="M354 675 C428 664 520 690 623 774" class="secondary"/>
+  <path d="M410 362 C463 310 532 273 638 240" class="service"/>
+  <path d="M492 62 C548 43 606 39 682 72" class="service"/>
+  <path d="M500 110 C525 198 554 314 544 420 C538 486 565 575 595 690" class="service"/>
+
+  <path d="M430 380 L596 470 L640 610 L596 801 L492 743 L420 604 Z" class="burnout"/>
+  <text x="516" y="570" class="label h2" text-anchor="middle">BURNOUT</text>
+  <text x="516" y="595" class="label h2" text-anchor="middle">TERRITORY</text>
+
+  <!-- Sparse west-bank massing: placeholders, not full buildings. -->
+  <g opacity=".9">
+    <rect x="548" y="38" width="21" height="36" transform="rotate(8 558 56)" class="dock"/>
+    <rect x="590" y="64" width="34" height="29" transform="rotate(5 607 78)" class="dock"/>
+    <rect x="633" y="100" width="25" height="45" transform="rotate(8 645 122)" class="dock"/>
+    <rect x="578" y="170" width="54" height="25" transform="rotate(3 605 182)" class="dock"/>
+    <rect x="526" y="225" width="36" height="25" transform="rotate(5 544 237)" class="dock"/>
+    <rect x="583" y="255" width="29" height="58" transform="rotate(4 597 284)" class="dock"/>
+    <rect x="625" y="365" width="33" height="28" transform="rotate(-3 641 379)" class="dock"/>
+  </g>
+
+  <!-- East-bank Grayline Docks outline: close to source silhouette, simplified interior. -->
+  <path d="M950 36 L1090 14 L1118 88 L1138 157 L1195 173 L1174 248 L1208 313 L1184 407 L1228 496 L1180 610 L1210 657 L1166 790 L1068 834 L968 807 L936 705 L950 592 L925 512 L955 405 L930 294 Z" class="district"/>
+  <path d="M970 56 L1076 42 L1098 100 L1113 174 L1166 187 L1146 249 L1177 313 L1155 392 L1196 500 L1150 606 L1176 650 L1137 768 L1067 800 L991 781 L966 692 L981 590 L954 510 L983 405 L958 295 Z" class="innerDistrict"/>
+
+  <!-- East waterfront rail, road, and service corridor. -->
+  <path d="M924 52 L901 70 L916 99 L892 124 L906 152 L884 184 L902 216 L883 250 L897 291 L878 338 L900 389 L878 448 L902 522 L878 589 L901 690 L882 773" class="rail"/>
+  <path d="M990 42 C985 126 995 190 1032 246 C1060 289 1039 336 1006 374 C958 430 967 488 1005 543 C1047 603 1001 668 1000 782" class="road"/>
+  <path d="M1066 76 C1060 170 1062 264 1072 348 C1080 429 1070 522 1058 777" class="service"/>
+
+  <!-- East-west segment roads restored from the reference map. -->
+  <path d="M1008 318 C1047 314 1094 316 1145 325 C1170 329 1194 331 1210 327" class="secondary"/>
+  <path d="M988 489 C1038 486 1086 489 1130 496 C1170 502 1198 499 1222 492" class="secondary"/>
+  <path d="M982 610 C1028 601 1072 600 1118 605 C1162 611 1192 610 1211 602" class="secondary"/>
+
+  <!-- Fainter west-bank cross streets that echo the original industrial segmentation. -->
+  <path d="M407 322 C466 328 527 352 596 392 C628 410 653 418 690 416" class="thin"/>
+  <path d="M353 570 C438 578 520 608 622 676" class="thin"/>
+
+  <!-- Bridge skeleton. -->
+  <path d="M957 497 L708 500" class="road"/>
+  <path d="M708 477 L957 477 M708 523 L957 523" stroke="#111" stroke-width="1.5" fill="none"/>
+  <path d="M720 477 L735 523 M766 477 L781 523 M812 477 L827 523 M858 477 L873 523 M904 477 L919 523" stroke="#111" stroke-width="1.5"/>
+  <circle cx="765" cy="472" r="13" class="callout"/><text x="765" y="473" class="calloutText">5</text>
+  <text x="787" y="464" class="label body">CHECKPOINT</text>
+  <text x="787" y="483" class="label body">BRIDGE</text>
+
+  <!-- Dock fingers and piers, kept as layout anchors. -->
+  <g>
+    <rect x="944" y="81" width="42" height="14" class="pier"/>
+    <rect x="924" y="119" width="52" height="14" class="pier"/>
+    <rect x="928" y="164" width="52" height="14" class="pier"/>
+    <rect x="930" y="208" width="48" height="14" class="pier"/>
+    <rect x="905" y="252" width="56" height="14" class="pier"/>
+    <rect x="900" y="303" width="66" height="16" class="pier"/>
+    <rect x="910" y="366" width="62" height="16" class="pier"/>
+    <rect x="900" y="438" width="60" height="15" class="pier"/>
+    <rect x="900" y="508" width="58" height="15" class="pier"/>
+    <rect x="910" y="588" width="52" height="15" class="pier"/>
+    <rect x="902" y="668" width="60" height="15" class="pier"/>
+    <rect x="920" y="744" width="56" height="15" class="pier"/>
+  </g>
+
+  <!-- East-bank internal zone placeholders for future grid/detail placement. -->
+  <rect x="1008" y="326" width="164" height="78" class="zone"/>
+  <rect x="994" y="592" width="155" height="106" class="zone"/>
+  <rect x="1004" y="532" width="154" height="54" fill="none" stroke="#111" stroke-width="1.4"/>
+  <rect x="1010" y="102" width="58" height="73" transform="rotate(4 1039 138)" fill="#ddd" stroke="#111" stroke-width="1.1"/>
+  <rect x="1080" y="190" width="45" height="41" transform="rotate(5 1102 210)" fill="#ddd" stroke="#111" stroke-width="1.1"/>
+
+  <circle cx="1016" cy="207" r="13" class="callout"/><text x="1016" y="208" class="calloutText">1</text>
+  <text x="1040" y="213" class="label body">GRAYLINE</text><text x="1040" y="232" class="label body">CARGO PIER</text>
+  <circle cx="1038" cy="370" r="13" class="callout"/><text x="1038" y="371" class="calloutText">2</text>
+  <text x="1064" y="376" class="label body">CONTAINER</text><text x="1064" y="395" class="label body">MAZE</text>
+  <circle cx="1052" cy="535" r="13" class="callout"/><text x="1052" y="536" class="calloutText">3</text>
+  <text x="1078" y="541" class="label body">RIVER MACHINE</text><text x="1078" y="560" class="label body">YARD</text>
+  <circle cx="1048" cy="681" r="13" class="callout"/><text x="1048" y="682" class="calloutText">4</text>
+
+  <!-- Direction markers and title card retained for context. -->
+  <path d="M360 64 L360 24 M349 36 L360 24 L371 36" class="arrow"/>
+  <text x="376" y="45" class="label body">TO DOWNTOWN</text><text x="376" y="66" class="label body">SEATTLE</text><text x="376" y="84" class="regular tiny">(6.2 KM)</text>
+  <path d="M378 432 L344 432 M358 420 L344 432 L358 444" class="arrow"/>
+  <text x="381" y="431" class="label body">TO SODO</text><text x="381" y="450" class="regular tiny">(3.8 KM)</text>
+  <path d="M410 972 L410 1000 M398 988 L410 1000 L422 988" class="arrow"/>
+  <text x="356" y="940" class="label body">TO TACOMA PORTS</text><text x="378" y="959" class="regular tiny">(16.5 KM)</text>
+  <path d="M1508 405 L1522 405 M1510 393 L1522 405 L1510 417" class="arrow"/>
+  <text x="1435" y="407" class="label body">TO TACOMA</text><text x="1432" y="426" class="label body">CORE</text><text x="1437" y="445" class="regular tiny">(2.4 KM)</text>
+  <path d="M1508 789 L1522 789 M1510 777 L1522 789 L1510 801" class="arrow"/>
+  <text x="1423" y="777" class="label body">TO BARRIENS</text><text x="1446" y="796" class="regular tiny">(1.8 KM)</text>
+
+  <rect x="1218" y="6" width="318" height="212" class="panel"/>
+  <text x="1240" y="55" class="label" font-size="30">GRAYLINE DOCKS</text>
+  <text x="1241" y="81" class="label" font-size="16">TACOMA INDUSTRIAL DISTRICT</text>
+  <text x="1240" y="114" class="regular body">Skeleton working copy for layout edits.</text>
+  <text x="1240" y="137" class="regular body">Roads, river, bridge, rail, docks, and</text>
+  <text x="1240" y="160" class="regular body">district shape preserve the reference map.</text>
+  <text x="1240" y="183" class="regular body">Interior detail can be rebuilt on hexes.</text>
+</svg>

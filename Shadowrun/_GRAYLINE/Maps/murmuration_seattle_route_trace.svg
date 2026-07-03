@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" role="img" aria-label="Stylized Seattle to mountain lodge trace map">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#062329"/>
+      <stop offset="1" stop-color="#0a1215"/>
+    </linearGradient>
+    <style>
+      .bg { fill: #07100f; }
+      .water { fill: url(#water); stroke: rgba(124,199,255,.28); stroke-width: 2; }
+      .land-line { fill: none; stroke: rgba(174,247,210,.18); stroke-width: 2; }
+      .grid { stroke: rgba(174,247,210,.1); stroke-width: 1; }
+      .mountain { fill: none; stroke: rgba(174,247,210,.24); stroke-width: 2; }
+      .label { fill: #aef7d2; font: 24px Consolas, monospace; letter-spacing: 0; }
+      .small { fill: rgba(174,247,210,.68); font: 17px Consolas, monospace; }
+      .node { fill: #7cc7ff; filter: url(#glow); }
+      .lodge { fill: #ffcf71; filter: url(#glow); }
+      .trace-base { fill: none; stroke: rgba(124,199,255,.18); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+      .trace-out { fill: none; stroke: #7cc7ff; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 950; stroke-dashoffset: 950; filter: url(#glow); animation: draw 2.2s ease-out .2s forwards; }
+      .trace-back { fill: none; stroke: #ffcf71; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1040; stroke-dashoffset: 1040; filter: url(#glow); animation: draw 2.35s ease-out 2s forwards; }
+      .pulse { fill: none; stroke: rgba(255,207,113,.65); stroke-width: 3; opacity: 0; animation: pulse 1.4s ease-out 3.8s infinite; }
+      @keyframes draw { to { stroke-dashoffset: 0; } }
+      @keyframes pulse {
+        0% { r: 9; opacity: .9; }
+        100% { r: 44; opacity: 0; }
+      }
+    </style>
+  </defs>
+  <rect class="bg" width="1000" height="720"/>
+  <g opacity=".9">
+    <path class="grid" d="M100 0v720M200 0v720M300 0v720M400 0v720M500 0v720M600 0v720M700 0v720M800 0v720M900 0v720M0 90h1000M0 180h1000M0 270h1000M0 360h1000M0 450h1000M0 540h1000M0 630h1000"/>
+    <path class="water" d="M0 0h310c-24 52-62 89-80 140-20 58 34 97 8 159-23 55-85 87-90 155-5 72 49 113 19 185-12 29-38 55-68 81H0z"/>
+    <path class="water" d="M372 356c40-48 72-61 96-39 24 21 22 72-5 116-29 48-77 87-112 76-34-10-33-59-9-100 8-15 18-34 30-53z"/>
+    <path class="land-line" d="M297 0c-8 56-48 92-57 143-11 64 53 97 24 168-26 63-88 87-94 150-7 72 63 114 25 198"/>
+    <path class="mountain" d="M650 40l42 88 41-74 38 93 46-111 51 123 42-81"/>
+    <path class="mountain" d="M620 145l50 103 57-121 41 108 56-93 69 134"/>
+    <path class="mountain" d="M690 270l52 91 43-72 61 121"/>
+    <path class="water" d="M715 132c70-28 134-7 165 41 25 39 8 82-42 99-66 24-151-2-176-54-17-35 0-68 53-86z"/>
+  </g>
+  <g>
+    <text class="label" x="242" y="425">SEATTLE</text>
+    <text class="small" x="54" y="100">PUGET SOUND</text>
+    <text class="small" x="380" y="548">LAKE WASHINGTON</text>
+    <text class="small" x="662" y="82">CASCADE RANGE</text>
+    <text class="label" x="706" y="320">MOUNTAIN LODGE</text>
+    <text class="small" x="746" y="344">LAKE / CHATEAU HOLD</text>
+  </g>
+  <path class="trace-base" d="M306 401C363 342 432 283 516 234S676 167 752 197"/>
+  <path class="trace-base" d="M776 222C691 244 603 284 514 341S356 435 307 402C267 438 279 484 337 507 398 531 452 496 431 452"/>
+  <path class="trace-out" d="M306 401C363 342 432 283 516 234S676 167 752 197"/>
+  <path class="trace-back" d="M776 222C691 244 603 284 514 341S356 435 307 402C267 438 279 484 337 507 398 531 452 496 431 452"/>
+  <circle class="node" cx="306" cy="401" r="10"/>
+  <circle class="lodge" cx="764" cy="207" r="11"/>
+  <circle class="pulse" cx="764" cy="207" r="9"/>
+  <circle class="pulse" cx="306" cy="401" r="9" style="animation-delay:4.2s"/>
+</svg>

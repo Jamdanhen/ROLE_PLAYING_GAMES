@@ -1,0 +1,186 @@
+============================================================
+TRACE PRESSURE MATRIX — VEHICLE / COMMS
+TABLE-READY (ANF)
+============================================================
+
+TRACE VECTORS
+------------------------------------------------------------
+| ID | VECTOR                  | SOURCE EVENT                | RISK | TIME        | VALUE     |
+|----|--------------------------|-----------------------------|------|-------------|-----------|
+| 1  | BIKE LEFT AT SCENE       | Physical evidence           | 2–4  | 2–24 hrs    | LOW–MED   |
+| 2  | EXTRACTION VEHICLE       | GridGuide traffic logs      | 2–4  | 1–3 hrs     | HIGH      |
+| 3  | GRAHAM CALL TO ARES      | Direct comm trace           | 3–5  | 5–15 min    | CRITICAL  |
+| 4  | ARES CONTACT TO RUNNERS  | Follow-up probing           | 2–4  | Variable    | VARIABLE  |
+
+------------------------------------------------------------
+
+
+TRACE VECTOR DETAIL
+============================================================
+
+1 — BIKE LEFT AT SCENE
+------------------------------------------------------------
+- Path:
+  → Plate scan → GridGuide → traffic cams → association
+
+- Modifiers:
+  +1 sloppy plates
+  +1 witnesses
+
+- Outcome:
+  → Leads to staging area
+  → Rarely direct safehouse hit
+
+- Use:
+  → Background pressure
+  → Supports other traces
+
+
+2 — EXTRACTION VEHICLE
+------------------------------------------------------------
+- Path:
+  → Plate → route replay → node tracking → stop points
+
+- Modifiers:
+  -1 strong fake plates
+  +1 erratic driving
+
+- Outcome:
+  → Bridge / transfer / near-safehouse
+
+- Use:
+  → Primary trace tool
+  → Reliable escalation driver
+
+
+3 — GRAHAM CALL TO ARES
+------------------------------------------------------------
+- Path:
+  → Signal triangulation → node trace → location narrowing
+
+- Modifiers:
+  +1 rushed call
+  -1 secure line
+
+- Outcome:
+  → Safehouse revealed or narrowed
+
+- Use:
+  → Immediate escalation trigger
+  → Fastest threat activation
+
+
+4 — ARES CONTACT TO RUNNERS
+------------------------------------------------------------
+- Path:
+  → Direct contact → probing → confirmation
+
+- Modifiers:
+  +1 player engagement
+  -1 misdirection
+
+- Outcome:
+  → Info leak OR control shift
+
+- Use:
+  → Player agency lever
+  → Can escalate or delay
+
+
+------------------------------------------------------------
+
+
+STACKING MODEL
+============================================================
+
+COMBINED PRESSURE SCORE
+------------------------------------------------------------
+- Add all active vector scores
+
+EXAMPLE
+------------------------------------------------------------
+- Bike (3) + Vehicle (3) + Call (5) = 11
+
+------------------------------------------------------------
+
+
+ESCALATION TIERS
+============================================================
+
+| TOTAL SCORE | LEVEL    | RESULT                                |
+|-------------|----------|----------------------------------------|
+| 0–3         | LOW      | Background investigation               |
+| 4–7         | MEDIUM   | Surveillance / soft contact            |
+| 8–11        | HIGH     | Strike team deployment                |
+| 12+         | CRITICAL | Multi-faction convergence             |
+
+------------------------------------------------------------
+
+
+EVALUATION PRIORITY
+============================================================
+
+1. GRAHAM CALL
+   → Fastest / most dangerous
+
+2. VEHICLE TRACE
+   → Most reliable
+
+3. BIKE
+   → Weak alone / strong combined
+
+4. ARES CONTACT
+   → Player-controlled multiplier
+
+------------------------------------------------------------
+
+
+GM CONTROL MODES
+============================================================
+
+TIGHT PRESSURE
+------------------------------------------------------------
+- Activate:
+  → Vehicle + Call
+
+→ Result:
+  - Same-session attack
+
+
+SLOW BURN
+------------------------------------------------------------
+- Activate:
+  → Bike + Vehicle only
+
+→ Result:
+  - Delayed escalation
+
+
+PLAYER AGENCY
+------------------------------------------------------------
+- Activate:
+  → Ares contact focus
+
+→ Result:
+  - Players determine exposure
+
+------------------------------------------------------------
+
+
+RECOMMENDED SETUP
+============================================================
+
+ACTIVE:
+- Vehicle trace (ongoing)
+- Graham call (mid-session trigger)
+- Ares contact (decision point)
+
+OUTCOME
+------------------------------------------------------------
+- Rising tension
+- Timed combat insertion
+- Player-driven consequences
+
+============================================================
+
+Complete

@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1448" height="1086" viewBox="0 0 1448 1086">
+  <defs>
+    <style>
+      .page{fill:#fbfbfa}
+      .outer{fill:#fff;stroke:#111;stroke-width:8;stroke-linejoin:miter}
+      .room{fill:#fff;stroke:#111;stroke-width:5}
+      .hall{fill:#f4f4f4;stroke:#111;stroke-width:5}
+      .secure{fill:#fff;stroke:#111;stroke-width:6;stroke-dasharray:12 7}
+      .door{stroke:#111;stroke-width:4;fill:none}
+      .glassline{stroke:#111;stroke-width:4;fill:none;stroke-dasharray:10 7}
+      .gap{stroke:#fff;stroke-width:12;stroke-linecap:square}
+      .label{font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:900;fill:#111;text-anchor:middle}
+      .small{font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:800;fill:#111;text-anchor:middle}
+      .title{font-family:Arial,Helvetica,sans-serif;font-size:36px;font-weight:900;fill:#111}
+      .subtitle{font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:800;fill:#111}
+    </style>
+  </defs>
+
+  <rect class="page" width="1448" height="1086"/>
+
+  <!-- Locked Floor 1 room-label base. No furniture, cover, GM notes, or tactical blocking. -->
+  <path class="outer" d="M285 80 L805 80 L805 112 L985 112 L985 80 L1210 80 L1210 690 L1268 690 L1268 815 L795 815 L795 745 L715 745 L715 930 L465 930 L465 745 L285 745 L285 610 L205 610 L205 475 L285 475 Z"/>
+
+  <!-- Public / front-of-house -->
+  <rect class="room" x="465" y="745" width="250" height="185"/>
+  <text class="label" x="590" y="835">PUBLIC LOBBY</text>
+  <text class="small" x="590" y="860">south main entrance</text>
+
+  <rect class="room" x="465" y="610" width="185" height="135"/>
+  <text class="label" x="557" y="675">RECEPTION</text>
+  <text class="small" x="557" y="700">public counter / glass</text>
+  <line class="glassline" x1="465" y1="690" x2="650" y2="690"/>
+
+  <rect class="hall" x="630" y="690" width="165" height="55"/>
+  <text class="label" x="712" y="712">CONTROLLED</text>
+  <text class="label" x="712" y="735">ENTRY</text>
+
+  <!-- Southwest office and west service access -->
+  <rect class="hall" x="205" y="475" width="80" height="135"/>
+  <text class="label" x="245" y="540">WEST</text>
+  <text class="label" x="245" y="565">SERVICE</text>
+
+  <rect class="hall" x="285" y="475" width="345" height="135"/>
+  <text class="label" x="452" y="535">WEST SERVICE /</text>
+  <text class="label" x="452" y="560">STAFF ACCESS</text>
+
+  <rect class="room" x="285" y="610" width="180" height="135"/>
+  <text class="label" x="375" y="670">OFFICE /</text>
+  <text class="label" x="375" y="695">ADMIN</text>
+
+  <path class="hall" d="M530 80 L585 80 L585 295 L680 295 L680 475 L285 475 L285 430 L530 430 Z"/>
+  <text class="label" x="482" y="458">ACCESS HALL</text>
+  <text class="label" x="558" y="260" transform="rotate(-90 558 260)">ACCESS HALL</text>
+
+  <!-- North / northwest staff and utility rooms -->
+  <rect class="room" x="285" y="80" width="245" height="215"/>
+  <text class="label" x="407" y="170">SECURITY /</text>
+  <text class="label" x="407" y="195">MAINT. POWER</text>
+
+  <rect class="room" x="585" y="80" width="95" height="125"/>
+  <text class="label" x="632" y="140">RESTROOM</text>
+
+  <rect class="room" x="585" y="205" width="95" height="90"/>
+  <text class="label" x="632" y="255">SUPPLY</text>
+
+  <rect class="room" x="285" y="295" width="145" height="135"/>
+  <text class="label" x="357" y="355">CATALOG</text>
+  <text class="label" x="357" y="380">OFFICE</text>
+
+  <rect class="room" x="430" y="295" width="100" height="135"/>
+  <text class="label" x="480" y="355">REPAIR</text>
+  <text class="label" x="480" y="380">BENCH</text>
+
+  <!-- Interior storage and secure areas -->
+  <rect class="room" x="680" y="80" width="305" height="405"/>
+  <text class="label" x="832" y="260">MAIN AUDIO</text>
+  <text class="label" x="832" y="285">STORAGE FLOOR</text>
+
+  <rect class="secure" x="680" y="80" width="115" height="125"/>
+  <text class="label" x="737" y="128">FREIGHT</text>
+  <text class="label" x="737" y="153">ELEVATOR</text>
+
+  <rect class="hall" x="630" y="475" width="165" height="215"/>
+  <text class="label" x="712" y="570">CONTROLLED</text>
+  <text class="label" x="712" y="595">INTERIOR HALL</text>
+
+  <rect class="room" x="795" y="475" width="415" height="215"/>
+  <text class="label" x="1002" y="570">SECURE</text>
+  <text class="label" x="1002" y="595">STAGING</text>
+
+  <rect class="room" x="795" y="690" width="473" height="125"/>
+  <text class="label" x="1032" y="755">LOADING DOCK /</text>
+  <text class="label" x="1032" y="780">WAREHOUSE</text>
+
+  <rect class="room" x="985" y="280" width="225" height="195"/>
+  <text class="label" x="1098" y="390">SECURED</text>
+  <text class="label" x="1098" y="415">RECORDS</text>
+
+  <rect class="secure" x="985" y="80" width="225" height="200"/>
+  <text class="label" x="1098" y="185">HIDDEN</text>
+  <text class="label" x="1098" y="210">ARCHIVE /</text>
+  <text class="label" x="1098" y="235">LEDGER AREA</text>
+
+  <!-- Door gaps / access indicators only where needed for circulation clarity. -->
+  <line class="gap" x1="565" y1="930" x2="650" y2="930"/>
+  <path class="door" d="M565 930 Q607 890 650 930"/>
+
+  <line class="gap" x1="510" y1="745" x2="575" y2="745"/>
+  <path class="door" d="M510 745 Q542 710 575 745"/>
+
+  <line class="gap" x1="665" y1="745" x2="715" y2="745"/>
+  <path class="door" d="M665 745 Q690 705 715 745"/>
+
+  <line class="gap" x1="665" y1="690" x2="730" y2="690"/>
+  <path class="door" d="M665 690 Q698 650 730 690"/>
+
+  <line class="gap" x1="205" y1="520" x2="205" y2="585"/>
+  <path class="door" d="M205 520 Q245 552 205 585"/>
+
+  <line class="gap" x1="285" y1="520" x2="285" y2="575"/>
+  <path class="door" d="M285 520 Q325 548 285 575"/>
+
+  <line class="gap" x1="350" y1="475" x2="405" y2="475"/>
+  <path class="door" d="M350 475 Q377 435 405 475"/>
+
+  <line class="gap" x1="350" y1="610" x2="405" y2="610"/>
+  <path class="door" d="M350 610 Q377 570 405 610"/>
+
+  <line class="gap" x1="520" y1="610" x2="590" y2="610"/>
+  <path class="door" d="M520 610 Q555 570 590 610"/>
+
+  <line class="gap" x1="680" y1="395" x2="680" y2="455"/>
+  <path class="door" d="M680 395 Q720 425 680 455"/>
+
+  <line class="gap" x1="710" y1="475" x2="775" y2="475"/>
+  <path class="door" d="M710 475 Q742 435 775 475"/>
+
+  <line class="gap" x1="985" y1="350" x2="985" y2="420"/>
+  <path class="door" d="M985 350 Q945 385 985 420"/>
+
+  <line class="gap" x1="530" y1="155" x2="530" y2="210"/>
+  <path class="door" d="M530 155 Q490 183 530 210"/>
+
+  <line class="gap" x1="585" y1="120" x2="585" y2="170"/>
+  <path class="door" d="M585 120 Q625 145 585 170"/>
+
+  <line class="gap" x1="585" y1="230" x2="585" y2="275"/>
+  <path class="door" d="M585 230 Q625 252 585 275"/>
+
+  <line class="gap" x1="350" y1="430" x2="405" y2="430"/>
+  <path class="door" d="M350 430 Q377 390 405 430"/>
+
+  <line class="gap" x1="455" y1="430" x2="505" y2="430"/>
+  <path class="door" d="M455 430 Q480 390 505 430"/>
+
+  <line class="gap" x1="630" y1="540" x2="630" y2="595"/>
+  <path class="door" d="M630 540 Q590 568 630 595"/>
+
+  <line class="gap" x1="795" y1="555" x2="795" y2="625"/>
+  <path class="door" d="M795 555 Q835 590 795 625"/>
+
+  <line class="gap" x1="900" y1="690" x2="975" y2="690"/>
+  <path class="door" d="M900 690 Q938 650 975 690"/>
+
+  <line class="gap" x1="1178" y1="815" x2="1250" y2="815"/>
+  <path class="door" d="M1178 815 Q1214 775 1250 815"/>
+
+  <line class="gap" x1="1090" y1="280" x2="1160" y2="280"/>
+  <path class="door" d="M1090 280 Q1125 320 1160 280"/>
+
+  <!-- Required exterior security note, kept as a map label only. -->
+  <text class="small" x="180" y="450">WEST WALL CAMERAS COVER</text>
+  <text class="small" x="180" y="468">SECONDARY DOOR + ALLEY LADDER</text>
+
+  <rect x="845" y="910" width="555" height="120" fill="#fff" stroke="#111" stroke-width="4"/>
+  <text class="title" x="875" y="955">CASCADE AUDIO STORAGE</text>
+  <line x1="845" y1="972" x2="1400" y2="972" stroke="#111" stroke-width="3"/>
+  <text class="subtitle" x="865" y="998">FLOOR 1 LOCKED BASE</text>
+  <text class="subtitle" x="1140" y="998">OWNER: MARCUS VAIL</text>
+</svg>

@@ -1,0 +1,246 @@
+```text
+============================================================
+SMALL STAT BLOCK STANDARD — SHADOWRUN 3E
+============================================================
+
+PURPOSE
+------------------------------------------------------------
+Create fast-reference NPCs for:
+
+- Combat
+- Social scenes
+- Random encounters
+- Backup enemies
+- Contacts
+- Security forces
+- Gang members
+
+Avoid full dossier format unless needed.
+
+============================================================
+DESIGN PHILOSOPHY
+============================================================
+
+KEEP ONLY:
+------------------------------------------------------------
+- Combat-relevant data
+- Role identity
+- Initiative
+- Key skills
+- Weapons
+- Armor
+- Threat level
+
+REMOVE:
+------------------------------------------------------------
+- Full gear inventories
+- Lifestyle
+- Extensive backstory
+- Long skill lists
+- Full cyberware breakdowns
+- Detailed contacts
+- Narrative prose
+
+============================================================
+RECOMMENDED FORMAT
+============================================================
+
+NAME
+------------------------------------------------------------
+- Name
+- Archetype
+- Threat level
+
+CORE STATS
+------------------------------------------------------------
+B Q S C I W
+Reaction / Initiative
+
+COMBAT
+------------------------------------------------------------
+- Primary weapon
+- Damage
+- Armor
+- Combat pool
+
+KEY SKILLS
+------------------------------------------------------------
+ONLY:
+- 3–6 relevant skills
+
+SPECIAL
+------------------------------------------------------------
+ONLY if important:
+- Cyberware
+- Magic
+- Rigging
+- Unique gear
+
+TACTICS
+------------------------------------------------------------
+1–3 lines maximum
+
+============================================================
+SIZE TARGETS
+============================================================
+
+MINION FORMAT
+------------------------------------------------------------
+3–8 lines
+
+STANDARD NPC
+------------------------------------------------------------
+10–20 lines
+
+ELITE / RECURRING
+------------------------------------------------------------
+20–35 lines
+
+FULL DOSSIER
+------------------------------------------------------------
+Only for:
+- PCs
+- Major NPCs
+- Recurring villains
+- Deep contacts
+
+============================================================
+EXAMPLE — MINIMAL
+============================================================
+
+NAME: Grinder
+TYPE: Orc Rigger
+THREAT: Moderate
+
+B5 Q5 S4 C2 I6 W5
+Reaction 8
+Init 8+2D6 / Rigged 10+3D6
+
+SKILLS
+- Car 6
+- Drone Gunnery 5
+- Electronics 4
+- SMG 4
+
+ARMOR
+- Armored Jacket 5/3
+
+WEAPONS
+- Ingram Smartgun X (7M BF/FA)
+
+SPECIAL
+- VCR-2
+- Bulldog Van nearby
+- Rotodrone support
+
+TACTICS
+- Avoids direct fights
+- Uses drones first
+- Retreats if cornered
+
+============================================================
+FAST GANG MEMBER FORMAT
+============================================================
+
+RED HAMMER ENFORCER
+------------------------------------------------------------
+B4 Q4 S4 C2 I3 W3
+Init 6+1D6
+Armor 4/2
+
+SKILLS
+- SMG 4
+- Clubs 3
+- Intimidation 3
+
+WEAPON
+- AK-97 (8M FA)
+
+TACTICS
+- Push aggressively
+- Works in groups
+
+============================================================
+FAST CORPORATE FORMAT
+============================================================
+
+KESTREL OPERATOR
+------------------------------------------------------------
+B4 Q5 S4 C3 I5 W4
+Init 8+2D6
+Armor 5/3
+
+SKILLS
+- Assault Rifles 5
+- Stealth 4
+- Athletics 3
+
+WEAPONS
+- HK-227 (8M BF)
+- Flashbangs
+
+SPECIAL
+- Smartlink
+- Tactical comms
+
+TACTICS
+- Coordinated movement
+- Controlled fire
+- Falls back strategically
+
+============================================================
+OPTIONAL ULTRA-LIGHT FORMAT
+============================================================
+
+FORMAT
+------------------------------------------------------------
+[NAME] [ROLE]
+
+B/Q/S/C/I/W
+Init
+Armor
+
+Weapon
+Top Skills
+
+Example:
+------------------------------------------------------------
+Burnout Gunner
+
+3/4/3/2/3/3
+5+1D6
+3/1
+
+SMG 4
+Bike 3
+Clubs 2
+
+============================================================
+RECOMMENDED CAMPAIGN STANDARD
+============================================================
+
+USE:
+------------------------------------------------------------
+- Ultra-light for mooks
+- Standard small block for normal NPCs
+- Full dossier only for major characters
+
+RESULT
+------------------------------------------------------------
+- Faster prep
+- Faster combat
+- Easier printing
+- Cleaner notes
+- Better encounter management
+
+============================================================
+
+REFERENCES
+------------------------------------------------------------
+- SR3 attribute and initiative structure :contentReference[oaicite:0]{index=0}
+- Rigger initiative and VCR rules :contentReference[oaicite:1]{index=1}
+- Quick-resolution and GM utility concepts :contentReference[oaicite:2]{index=2}
+- Project formatting standards :contentReference[oaicite:3]{index=3}
+
+============================================================
+```

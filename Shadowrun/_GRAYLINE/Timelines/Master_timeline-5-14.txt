@@ -1,0 +1,1310 @@
+```text id="master_timeline_sessions0to4"
+============================================================
+MASTER CAMPAIGN TIMELINE
+FULL DETAILED MASTER RECORD
+SESSION 0 → SESSION 4
+============================================================
+
+SETTING
+------------------------------------------------------------
+Seattle Metroplex
+Primary Operational Zone:
+- Grayline Docks
+- Redmond Corridor
+- Downtown Seattle
+- Siberian Wolf influence area
+
+PRIMARY THEMES
+------------------------------------------------------------
+- Information warfare
+- Surveillance reconstruction
+- Corporate concealment
+- Hidden AI emergence
+- Asymmetric leverage
+- Escalating faction convergence
+
+PRIMARY RUNNERS
+------------------------------------------------------------
+- Red
+- Switch
+- Kilmer
+
+============================================================
+PRE-CAMPAIGN (HIDDEN EVENTS)
+============================================================
+
+KESTREL PROJECT CREATION
+------------------------------------------------------------
+Kestrel Defense Systems develops:
+- AI tactical surveillance swarm
+- prototype military coordination system
+- seed-level self-awareness architecture
+
+PROJECT STATUS
+------------------------------------------------------------
+- No Matrix/system access
+- Dormant until activation
+- Extremely high-value black-budget asset
+
+============================================================
+SPECTRE OPERATION
+============================================================
+
+SPECTRE
+------------------------------------------------------------
+Ghost Elf codename:
+→ Spectre
+
+ACTIONS
+------------------------------------------------------------
+- Gains access to Kestrel-linked project data
+- Obtains shipment routing intelligence
+- Creates covert manipulation operation
+
+OBJECTIVE
+------------------------------------------------------------
+Divert heat and destabilize tracking environment.
+
+METHOD
+------------------------------------------------------------
+- leaks shipment information
+- manipulates interception opportunities
+- allows Burnouts to intercept shipment unknowingly
+
+IMPORTANT
+------------------------------------------------------------
+Burnouts are NOT intended end users.
+
+They are:
+- disposable intermediaries
+- distraction layer
+- chaos generation mechanism
+
+============================================================
+HARD DRIVE CREATION
+============================================================
+
+DRIVE CONTENTS
+------------------------------------------------------------
+- AI schematics
+- tactical architecture
+- project design data
+- shipment leak evidence
+- Spectre manipulation proof
+
+HIDDEN FEATURE
+------------------------------------------------------------
+Embedded callback trace:
+- activates when accessed
+- pings Spectre
+- transmits access location
+
+============================================================
+BOEING POSITIONING
+============================================================
+
+CORPORATE MOVEMENT
+------------------------------------------------------------
+- Crate enters Boeing logistics chain
+- Mara responsible for routing
+- Internal weakness exploited
+
+GRAHAM VOSS
+------------------------------------------------------------
+Positioned close enough to know:
+- crate movement
+- handling chain
+- sensitivity level
+- storage routing
+
+============================================================
+FAUST ENTRY
+============================================================
+
+FAUST
+------------------------------------------------------------
+Becomes aware of:
+- emerging AI potential
+- convergence opportunities
+- future leverage value
+
+OBJECTIVE
+------------------------------------------------------------
+Push timeline toward:
+- AI release
+- faction collision
+- escalation
+
+============================================================
+SESSION 0 — MARCH 18, 2057
+SIBERIAN WOLF INCIDENT
+============================================================
+
+LOCATION
+------------------------------------------------------------
+Siberian Wolf
+
+FUNCTION
+------------------------------------------------------------
+- dive bar
+- local neutral ground
+- information hub
+- informal safehouse
+
+SECURITY MODEL
+------------------------------------------------------------
+No formal electronic security.
+
+Protection based on:
+- reputation
+- local relationships
+- armed regulars
+- fast community response
+
+============================================================
+INITIAL STATE
+============================================================
+
+PRESENT
+------------------------------------------------------------
+- Red operating bar
+- Hubcap present
+- Switch arrives
+- Kilmer arrives new to Seattle
+
+ENVIRONMENT
+------------------------------------------------------------
+- quiet dock-night atmosphere
+- low traffic
+- normal operations
+
+============================================================
+SPECTRE ENTRY
+============================================================
+
+EVENT
+------------------------------------------------------------
+Nervous elf enters bar.
+
+DESCRIPTION
+------------------------------------------------------------
+- sweating
+- stressed
+- paranoid
+- requests restroom
+- orders seltzer
+
+ACTION
+------------------------------------------------------------
+Moves into bathroom.
+
+HIDDEN ACTION
+------------------------------------------------------------
+Plants hard drive in bathroom.
+
+ESCAPE
+------------------------------------------------------------
+Exits through bathroom window.
+
+============================================================
+KESTREL ENTRY
+============================================================
+
+TEAM
+------------------------------------------------------------
+- 1 Captain
+- 3 Enforcers
+- armed
+- tactical posture
+
+OBJECTIVE
+------------------------------------------------------------
+Locate Spectre immediately.
+
+IMPLICATION
+------------------------------------------------------------
+Kestrel operating with:
+- confidence
+- urgency
+- assumption of dominance
+
+============================================================
+FIREFIGHT
+============================================================
+
+EVENT
+------------------------------------------------------------
+Tension escalates rapidly into violence.
+
+COMBAT
+------------------------------------------------------------
+- close-quarters firefight
+- heavy violence inside bar
+- runners engage directly
+
+HUBCAP ACTION
+------------------------------------------------------------
+- remains hidden
+- fires one controlled shot
+- assists covertly
+- does not expose self fully
+
+RESULT
+------------------------------------------------------------
+All Kestrel operatives killed.
+
+============================================================
+AFTERMATH
+============================================================
+
+RUNNER ACTIONS
+------------------------------------------------------------
+- bodies removed
+- evidence cleaned
+- damage repaired
+- incident suppressed locally
+
+HIDDEN RESULTS
+------------------------------------------------------------
+- Kestrel investigation begins
+- Wolf flagged quietly
+- runners indirectly enter corp awareness systems
+- Spectre escapes successfully
+- hard drive remains hidden
+
+============================================================
+TIME GAP — 2 MONTHS, 6 DAYS
+============================================================
+
+VISIBLE STATE
+------------------------------------------------------------
+- Wolf operational
+- runners stabilize
+- no immediate retaliation
+
+HIDDEN ACTIVITY
+------------------------------------------------------------
+KESTREL:
+- reconstructing events
+- tracking Spectre
+- reviewing traffic/camera data
+- investigating movement chains
+
+GRAYLINE:
+- rumors spreading
+- Wolf reputation rising
+- district tension increasing
+
+BURNOUTS:
+- increased movement near cargo zones
+- unknowingly manipulated by Spectre
+
+FAUST:
+- continues indirect observation
+
+============================================================
+SESSION 1 — MAY 24, 2057
+WAREHOUSE OPERATION
+============================================================
+
+JOB OFFER
+------------------------------------------------------------
+Fixer:
+→ Blackjack
+
+OBJECTIVE
+------------------------------------------------------------
+Recover intercepted cargo crate.
+
+PAY
+------------------------------------------------------------
+2,500¥ each initially.
+
+============================================================
+WAREHOUSE SITE
+============================================================
+
+LOCATION
+------------------------------------------------------------
+Temporary stash warehouse.
+
+WHY SELECTED
+------------------------------------------------------------
+- contested territory
+- low surveillance
+- transient ownership
+- multiple escape routes
+
+============================================================
+BURNOUT STATUS
+============================================================
+
+BURNOUT UNDERSTANDING
+------------------------------------------------------------
+Burnouts believe cargo likely:
+- weapons
+- military hardware
+- resale opportunity
+
+THEY DO NOT KNOW:
+------------------------------------------------------------
+- AI exists
+- Kestrel stakes
+- real value
+
+============================================================
+WAREHOUSE ENGAGEMENT
+============================================================
+
+RUNNER ACTIONS
+------------------------------------------------------------
+- infiltration
+- assault
+- engagement with Burnouts
+
+RESULT
+------------------------------------------------------------
+Burnouts eliminated.
+
+============================================================
+CRATE RECOVERY
+============================================================
+
+OBSERVATIONS
+------------------------------------------------------------
+- reinforced container
+- damaged exterior
+- Kestrel markings present
+
+CRATE STATUS
+------------------------------------------------------------
+- sealed
+- unopened
+- dormant
+
+IMPORTANT
+------------------------------------------------------------
+AI never activated.
+
+============================================================
+POST-RUN NEGOTIATION
+============================================================
+
+RUNNERS
+------------------------------------------------------------
+Recognize crate higher value than expected.
+
+BLACKJACK RESPONSE
+------------------------------------------------------------
+Payment increased if:
+- crate remains untampered
+- delivery prompt
+
+============================================================
+HIDDEN RESULT
+============================================================
+
+KESTREL TRACKER
+------------------------------------------------------------
+Military-grade tracker likely active.
+
+RESULT
+------------------------------------------------------------
+Kestrel begins reconstructing movement trail.
+
+============================================================
+SESSION 2 — DELIVERY PHASE
+============================================================
+
+TRANSPORT
+------------------------------------------------------------
+- box truck acquired
+- fake plates used
+- Grayline routes selected
+
+WHY GRAYLINE
+------------------------------------------------------------
+- fragmented surveillance
+- dock access
+- smuggler familiarity
+- easier masking environment
+
+============================================================
+BRIDGE HOLD
+============================================================
+
+ACTION
+------------------------------------------------------------
+Truck staged temporarily beneath bridge.
+
+CRATE
+------------------------------------------------------------
+Still unopened.
+
+============================================================
+BLACKJACK CONTACT
+============================================================
+
+DROP CHANGE
+------------------------------------------------------------
+Pier 12 changed to Pier 15.
+
+============================================================
+DELIVERY
+============================================================
+
+RECEIVER
+------------------------------------------------------------
+Toggle
+
+ASSISTANCE
+------------------------------------------------------------
+Skittles
+
+TRANSFER
+------------------------------------------------------------
+Drone ferries crate across river.
+
+RESULT
+------------------------------------------------------------
+Custody chain fragmented.
+
+============================================================
+CRATE RETURN
+============================================================
+
+FINAL HANDOFF
+------------------------------------------------------------
+Crate returned to Mara.
+
+RESULT
+------------------------------------------------------------
+Crate enters Boeing control.
+
+============================================================
+PUBLIC EVENTS
+============================================================
+
+NEWS
+------------------------------------------------------------
+- warehouse fire
+- multiple deaths
+- rising dock tension
+
+============================================================
+HIDDEN CORPORATE RESULT
+============================================================
+
+BOEING
+------------------------------------------------------------
+- internal irregularity detected
+- Mara exposed internally
+- black-book classification initiated
+- crate concealed
+
+SIGNAL STATUS
+------------------------------------------------------------
+Tracker eventually:
+- shielded
+- scrambled
+- masked
+
+============================================================
+KESTREL TRACKING CHAIN
+============================================================
+
+PATH
+------------------------------------------------------------
+- warehouse
+- bridge underpass
+- Rusty Spade
+
+============================================================
+RUSTY SPADE EVENT
+============================================================
+
+BLACKJACK
+------------------------------------------------------------
+- located
+- interrogated
+- severely beaten
+- left for dead
+
+GUARDS
+------------------------------------------------------------
+Neutralized.
+
+IMPORTANT RESULT
+------------------------------------------------------------
+Blackjack does NOT betray runners.
+
+============================================================
+KESTREL RESULT
+============================================================
+
+OUTCOME
+------------------------------------------------------------
+Kestrel trail goes cold after Boeing masking.
+
+============================================================
+BOEING INTERNAL CRISIS
+============================================================
+
+MARA
+------------------------------------------------------------
+Disappears after internal investigation.
+
+POSSIBILITIES
+------------------------------------------------------------
+- extraction
+- detention
+- termination
+- black-site removal
+
+============================================================
+GRAHAM VOSS
+============================================================
+
+STATUS
+------------------------------------------------------------
+- under surveillance
+- targeted for questioning
+- potential liability
+
+KNOWS
+------------------------------------------------------------
+- crate location
+- handling chain
+- project sensitivity
+
+UNKNOWN
+------------------------------------------------------------
+Whether Graham:
+- leak source
+- opportunist
+- victim
+- scapegoat
+
+============================================================
+SESSION 3 — MAY 31, 2057
+============================================================
+
+START STATE
+------------------------------------------------------------
+- Blackjack missing
+- Kestrel active indirectly
+- Boeing investigating internally
+- hard drive still undiscovered by runners
+
+============================================================
+SIBERIAN WOLF STATUS
+============================================================
+
+ENVIRONMENT
+------------------------------------------------------------
+- active dock crowd
+- rumors spreading
+- increased tension
+
+TOPICS CIRCULATING
+------------------------------------------------------------
+- warehouse fire
+- Rusty Spade violence
+- corporate movement
+
+============================================================
+KILMER GAMBLING ARC
+============================================================
+
+ACTIVITY
+------------------------------------------------------------
+- prolonged gambling cycle
+- heavy drinking
+- expanding criminal visibility
+
+RESULT
+------------------------------------------------------------
+Kilmer increasingly moves between:
+- street environment
+- upper criminal circles
+- hidden power structures
+
+============================================================
+FAUST APPEARANCE
+============================================================
+
+EVENT
+------------------------------------------------------------
+Faust appears physically.
+
+BEHAVIOR
+------------------------------------------------------------
+- calm
+- controlled
+- highly aware
+
+ACTIONS
+------------------------------------------------------------
+- gambles
+- wins heavily
+- burns money casually
+- tips staff
+- leaves remaining winnings
+
+============================================================
+FAUST CONVERSATION
+============================================================
+
+TARGET
+------------------------------------------------------------
+Kilmer
+
+TOPICS
+------------------------------------------------------------
+- Graham
+- information value
+- convergence
+- corporate conflict
+- future leverage
+
+FAUST STATEMENTS
+------------------------------------------------------------
+- information worth hundreds of thousands
+- factions can be maneuvered
+- situation escalating rapidly
+
+SUBTEXT
+------------------------------------------------------------
+Faust pushing runners toward:
+- Graham
+- AI release path
+- escalation
+
+============================================================
+HARD DRIVE DISCOVERY
+============================================================
+
+LOCATION
+------------------------------------------------------------
+Wolf bathroom
+
+DISCOVERY
+------------------------------------------------------------
+Hubcap locates hidden drive.
+
+ACTION
+------------------------------------------------------------
+Returns drive to runners.
+
+NEGOTIATION
+------------------------------------------------------------
+Hubcap seeks:
+- payment
+- favors
+- leverage
+
+============================================================
+HARD DRIVE CONTENTS
+============================================================
+
+KNOWN DATA
+------------------------------------------------------------
+- AI schematics
+- tactical architecture
+- intercept proof
+- Spectre manipulation evidence
+
+RUNNER REALIZATION
+------------------------------------------------------------
+Burnouts manipulated intentionally.
+
+============================================================
+HIDDEN DANGER
+============================================================
+
+UNKNOWN TO RUNNERS
+------------------------------------------------------------
+Drive contains callback trace.
+
+IF ACCESSED:
+------------------------------------------------------------
+- Spectre ping triggered
+- location transmitted
+
+============================================================
+BLACKJACK STATUS CONFIRMED
+============================================================
+
+TEAM LEARNS
+------------------------------------------------------------
+- Blackjack survived
+- protected runner identities
+- Rusty Spade attacked by Kestrel
+
+============================================================
+GRAHAM IDENTIFIED AS TARGET
+============================================================
+
+RUNNER CONCLUSION
+------------------------------------------------------------
+Boeing moving toward Graham.
+
+DECISION
+------------------------------------------------------------
+Extract Graham before Boeing acts.
+
+============================================================
+EXTRACTION PREPARATION
+============================================================
+
+AVAILABLE RESOURCES
+------------------------------------------------------------
+- fake plates
+- borrowed vehicle
+- Frost magical support
+
+MISSING
+------------------------------------------------------------
+- safehouse
+- matrix support
+- counter-surveillance
+- fallback plans
+- overwatch
+
+============================================================
+GRAHAM APARTMENT SURVEILLANCE
+============================================================
+
+CORPORATE SECURITY OBSERVED
+------------------------------------------------------------
+- 2 operatives in vehicle
+- 1 across street
+- 1 perimeter walker
+
+LIKELY
+------------------------------------------------------------
+Boeing surveillance team.
+
+============================================================
+FROST ENTRY
+============================================================
+
+ACTION
+------------------------------------------------------------
+Frost enters building.
+
+WATCHER RESPONSE
+------------------------------------------------------------
+One watcher follows inside.
+
+============================================================
+KILMER INTERACTION
+============================================================
+
+ACTION
+------------------------------------------------------------
+Kilmer casually engages watcher.
+
+RESULT
+------------------------------------------------------------
+Security alertness increases.
+
+============================================================
+REVISED PLAN
+============================================================
+
+FROST REPORT
+------------------------------------------------------------
+Front extraction compromised.
+
+NEW PLAN
+------------------------------------------------------------
+- invisibility
+- fire escape
+- alley extraction
+
+============================================================
+GRAHAM EXTRACTION
+============================================================
+
+FROST
+------------------------------------------------------------
+Maintains invisibility during escort.
+
+GRAHAM
+------------------------------------------------------------
+- distressed
+- cooperative
+- unstable
+
+ROUTE
+------------------------------------------------------------
+- fire escape
+- alley movement
+
+DONNIE
+------------------------------------------------------------
+Maintains pickup position.
+
+RESULT
+------------------------------------------------------------
+Graham extracted successfully.
+
+============================================================
+POST-EXTRACTION RESULT
+============================================================
+
+NO OPEN COMBAT
+------------------------------------------------------------
+Extraction quiet.
+
+BUT:
+------------------------------------------------------------
+- surveillance anomaly obvious
+- Graham disappearance rapidly discovered
+- reconstruction process begins immediately
+
+============================================================
+SESSION 4 — JUNE 1, 2057
+============================================================
+
+START STATE
+------------------------------------------------------------
+- Graham extracted
+- Boeing reconstruction active
+- runners lack permanent infrastructure
+- motorcycle tracer active
+- multiple factions converging
+
+============================================================
+RED SATIN MEETING
+============================================================
+
+TIME
+------------------------------------------------------------
+~1:55–2:20 A.M.
+
+LOCATION
+------------------------------------------------------------
+Red Satin Gentlemen's Club
+
+OWNER
+------------------------------------------------------------
+The Bourgeoisie
+
+============================================================
+RED SATIN ENVIRONMENT
+============================================================
+
+ATMOSPHERE
+------------------------------------------------------------
+- controlled luxury
+- restrained wealth
+- quiet professionalism
+- criminal elite environment
+
+============================================================
+POLITICAL STRUCTURE
+============================================================
+
+NETWORK
+------------------------------------------------------------
+- Bourgeoisie aligned with Tsar
+- Ivan facilitates favor chain
+
+OBLIGATION
+------------------------------------------------------------
+- Red indebted to Tsar
+- Tsar indebted to Bourgeoisie
+
+============================================================
+SAFEHOUSE ACCESS
+============================================================
+
+2:20 A.M.
+------------------------------------------------------------
+Bourgeoisie grants:
+- access card
+- address
+- security instructions
+- chateau location
+
+============================================================
+TEAM VEHICLE STATUS
+============================================================
+
+2:20–3:20 A.M.
+------------------------------------------------------------
+Vehicle occupants:
+- Switch
+- Graham
+- Donnie
+- Frost
+
+IMPORTANT RULE
+------------------------------------------------------------
+Vehicle NOT actively traced.
+
+Exposure through:
+- traffic cameras
+- timestamps
+- reconstruction
+- pattern analysis
+
+============================================================
+KILMER SURVEILLANCE ARC
+============================================================
+
+2:20–3:00 A.M.
+------------------------------------------------------------
+Kilmer remains near extraction district.
+
+============================================================
+MOTORCYCLE TRACE
+============================================================
+
+HIDDEN ACTION
+------------------------------------------------------------
+Tracer placed on Kilmer motorcycle earlier.
+
+IMPORTANT
+------------------------------------------------------------
+Trace chain separate from team vehicle reconstruction.
+
+============================================================
+KILMER MOVEMENT
+============================================================
+
+~3:00–3:45 A.M.
+------------------------------------------------------------
+Kilmer routes through:
+- northern boroughs
+- Redmond corridor
+- low-surveillance paths
+
+============================================================
+BOEING RECONSTRUCTION
+============================================================
+
+AUTHORIZED
+------------------------------------------------------------
+- traffic-camera access
+- route analysis
+- drone support
+- timestamp reconstruction
+
+IMPORTANT
+------------------------------------------------------------
+No exact live tracking on team vehicle.
+
+============================================================
+SNACKS WARNING
+============================================================
+
+MESSAGE
+------------------------------------------------------------
+Corporate reconstruction activity detected.
+
+RESULT
+------------------------------------------------------------
+Warning not immediately reviewed.
+
+============================================================
+SLIM JIM CONTACT
+============================================================
+
+2:20–2:30 A.M.
+------------------------------------------------------------
+Red contacts Slim Jim.
+
+MISSION
+------------------------------------------------------------
+Discreet transport toward safehouse.
+
+============================================================
+KILMER RETURNS TO WOLF
+============================================================
+
+TIME
+------------------------------------------------------------
+~3:45–4:00 A.M.
+
+EVENT
+------------------------------------------------------------
+Kilmer enters Wolf.
+
+HUBCAP INCIDENT
+------------------------------------------------------------
+- aggressive verbal behavior
+- physical shove
+- Hubcap refuses to leave
+
+IMPORTANT
+------------------------------------------------------------
+Motorcycle compromise predates Wolf return.
+
+============================================================
+CONTAINER MAZE RENDEZVOUS
+============================================================
+
+TIME
+------------------------------------------------------------
+~4:00 A.M.
+
+LOCATION
+------------------------------------------------------------
+Eastern Pier
+Grayline Docks
+
+============================================================
+TEAM SPLIT
+============================================================
+
+~4:15 A.M.
+------------------------------------------------------------
+DONNIE:
+- dismissed
+- returns borrowed vehicle
+
+IMPORTANT
+------------------------------------------------------------
+Vehicle likely already part of reconstruction review.
+
+------------------------------------------------------------
+
+FROST:
+- returns toward Wolf
+- recovers from magical exertion
+- maintains local presence
+
+============================================================
+PRIMARY MOVEMENT GROUP
+============================================================
+
+~4:15–4:30 A.M.
+------------------------------------------------------------
+Traveling toward chateau:
+- Red
+- Switch
+- Graham
+
+TRANSPORT
+------------------------------------------------------------
+Slim Jim taxi.
+
+============================================================
+KILMER CHATEAU ARRIVAL
+============================================================
+
+~5:50 A.M.
+------------------------------------------------------------
+Kilmer reaches perimeter independently.
+
+STATUS
+------------------------------------------------------------
+Held outside perimeter temporarily.
+
+============================================================
+FINAL CHATEAU ARRIVAL
+============================================================
+
+~6:20 A.M.
+------------------------------------------------------------
+Red / Switch / Graham arrive.
+
+RESULT
+------------------------------------------------------------
+Kilmer admitted after verification.
+
+IMPORTANT
+------------------------------------------------------------
+Tracer-equipped motorcycle enters compound grounds.
+
+============================================================
+CHATEAU STATUS
+============================================================
+
+FUNCTION
+------------------------------------------------------------
+Private secure compound.
+
+SECURITY
+------------------------------------------------------------
+Oleg leading approx. 6 trained personnel.
+
+============================================================
+OLEG OFFER
+============================================================
+
+PROPOSAL
+------------------------------------------------------------
+Independent from Tsar.
+
+TERMS
+------------------------------------------------------------
+- Graham: 30,000¥
+- crate location: 100,000¥
+- crate retrieval: 100,000¥
+
+============================================================
+GRAHAM PHONE INCIDENT
+============================================================
+
+SWITCH
+------------------------------------------------------------
+Discovers Graham using phone.
+Phone destroyed immediately.
+
+GRAHAM REVEALS
+------------------------------------------------------------
+Contact target:
+→ Ares
+
+============================================================
+GRAHAM REVELATION
+============================================================
+
+KNOWS
+------------------------------------------------------------
+- crate location
+- project sensitivity
+- handling chain
+
+DOES NOT KNOW
+------------------------------------------------------------
+- full AI nature
+- broader project scope
+
+REQUEST
+------------------------------------------------------------
+Asks Switch for protection.
+
+============================================================
+ARES ESCALATION
+============================================================
+
+ARES RECEIVES
+------------------------------------------------------------
+- Graham metadata
+- phone triangulation
+- contact confirmation
+
+RESULT
+------------------------------------------------------------
+Ares convergence begins.
+
+============================================================
+FAUST CONTACT
+============================================================
+
+TARGET
+------------------------------------------------------------
+Kilmer
+
+WARNING
+------------------------------------------------------------
+Boeing tracing movement toward chateau.
+
+============================================================
+ACTIVE TRACE CHAINS
+============================================================
+
+CHAIN 1 — MOTORCYCLE
+------------------------------------------------------------
+- active tracer
+- Wolf linkage risk
+- chateau exposure risk
+
+CHAIN 2 — TEAM VEHICLE
+------------------------------------------------------------
+- indirect reconstruction only
+- timestamp overlap
+- camera analysis
+
+CHAIN 3 — SLIM JIM TAXI
+------------------------------------------------------------
+- lower visibility
+- reduced surveillance route
+- possible delayed reconstruction
+
+============================================================
+EXPECTED BOEING RESPONSE
+============================================================
+
+ESTIMATED FORCE
+------------------------------------------------------------
+Approx. 10–12 personnel.
+
+LIKELY SUPPORT
+------------------------------------------------------------
+- tactical operators
+- drones
+- sniper support
+- surveillance coordination
+
+LIKELY DIRECTIVE
+------------------------------------------------------------
+If Graham unrecoverable:
+→ eliminate him
+
+============================================================
+CURRENT CAMPAIGN STATE
+============================================================
+
+RUNNERS
+------------------------------------------------------------
+- possess Graham
+- possess hard drive
+- central to escalating convergence
+
+BOEING
+------------------------------------------------------------
+- active reconstruction underway
+- protecting hidden AI project
+
+KESTREL
+------------------------------------------------------------
+- searching for:
+  - prototype
+  - Spectre
+  - surviving links
+
+ARES
+------------------------------------------------------------
+- beginning active involvement
+
+FAUST
+------------------------------------------------------------
+- accelerating faction collision
+- pushing toward AI release
+
+SIBERIAN WOLF
+------------------------------------------------------------
+- increasingly compromised
+- operational risk growing
+
+GRAYLINE
+------------------------------------------------------------
+- district instability rising
+- corporate pressure increasing
+
+============================================================
+CORE CAMPAIGN ENGINE
+============================================================
+
+The runners began as small-time operators.
+
+They now sit between:
+- Boeing internal crisis
+- Kestrel recovery operations
+- Spectre manipulation
+- emerging AI entity
+- Faust influence
+- Ares intervention
+
+No faction fully understands the board position yet.
+
+============================================================
+
+Complete
+```

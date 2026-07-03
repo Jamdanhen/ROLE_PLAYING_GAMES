@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1448" height="1086" viewBox="0 0 1448 1086">
+  <defs>
+    <style>
+      .page{fill:#fbfbfa}
+      .ghost{fill:#f8f8f6;stroke:#c7c7c7;stroke-width:4;stroke-dasharray:14 8}
+      .deck{fill:#fff;stroke:#111;stroke-width:6;stroke-linejoin:miter}
+      .deckedge{fill:none;stroke:#111;stroke-width:6;stroke-linejoin:miter}
+      .hall{fill:#f4f4f4;stroke:#111;stroke-width:5}
+      .secure{fill:#fff;stroke:#111;stroke-width:6;stroke-dasharray:12 7}
+      .void{fill:#f7f7f7;stroke:#111;stroke-width:4;stroke-dasharray:10 7}
+      .rail{stroke:#111;stroke-width:4;fill:none;stroke-dasharray:6 6}
+      .scaffold{fill:#fff;stroke:#111;stroke-width:5;stroke-dasharray:12 6;stroke-linejoin:miter}
+      .bearing{stroke:#111;stroke-width:8;fill:none;stroke-linecap:square}
+      .unit{fill:#fff;stroke:#111;stroke-width:3}
+      .door{stroke:#111;stroke-width:4;fill:none}
+      .gap{stroke:#fff;stroke-width:12;stroke-linecap:square}
+      .label{font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:900;fill:#111;text-anchor:middle}
+      .small{font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:800;fill:#111;text-anchor:middle}
+      .title{font-family:Arial,Helvetica,sans-serif;font-size:36px;font-weight:900;fill:#111}
+      .subtitle{font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:800;fill:#111}
+    </style>
+  </defs>
+
+  <rect class="page" width="1448" height="1086"/>
+
+  <!-- Floor 1 footprint ghosted for alignment only. Floor 2 is not a full duplicate building floor. -->
+  <path class="ghost" d="M285 80 L805 80 L805 112 L985 112 L985 80 L1210 80 L1210 690 L1268 690 L1268 815 L795 815 L795 745 L715 745 L715 930 L465 930 L465 745 L285 745 L285 610 L205 610 L205 475 L285 475 Z"/>
+
+  <!-- Accessible upstairs storage deck. South wall is the border of the upstairs accessible area. -->
+  <path class="deck" d="M285 80 L1210 80 L1210 475 L285 475 Z"/>
+  <path class="deckedge" d="M985 80 L1210 80 L1210 475 L985 475"/>
+  <rect class="unit" x="1010" y="110" width="75" height="70"/>
+  <rect class="unit" x="1090" y="110" width="75" height="70"/>
+  <rect class="unit" x="1010" y="190" width="75" height="70"/>
+  <rect class="unit" x="1090" y="190" width="75" height="70"/>
+  <rect class="unit" x="1010" y="270" width="75" height="70"/>
+  <rect class="unit" x="1090" y="270" width="75" height="70"/>
+  <rect class="unit" x="1010" y="350" width="75" height="70"/>
+  <rect class="unit" x="1090" y="350" width="75" height="70"/>
+
+  <rect class="unit" x="835" y="110" width="75" height="90"/>
+  <rect class="unit" x="910" y="110" width="75" height="90"/>
+  <rect class="unit" x="510" y="110" width="75" height="90"/>
+  <rect class="unit" x="585" y="110" width="75" height="90"/>
+
+  <rect class="unit" x="315" y="110" width="75" height="80"/>
+  <rect class="unit" x="395" y="110" width="75" height="80"/>
+  <rect class="unit" x="315" y="220" width="75" height="80"/>
+  <rect class="unit" x="395" y="220" width="75" height="80"/>
+  <rect class="unit" x="315" y="330" width="75" height="80"/>
+  <rect class="unit" x="395" y="330" width="75" height="80"/>
+
+  <rect class="secure" x="680" y="80" width="115" height="125"/>
+
+  <!-- Second-floor scaffold landing: elevator south side opens onto this squared U platform. -->
+  <path class="scaffold" d="M595 205 L985 205 L985 475 L900 475 L900 295 L680 295 L680 475 L595 475 Z"/>
+  <line class="bearing" x1="285" y1="475" x2="1210" y2="475"/>
+
+  <rect class="void" x="795" y="475" width="415" height="215"/>
+
+  <rect class="void" x="795" y="690" width="473" height="125"/>
+
+  <path class="rail" d="M795 475 L1210 475 L1210 690 L795 690 Z"/>
+</svg>
