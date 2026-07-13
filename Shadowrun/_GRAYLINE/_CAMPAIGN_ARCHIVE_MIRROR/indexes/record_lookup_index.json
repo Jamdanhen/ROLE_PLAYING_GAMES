@@ -1,0 +1,2707 @@
+{
+  "schema_version": "registry_record_index.v1",
+  "generated_at": "2026-07-08T03:00:53.1584884Z",
+  "count": 450,
+  "records": [
+    {
+      "id": "cal-ses-000",
+      "title": "Session 000 - Siberian Wolf Incident",
+      "source_file": "records\\authority\\calendar_event_record.authority.records.json",
+      "record_type": "calendar_event_record"
+    },
+    {
+      "id": "cal-ses-001",
+      "title": "Session 001 - Double Down",
+      "source_file": "records\\authority\\calendar_event_record.authority.records.json",
+      "record_type": "calendar_event_record"
+    },
+    {
+      "id": "cal-ses-002",
+      "title": "Session 002 - Crate Delivery And Gray Line Pressure",
+      "source_file": "records\\authority\\calendar_event_record.authority.records.json",
+      "record_type": "calendar_event_record"
+    },
+    {
+      "id": "cal-ses-003",
+      "title": "Session 003 - Graham Extraction And Hard Drive Recovery",
+      "source_file": "records\\authority\\calendar_event_record.authority.records.json",
+      "record_type": "calendar_event_record"
+    },
+    {
+      "id": "cal-ses-004",
+      "title": "Session 004 - Consolidated Session 4",
+      "source_file": "records\\authority\\calendar_event_record.authority.records.json",
+      "record_type": "calendar_event_record"
+    },
+    {
+      "id": "cal-ses-005",
+      "title": "Session 005 - Corporate Surveillance And Street Fallout",
+      "source_file": "records\\authority\\calendar_event_record.authority.records.json",
+      "record_type": "calendar_event_record"
+    },
+    {
+      "id": "ent-homeless-witness",
+      "title": "Homeless Witness",
+      "source_file": "records\\authority\\entity_record.authority.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-kevin-drass",
+      "title": "Kevin Drass",
+      "source_file": "records\\authority\\entity_record.authority.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-slim-jim",
+      "title": "Slim Jim",
+      "source_file": "records\\authority\\entity_record.authority.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-dr-samuel-wong",
+      "title": "Dr. Samuel Wong",
+      "source_file": "records\\authority\\entity_record.authority.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-tiny",
+      "title": "Tiny",
+      "source_file": "records\\authority\\entity_record.authority.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-velvet-jones",
+      "title": "Velvet Jones",
+      "source_file": "records\\authority\\entity_record.authority.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "fact-entity-spectre-phase1-review-readiness",
+      "title": "Spectre Phase 1 dossier readiness fact",
+      "source_file": "records\\authority\\fact_record.authority.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-homeless-witness-phase1-review-readiness",
+      "title": "Homeless Witness Phase 1 dossier readiness fact",
+      "source_file": "records\\authority\\fact_record.authority.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s003-reward-karma-unknown-working",
+      "title": "Session 003 karma award",
+      "source_file": "records\\authority\\fact_record.authority.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-slim-jim-phase1-review-readiness",
+      "title": "Slim Jim Phase 1 dossier readiness fact",
+      "source_file": "records\\authority\\fact_record.authority.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s004-reward-karma-unknown-working",
+      "title": "Session 004 karma award",
+      "source_file": "records\\authority\\fact_record.authority.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-dr-samuel-wong-phase1-review-readiness",
+      "title": "Dr. Samuel Wong Phase 1 dossier readiness fact",
+      "source_file": "records\\authority\\fact_record.authority.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-razor-phase1-review-readiness",
+      "title": "Razor Phase 1 dossier readiness fact",
+      "source_file": "records\\authority\\fact_record.authority.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-relationship-switch-snacks-phase1-review-readiness",
+      "title": "Switch / Snacks formal contact readiness fact",
+      "source_file": "records\\authority\\fact_record.authority.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-blackjack-recovery",
+      "title": "Blackjack recovery state",
+      "source_file": "records\\authority\\fact_record.authority.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-boeing-boundary",
+      "title": "Boeing pressure boundary",
+      "source_file": "records\\authority\\fact_record.authority.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-chinese-riverboat-lead",
+      "title": "Chinese riverboat cargo lead",
+      "source_file": "records\\authority\\fact_record.authority.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-ellis-freight-cover",
+      "title": "Ellis false freight cover",
+      "source_file": "records\\authority\\fact_record.authority.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-graham-sold-ares",
+      "title": "Graham sold to Ares",
+      "source_file": "records\\authority\\fact_record.authority.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-hard-drive-handshake-activated",
+      "title": "Session 006 hard-drive/cradle handshake activated-system fact",
+      "source_file": "records\\authority\\fact_record.authority.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-mouse-triad-office",
+      "title": "Mouse Triad office state",
+      "source_file": "records\\authority\\fact_record.authority.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-reward-asset-suv-contact-working",
+      "title": "Session 006 SUV asset reward",
+      "source_file": "records\\authority\\fact_record.authority.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-reward-cash-kilmer-working",
+      "title": "Session 006 reward working record - Kilmer cash",
+      "source_file": "records\\authority\\fact_record.authority.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-reward-cash-switch-working",
+      "title": "Session 006 reward working record - Switch cash",
+      "source_file": "records\\authority\\fact_record.authority.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-reward-cash-the-chin-working",
+      "title": "Session 006 reward working record - The Chin cash",
+      "source_file": "records\\authority\\fact_record.authority.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-velvet-future-job-hook",
+      "title": "Velvet future job hook",
+      "source_file": "records\\authority\\fact_record.authority.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fac-burnouts",
+      "title": "Burnouts",
+      "source_file": "records\\authority\\faction_record.authority.records.json",
+      "record_type": "faction_record"
+    },
+    {
+      "id": "fac-siberian-wolf-regulars",
+      "title": "Siberian Wolf Regulars",
+      "source_file": "records\\authority\\faction_record.authority.records.json",
+      "record_type": "faction_record"
+    },
+    {
+      "id": "loc-pier-12-pier-15",
+      "title": "Pier 12 / Pier 15",
+      "source_file": "records\\authority\\location_record.authority.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-container-maze-eastern-pier",
+      "title": "Container Maze / Eastern Pier",
+      "source_file": "records\\authority\\location_record.authority.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-red-satin-gentlemen-s-club",
+      "title": "Red Satin Gentlemen's Club",
+      "source_file": "records\\authority\\location_record.authority.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-oldsmobile-2035-scene",
+      "title": "Oldsmobile 2035 Scene",
+      "source_file": "records\\authority\\location_record.authority.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-seattle-outskirts-suburban-roads",
+      "title": "Seattle Outskirts / Suburban Roads",
+      "source_file": "records\\authority\\location_record.authority.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-telecom-kiosk-payphone-corner",
+      "title": "Telecom Kiosk / Payphone Corner",
+      "source_file": "records\\authority\\location_record.authority.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-wong-s-meat-market-tacoma-district",
+      "title": "Wong's Meat Market / Tacoma District",
+      "source_file": "records\\authority\\location_record.authority.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-siberian-wolf-office",
+      "title": "Siberian Wolf Office",
+      "source_file": "records\\authority\\location_record.authority.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-the-marrow",
+      "title": "The Marrow",
+      "source_file": "records\\authority\\location_record.authority.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "rel-kevin-drass-the-chin-contact",
+      "title": "Kevin Drass is The Chin's fire-response / infrastructure information contact; Firefighter is his secondary role/contact label.",
+      "source_file": "records\\authority\\relationship_record.authority.records.json",
+      "record_type": "relationship_record"
+    },
+    {
+      "id": "rel-velvet-the-chin-session006",
+      "title": "Velvet Jones is The Chin's fixer contact, rating 2/2. The Session 006 future-job hook remains separate job evidence and does not make Velvet a patron.",
+      "source_file": "records\\authority\\relationship_record.authority.records.json",
+      "record_type": "relationship_record"
+    },
+    {
+      "id": "ses-000",
+      "title": "Session 000 - Siberian Wolf Incident",
+      "source_file": "records\\authority\\session_record.authority.records.json",
+      "record_type": "session_record"
+    },
+    {
+      "id": "ses-001",
+      "title": "Session 001 - Double Down",
+      "source_file": "records\\authority\\session_record.authority.records.json",
+      "record_type": "session_record"
+    },
+    {
+      "id": "ses-002",
+      "title": "Session 002 - Crate Delivery And Gray Line Pressure",
+      "source_file": "records\\authority\\session_record.authority.records.json",
+      "record_type": "session_record"
+    },
+    {
+      "id": "ses-003",
+      "title": "Session 003 - Graham Extraction And Hard Drive Recovery",
+      "source_file": "records\\authority\\session_record.authority.records.json",
+      "record_type": "session_record"
+    },
+    {
+      "id": "ses-004",
+      "title": "Session 004 - Consolidated Session 4",
+      "source_file": "records\\authority\\session_record.authority.records.json",
+      "record_type": "session_record"
+    },
+    {
+      "id": "ses-005",
+      "title": "Session 005 - Corporate Surveillance And Street Fallout",
+      "source_file": "records\\authority\\session_record.authority.records.json",
+      "record_type": "session_record"
+    },
+    {
+      "id": "ses-006",
+      "title": "All In",
+      "source_file": "records\\authority\\session_record.authority.records.json",
+      "record_type": "session_record"
+    },
+    {
+      "id": "thr-session006-bourgeoisie-ares-graham-transfer",
+      "title": "Bourgeoisie / Ares Graham Transfer",
+      "source_file": "records\\authority\\thread_record.authority.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-session006-braddock-switch-pressure",
+      "title": "Braddock / Switch Pressure",
+      "source_file": "records\\authority\\thread_record.authority.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-session006-ellis-false-cover",
+      "title": "Ellis False Freight Cover",
+      "source_file": "records\\authority\\thread_record.authority.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-session006-hard-drive-cradle-discovery",
+      "title": "Hard Drive / Cradle / Tracker Discovery",
+      "source_file": "records\\authority\\thread_record.authority.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-session006-mouse-triad-office",
+      "title": "Mouse / Triad Office Pressure",
+      "source_file": "records\\authority\\thread_record.authority.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-session006-velvet-future-job",
+      "title": "Velvet Jones Future Job Hook",
+      "source_file": "records\\authority\\thread_record.authority.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-session006-wolf-poker-night-social-field",
+      "title": "Session 006 Wolf Poker Night Social Field",
+      "source_file": "records\\authority\\thread_record.authority.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": null,
+      "title": "Dictation Support",
+      "source_file": "records\\carry_forward\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Table-Ready / Session-Fact Output Model",
+      "source_file": "records\\carry_forward\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "General Interface Polish",
+      "source_file": "records\\carry_forward\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Reward / Karma / Experience Tracking",
+      "source_file": "records\\carry_forward\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Media / Handout Attachments",
+      "source_file": "records\\carry_forward\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Role Tags / Relationship Status",
+      "source_file": "records\\carry_forward\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Remembered Details Intake",
+      "source_file": "records\\carry_forward\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Template-Driven Agnostic Extraction",
+      "source_file": "records\\carry_forward\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Tacoma Replaces Redmond",
+      "source_file": "records\\carry_forward\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "PC/NPC Classification Failures",
+      "source_file": "records\\carry_forward\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Repository Writes",
+      "source_file": "records\\carry_forward\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Oldsmobile 2035 Retrofit",
+      "source_file": "records\\carry_forward\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Oldsmobile 2035 trunk contents no longer relevant",
+      "source_file": "records\\carry_forward\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Graham Final Fate",
+      "source_file": "records\\carry_forward\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Rusty Spade Final Site Wording",
+      "source_file": "records\\carry_forward\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "SM-0001 Missing Source Attachment",
+      "source_file": "records\\carry_forward\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Tag Review Needed For Non-Superseded Map Materials",
+      "source_file": "records\\carry_forward\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "SM-0003 Supersession Review",
+      "source_file": "records\\carry_forward\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Session 006 Reward Draft Candidates Parked",
+      "source_file": "records\\carry_forward\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Session 007 protected source boundary - removed from Session 006 review",
+      "source_file": "records\\carry_forward\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Graham final fate under Ares auspice remains future hook",
+      "source_file": "records\\carry_forward\\unresolved_item.records.json",
+      "record_type": "unresolved_item"
+    },
+    {
+      "id": null,
+      "title": "Oldsmobile 2035 retrofit",
+      "source_file": "records\\carry_forward\\unresolved_item.records.json",
+      "record_type": "unresolved_item"
+    },
+    {
+      "id": null,
+      "title": "Oldsmobile 2035 trunk contents",
+      "source_file": "records\\carry_forward\\unresolved_item.records.json",
+      "record_type": "unresolved_item"
+    },
+    {
+      "id": null,
+      "title": "Hubcap derived food/fish-sandwich detail",
+      "source_file": "records\\carry_forward\\unresolved_item.records.json",
+      "record_type": "unresolved_item"
+    },
+    {
+      "id": null,
+      "title": "Role tags and relationship/contact status",
+      "source_file": "records\\carry_forward\\unresolved_item.records.json",
+      "record_type": "unresolved_item"
+    },
+    {
+      "id": null,
+      "title": "Session 006 SUV asset and associate lane resolved",
+      "source_file": "records\\carry_forward\\unresolved_item.records.json",
+      "record_type": "unresolved_item"
+    },
+    {
+      "id": null,
+      "title": "Session 003 reward amount and scope",
+      "source_file": "records\\carry_forward\\unresolved_item.records.json",
+      "record_type": "unresolved_item"
+    },
+    {
+      "id": null,
+      "title": "Session 004 reward amount and scope",
+      "source_file": "records\\carry_forward\\unresolved_item.records.json",
+      "record_type": "unresolved_item"
+    },
+    {
+      "id": "cal-ses-001",
+      "title": "Session 001 - Double Down",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "calendar_event_record"
+    },
+    {
+      "id": "ent-homeless-witness",
+      "title": "Homeless Witness",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-kevin-drass",
+      "title": "Kevin Drass",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "fac-burnouts",
+      "title": "Burnouts",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "faction_record"
+    },
+    {
+      "id": "fact-entity-homeless-witness-phase1-review-readiness",
+      "title": "Homeless Witness Phase 1 dossier readiness fact",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "rel-kevin-drass-the-chin-contact",
+      "title": "Kevin Drass is The Chin's fire-response / infrastructure information contact; Firefighter is his secondary role/contact label.",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "relationship_record"
+    },
+    {
+      "id": "ses-001",
+      "title": "Session 001 - Double Down",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "session_record"
+    },
+    {
+      "id": "cal-ses-002",
+      "title": "Session 002 - Crate Delivery And Gray Line Pressure",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "calendar_event_record"
+    },
+    {
+      "id": "loc-pier-12-pier-15",
+      "title": "Pier 12 / Pier 15",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "ses-002",
+      "title": "Session 002 - Crate Delivery And Gray Line Pressure",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "session_record"
+    },
+    {
+      "id": "cal-ses-003",
+      "title": "Session 003 - Graham Extraction And Hard Drive Recovery",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "calendar_event_record"
+    },
+    {
+      "id": "fact-s003-reward-karma-unknown-working",
+      "title": "Session 003 karma award",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "ses-003",
+      "title": "Session 003 - Graham Extraction And Hard Drive Recovery",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "session_record"
+    },
+    {
+      "id": "cal-ses-004",
+      "title": "Session 004 - Consolidated Session 4",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "calendar_event_record"
+    },
+    {
+      "id": "ent-slim-jim",
+      "title": "Slim Jim",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "fact-entity-slim-jim-phase1-review-readiness",
+      "title": "Slim Jim Phase 1 dossier readiness fact",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s004-reward-karma-unknown-working",
+      "title": "Session 004 karma award",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "loc-container-maze-eastern-pier",
+      "title": "Container Maze / Eastern Pier",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-red-satin-gentlemen-s-club",
+      "title": "Red Satin Gentlemen's Club",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "ses-004",
+      "title": "Session 004 - Consolidated Session 4",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "session_record"
+    },
+    {
+      "id": "cal-ses-005",
+      "title": "Session 005 - Corporate Surveillance And Street Fallout",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "calendar_event_record"
+    },
+    {
+      "id": "ent-dr-samuel-wong",
+      "title": "Dr. Samuel Wong",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "fact-entity-dr-samuel-wong-phase1-review-readiness",
+      "title": "Dr. Samuel Wong Phase 1 dossier readiness fact",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-razor-phase1-review-readiness",
+      "title": "Razor Phase 1 dossier readiness fact",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-relationship-switch-snacks-phase1-review-readiness",
+      "title": "Switch / Snacks formal contact readiness fact",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "loc-oldsmobile-2035-scene",
+      "title": "Oldsmobile 2035 Scene",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-seattle-outskirts-suburban-roads",
+      "title": "Seattle Outskirts / Suburban Roads",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-telecom-kiosk-payphone-corner",
+      "title": "Telecom Kiosk / Payphone Corner",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-wong-s-meat-market-tacoma-district",
+      "title": "Wong's Meat Market / Tacoma District",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "ses-005",
+      "title": "Session 005 - Corporate Surveillance And Street Fallout",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "session_record"
+    },
+    {
+      "id": "ent-tiny",
+      "title": "Tiny",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-velvet-jones",
+      "title": "Velvet Jones",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "fac-siberian-wolf-regulars",
+      "title": "Siberian Wolf Regulars",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "faction_record"
+    },
+    {
+      "id": "fact-s006-blackjack-recovery",
+      "title": "Blackjack recovery state",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-boeing-boundary",
+      "title": "Boeing pressure boundary",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-chinese-riverboat-lead",
+      "title": "Chinese riverboat cargo lead",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-ellis-freight-cover",
+      "title": "Ellis false freight cover",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-graham-sold-ares",
+      "title": "Graham sold to Ares",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-hard-drive-handshake-activated",
+      "title": "Session 006 hard-drive/cradle handshake activated-system fact",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-mouse-triad-office",
+      "title": "Mouse Triad office state",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-reward-asset-suv-contact-working",
+      "title": "Session 006 SUV asset reward",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-reward-cash-kilmer-working",
+      "title": "Session 006 reward working record - Kilmer cash",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-reward-cash-switch-working",
+      "title": "Session 006 reward working record - Switch cash",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-reward-cash-the-chin-working",
+      "title": "Session 006 reward working record - The Chin cash",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-velvet-future-job-hook",
+      "title": "Velvet future job hook",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "loc-siberian-wolf-office",
+      "title": "Siberian Wolf Office",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-the-marrow",
+      "title": "The Marrow",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "rel-velvet-the-chin-session006",
+      "title": "Velvet Jones is The Chin's fixer contact, rating 2/2. The Session 006 future-job hook remains separate job evidence and does not make Velvet a patron.",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "relationship_record"
+    },
+    {
+      "id": "ses-006",
+      "title": "All In",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "session_record"
+    },
+    {
+      "id": "thr-session006-bourgeoisie-ares-graham-transfer",
+      "title": "Bourgeoisie / Ares Graham Transfer",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-session006-braddock-switch-pressure",
+      "title": "Braddock / Switch Pressure",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-session006-ellis-false-cover",
+      "title": "Ellis False Freight Cover",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-session006-hard-drive-cradle-discovery",
+      "title": "Hard Drive / Cradle / Tracker Discovery",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-session006-mouse-triad-office",
+      "title": "Mouse / Triad Office Pressure",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-session006-velvet-future-job",
+      "title": "Velvet Jones Future Job Hook",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-session006-wolf-poker-night-social-field",
+      "title": "Session 006 Wolf Poker Night Social Field",
+      "source_file": "records\\source_truth\\branch_records.raw.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "rel-switch-blackjack-contact",
+      "title": "",
+      "source_file": "records\\source_truth\\contact_card.records.json",
+      "record_type": "contact_card.records"
+    },
+    {
+      "id": "rel-slim-jim-the-chin-contact",
+      "title": "",
+      "source_file": "records\\source_truth\\contact_card.records.json",
+      "record_type": "contact_card.records"
+    },
+    {
+      "id": "pc",
+      "title": "",
+      "source_file": "records\\source_truth\\controlled_category.records.json",
+      "record_type": "controlled_category.records"
+    },
+    {
+      "id": "contact",
+      "title": "",
+      "source_file": "records\\source_truth\\controlled_category.records.json",
+      "record_type": "controlled_category.records"
+    },
+    {
+      "id": "npc",
+      "title": "",
+      "source_file": "records\\source_truth\\controlled_category.records.json",
+      "record_type": "controlled_category.records"
+    },
+    {
+      "id": "employee",
+      "title": "",
+      "source_file": "records\\source_truth\\controlled_category.records.json",
+      "record_type": "controlled_category.records"
+    },
+    {
+      "id": "patron",
+      "title": "",
+      "source_file": "records\\source_truth\\controlled_category.records.json",
+      "record_type": "controlled_category.records"
+    },
+    {
+      "id": "enemy_adversary",
+      "title": "",
+      "source_file": "records\\source_truth\\controlled_category.records.json",
+      "record_type": "controlled_category.records"
+    },
+    {
+      "id": "associate",
+      "title": "",
+      "source_file": "records\\source_truth\\controlled_category.records.json",
+      "record_type": "controlled_category.records"
+    },
+    {
+      "id": "service_provider",
+      "title": "",
+      "source_file": "records\\source_truth\\controlled_category.records.json",
+      "record_type": "controlled_category.records"
+    },
+    {
+      "id": "faction_actor",
+      "title": "",
+      "source_file": "records\\source_truth\\controlled_category.records.json",
+      "record_type": "controlled_category.records"
+    },
+    {
+      "id": "organization_group",
+      "title": "",
+      "source_file": "records\\source_truth\\controlled_category.records.json",
+      "record_type": "controlled_category.records"
+    },
+    {
+      "id": "locmap-loc-siberian-wolf",
+      "title": "Siberian Wolf Location Map",
+      "source_file": "records\\source_truth\\location_map.records.json",
+      "record_type": "location_map.records"
+    },
+    {
+      "id": "locmap-loc-the-marrow",
+      "title": "The Marrow Location Map",
+      "source_file": "records\\source_truth\\location_map.records.json",
+      "record_type": "location_map.records"
+    },
+    {
+      "id": "locmap-loc-red-satin-gentlemen-s-club",
+      "title": "Red Satin Location Map",
+      "source_file": "records\\source_truth\\location_map.records.json",
+      "record_type": "location_map.records"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\source_truth\\material_link.records.json",
+      "record_type": "material_link.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-000-1782437168295-1",
+      "title": "Spectre came in sweating, running from the Kestrel hit team, and ordered seltzer water.",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-000-1782446547182-2",
+      "title": "The Siberian Wolf has a pool table in the center of the main floor. During the firefight, the Kestrel strike team used the pool table as cover while The Chin used the bar proper as cover.",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-000-1783039938952-3",
+      "title": "surveillance reconstruction begins- traffic and movement review initiated This is incorrect there is no traffic or movement review initiated The only knowledge they have is that the strike team was in the area The wolf has been flagged only as a possible spot of interest",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-001-1782678020856-1",
+      "title": "FIREFIGHTER- Kevin Drass-Chin Firefighter Contact 2/2",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-001-1782687842143-2",
+      "title": "6 Burnout Gang members armed with smg's",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-001-1782952478564-3",
+      "title": "Exploring the possibility that this may be a minor manifestation spirit that is in service to Faust",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-002-1782940685172-1",
+      "title": "Northside references should actually be West side references south side references should be east side references thus the burnout warehouse was on the West side and the Siberian wolf is part of the east side All of the territory encompassed is in the Gray Line Docks area of the Tacoma district in the Metroplex of Seattle",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-002-1782951907880-2",
+      "title": "North side should be revised to be east side East side is where the Siberian wolf is located south side should now be revised to West side Westside is where the Burnouts Warehouse was located Both sides of the river are part of the Gray Line Docks Area The Gray Line docks area is part of the Tacoma section of the Greater Seattle Metroplex",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-002-1782963294314-3",
+      "title": "Blackjack is Switch's fixer contact Rating 2/2",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-002-1782991591024-4",
+      "title": "Vessel",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-002-1782991747280-5",
+      "title": "For Session 002, limit this thread to the opening of the Blackjack missing/status question after the crate/payment/transfer chain. Blackjack has not yet been recovered or routed to Dr. Samuel Wong in this session. Wong/Rusty Spade fallout belongs to later-session context only.",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-002-1783031538058-6",
+      "title": "4000 nuyen from Blackjack base pay 1500+2500 speed bonus",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-002-1783140468899-7",
+      "title": "Blackjack is switches fixer contact rating 2/2",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-002-1783212000294-8",
+      "title": "3 karma each",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-003-1783207477162-1",
+      "title": "GM facing: need to specify the trace types. Kestrel Crate Trace. Spectre Hard Drive Trace.",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-003-1783210739812-2",
+      "title": "3 Karma each",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-004-1783212947881-2",
+      "title": "Snacks provides a warning while the chin is in red satin the warning is through the donut to switch. Switch then tries to contact the chin via Telecom Device. The chin ignores the call because he is meeting with the bourgeoisie at the time This increases the bourgeoisie's respect for the chin's professionalism however delays any response to the warning that a corporation is conducting a vehicle trace via the Lone Star Database",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-004-1783213347367-2",
+      "title": "4 karma each",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-004-1783213549048-3",
+      "title": "During phase three Kilmer Briefly encounters a familiar looking homeless man in the alley behind the apartments during the surveillance window. GM facing information This is the same homeless personification of a lesser spirit in the service of Faust",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-005-1783214330612-1",
+      "title": "Before leaving Hubcap requested a fish sandwich from Switch from the Stuffer shack",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-005-razor-razor-correction",
+      "title": "Owner correction: the person/source label previously shown as Razor should display as Rezak / \"Razor\" in owner-facing review. Preserve Razor as source/legacy alias context only.",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-005-1783223784171-3",
+      "title": "This is a of the Chin 2/2",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-005-1783223796830-4",
+      "title": "This is a contact of the Chin 2/2",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-006-1783225937690-1",
+      "title": "The Gray line dogs are not anything The wording was Gray line DOCKS",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-006-1783262614114-2",
+      "title": "Tiny is the chin's contact troll bouncer Rating 2/2",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-006-1783262639938-3",
+      "title": "Velvet is Chin's fixer contact 2/2",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "owner-note-authority-review-ses-006-1783271180236-4",
+      "title": "Velvet is a fixer contact of the chin He is not a patron 2/2",
+      "source_file": "records\\source_truth\\owner_note.records.json",
+      "record_type": "owner_note.records"
+    },
+    {
+      "id": "ent-hubcap",
+      "title": "",
+      "source_file": "records\\source_truth\\person_card.records.json",
+      "record_type": "person_card.records"
+    },
+    {
+      "id": "ent-tonya",
+      "title": "Tonya",
+      "source_file": "records\\source_truth\\person_card.records.json",
+      "record_type": "person_card.records"
+    },
+    {
+      "id": "ent-switch",
+      "title": "",
+      "source_file": "records\\source_truth\\person_card.records.json",
+      "record_type": "person_card.records"
+    },
+    {
+      "id": "ent-the-chin",
+      "title": "",
+      "source_file": "records\\source_truth\\person_card.records.json",
+      "record_type": "person_card.records"
+    },
+    {
+      "id": "ent-kilmer",
+      "title": "",
+      "source_file": "records\\source_truth\\person_card.records.json",
+      "record_type": "person_card.records"
+    },
+    {
+      "id": "relweb-ent-blackjack",
+      "title": "Blackjack Relationship Web",
+      "source_file": "records\\source_truth\\relationship_web.records.json",
+      "record_type": "relationship_web.records"
+    },
+    {
+      "id": "relweb-ent-slim-jim",
+      "title": "Slim Jim Relationship Web",
+      "source_file": "records\\source_truth\\relationship_web.records.json",
+      "record_type": "relationship_web.records"
+    },
+    {
+      "id": "relweb-ent-hubcap",
+      "title": "Hubcap Relationship Web",
+      "source_file": "records\\source_truth\\relationship_web.records.json",
+      "record_type": "relationship_web.records"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\source_truth\\source_truth_edit_model.records.json",
+      "record_type": "source_truth_edit_model.records"
+    },
+    {
+      "id": null,
+      "title": "Source image for SM-0005 Siberian Wolf Bar and Apartments mixed-visibility map; hash preserved from supporting-material record.",
+      "source_file": "records\\working\\attachment_record.records.json",
+      "record_type": "attachment_record"
+    },
+    {
+      "id": null,
+      "title": "Apartment source image for SM-0006 Siberian Wolf map set; hash preserved from supporting-material record.",
+      "source_file": "records\\working\\attachment_record.records.json",
+      "record_type": "attachment_record"
+    },
+    {
+      "id": null,
+      "title": "Bar source image for SM-0006 Siberian Wolf map set; hash preserved from supporting-material record.",
+      "source_file": "records\\working\\attachment_record.records.json",
+      "record_type": "attachment_record"
+    },
+    {
+      "id": null,
+      "title": "Source image for SM-0002 Mountain Chateau Map.",
+      "source_file": "records\\working\\attachment_record.records.json",
+      "record_type": "attachment_record"
+    },
+    {
+      "id": null,
+      "title": "Duplicate source image for SM-0003, matching SM-0002 hash.",
+      "source_file": "records\\working\\attachment_record.records.json",
+      "record_type": "attachment_record"
+    },
+    {
+      "id": null,
+      "title": "First-floor source image for SM-0004 Mountain Chateau map set.",
+      "source_file": "records\\working\\attachment_record.records.json",
+      "record_type": "attachment_record"
+    },
+    {
+      "id": null,
+      "title": "Second-floor source image for SM-0004 Mountain Chateau map set.",
+      "source_file": "records\\working\\attachment_record.records.json",
+      "record_type": "attachment_record"
+    },
+    {
+      "id": null,
+      "title": "Third-floor source image for SM-0004 Mountain Chateau map set.",
+      "source_file": "records\\working\\attachment_record.records.json",
+      "record_type": "attachment_record"
+    },
+    {
+      "id": null,
+      "title": "Aerial source image for SM-0004 Mountain Chateau map set.",
+      "source_file": "records\\working\\attachment_record.records.json",
+      "record_type": "attachment_record"
+    },
+    {
+      "id": null,
+      "title": "Captured non-canonical Phase 1 entity dossier readiness facts from enriched entity records for owner review.",
+      "source_file": "records\\working\\authority_event.records.json",
+      "record_type": "authority_event"
+    },
+    {
+      "id": null,
+      "title": "Captured non-canonical Phase 1 relationship readiness facts from enriched relationship records for owner review.",
+      "source_file": "records\\working\\authority_event.records.json",
+      "record_type": "authority_event"
+    },
+    {
+      "id": null,
+      "title": "Captured non-canonical Phase 3 calendar, supporting-material, attachment, and tag-review records for read-only owner review.",
+      "source_file": "records\\working\\authority_event.records.json",
+      "record_type": "authority_event"
+    },
+    {
+      "id": null,
+      "title": "Recorded Phase 3 structural readiness blockers for missing source attachments, missing tag reviews, and supporting-material supersession review.",
+      "source_file": "records\\working\\authority_event.records.json",
+      "record_type": "authority_event"
+    },
+    {
+      "id": null,
+      "title": "Captured Session 006 source, review, staged output, old repository output, reward draft, and prep-boundary evidence as non-canonical V2 draft records.",
+      "source_file": "records\\working\\authority_event.records.json",
+      "record_type": "authority_event"
+    },
+    {
+      "id": null,
+      "title": "Owner approved the Session 006 hard-drive/cradle handshake addendum for non-canonical overlay application only.",
+      "source_file": "records\\working\\authority_event.records.json",
+      "record_type": "authority_event"
+    },
+    {
+      "id": "cal-ses-000",
+      "title": "Session 000 - Siberian Wolf Incident",
+      "source_file": "records\\working\\calendar_event_record.records.json",
+      "record_type": "calendar_event_record"
+    },
+    {
+      "id": "cal-ses-001",
+      "title": "Session 001 - Double Down",
+      "source_file": "records\\working\\calendar_event_record.records.json",
+      "record_type": "calendar_event_record"
+    },
+    {
+      "id": "cal-ses-002",
+      "title": "Session 002 - Crate Delivery And Gray Line Pressure",
+      "source_file": "records\\working\\calendar_event_record.records.json",
+      "record_type": "calendar_event_record"
+    },
+    {
+      "id": "cal-ses-003",
+      "title": "Session 003 - Graham Extraction And Hard Drive Recovery",
+      "source_file": "records\\working\\calendar_event_record.records.json",
+      "record_type": "calendar_event_record"
+    },
+    {
+      "id": "cal-ses-004",
+      "title": "Session 004 - Consolidated Session 4",
+      "source_file": "records\\working\\calendar_event_record.records.json",
+      "record_type": "calendar_event_record"
+    },
+    {
+      "id": "cal-ses-005",
+      "title": "Session 005 - Corporate Surveillance And Street Fallout",
+      "source_file": "records\\working\\calendar_event_record.records.json",
+      "record_type": "calendar_event_record"
+    },
+    {
+      "id": "cal-ses-006",
+      "title": "Session 006 - All In",
+      "source_file": "records\\working\\calendar_event_record.records.json",
+      "record_type": "calendar_event_record"
+    },
+    {
+      "id": null,
+      "title": "Dictation Support",
+      "source_file": "records\\working\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Table-Ready / Session-Fact Output Model",
+      "source_file": "records\\working\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "General Interface Polish",
+      "source_file": "records\\working\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Reward / Karma / Experience Tracking",
+      "source_file": "records\\working\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Media / Handout Attachments",
+      "source_file": "records\\working\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Role Tags / Relationship Status",
+      "source_file": "records\\working\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Remembered Details Intake",
+      "source_file": "records\\working\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Template-Driven Agnostic Extraction",
+      "source_file": "records\\working\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Tacoma Replaces Redmond",
+      "source_file": "records\\working\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "PC/NPC Classification Failures",
+      "source_file": "records\\working\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Repository Writes",
+      "source_file": "records\\working\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Oldsmobile 2035 Retrofit",
+      "source_file": "records\\working\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Oldsmobile 2035 trunk contents no longer relevant",
+      "source_file": "records\\working\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Graham Final Fate",
+      "source_file": "records\\working\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Rusty Spade Final Site Wording",
+      "source_file": "records\\working\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "SM-0001 Missing Source Attachment",
+      "source_file": "records\\working\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Tag Review Needed For Non-Superseded Map Materials",
+      "source_file": "records\\working\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "SM-0003 Supersession Review",
+      "source_file": "records\\working\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Session 006 Reward Draft Candidates Parked",
+      "source_file": "records\\working\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Session 007 protected source boundary - removed from Session 006 review",
+      "source_file": "records\\working\\deferred_item_record.records.json",
+      "record_type": "deferred_item_record"
+    },
+    {
+      "id": null,
+      "title": "Kestrel Strike Team",
+      "source_file": "records\\working\\encounter_unit_record.records.json",
+      "record_type": "encounter_unit_record"
+    },
+    {
+      "id": null,
+      "title": "Kestrel Squad Captain / Guard Captain",
+      "source_file": "records\\working\\encounter_unit_record.records.json",
+      "record_type": "encounter_unit_record"
+    },
+    {
+      "id": null,
+      "title": "Kestrel Enforcers",
+      "source_file": "records\\working\\encounter_unit_record.records.json",
+      "record_type": "encounter_unit_record"
+    },
+    {
+      "id": "ent-the-chin",
+      "title": "The Chin",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-switch",
+      "title": "Switch",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-kilmer",
+      "title": "Kilmer",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-blackjack",
+      "title": "Blackjack",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-hubcap",
+      "title": "Hubcap",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-spectre",
+      "title": "Spectre",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-faust",
+      "title": "Faust",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-graham-voss",
+      "title": "Graham Voss",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-mara",
+      "title": "Mara",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-toggle",
+      "title": "Toggle",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-skittles",
+      "title": "Skittles",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-snacks",
+      "title": "Snacks",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-donnie",
+      "title": "Donnie",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-frost",
+      "title": "Frost",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-slim-jim",
+      "title": "Slim Jim",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-ivan",
+      "title": "Ivan",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-the-bourgeoisie",
+      "title": "The Bourgeoisie",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-razor",
+      "title": "Razor",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-dr-samuel-wong",
+      "title": "Dr. Samuel Wong",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-oldsmobile-2035",
+      "title": "Oldsmobile 2035",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-homeless-witness",
+      "title": "Homeless Witness",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-mouse",
+      "title": "Liang \"Mouse\" Zhen",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-ellis-rouke",
+      "title": "Ellis Rouke",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-nails-donovan",
+      "title": "Nails Donovan",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-velvet-jones",
+      "title": "Velvet Jones",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-lt-braddock",
+      "title": "Lieutenant Braddock",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-tiny",
+      "title": "Tiny",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-victor-sable",
+      "title": "Victor Sable",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-jeremiah-cross",
+      "title": "Jeremiah Cross",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-gino-marks",
+      "title": "Gino Marks",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-silk-ramos",
+      "title": "Silk Ramos",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-old-vic",
+      "title": "Old Vic",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-elena-markova",
+      "title": "Elena Markova",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-kevin-drass",
+      "title": "Kevin Drass",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "ent-louis-brown",
+      "title": "Louis Brown / Louie",
+      "source_file": "records\\working\\entity_record.records.json",
+      "record_type": "entity_record"
+    },
+    {
+      "id": "fact-entity-the-chin-phase1-review-readiness",
+      "title": "The Chin Phase 1 dossier readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-switch-phase1-review-readiness",
+      "title": "Switch Phase 1 dossier readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-kilmer-phase1-review-readiness",
+      "title": "Kilmer Phase 1 dossier readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-blackjack-phase1-review-readiness",
+      "title": "Blackjack Phase 1 dossier readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-hubcap-phase1-review-readiness",
+      "title": "Hubcap Phase 1 dossier readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-spectre-phase1-review-readiness",
+      "title": "Spectre Phase 1 dossier readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-faust-phase1-review-readiness",
+      "title": "Faust Phase 1 dossier readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-graham-voss-phase1-review-readiness",
+      "title": "Graham Voss Phase 1 dossier readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-mara-phase1-review-readiness",
+      "title": "Mara Phase 1 dossier readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-toggle-phase1-review-readiness",
+      "title": "Toggle Phase 1 dossier readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-snacks-phase1-review-readiness",
+      "title": "Snacks Phase 1 dossier readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-donnie-phase1-review-readiness",
+      "title": "Donnie Phase 1 dossier readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-frost-phase1-review-readiness",
+      "title": "Frost Phase 1 dossier readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-slim-jim-phase1-review-readiness",
+      "title": "Slim Jim Phase 1 dossier readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-ivan-phase1-review-readiness",
+      "title": "Ivan Phase 1 dossier readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-the-bourgeoisie-phase1-review-readiness",
+      "title": "The Bourgeoisie Phase 1 dossier readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-razor-phase1-review-readiness",
+      "title": "Razor Phase 1 dossier readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-dr-samuel-wong-phase1-review-readiness",
+      "title": "Dr. Samuel Wong Phase 1 dossier readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-oldsmobile-2035-phase1-review-readiness",
+      "title": "Oldsmobile 2035 Phase 1 dossier readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-entity-homeless-witness-phase1-review-readiness",
+      "title": "Homeless Witness Phase 1 dossier readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-relationship-mara-blackjack-phase1-review-readiness",
+      "title": "rel-mara-blackjack Phase 1 relationship readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-relationship-toggle-blackjack-phase1-review-readiness",
+      "title": "rel-toggle-blackjack Phase 1 relationship readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-relationship-switch-snacks-phase1-review-readiness",
+      "title": "Switch / Snacks formal contact readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-relationship-chin-ivan-phase1-review-readiness",
+      "title": "rel-chin-ivan Phase 1 relationship readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-relationship-bourgeoisie-tsar-network-phase1-review-readiness",
+      "title": "rel-bourgeoisie-tsar-network Phase 1 relationship readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-relationship-graham-ares-phase1-review-readiness",
+      "title": "rel-graham-ares Phase 1 relationship readiness fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-session-window",
+      "title": "Session 006 window",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-graham-sold-ares",
+      "title": "Graham sold to Ares",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-bourgeoisie-payments-frost-correction",
+      "title": "Bourgeoisie payments and Frost correction",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-braddock-message",
+      "title": "Braddock message to Switch",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-mouse-triad-office",
+      "title": "Mouse Triad office state",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-ellis-freight-cover",
+      "title": "Ellis false freight cover",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-velvet-future-job-hook",
+      "title": "Velvet future job hook",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-hard-drive-cradle-tracker",
+      "title": "Hard drive, Cradle, and tracker discovery",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-skittles-btl-boundary",
+      "title": "Skittles BTL visibility boundary",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-reward-karma",
+      "title": "Session 006 reward",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-blackjack-recovery",
+      "title": "Blackjack recovery state",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-boeing-boundary",
+      "title": "Boeing pressure boundary",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-chinese-riverboat-lead",
+      "title": "Chinese riverboat cargo lead",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-poker-social-field",
+      "title": "Poker Night social field",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-hard-drive-handshake-activated",
+      "title": "Session 006 hard-drive/cradle handshake activated-system fact",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-reward-cash-switch-working",
+      "title": "Session 006 reward working record - Switch cash",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-reward-cash-kilmer-working",
+      "title": "Session 006 reward working record - Kilmer cash",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-reward-cash-the-chin-working",
+      "title": "Session 006 reward working record - The Chin cash",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s006-reward-asset-suv-contact-working",
+      "title": "Session 006 SUV asset reward",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s003-reward-karma-unknown-working",
+      "title": "Session 003 karma award",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fact-s004-reward-karma-unknown-working",
+      "title": "Session 004 karma award",
+      "source_file": "records\\working\\fact_record.records.json",
+      "record_type": "fact_record"
+    },
+    {
+      "id": "fac-boeing",
+      "title": "Boeing",
+      "source_file": "records\\working\\faction_record.records.json",
+      "record_type": "faction_record"
+    },
+    {
+      "id": "fac-ares",
+      "title": "Ares",
+      "source_file": "records\\working\\faction_record.records.json",
+      "record_type": "faction_record"
+    },
+    {
+      "id": "fac-kestrel-defense-systems",
+      "title": "Kestrel Defense Systems",
+      "source_file": "records\\working\\faction_record.records.json",
+      "record_type": "faction_record"
+    },
+    {
+      "id": "fac-brigada-12",
+      "title": "Brigada 12",
+      "source_file": "records\\working\\faction_record.records.json",
+      "record_type": "faction_record"
+    },
+    {
+      "id": "fac-burnouts",
+      "title": "Burnouts",
+      "source_file": "records\\working\\faction_record.records.json",
+      "record_type": "faction_record"
+    },
+    {
+      "id": "fac-lone-star",
+      "title": "Lone Star",
+      "source_file": "records\\working\\faction_record.records.json",
+      "record_type": "faction_record"
+    },
+    {
+      "id": "fac-russian-mafia-ivan-tsar-influence-network",
+      "title": "Russian Mafia / Ivan / Tsar Influence Network",
+      "source_file": "records\\working\\faction_record.records.json",
+      "record_type": "faction_record"
+    },
+    {
+      "id": "fac-chinese-triads",
+      "title": "Chinese Triads",
+      "source_file": "records\\working\\faction_record.records.json",
+      "record_type": "faction_record"
+    },
+    {
+      "id": "fac-bourgeoisie-organization",
+      "title": "Bourgeoisie Organization",
+      "source_file": "records\\working\\faction_record.records.json",
+      "record_type": "faction_record"
+    },
+    {
+      "id": "fac-siberian-wolf-regulars",
+      "title": "Siberian Wolf Regulars",
+      "source_file": "records\\working\\faction_record.records.json",
+      "record_type": "faction_record"
+    },
+    {
+      "id": "loc-siberian-wolf",
+      "title": "Siberian Wolf",
+      "source_file": "records\\working\\location_record.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-wolf-restroom",
+      "title": "Wolf Restroom",
+      "source_file": "records\\working\\location_record.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-grayline-docks-gray-line-district",
+      "title": "Grayline Docks / Gray Line District",
+      "source_file": "records\\working\\location_record.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-barrens-warehouse-district-warehouse",
+      "title": "Barrens Warehouse District / Warehouse",
+      "source_file": "records\\working\\location_record.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-rusty-spade",
+      "title": "Rusty Spade",
+      "source_file": "records\\working\\location_record.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-pier-12-pier-15",
+      "title": "Pier 12 / Pier 15",
+      "source_file": "records\\working\\location_record.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-graham-voss-apartment-sector",
+      "title": "Graham Voss Apartment Sector",
+      "source_file": "records\\working\\location_record.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-tacoma-corridor",
+      "title": "Tacoma Corridor",
+      "source_file": "records\\working\\location_record.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-red-satin-gentlemen-s-club",
+      "title": "Red Satin Gentlemen's Club",
+      "source_file": "records\\working\\location_record.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-mountain-chateau-compound",
+      "title": "Mountain Chateau Compound",
+      "source_file": "records\\working\\location_record.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-mountain-road-descent-route",
+      "title": "Mountain Road / Descent Route",
+      "source_file": "records\\working\\location_record.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-seattle-outskirts-suburban-roads",
+      "title": "Seattle Outskirts / Suburban Roads",
+      "source_file": "records\\working\\location_record.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-wong-s-meat-market-tacoma-district",
+      "title": "Wong's Meat Market / Tacoma District",
+      "source_file": "records\\working\\location_record.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-oldsmobile-2035-scene",
+      "title": "Oldsmobile 2035 Scene",
+      "source_file": "records\\working\\location_record.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-telecom-kiosk-payphone-corner",
+      "title": "Telecom Kiosk / Payphone Corner",
+      "source_file": "records\\working\\location_record.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-stuffer-shack",
+      "title": "Stuffer Shack",
+      "source_file": "records\\working\\location_record.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-container-maze-eastern-pier",
+      "title": "Container Maze / Eastern Pier",
+      "source_file": "records\\working\\location_record.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-the-marrow",
+      "title": "The Marrow",
+      "source_file": "records\\working\\location_record.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "loc-siberian-wolf-office",
+      "title": "Siberian Wolf Office",
+      "source_file": "records\\working\\location_record.records.json",
+      "record_type": "location_record"
+    },
+    {
+      "id": "rel-mara-blackjack",
+      "title": "Mara hired Blackjack as fixer for the crate recovery chain; this remains relationship evidence and does not make Blackjack a formal runner contact.",
+      "source_file": "records\\working\\relationship_record.records.json",
+      "record_type": "relationship_record"
+    },
+    {
+      "id": "rel-switch-blackjack-contact",
+      "title": "Blackjack is Switch's fixer contact, rating 2/2. The Mara/Blackjack chain remains separate fixer-hiring evidence and does not replace this Switch contact relationship.",
+      "source_file": "records\\working\\relationship_record.records.json",
+      "record_type": "relationship_record"
+    },
+    {
+      "id": "rel-toggle-blackjack",
+      "title": "Toggle recovered and routed Blackjack after Rusty Spade fallout; this is an operational favor/recovery chain, not a promoted contact.",
+      "source_file": "records\\working\\relationship_record.records.json",
+      "record_type": "relationship_record"
+    },
+    {
+      "id": "rel-switch-snacks",
+      "title": "Snacks is Switch's forensic/intelligence and social-continuity contact, rating 2/2 by confirmed-formal-contact default because no separate rating was recorded.",
+      "source_file": "records\\working\\relationship_record.records.json",
+      "record_type": "relationship_record"
+    },
+    {
+      "id": "rel-chin-ivan",
+      "title": "Ivan is The Chin's Russian Mafia / Gray Line contact, rating 2/2 by confirmed-formal-contact default because no separate rating was recorded.",
+      "source_file": "records\\working\\relationship_record.records.json",
+      "record_type": "relationship_record"
+    },
+    {
+      "id": "rel-bourgeoisie-tsar-network",
+      "title": "Bourgeoisie and Tsar/Russian Mafia network are linked through alliance, favor-chain pressure, chateau access, and Graham leverage.",
+      "source_file": "records\\working\\relationship_record.records.json",
+      "record_type": "relationship_record"
+    },
+    {
+      "id": "rel-graham-ares",
+      "title": "Graham contacted Ares for extraction and may become Ares leverage/asset through Bourgeoisie-side outcome; final state remains unresolved and not promoted.",
+      "source_file": "records\\working\\relationship_record.records.json",
+      "record_type": "relationship_record"
+    },
+    {
+      "id": "rel-chin-ivan-staffing-favor-s006",
+      "title": "Ivan is The Chin's contact for Russian Mafia / Gray Line support, rating 2/2 by confirmed-formal-contact default; the Session 006 staffing favor remains contact/favor evidence.",
+      "source_file": "records\\working\\relationship_record.records.json",
+      "record_type": "relationship_record"
+    },
+    {
+      "id": "rel-chin-tiny-favor-session006",
+      "title": "Tiny is The Chin's troll bouncer contact, rating 2/2; Session 006 support is contact/favor evidence, not unrelated Snacks or Dr. Wong material.",
+      "source_file": "records\\working\\relationship_record.records.json",
+      "record_type": "relationship_record"
+    },
+    {
+      "id": "rel-braddock-switch-session006",
+      "title": "Braddock/Switch pressure is preserved as adversarial relationship evidence.",
+      "source_file": "records\\working\\relationship_record.records.json",
+      "record_type": "relationship_record"
+    },
+    {
+      "id": "rel-mouse-the-chin-session006",
+      "title": "Mouse and The Chin have Session 006 pressure evidence, not a formal contact.",
+      "source_file": "records\\working\\relationship_record.records.json",
+      "record_type": "relationship_record"
+    },
+    {
+      "id": "rel-velvet-the-chin-session006",
+      "title": "Velvet Jones is The Chin's fixer contact, rating 2/2. The Session 006 future-job hook remains separate job evidence and does not make Velvet a patron.",
+      "source_file": "records\\working\\relationship_record.records.json",
+      "record_type": "relationship_record"
+    },
+    {
+      "id": "rel-kevin-drass-the-chin-contact",
+      "title": "Kevin Drass is The Chin's fire-response / infrastructure information contact; Firefighter is his secondary role/contact label.",
+      "source_file": "records\\working\\relationship_record.records.json",
+      "record_type": "relationship_record"
+    },
+    {
+      "id": "rel-louis-brown-the-chin-contact",
+      "title": "Louis Brown / Louie is The Chin's dockyard supervisor / union contact with two mild favors owed.",
+      "source_file": "records\\working\\relationship_record.records.json",
+      "record_type": "relationship_record"
+    },
+    {
+      "id": "rel-slim-jim-the-chin-contact",
+      "title": "Slim Jim is The Chin's formal contact, rating 2/2.",
+      "source_file": "records\\working\\relationship_record.records.json",
+      "record_type": "relationship_record"
+    },
+    {
+      "id": "rel-dr-samuel-wong-the-chin-contact",
+      "title": "Dr. Samuel Wong is The Chin's medical/contact-network contact, rating 2/2.",
+      "source_file": "records\\working\\relationship_record.records.json",
+      "record_type": "relationship_record"
+    },
+    {
+      "id": "rev-phase1-entity-relationship-review-readiness",
+      "title": "",
+      "source_file": "records\\working\\review_packet.records.json",
+      "record_type": "review_packet"
+    },
+    {
+      "id": "rev-phase3-calendar-material-readiness",
+      "title": "",
+      "source_file": "records\\working\\review_packet.records.json",
+      "record_type": "review_packet"
+    },
+    {
+      "id": "rev-session006-corrected-review",
+      "title": "",
+      "source_file": "records\\working\\review_packet.records.json",
+      "record_type": "review_packet"
+    },
+    {
+      "id": "rev-session006-handshake-addendum-approval",
+      "title": "",
+      "source_file": "records\\working\\review_packet.records.json",
+      "record_type": "review_packet"
+    },
+    {
+      "id": "rev-session001-kevin-drass-owner-correction",
+      "title": "",
+      "source_file": "records\\working\\review_packet.records.json",
+      "record_type": "review_packet"
+    },
+    {
+      "id": "rev-session001-louis-brown-owner-correction",
+      "title": "",
+      "source_file": "records\\working\\review_packet.records.json",
+      "record_type": "review_packet"
+    },
+    {
+      "id": "ses-000",
+      "title": "Session 000 - Siberian Wolf Incident",
+      "source_file": "records\\working\\session_record.records.json",
+      "record_type": "session_record"
+    },
+    {
+      "id": "ses-001",
+      "title": "Session 001 - Double Down",
+      "source_file": "records\\working\\session_record.records.json",
+      "record_type": "session_record"
+    },
+    {
+      "id": "ses-002",
+      "title": "Session 002 - Crate Delivery And Gray Line Pressure",
+      "source_file": "records\\working\\session_record.records.json",
+      "record_type": "session_record"
+    },
+    {
+      "id": "ses-003",
+      "title": "Session 003 - Graham Extraction And Hard Drive Recovery",
+      "source_file": "records\\working\\session_record.records.json",
+      "record_type": "session_record"
+    },
+    {
+      "id": "ses-004",
+      "title": "Session 004 - Consolidated Session 4",
+      "source_file": "records\\working\\session_record.records.json",
+      "record_type": "session_record"
+    },
+    {
+      "id": "ses-005",
+      "title": "Session 005 - Corporate Surveillance And Street Fallout",
+      "source_file": "records\\working\\session_record.records.json",
+      "record_type": "session_record"
+    },
+    {
+      "id": "ses-006",
+      "title": "All In",
+      "source_file": "records\\working\\session_record.records.json",
+      "record_type": "session_record"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "",
+      "source_file": "records\\working\\source_reference.records.json",
+      "record_type": "source_reference"
+    },
+    {
+      "id": null,
+      "title": "Tacoma Docks Hubcap Test Map is preserved as a non-promoted supporting-material test record with four pending tags.",
+      "source_file": "records\\working\\supporting_material_record.records.json",
+      "record_type": "supporting_material_record"
+    },
+    {
+      "id": null,
+      "title": "Mountain Chateau Map is preserved as a non-promoted mixed-visibility chateau map with redaction/pin needs.",
+      "source_file": "records\\working\\supporting_material_record.records.json",
+      "record_type": "supporting_material_record"
+    },
+    {
+      "id": null,
+      "title": "SM-0003 is preserved as a duplicate/superseded Mountain Chateau map candidate and must not be promoted.",
+      "source_file": "records\\working\\supporting_material_record.records.json",
+      "record_type": "supporting_material_record"
+    },
+    {
+      "id": null,
+      "title": "Mountain Chateau Map Set is preserved as one non-promoted map set unless the owner deliberately separates the maps later.",
+      "source_file": "records\\working\\supporting_material_record.records.json",
+      "record_type": "supporting_material_record"
+    },
+    {
+      "id": null,
+      "title": "Siberian Wolf Bar And Apartments map is preserved as mixed-visibility operational supporting material with pin/redaction needs.",
+      "source_file": "records\\working\\supporting_material_record.records.json",
+      "record_type": "supporting_material_record"
+    },
+    {
+      "id": null,
+      "title": "Siberian Wolf Bar And Apartments Map Set is preserved as a tag-reviewed non-promoted operational map set with separated player/GM visibility.",
+      "source_file": "records\\working\\supporting_material_record.records.json",
+      "record_type": "supporting_material_record"
+    },
+    {
+      "id": null,
+      "title": "SM-0001 tag sweep preserves four pending tags and no promoted/approved tags.",
+      "source_file": "records\\working\\tag_review_record.records.json",
+      "record_type": "tag_review_record"
+    },
+    {
+      "id": null,
+      "title": "SM-0006 tag review preserves approved project-side tags while promotion remains separate.",
+      "source_file": "records\\working\\tag_review_record.records.json",
+      "record_type": "tag_review_record"
+    },
+    {
+      "id": "thr-hidden-hard-drive-ai-emergence-path",
+      "title": "Hidden Hard Drive / AI Emergence Path",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-trace-callback-beacon-risk",
+      "title": "Trace Callback / Beacon Risk",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-crate-prototype-learning-ai-program",
+      "title": "Crate / Prototype / Learning AI Program",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-boeing-reconstruction",
+      "title": "Boeing Reconstruction",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-motorcycle-tracer-chain",
+      "title": "Motorcycle Tracer Chain",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-ares-convergence",
+      "title": "Ares Convergence",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-kestrel-investigation",
+      "title": "Kestrel Investigation",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-blackjack-missing-loyalty",
+      "title": "Blackjack Missing / Loyalty",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-graham-voss-protection-betrayal-pressure",
+      "title": "Graham Voss Protection / Betrayal Pressure",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-faust-convergence-pressure",
+      "title": "Faust Convergence Pressure",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-slim-jim-taxi-chain",
+      "title": "Slim Jim Taxi Chain",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-siberian-wolf-linkage-risk",
+      "title": "Siberian Wolf Linkage Risk",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-donnie-oldsmobile-2035-staged-scene-chain",
+      "title": "Donnie / Oldsmobile 2035 / Staged Scene Chain",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-blackjack-toggle-dr-samuel-wong-chain",
+      "title": "Blackjack / Toggle / Dr. Samuel Wong Chain",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-snacks-forensic-and-relationship-chain",
+      "title": "Snacks Forensic And Relationship Chain",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-nuyen-value-tracking",
+      "title": "Nuyen Value Tracking",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-session006-wolf-poker-night-social-field",
+      "title": "Session 006 Wolf Poker Night Social Field",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-session006-mouse-triad-office",
+      "title": "Mouse / Triad Office Pressure",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-session006-ellis-false-cover",
+      "title": "Ellis False Freight Cover",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-session006-velvet-future-job",
+      "title": "Velvet Jones Future Job Hook",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-session006-braddock-switch-pressure",
+      "title": "Braddock / Switch Pressure",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-session006-hard-drive-cradle-discovery",
+      "title": "Hard Drive / Cradle / Tracker Discovery",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-session006-bourgeoisie-ares-graham-transfer",
+      "title": "Bourgeoisie / Ares Graham Transfer",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": "thr-session006-rewards-and-drafts",
+      "title": "Session 006 Rewards And Draft Candidates",
+      "source_file": "records\\working\\thread_record.records.json",
+      "record_type": "thread_record"
+    },
+    {
+      "id": null,
+      "title": "Graham final fate under Ares auspice remains future hook",
+      "source_file": "records\\working\\unresolved_item.records.json",
+      "record_type": "unresolved_item"
+    },
+    {
+      "id": null,
+      "title": "Oldsmobile 2035 retrofit",
+      "source_file": "records\\working\\unresolved_item.records.json",
+      "record_type": "unresolved_item"
+    },
+    {
+      "id": null,
+      "title": "Oldsmobile 2035 trunk contents",
+      "source_file": "records\\working\\unresolved_item.records.json",
+      "record_type": "unresolved_item"
+    },
+    {
+      "id": null,
+      "title": "Hubcap derived food/fish-sandwich detail",
+      "source_file": "records\\working\\unresolved_item.records.json",
+      "record_type": "unresolved_item"
+    },
+    {
+      "id": null,
+      "title": "Role tags and relationship/contact status",
+      "source_file": "records\\working\\unresolved_item.records.json",
+      "record_type": "unresolved_item"
+    },
+    {
+      "id": null,
+      "title": "Session 006 SUV asset and associate lane resolved",
+      "source_file": "records\\working\\unresolved_item.records.json",
+      "record_type": "unresolved_item"
+    },
+    {
+      "id": null,
+      "title": "Session 003 reward amount and scope",
+      "source_file": "records\\working\\unresolved_item.records.json",
+      "record_type": "unresolved_item"
+    },
+    {
+      "id": null,
+      "title": "Session 004 reward amount and scope",
+      "source_file": "records\\working\\unresolved_item.records.json",
+      "record_type": "unresolved_item"
+    }
+  ]
+}

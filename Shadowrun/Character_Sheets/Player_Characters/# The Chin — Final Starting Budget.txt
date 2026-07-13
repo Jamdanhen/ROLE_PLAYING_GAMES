@@ -1,0 +1,124 @@
+# The Chin — Final Starting Budget
+
+## Starting Resources
+
+**1,000,000¥**
+
+## Cyberware
+
+| Item | Cost |
+|---|---:|
+| Wired Reflexes 2 | 165,000¥ |
+| Dermal Plating 2 | 15,000¥ |
+| Smartlink | 2,500¥ |
+| Skillwires 2, 50 MP Capacity | 50,000¥ |
+| Base CyberEyes | 5,000¥ |
+| Display Link | 1,000¥ |
+| Vision Package Total | 8,000¥ |
+
+### Skillwires Notes
+
+- Maximum Skill Rating: 2
+- Maximum Total Capacity: 50 MP
+- Cost Formula: 50 MP × Rating 2 × 500¥
+
+### CyberEyes Package
+
+- Low-Light Vision
+- Flare Compensation
+- Thermographic Vision
+
+**Cyberware Total: 246,500¥**
+
+## Weapons
+
+| Item | Cost |
+|---|---:|
+| Modified M107 | 5,200¥ |
+| Smartlink Modification — M107 | 750¥ |
+| Defiance T-250 | 500¥ |
+| Smartlink Modification — Defiance T-250 | 750¥ |
+| Ruger Super Warhawk | 300¥ |
+| Smartlink Modification — Ruger Super Warhawk | 750¥ |
+| Katana | 1,000¥ |
+| 239 Standard Grenades | 7,170¥ |
+| 2 Flash Grenades | 80¥ |
+| Underbarrel Grenade Launcher | 1,700¥ |
+
+**Weapons Total: 18,200¥**
+
+## Gear
+
+| Item | Cost |
+|---|---:|
+| Grapple Gun | 700¥ |
+| Armor Jacket | 900¥ |
+| Miscellaneous Gear | 1,000¥ |
+| Trauma Patches | 5,000¥ |
+| Stim Patches | 150¥ |
+| Medkits | 400¥ |
+
+**Gear Total: 8,150¥**
+
+## Services
+
+| Item | Cost |
+|---|---:|
+| DocWagon Platinum | 50,000¥ |
+
+**Services Total: 50,000¥**
+
+## Vehicle
+
+| Item | Cost |
+|---|---:|
+| BMW Blitzen | 23,000¥ |
+
+**Vehicle Total: 23,000¥**
+
+## Contacts
+
+| Item | Cost |
+|---|---:|
+| 10 Additional Contacts | 50,000¥ |
+| Buddy — Frost | 10,000¥ |
+
+**Contacts Total: 60,000¥**
+
+## Property
+
+### Siberian Wolf
+
+| Item | Cost |
+|---|---:|
+| Business — Lifetime Middle Lifestyle Purchase | 500,000¥ |
+| Operation Level: Low Lifestyle | Included |
+| One Lifetime Middle Lifestyle Guest — Apartment | 50,000¥ |
+| One Lifetime Low Lifestyle Guest — Apartment | 10,000¥ |
+| One Lifetime Low Lifestyle Guest — Apartment | 10,000¥ |
+
+**Property Total: 570,000¥**
+
+## Budget Summary
+
+| Category | Total |
+|---|---:|
+| Cyberware | 246,500¥ |
+| Weapons | 18,200¥ |
+| Gear | 8,150¥ |
+| Services | 50,000¥ |
+| Vehicle | 23,000¥ |
+| Contacts | 60,000¥ |
+| Property | 570,000¥ |
+
+**Total Spent: 975,850¥**
+
+**Unspent Resources: 24,150¥**
+
+## Starting Money
+
+**24,150¥ × 10% = 2,415¥**
+
+# The Chin — Final Starting Cash
+
+**2,415¥**

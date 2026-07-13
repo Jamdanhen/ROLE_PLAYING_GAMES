@@ -1,0 +1,1366 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Chin - Modular Shadowrun 3E Sheet Test</title>
+  <style>
+    :root {
+      --ink: #171717;
+      --muted: #5d625d;
+      --rule: #747a73;
+      --soft: #eceee7;
+      --paper: #fbfbf6;
+      --accent: #9f2f2f;
+      --field: #fffef8;
+      --blue: #214f77;
+      --green: #496f4a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #d8d9d2;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+    }
+
+    button, input, textarea, select { font: inherit; }
+
+    .builder {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: minmax(300px, 1fr) auto;
+      gap: 16px;
+      padding: 12px 18px;
+      background: #20231f;
+      color: #fff;
+      box-shadow: 0 2px 16px rgba(0,0,0,.25);
+    }
+
+    .builder h1 {
+      margin: 0 0 4px;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+
+    .builder p {
+      margin: 0;
+      color: #d6d8d0;
+      font-size: 12px;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .controls button, .controls label {
+      min-height: 34px;
+      border: 1px solid #73786f;
+      border-radius: 4px;
+      background: #30342f;
+      color: #fff;
+      padding: 7px 10px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .controls button:hover, .controls label:hover { background: #3d443c; }
+    .controls input { margin-right: 5px; }
+
+    .wrap {
+      display: grid;
+      grid-template-columns: 270px minmax(780px, 8.5in);
+      gap: 18px;
+      align-items: start;
+      max-width: 1280px;
+      margin: 18px auto;
+      padding: 0 12px 24px;
+    }
+
+    .library {
+      position: sticky;
+      top: 86px;
+      background: var(--paper);
+      border: 1px solid #aeb3a7;
+      border-radius: 6px;
+      padding: 12px;
+      box-shadow: 0 2px 14px rgba(0,0,0,.12);
+    }
+
+    .library h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    .library .item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      align-items: center;
+      padding: 7px 0;
+      border-top: 1px solid #d4d7cf;
+    }
+
+    .library .item:first-of-type { border-top: 0; }
+    .library small { color: var(--muted); }
+    .library input[type="number"] { width: 58px; padding: 4px; }
+
+    .sheet {
+      width: 8.5in;
+      min-height: 11in;
+      padding: .42in;
+      background: var(--paper);
+      box-shadow: 0 3px 22px rgba(0,0,0,.22);
+    }
+
+    .page {
+      min-height: 10.15in;
+      page-break-after: always;
+    }
+
+    .titlebar {
+      display: grid;
+      grid-template-columns: 1.3fr .9fr .9fr;
+      gap: 10px;
+      align-items: end;
+      margin-bottom: 12px;
+      border-bottom: 3px solid var(--ink);
+      padding-bottom: 8px;
+    }
+
+    .brand {
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .subbrand {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .section {
+      margin: 0 0 12px;
+      border: 1px solid var(--rule);
+      background: rgba(255,255,255,.36);
+      break-inside: avoid;
+    }
+
+    .section h2 {
+      margin: 0;
+      padding: 5px 8px;
+      background: #2c2f2b;
+      color: #fff;
+      font-size: 13px;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+
+    .content { padding: 8px; }
+
+    .grid { display: grid; gap: 8px; }
+    .cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .identity { grid-template-columns: minmax(260px, 1fr) minmax(260px, 1fr) 72px; align-items: start; }
+    .identity-stack {
+      display: grid;
+      gap: 8px;
+      align-content: start;
+    }
+    .identity-compact input {
+      max-width: 6ch;
+      min-width: 6ch;
+    }
+    .attribute-grid { grid-template-columns: 1.25fr repeat(3, .62fr); }
+
+    label.field {
+      display: grid;
+      gap: 3px;
+      min-width: 0;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .field input, .field textarea, .field select {
+      width: 100%;
+      min-height: 30px;
+      border: 1px solid var(--rule);
+      border-radius: 0;
+      background: var(--field);
+      color: var(--ink);
+      padding: 5px 6px;
+      font-size: 14px;
+    }
+
+    .field textarea {
+      min-height: 76px;
+      resize: vertical;
+      line-height: 1.3;
+    }
+
+    .row-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .row-table th {
+      color: var(--muted);
+      font-size: 10px;
+      text-transform: uppercase;
+      text-align: left;
+      line-height: 1.1;
+      padding: 0 5px 5px;
+      border-bottom: 1px solid var(--rule);
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: normal;
+      vertical-align: bottom;
+    }
+
+    .row-table td {
+      padding: 4px 5px;
+      border-bottom: 1px solid #c7cbc2;
+      vertical-align: top;
+    }
+
+    .row-table input, .row-table textarea {
+      width: 100%;
+      min-height: 31px;
+      border: 0;
+      border-bottom: 1px solid var(--rule);
+      background: var(--field);
+      padding: 5px 4px;
+      font-size: 14px;
+    }
+
+    .row-table textarea {
+      min-height: 46px;
+      resize: vertical;
+      line-height: 1.25;
+    }
+
+    .narrow { width: 52px; }
+    .tiny { width: 42px; }
+    .wide-note { width: 32%; }
+    .medium { width: 74px; }
+    .long { width: 18%; }
+
+    .dense-table th { font-size: 9px; }
+    .dense-table .tiny { width: 38px; }
+    .dense-table .narrow { width: 48px; }
+    .dense-table .medium { width: 68px; }
+
+    .weapon-table .weapon-name { width: 30%; }
+    .weapon-table .weapon-type { width: 18%; }
+    .weapon-table .weapon-detail td {
+      padding: 0 5px 8px;
+      background: transparent;
+    }
+
+    .weapon-detail-grid {
+      display: grid;
+      grid-template-columns: 92px minmax(150px, 1fr) minmax(220px, 2fr);
+      gap: 8px;
+      align-items: end;
+    }
+
+    .weapon-detail-grid label {
+      display: grid;
+      gap: 2px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 400;
+    }
+
+    .weapon-detail-grid input,
+    .weapon-detail-grid textarea {
+      width: 100%;
+      min-height: 32px;
+      border: 0;
+      border-bottom: 1px solid var(--rule);
+      background: var(--field);
+      padding: 5px 4px;
+      font-size: 14px;
+    }
+
+    .weapon-detail-grid textarea {
+      min-height: 42px;
+      resize: vertical;
+      line-height: 1.25;
+    }
+
+    .calc {
+      border-left: 4px solid var(--green);
+      background: #f4f6ef;
+      padding: 8px;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .calc strong { display: block; font-size: 18px; }
+    .calc small { color: var(--muted); }
+
+    .condition-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.1fr;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .monitor {
+      display: grid;
+      gap: 6px;
+    }
+
+    .monitor-title {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .box-row {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 4px;
+    }
+
+    .box-row label {
+      display: grid;
+      place-items: center;
+      min-height: 30px;
+      border: 1px solid var(--rule);
+      background: var(--field);
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .box-row input {
+      width: 18px;
+      height: 18px;
+      margin: 0;
+    }
+
+    .level-labels {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+      color: var(--muted);
+      font-size: 10px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .section-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .section-actions button {
+      border: 1px solid #aeb3a7;
+      background: #f2f3ee;
+      border-radius: 4px;
+      padding: 5px 8px;
+      cursor: pointer;
+    }
+
+    .print-note {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 1080px) {
+      .wrap { grid-template-columns: 1fr; }
+      .library { position: static; }
+      .sheet { width: 100%; }
+    }
+
+    @media print {
+      body { background: #fff; font-size: 12pt; }
+      .builder, .library, .section-actions { display: none !important; }
+      .wrap { display: block; margin: 0; padding: 0; max-width: none; }
+      .sheet { width: auto; min-height: 0; margin: 0; padding: .35in; box-shadow: none; }
+      .page { min-height: 10.2in; }
+      .field input, .field textarea, .row-table input, .row-table textarea {
+        background: #fff;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+      .section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header class="builder">
+    <div>
+      <h1>The Chin - Modular Sheet Test</h1>
+      <p>Build readable, printable sheets from reusable sections. Data stays in this browser unless exported.</p>
+    </div>
+    <div class="controls">
+      <button type="button" id="printBtn">Print</button>
+      <button type="button" id="exportBtn">Export JSON</button>
+      <label><input type="file" id="importFile" accept="application/json"> Import</label>
+      <button type="button" id="resetBtn">Reset</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <aside class="library">
+      <h2>Sheet Sections</h2>
+      <div id="sectionLibrary"></div>
+      <p class="print-note">Use counts for repeatable pages or blocks. Magic, Matrix, and Vehicles can be turned off for mundane runners.</p>
+    </aside>
+
+    <section class="sheet" id="sheet">
+      <div class="page">
+        <div class="titlebar">
+          <div>
+            <div class="brand">Shadowrun 3rd Edition</div>
+            <div class="subbrand">Modular character sheet</div>
+          </div>
+          <label class="field">Character Name<input data-key="identity.name" value="The Chin"></label>
+          <label class="field">Player / Owner<input data-key="identity.player"></label>
+        </div>
+        <div id="sheetSections"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const sectionDefs = [
+      { id: "identity", label: "Identity", count: 1, max: 1 },
+      { id: "attributes", label: "Attributes + Calculations", count: 1, max: 1 },
+      { id: "condition", label: "Condition Modifiers", count: 1, max: 1 },
+      { id: "skills", label: "Skills", count: 1, max: 4 },
+      { id: "weapons", label: "Weapons", count: 1, max: 5 },
+      { id: "armorGear", label: "Armor + Gear", count: 1, max: 4 },
+      { id: "resources", label: "Resources / Money", count: 1, max: 3 },
+      { id: "lifestyles", label: "Lifestyles", count: 1, max: 4 },
+      { id: "sinId", label: "SINs / IDs / Credsticks", count: 1, max: 4 },
+      { id: "contacts", label: "Contacts", count: 1, max: 6 },
+      { id: "cyberware", label: "Cyberware / Bioware", count: 1, max: 4 },
+      { id: "magic", label: "Magic", count: 0, max: 4 },
+      { id: "matrix", label: "Matrix / Decker", count: 0, max: 4 },
+      { id: "vehicles", label: "Vehicles / Drones", count: 0, max: 5 },
+      { id: "advancement", label: "Karma + Advancement", count: 1, max: 3 },
+      { id: "notes", label: "Background + Notes", count: 1, max: 5 }
+    ];
+
+    const state = {
+      sections: Object.fromEntries(sectionDefs.map(s => [s.id, s.count])),
+      data: {}
+    };
+
+    const get = key => key.split(".").reduce((o, k) => o && o[k], state.data) ?? "";
+    function set(key, value) {
+      const parts = key.split(".");
+      let obj = state.data;
+      while (parts.length > 1) {
+        const part = parts.shift();
+        obj[part] ||= {};
+        obj = obj[part];
+      }
+      obj[parts[0]] = value;
+      save();
+      calculate();
+    }
+
+    function number(key) {
+      const value = parseFloat(get(key));
+      return Number.isFinite(value) ? value : 0;
+    }
+
+    function field(label, key, value = "", type = "text") {
+      const current = get(key) || value;
+      return `<label class="field">${label}<input type="${type}" data-key="${key}" value="${escapeHtml(current)}"></label>`;
+    }
+
+    function area(label, key, value = "") {
+      const current = get(key) || value;
+      return `<label class="field">${label}<textarea data-key="${key}">${escapeHtml(current)}</textarea></label>`;
+    }
+
+    function select(label, key, options) {
+      const current = get(key);
+      const choices = options.map(opt => {
+        const value = typeof opt === "string" ? opt : opt.value;
+        const text = typeof opt === "string" ? opt : opt.label;
+        return `<option value="${escapeHtml(value)}" ${current === value ? "selected" : ""}>${escapeHtml(text)}</option>`;
+      }).join("");
+      return `<label class="field">${label}<select data-key="${key}">${choices}</select></label>`;
+    }
+
+    function monitorBoxes(prefix) {
+      const boxes = Array.from({ length: 10 }, (_, i) => `<label>${i + 1}<input type="checkbox" data-key="${prefix}.box${i + 1}"></label>`).join("");
+      return `<div class="box-row">${boxes}</div><div class="level-labels"><span>Light</span><span>Moderate</span><span>Serious</span><span>Deadly</span></div>`;
+    }
+
+    function rowInputs(prefix, cols, row) {
+      return cols.map(col => `<td class="${col.cls || ""}"><input data-key="${prefix}.${row}.${col.key}"></td>`).join("");
+    }
+
+    function table(prefix, cols, rows, options = {}) {
+      const head = cols.map(col => `<th class="${col.cls || ""}">${col.label}</th>`).join("");
+      const body = Array.from({ length: rows }, (_, i) => `<tr>${rowInputs(prefix, cols, i)}</tr>`).join("");
+      const cls = options.dense ? "row-table dense-table" : "row-table";
+      return `<table class="${cls}"><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table>`;
+    }
+
+    function weaponTable(prefix, rows) {
+      const body = Array.from({ length: rows }, (_, i) => `
+        <tr>
+          <td class="weapon-name"><input data-key="${prefix}.${i}.name"></td>
+          <td class="weapon-type"><input data-key="${prefix}.${i}.type"></td>
+          <td class="tiny"><input data-key="${prefix}.${i}.conceal"></td>
+          <td class="medium"><input data-key="${prefix}.${i}.ammo"></td>
+          <td class="narrow"><input data-key="${prefix}.${i}.damage"></td>
+        </tr>
+        <tr class="weapon-detail">
+          <td colspan="5">
+            <div class="weapon-detail-grid">
+              <label>Mode<input data-key="${prefix}.${i}.mode"></label>
+              <label>Range / Reach<input data-key="${prefix}.${i}.range"></label>
+              <label>Mods / Notes<textarea data-key="${prefix}.${i}.notes"></textarea></label>
+            </div>
+          </td>
+        </tr>
+      `).join("");
+      return `<table class="row-table dense-table weapon-table"><thead><tr><th class="weapon-name">Weapon</th><th class="weapon-type">Type</th><th class="tiny">Con</th><th class="medium">Ammo</th><th class="narrow">Dmg</th></tr></thead><tbody>${body}</tbody></table>`;
+    }
+
+    const renderers = {
+      identity() {
+        return `<section class="section"><h2>Identity</h2><div class="content grid identity">
+          ${field("Character Name", "identity.name", "The Chin")}
+          ${field("Role", "identity.role", "Runner / Bar Owner")}
+          <div class="identity-stack identity-compact">${field("Age", "identity.age")}</div>
+          ${field("Real Name", "identity.realName", "Sergei Chinakhov")}
+          ${field("Metatype", "identity.metatype", "Human")}
+          <div class="identity-stack identity-compact">${field("Sex", "identity.sex")}</div>
+          ${field("Aliases", "identity.aliases")}
+          ${field("Location", "identity.location", "Siberian Wolf")}
+        </div></section>`;
+      },
+
+      attributes() {
+        const attrs = ["body", "quickness", "strength", "charisma", "intelligence", "willpower", "essence", "magic"];
+        const rows = attrs.map(a => `<tr>
+          <td>${labelize(a)}</td>
+          <td><input data-key="attributes.${a}.natural"></td>
+          <td><input data-key="attributes.${a}.modified"></td>
+          <td><input data-key="attributes.${a}.temporary"></td>
+        </tr>`).join("");
+        return `<section class="section"><h2>Attributes + Derived Numbers</h2><div class="content grid cols-2">
+          <table class="row-table"><thead><tr><th>Attribute</th><th>Natural</th><th>Modified</th><th>Temp</th></tr></thead><tbody>${rows}</tbody></table>
+          <div class="grid cols-2">
+            ${field("Reaction Mods", "derived.reactionMods", "0", "number")}
+            ${field("Initiative Dice", "derived.initiativeDice", "1", "number")}
+            ${field("Combat Pool Mods", "derived.combatPoolMods", "0", "number")}
+            ${field("Hacking Pool Mods", "derived.hackingPoolMods", "0", "number")}
+            <div class="calc"><strong id="reactionOut">0</strong><small>Reaction = (Quickness + Intelligence) / 2 + mods</small></div>
+            <div class="calc"><strong id="initiativeOut">0 + 1D6</strong><small>Initiative = Reaction + Initiative Dice</small></div>
+            <div class="calc"><strong id="combatPoolOut">0</strong><small>Combat Pool = (Quickness + Intelligence + Willpower) / 2 + mods</small></div>
+            <div class="calc"><strong id="hackingPoolOut">0</strong><small>Hacking Pool = (Intelligence + MPCP) / 3 + mods</small></div>
+          </div>
+        </div></section>`;
+      },
+
+      condition() {
+        const levels = [
+          { value: "none", label: "None" },
+          { value: "light", label: "Light (+1 TN)" },
+          { value: "moderate", label: "Moderate (+2 TN)" },
+          { value: "serious", label: "Serious (+3 TN)" },
+          { value: "deadly", label: "Deadly / Unconscious" }
+        ];
+        return `<section class="section"><h2>Condition Modifiers</h2><div class="content condition-grid">
+          <div class="monitor">
+            <div class="monitor-title">Stun Monitor</div>
+            ${monitorBoxes("condition.stun")}
+            ${select("Current Stun Level", "condition.stun.level", levels)}
+          </div>
+          <div class="monitor">
+            <div class="monitor-title">Physical Monitor</div>
+            ${monitorBoxes("condition.physical")}
+            ${select("Current Physical Level", "condition.physical.level", levels)}
+          </div>
+          <div class="grid">
+            ${field("Overflow Boxes", "condition.overflow")}
+            ${field("Manual TN Mod", "condition.manualTn", "0", "number")}
+            ${field("Manual Init Mod", "condition.manualInit", "0", "number")}
+            <div class="calc"><strong id="conditionTnOut">+0 TN</strong><small>Highest current wound/stun modifier plus manual TN modifier.</small></div>
+            <div class="calc"><strong id="conditionInitOut">+0 Init</strong><small>Initiative modifier from current condition plus manual modifier.</small></div>
+            <div class="calc"><strong id="conditionStatusOut">No condition penalty</strong><small>Use manual fields when house rules or special cases apply.</small></div>
+          </div>
+        </div></section>`;
+      },
+
+      skills(instance) {
+        return `<section class="section"><h2>Skills ${instance ? instance + 1 : ""}</h2><div class="content">
+          ${table(`skills.${instance || 0}`, [
+            { label: "Skill", key: "name" },
+            { label: "Rtg", key: "rating", cls: "narrow" },
+            { label: "Spec", key: "spec" },
+            { label: "Spec Rtg", key: "specRating", cls: "narrow" },
+            { label: "Notes", key: "notes" }
+          ], 12)}
+        </div></section>`;
+      },
+
+      weapons(instance) {
+        return `<section class="section"><h2>Weapons ${instance ? instance + 1 : ""}</h2><div class="content">
+          ${weaponTable(`weapons.${instance || 0}`, 8)}
+        </div></section>`;
+      },
+
+      armorGear(instance) {
+        return `<section class="section"><h2>Armor + Gear ${instance ? instance + 1 : ""}</h2><div class="content grid cols-2">
+          <div>${table(`armor.${instance || 0}`, [
+            { label: "Armor", key: "name" },
+            { label: "Bal", key: "ballistic", cls: "narrow" },
+            { label: "Imp", key: "impact", cls: "narrow" },
+            { label: "Notes", key: "notes" }
+          ], 5)}</div>
+          <div>${table(`gear.${instance || 0}`, [
+            { label: "Gear", key: "name" },
+            { label: "Rtg", key: "rating", cls: "narrow" },
+            { label: "Qty", key: "qty", cls: "tiny" },
+            { label: "Notes", key: "notes" }
+          ], 8)}</div>
+        </div></section>`;
+      },
+
+      resources(instance) {
+        return `<section class="section"><h2>Resources / Money ${instance ? instance + 1 : ""}</h2><div class="content grid cols-3">
+          ${field("Starting Resources", "resources.starting")}
+          ${field("Current Nuyen", "resources.current")}
+          ${field("Bank / Stored Funds", "resources.bank")}
+          <div style="grid-column: 1 / -1">${table(`resources.ledger.${instance || 0}`, [
+            { label: "Src / Exp", key: "item" },
+            { label: "Amt", key: "amount", cls: "narrow" },
+            { label: "Date", key: "date", cls: "narrow" },
+            { label: "Notes", key: "notes", cls: "wide-note" }
+          ], 8)}</div>
+        </div></section>`;
+      },
+
+      lifestyles(instance) {
+        return `<section class="section"><h2>Lifestyles ${instance ? instance + 1 : ""}</h2><div class="content">
+          ${table(`lifestyles.${instance || 0}`, [
+            { label: "Lifestyle", key: "type" },
+            { label: "Mo Cost", key: "cost", cls: "narrow" },
+            { label: "Mos Paid", key: "months", cls: "narrow" },
+            { label: "Addr / Loc", key: "address" },
+            { label: "Edges / Flaws / Notes", key: "notes", cls: "wide-note" }
+          ], 6)}
+        </div></section>`;
+      },
+
+      sinId(instance) {
+        return `<section class="section"><h2>SINs / IDs / Credsticks ${instance ? instance + 1 : ""}</h2><div class="content grid cols-2">
+          <div>${table(`sin.${instance || 0}`, [
+            { label: "SIN / ID / Lic", key: "name" },
+            { label: "Rtg", key: "rating", cls: "narrow" },
+            { label: "Status", key: "status", cls: "narrow" },
+            { label: "Notes", key: "notes" }
+          ], 8)}</div>
+          <div>${table(`credsticks.${instance || 0}`, [
+            { label: "Cred / Acct", key: "name" },
+            { label: "Type / Rtg", key: "type", cls: "narrow" },
+            { label: "Bal", key: "balance", cls: "narrow" },
+            { label: "Notes", key: "notes" }
+          ], 8)}</div>
+        </div></section>`;
+      },
+
+      contacts(instance) {
+        return `<section class="section"><h2>Contacts ${instance ? instance + 1 : ""}</h2><div class="content">
+          ${table(`contacts.${instance || 0}`, [
+            { label: "Name", key: "name" },
+            { label: "Type", key: "type" },
+            { label: "Lvl", key: "level", cls: "narrow" },
+            { label: "Loyal", key: "loyalty", cls: "narrow" },
+            { label: "Notes", key: "notes", cls: "wide-note" }
+          ], 10)}
+        </div></section>`;
+      },
+
+      cyberware(instance) {
+        return `<section class="section"><h2>Cyberware / Bioware ${instance ? instance + 1 : ""}</h2><div class="content">
+          ${table(`cyberware.${instance || 0}`, [
+            { label: "Implant", key: "name" },
+            { label: "Lvl", key: "level", cls: "narrow" },
+            { label: "Grade", key: "grade", cls: "narrow" },
+            { label: "Ess/Index", key: "essence", cls: "narrow" },
+            { label: "Effects / Notes", key: "notes", cls: "wide-note" }
+          ], 10)}
+        </div></section>`;
+      },
+
+      magic(instance) {
+        return `<section class="section"><h2>Magic ${instance ? instance + 1 : ""}</h2><div class="content grid cols-2">
+          ${area("Tradition / Totem / Lodge", `magic.${instance || 0}.profile`)}
+          ${table(`magic.${instance || 0}.spells`, [
+            { label: "Spell / Spirit / Power", key: "name" },
+            { label: "Force", key: "force", cls: "narrow" },
+            { label: "Type", key: "type", cls: "narrow" },
+            { label: "Drain / Notes", key: "notes" }
+          ], 8)}
+        </div></section>`;
+      },
+
+      matrix(instance) {
+        return `<section class="section"><h2>Matrix / Decker ${instance ? instance + 1 : ""}</h2><div class="content grid cols-2">
+          ${area("Deck / Persona", `matrix.${instance || 0}.deck`)}
+          ${table(`matrix.${instance || 0}.utilities`, [
+            { label: "Util / Program", key: "name" },
+            { label: "Rtg", key: "rating", cls: "narrow" },
+            { label: "Size", key: "size", cls: "narrow" },
+            { label: "Notes", key: "notes" }
+          ], 8)}
+        </div></section>`;
+      },
+
+      vehicles(instance) {
+        return `<section class="section"><h2>Vehicles / Drones ${instance ? instance + 1 : ""}</h2><div class="content">
+          ${table(`vehicles.${instance || 0}`, [
+            { label: "Veh / Drone", key: "name", cls: "long" },
+            { label: "Hndl", key: "handling", cls: "medium" },
+            { label: "Spd", key: "speed", cls: "narrow" },
+            { label: "Body", key: "body", cls: "tiny" },
+            { label: "Armor", key: "armor", cls: "tiny" },
+            { label: "Sig", key: "signature", cls: "medium" },
+            { label: "Notes", key: "notes", cls: "wide-note" }
+          ], 7, { dense: true })}
+        </div></section>`;
+      },
+
+      advancement(instance) {
+        return `<section class="section"><h2>Karma + Advancement ${instance ? instance + 1 : ""}</h2><div class="content grid cols-3">
+          ${field("Karma Pool", "karma.pool", "0", "number")}
+          ${field("Good Karma", "karma.good", "0", "number")}
+          ${field("Total Earned", "karma.total", "0", "number")}
+          <div style="grid-column: 1 / -1">${table(`karma.log.${instance || 0}`, [
+            { label: "Inc / Buy", key: "item" },
+            { label: "Karma", key: "cost", cls: "narrow" },
+            { label: "Date", key: "date", cls: "narrow" },
+            { label: "Notes", key: "notes" }
+          ], 8)}</div>
+        </div></section>`;
+      },
+
+      notes(instance) {
+        return `<section class="section"><h2>Background + Notes ${instance ? instance + 1 : ""}</h2><div class="content grid cols-2">
+          ${area("History / Concept", `notes.${instance || 0}.history`)}
+          ${area("Current Run Notes", `notes.${instance || 0}.current`)}
+          ${area("Network / Organization", `notes.${instance || 0}.network`)}
+          ${area("GM / Advancement Notes", `notes.${instance || 0}.gm`)}
+        </div></section>`;
+      }
+    };
+
+    function renderLibrary() {
+      const host = document.getElementById("sectionLibrary");
+      host.innerHTML = sectionDefs.map(def => `
+        <div class="item">
+          <label><input type="checkbox" data-section="${def.id}" ${state.sections[def.id] ? "checked" : ""}> ${def.label}<br><small>${def.max === 1 ? "single section" : "repeatable"}</small></label>
+          ${def.max > 1 ? `<input type="number" min="0" max="${def.max}" data-count="${def.id}" value="${state.sections[def.id]}">` : ""}
+        </div>
+      `).join("");
+    }
+
+    function renderSheet() {
+      const host = document.getElementById("sheetSections");
+      host.innerHTML = sectionDefs.flatMap(def => {
+        const count = state.sections[def.id] || 0;
+        return Array.from({ length: count }, (_, i) => renderers[def.id](i));
+      }).join("");
+      bindInputs();
+      hydrateInputs();
+      calculate();
+    }
+
+    function bindInputs() {
+      document.querySelectorAll("[data-key]").forEach(input => {
+        const eventName = input.type === "checkbox" || input.tagName === "SELECT" ? "change" : "input";
+        input.addEventListener(eventName, e => {
+          const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
+          set(e.target.dataset.key, value);
+        });
+      });
+    }
+
+    function hydrateInputs() {
+      document.querySelectorAll("[data-key]").forEach(input => {
+        const val = get(input.dataset.key);
+        if (input.type === "checkbox") {
+          input.checked = val === true || val === "true";
+        } else if (val !== "") {
+          input.value = val;
+        }
+      });
+    }
+
+    function calculate() {
+      const q = number("attributes.quickness.modified") || number("attributes.quickness.natural");
+      const i = number("attributes.intelligence.modified") || number("attributes.intelligence.natural");
+      const w = number("attributes.willpower.modified") || number("attributes.willpower.natural");
+      const mpcp = number("matrix.mpcp");
+      const reaction = Math.floor((q + i) / 2) + number("derived.reactionMods");
+      const combatPool = Math.floor((q + i + w) / 2) + number("derived.combatPoolMods");
+      const hackingPool = Math.floor((i + mpcp) / 3) + number("derived.hackingPoolMods");
+      const dice = Math.max(1, number("derived.initiativeDice") || 1);
+      const condition = calculateCondition();
+      text("reactionOut", reaction);
+      text("initiativeOut", `${reaction} + ${dice}D6`);
+      text("combatPoolOut", combatPool);
+      text("hackingPoolOut", hackingPool);
+      text("conditionTnOut", `${condition.tn >= 0 ? "+" : ""}${condition.tn} TN`);
+      text("conditionInitOut", `${condition.init >= 0 ? "+" : ""}${condition.init} Init`);
+      text("conditionStatusOut", condition.status);
+    }
+
+    function calculateCondition() {
+      const mods = {
+        none: { tn: 0, init: 0, status: "No condition penalty" },
+        light: { tn: 1, init: -1, status: "Light condition penalty" },
+        moderate: { tn: 2, init: -2, status: "Moderate condition penalty" },
+        serious: { tn: 3, init: -3, status: "Serious condition penalty" },
+        deadly: { tn: 3, init: -3, status: "Deadly condition: incapacitated or needs table ruling" }
+      };
+      const stun = mods[get("condition.stun.level") || "none"] || mods.none;
+      const physical = mods[get("condition.physical.level") || "none"] || mods.none;
+      const tn = Math.max(stun.tn, physical.tn) + number("condition.manualTn");
+      const init = Math.min(stun.init, physical.init) + number("condition.manualInit");
+      const statuses = [stun.status, physical.status].filter(s => s !== "No condition penalty");
+      return { tn, init, status: statuses.length ? statuses.join(" / ") : "No condition penalty" };
+    }
+
+    function text(id, value) {
+      const node = document.getElementById(id);
+      if (node) node.textContent = value;
+    }
+
+    function labelize(value) {
+      return value.replace(/([A-Z])/g, " $1").replace(/^./, c => c.toUpperCase());
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+    }
+
+    function save() {
+      localStorage.setItem("sr3-modular-sheet-state-the-chin", JSON.stringify(state));
+    }
+
+    function load() {
+      const raw = localStorage.getItem("sr3-modular-sheet-state-the-chin");
+      if (!raw) return;
+      try {
+        const parsed = JSON.parse(raw);
+        Object.assign(state.sections, parsed.sections || {});
+        state.data = parsed.data || {};
+      } catch {}
+    }
+
+    function download(filename, text) {
+      const blob = new Blob([text], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    document.addEventListener("change", e => {
+      if (e.target.dataset.section) {
+        const id = e.target.dataset.section;
+        const def = sectionDefs.find(s => s.id === id);
+        state.sections[id] = e.target.checked ? Math.max(1, state.sections[id] || def.count || 1) : 0;
+        save(); renderLibrary(); renderSheet();
+      }
+      if (e.target.dataset.count) {
+        const id = e.target.dataset.count;
+        const def = sectionDefs.find(s => s.id === id);
+        state.sections[id] = Math.max(0, Math.min(def.max, parseInt(e.target.value || "0", 10)));
+        save(); renderLibrary(); renderSheet();
+      }
+    });
+
+    document.getElementById("printBtn").addEventListener("click", () => window.print());
+    document.getElementById("exportBtn").addEventListener("click", () => download("shadowrun-3e-character.json", JSON.stringify(state, null, 2)));
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      if (!confirm("Reset this local sheet builder state?")) return;
+      localStorage.removeItem("sr3-modular-sheet-state-the-chin");
+      location.reload();
+    });
+    document.getElementById("importFile").addEventListener("change", async e => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const parsed = JSON.parse(await file.text());
+      Object.assign(state.sections, parsed.sections || {});
+      state.data = parsed.data || {};
+      save(); renderLibrary(); renderSheet();
+    });
+
+    const chinSeed = {
+      "sections": {
+            "identity": 1,
+            "attributes": 1,
+            "condition": 1,
+            "skills": 2,
+            "weapons": 1,
+            "armorGear": 1,
+            "resources": 1,
+            "lifestyles": 1,
+            "sinId": 1,
+            "contacts": 2,
+            "cyberware": 1,
+            "magic": 0,
+            "matrix": 0,
+            "vehicles": 1,
+            "advancement": 1,
+            "notes": 2
+      },
+      "data": {
+            "identity": {
+                  "name": "The Chin",
+                  "realName": "Sergei Chinakhov",
+                  "metatype": "Human",
+                  "role": "PC / Runner / Bar Owner / Former Operator",
+                  "aliases": "The Chin",
+                  "location": "Siberian Wolf"
+            },
+            "attributes": {
+                  "body": {
+                        "natural": "5",
+                        "modified": "7"
+                  },
+                  "quickness": {
+                        "natural": "5",
+                        "modified": "5"
+                  },
+                  "strength": {
+                        "natural": "5",
+                        "modified": "5"
+                  },
+                  "charisma": {
+                        "natural": "3",
+                        "modified": "3"
+                  },
+                  "intelligence": {
+                        "natural": "3",
+                        "modified": "3"
+                  },
+                  "willpower": {
+                        "natural": "3",
+                        "modified": "3"
+                  },
+                  "essence": {
+                        "natural": "0.80",
+                        "modified": "0.80"
+                  },
+                  "magic": {
+                        "natural": "0",
+                        "modified": "0"
+                  }
+            },
+            "derived": {
+                  "reactionMods": "4",
+                  "initiativeDice": "3",
+                  "combatPoolMods": "0",
+                  "hackingPoolMods": "0"
+            },
+            "condition": {
+                  "stun": {
+                        "level": "none"
+                  },
+                  "physical": {
+                        "level": "none"
+                  },
+                  "overflow": "",
+                  "manualTn": "0",
+                  "manualInit": "0"
+            },
+            "skills": {
+                  "0": {
+                        "0": {
+                              "name": "Pistols",
+                              "rating": "5"
+                        },
+                        "1": {
+                              "name": "Shotguns",
+                              "rating": "5"
+                        },
+                        "2": {
+                              "name": "Assault Rifles",
+                              "rating": "5"
+                        },
+                        "3": {
+                              "name": "Launch Weapons",
+                              "rating": "5"
+                        },
+                        "4": {
+                              "name": "Edged Weapons",
+                              "rating": "2"
+                        },
+                        "5": {
+                              "name": "Athletics",
+                              "rating": "3"
+                        },
+                        "6": {
+                              "name": "Stealth",
+                              "rating": "4"
+                        },
+                        "7": {
+                              "name": "Throwing Weapons",
+                              "rating": "3"
+                        },
+                        "8": {
+                              "name": "Etiquette",
+                              "rating": "3"
+                        },
+                        "9": {
+                              "name": "Negotiation",
+                              "rating": "3"
+                        },
+                        "10": {
+                              "name": "Leadership",
+                              "rating": "2"
+                        }
+                  },
+                  "1": {
+                        "0": {
+                              "name": "Criminal Organizations",
+                              "rating": "1"
+                        },
+                        "1": {
+                              "name": "Local Neighborhood",
+                              "rating": "3"
+                        },
+                        "2": {
+                              "name": "Tacoma",
+                              "rating": "3"
+                        },
+                        "3": {
+                              "name": "Mafia Establishments",
+                              "rating": "3"
+                        },
+                        "4": {
+                              "name": "Gang Turf",
+                              "rating": "2"
+                        },
+                        "5": {
+                              "name": "Underworld Politics",
+                              "rating": "3"
+                        },
+                        "6": {
+                              "name": "English",
+                              "rating": "3"
+                        },
+                        "7": {
+                              "name": "Russian",
+                              "rating": "1"
+                        }
+                  }
+            },
+            "weapons": {
+                  "0": {
+                        "0": {
+                              "name": "FN HAR",
+                              "type": "Assault Rifle",
+                              "conceal": "2",
+                              "ammo": "35(c)",
+                              "mode": "SA/BF/FA",
+                              "damage": "8M",
+                              "range": "0-50 / 51-150 / 151-350 / 351-550",
+                              "notes": "Folding stock, top laser sight, gas vent 2, smartlink system. Underbarrel grenade launcher mounted."
+                        },
+                        "1": {
+                              "name": "Underbarrel GL",
+                              "type": "Launcher",
+                              "conceal": "--",
+                              "ammo": "6(m)",
+                              "mode": "SS",
+                              "damage": "By grenade",
+                              "range": "5-50 / 51-100 / 101-150 / 151-300",
+                              "notes": "Grenade Link: air-timed mini-grenades; scatter reduced to 1D6 when range finder used."
+                        },
+                        "2": {
+                              "name": "Ruger Super Warhawk",
+                              "type": "Heavy Pistol",
+                              "conceal": "4",
+                              "ammo": "6(cy)",
+                              "mode": "SS",
+                              "damage": "10M",
+                              "range": "0-5 / 6-20 / 21-40 / 41-60",
+                              "notes": "Primary sidearm; smartlinked via system."
+                        },
+                        "3": {
+                              "name": "Katana",
+                              "type": "Melee",
+                              "conceal": "3",
+                              "ammo": "",
+                              "mode": "",
+                              "damage": "8M",
+                              "range": "Reach 1",
+                              "notes": "Damage is STR+3M with Strength 5."
+                        }
+                  }
+            },
+            "armor": {
+                  "0": {
+                        "0": {
+                              "name": "Armor Jacket",
+                              "ballistic": "5",
+                              "impact": "3"
+                        }
+                  }
+            },
+            "gear": {
+                  "0": {
+                        "0": {
+                              "name": "DocWagon Platinum",
+                              "qty": "1"
+                        },
+                        "1": {
+                              "name": "Grapple Gun",
+                              "qty": "1"
+                        },
+                        "2": {
+                              "name": "Grapple Lines 100m",
+                              "qty": "6"
+                        },
+                        "3": {
+                              "name": "Stimulant Patches",
+                              "rating": "3",
+                              "qty": "2"
+                        },
+                        "4": {
+                              "name": "Medkit",
+                              "rating": "3",
+                              "qty": "2"
+                        },
+                        "5": {
+                              "name": "Smartlink system",
+                              "qty": "1"
+                        },
+                        "6": {
+                              "name": "Grenade Link",
+                              "qty": "1"
+                        }
+                  }
+            },
+            "resources": {
+                  "starting": "",
+                  "current": "",
+                  "bank": "",
+                  "ledger": {
+                        "0": {}
+                  }
+            },
+            "lifestyles": {
+                  "0": {
+                        "0": {
+                              "type": "Bar / Safe Haven",
+                              "address": "Siberian Wolf",
+                              "notes": "Primary operating base and local hub."
+                        }
+                  }
+            },
+            "sin": {
+                  "0": {}
+            },
+            "credsticks": {
+                  "0": {}
+            },
+            "contacts": {
+                  "0": {
+                        "0": {
+                              "name": "Velvet Jones",
+                              "type": "Fixer",
+                              "level": "3-4",
+                              "loyalty": "1",
+                              "notes": "Primary job source."
+                        },
+                        "1": {
+                              "name": "Louie Brown",
+                              "type": "Dock Worker",
+                              "level": "2-3",
+                              "loyalty": "1",
+                              "notes": "Shift supervisor; truck access; dock movement."
+                        },
+                        "2": {
+                              "name": "Kevin Drass",
+                              "type": "Firefighter",
+                              "level": "2",
+                              "loyalty": "1",
+                              "notes": "Warehouse fire status info."
+                        },
+                        "3": {
+                              "name": "Ivan Petrenov",
+                              "type": "Mafia Contact",
+                              "level": "3",
+                              "loyalty": "1",
+                              "notes": "Russian mafia contact under Tsar."
+                        },
+                        "4": {
+                              "name": "Unnamed Paramedic",
+                              "type": "Medical",
+                              "level": "2",
+                              "loyalty": "1",
+                              "notes": "Medical stabilization."
+                        },
+                        "5": {
+                              "name": "Unnamed Sasquatch",
+                              "type": "Entertainer",
+                              "level": "1-2",
+                              "loyalty": "1",
+                              "notes": "Observation inside the Wolf."
+                        },
+                        "6": {
+                              "name": "Sammy Wong",
+                              "type": "Street Doc",
+                              "level": "3",
+                              "loyalty": "1",
+                              "notes": "Illegal medical work."
+                        },
+                        "7": {
+                              "name": "Carlos Mendez",
+                              "type": "Street Cop",
+                              "level": "2",
+                              "loyalty": "1",
+                              "notes": "Low-level Lone Star access."
+                        },
+                        "8": {
+                              "name": "Tiny",
+                              "type": "Troll Bouncer",
+                              "level": "2",
+                              "loyalty": "1",
+                              "notes": "Primary Wolf security."
+                        },
+                        "9": {
+                              "name": "Slim Jim",
+                              "type": "Cab Driver",
+                              "level": "1-2",
+                              "loyalty": "1",
+                              "notes": "Transport."
+                        }
+                  },
+                  "1": {
+                        "0": {
+                              "name": "Unnamed Fence",
+                              "type": "Fence",
+                              "level": "3",
+                              "loyalty": "1",
+                              "notes": "Moves goods."
+                        },
+                        "1": {
+                              "name": "Unnamed Bartender",
+                              "type": "Bartender",
+                              "level": "2",
+                              "loyalty": "1",
+                              "notes": "Controls environment."
+                        },
+                        "2": {
+                              "name": "Frost",
+                              "type": "Buddy / Mage",
+                              "level": "",
+                              "loyalty": "",
+                              "notes": "Close ally; paid buddy contact at character creation."
+                        }
+                  }
+            },
+            "cyberware": {
+                  "0": {
+                        "0": {
+                              "name": "Wired Reflexes",
+                              "level": "2",
+                              "notes": "+4 Reaction; +2 Initiative dice."
+                        },
+                        "1": {
+                              "name": "Skillwires",
+                              "level": "2",
+                              "notes": "Rating 2."
+                        },
+                        "2": {
+                              "name": "Smartlink",
+                              "notes": "-2 TN with smartlinked weapons."
+                        },
+                        "3": {
+                              "name": "Cybereyes",
+                              "notes": "Thermographic, flare compensation, low-light, display link."
+                        },
+                        "4": {
+                              "name": "Dermal Plating",
+                              "level": "2",
+                              "notes": "+2 Body."
+                        }
+                  }
+            },
+            "vehicles": {
+                  "0": {
+                        "0": {
+                              "name": "BMW Blitzen 2025",
+                              "notes": "Gear/listing only; detailed vehicle stats not provided in source posting."
+                        }
+                  }
+            },
+            "karma": {
+                  "pool": "6",
+                  "good": "",
+                  "total": "",
+                  "log": {
+                        "0": {
+                              "0": {
+                                    "item": "Karma Pool currently six",
+                                    "notes": "Updated from earlier value."
+                              }
+                        }
+                  }
+            },
+            "notes": {
+                  "0": {
+                        "history": "Former Russian military operator; immigrated to the United States. Current second-in-command of Brigata 12. Runs the Siberian Wolf, a bar that doubles as a neighborhood hub.",
+                        "current": "Siberian Wolf survived Kestrel incident; reputation increased locally. Active threads: Blackjack jobs, Grayline stability, Russian network expansion, Burnout pressure, Kestrel awareness possible.",
+                        "network": "Maintains operational relationships, dock influence, gang authority, and local infrastructure connections.",
+                        "gm": "Tone: “You don’t start trouble here. Because I end it.”"
+                  },
+                  "1": {
+                        "history": "Session 0: operated the Wolf during Kestrel incident; firefight and cleanup. Session 1: warehouse recovery and Burnout conflict. Session 2: Grayline transport through dock routes. Session 3: Graham extraction.",
+                        "current": "Role in campaign: safe haven anchor, local power figure, network hub, Brigata 12 operational authority.",
+                        "network": "Brigada 12 has 12 members including Razor (leader), Donny (driver), Alexei “Bodki”, Gino Malkin, Yuri “The Rat” Volkov, plus 7 unnamed members.",
+                        "gm": "Truth: The Chin is not simply a bar owner. He keeps the neighborhood functioning."
+                  }
+            }
+      }
+};
+    if (!localStorage.getItem("sr3-modular-sheet-state-the-chin")) {
+      localStorage.setItem("sr3-modular-sheet-state-the-chin", JSON.stringify(chinSeed));
+    }
+
+    load();
+    renderLibrary();
+    renderSheet();
+  </script>
+</body>
+</html>
+

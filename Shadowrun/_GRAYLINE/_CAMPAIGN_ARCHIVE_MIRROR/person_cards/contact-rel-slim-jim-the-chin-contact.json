@@ -1,0 +1,51 @@
+{
+  "display_mode": "contact_card",
+  "primary_contact_record_id": "ent-slim-jim",
+  "contact_owner_record_id": "ent-the-chin",
+  "category_label": "Contact",
+  "link_label": "The Chin",
+  "contact_role_label": "Taxi driver",
+  "contact_card_summary": "Slim Jim is The Chin's transportation contact.",
+  "formal_contact_status": "formal_contact",
+  "loyalty": "2",
+  "connection_rating": "2",
+  "rating_basis": "Owner-reviewed 2/2 contact rating.",
+  "portrait_material_record_id": "",
+  "normal_services": [
+    "Taxi and transportation support",
+    "Movement support through The Chin's network"
+  ],
+  "appearance_aesthetic": "Unknown.",
+  "metatype_race": "Unknown.",
+  "current_physical_status": "Unknown.",
+  "last_known_location": "Unknown.",
+  "regular_status": "The Chin's transportation contact; routine hangout pattern is not recorded yet.",
+  "contact_availability": "Available as transportation contact where supported by reviewed records.",
+  "table_role": "The Chin's taxi driver contact.",
+  "owner_notes": "",
+  "owner_facing_tags": [
+    "taxi driver",
+    "The Chin contact",
+    "transportation"
+  ],
+  "owner_added_pending_tags": [],
+  "location_associations": [],
+  "related_relationship_record_ids": [],
+  "favor_ledger": [],
+  "edit_history": [
+    {
+      "edited_at": "2026-07-07T00:00:00Z",
+      "edited_by": "owner_source_truth_branch_header_grammar",
+      "edit_scope": "branch_contact_card_header",
+      "stable_authority_changed": false,
+      "source_preservation_modified": false,
+      "note": "Added branch-only contact-card overlay from existing Slim Jim/The Chin contact evidence."
+    }
+  ],
+  "branch_only": true,
+  "stable_authority_changed": false,
+  "source_preservation_modified": false,
+  "binary_files_copied": false,
+  "updated_at": "2026-07-07T00:00:00Z",
+  "contact_card_id": "rel-slim-jim-the-chin-contact"
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "session_id": "ses-000",
+    "packet_path": "C:\\Campaign_Archive_System\\working_registry\\authority_review_packets\\ses-000\\session000_authority_review_packet.json",
+    "previous_sections": 25,
+    "recovered_sections": 25,
+    "recovery_mode": "critical_rebuild_from_master_log"
+  },
+  {
+    "session_id": "ses-002",
+    "packet_path": "C:\\Campaign_Archive_System\\working_registry\\authority_review_packets\\ses-002\\ses002_authority_review_packet.json",
+    "previous_sections": 17,
+    "recovered_sections": 17,
+    "recovery_mode": "normalize_fragmented_story_from_master_log"
+  },
+  {
+    "session_id": "ses-004",
+    "packet_path": "C:\\Campaign_Archive_System\\working_registry\\authority_review_packets\\ses-004\\ses004_authority_review_packet.json",
+    "previous_sections": 17,
+    "recovered_sections": 17,
+    "recovery_mode": "critical_rebuild_from_master_log"
+  },
+  {
+    "session_id": "ses-005",
+    "packet_path": "C:\\Campaign_Archive_System\\working_registry\\authority_review_packets\\ses-005\\ses005_authority_review_packet.json",
+    "previous_sections": 32,
+    "recovered_sections": 32,
+    "recovery_mode": "critical_rebuild_from_master_log"
+  },
+  {
+    "session_id": "ses-006",
+    "packet_path": "C:\\Campaign_Archive_System\\working_registry\\authority_review_packets\\ses-006\\ses006_authority_review_packet.json",
+    "previous_sections": 46,
+    "recovered_sections": 46,
+    "recovery_mode": "expand_grouped_story_from_master_log"
+  }
+]

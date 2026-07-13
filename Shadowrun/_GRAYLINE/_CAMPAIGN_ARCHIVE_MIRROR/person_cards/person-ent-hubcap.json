@@ -1,0 +1,12 @@
+{
+  "display_mode": "person_card",
+  "category_label": "NPC",
+  "link_label": "Grayline Street Network",
+  "role_label": "Street scrounger / witness",
+  "person_card_summary": "Hubcap is a street scrounger and witness tied to Grayline street-level continuity.",
+  "branch_only": true,
+  "stable_authority_changed": false,
+  "source_preservation_modified": false,
+  "binary_files_copied": false,
+  "person_card_id": "ent-hubcap"
+}

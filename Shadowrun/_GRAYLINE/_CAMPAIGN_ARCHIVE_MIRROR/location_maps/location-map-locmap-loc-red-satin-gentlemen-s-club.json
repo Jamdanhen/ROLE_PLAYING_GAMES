@@ -1,0 +1,123 @@
+{
+  "title": "Red Satin Location Map",
+  "central_location_record_id": "loc-red-satin-gentlemen-s-club",
+  "summary": "Draft owner-facing location map for Red Satin, a downtown Bourgeoisie-owned luxury club with controlled front-of-house access and private back-office meeting space.",
+  "location_categories": {
+    "place_identity": [
+      {
+        "title": "Red Satin Gentlemen's Club",
+        "label": "Central place",
+        "summary": "Downtown Bourgeoisie-owned luxury gentlemen's club.",
+        "city": "Seattle",
+        "district": "Downtown",
+        "section": "Downtown",
+        "place_type": "Luxury gentlemen's club",
+        "venue_role": "High-status Bourgeoisie meeting venue",
+        "route_view": "locations",
+        "route_id": "loc-red-satin-gentlemen-s-club"
+      }
+    ],
+    "ownership_control": [
+      {
+        "title": "Bourgeoisie-owned venue",
+        "label": "Ownership / control",
+        "summary": "Controlled by the Bourgeoisie network.",
+        "route_view": "factions",
+        "route_id": "fac-bourgeoisie-organization"
+      }
+    ],
+    "lifestyle_economy": [
+      {
+        "title": "Luxury club business",
+        "label": "Lifestyle / economy",
+        "summary": "Main-room club economy built around a dance floor, high-status service, and controlled private business access.",
+        "route_view": "locations",
+        "route_id": "loc-red-satin-gentlemen-s-club"
+      }
+    ],
+    "security_access": [
+      {
+        "title": "Valet and doorman gatekeeping",
+        "label": "Access / gatekeeping",
+        "summary": "Entry requires getting through valets and the doorman before reaching the controlled club interior.",
+        "route_view": "locations",
+        "route_id": "loc-red-satin-gentlemen-s-club"
+      },
+      {
+        "title": "Bodyguards / venue security",
+        "label": "Security presence",
+        "summary": "Bodyguards are part of the venue security/access layer, not a reusable encounter table unless one is later defined.",
+        "route_view": "locations",
+        "route_id": "loc-red-satin-gentlemen-s-club"
+      }
+    ],
+    "zones_rooms_routes": [
+      {
+        "title": "Main room / dance floor",
+        "label": "Zone / room",
+        "summary": "Primary club floor with the dance floor and front-of-house social environment.",
+        "route_view": "locations",
+        "route_id": "loc-red-satin-gentlemen-s-club"
+      },
+      {
+        "title": "Back office",
+        "label": "Private room",
+        "summary": "Private business area separate from the main club floor.",
+        "route_view": "locations",
+        "route_id": "loc-red-satin-gentlemen-s-club"
+      }
+    ],
+    "people_here": [
+      {
+        "title": "The Chin",
+        "label": "Visitor / meeting participant",
+        "summary": "Session 004 meeting context.",
+        "route_view": "entities",
+        "route_id": "ent-the-chin"
+      }
+    ],
+    "groups_factions_here": [
+      {
+        "title": "Bourgeoisie Organization",
+        "label": "Owner / patron network",
+        "summary": "Primary network tied to the venue.",
+        "route_view": "factions",
+        "route_id": "fac-bourgeoisie-organization"
+      }
+    ],
+    "materials_maps": [],
+    "events_at_place": [
+      {
+        "title": "Session 004 Red Satin meeting",
+        "label": "Standalone event / scene",
+        "summary": "The Chin reaches the Red Satin through the venue's front-of-house gatekeeping and meeting route.",
+        "session_id": "ses-004",
+        "zone": "Main room / back office route",
+        "why_it_matters": "Establishes Red Satin as a controlled Bourgeoisie venue with distinct public and private areas.",
+        "visibility": "Mixed / contextual",
+        "route_view": "sessions",
+        "route_id": "ses-004"
+      }
+    ],
+    "threads_hooks": [],
+    "assets_objects_here": [],
+    "local_rules_mechanics": [],
+    "encounter_tables_hazards": [],
+    "active_location_pressure": [
+      {
+        "title": "Traffic-camera / Oldsmobile exposure",
+        "label": "Location pressure",
+        "summary": "Possible pressure is limited to traffic cameras or other local exposure tying the Oldsmobile to this location.",
+        "route_view": "threads",
+        "route_id": "thr-donnie-oldsmobile-2035-staged-scene-chain"
+      }
+    ],
+    "location_questions": [
+      "Does Red Satin need a venue map/material later?",
+      "Do the valets, doorman, bodyguards, main room, and back office need separate map pins later?"
+    ]
+  },
+  "pressure_candidates": [],
+  "branch_only": true,
+  "location_map_id": "locmap-loc-red-satin-gentlemen-s-club"
+}

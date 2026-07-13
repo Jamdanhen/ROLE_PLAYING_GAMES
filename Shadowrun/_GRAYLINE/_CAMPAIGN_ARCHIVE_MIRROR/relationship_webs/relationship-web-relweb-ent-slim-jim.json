@@ -1,0 +1,44 @@
+{
+  "title": "Slim Jim Relationship Web",
+  "central_record_id": "ent-slim-jim",
+  "summary": "Relationship web for Slim Jim, centered on his contact relationship with The Chin and transportation service role without absorbing broad session recap.",
+  "relationship_categories": {
+    "formal_contacts": [
+      {
+        "title": "The Chin",
+        "label": "Contact",
+        "summary": "Slim Jim is The Chin's transportation contact, rating 2/2 where supported by owner review.",
+        "route_view": "relationships",
+        "route_id": "rel-slim-jim-the-chin-contact"
+      }
+    ],
+    "known_associates": [],
+    "jobs_contracts": [],
+    "favors_obligations": [],
+    "adversaries": [],
+    "employers_patrons": [],
+    "memberships_affiliations": [],
+    "family_personal_ties": [],
+    "service_providers": [
+      {
+        "title": "Transportation / taxi service",
+        "label": "Service relationship",
+        "summary": "Slim Jim provides transportation service through The Chin's network; this is contact service, not an automatic favor.",
+        "route_view": "threads",
+        "route_id": "thr-slim-jim-taxi-chain"
+      }
+    ]
+  },
+  "relationship_questions": [
+    "Are Slim Jim's Loyalty and Connection ratings fully confirmed at 2/2, or should the rating basis stay visible for owner review?"
+  ],
+  "relationship_history": [
+    {
+      "session_id": "ses-004",
+      "summary": "Slim Jim functions as The Chin's transportation contact during the chateau movement chain."
+    }
+  ],
+  "pressure_candidates": [],
+  "branch_only": true,
+  "relationship_web_id": "relweb-ent-slim-jim"
+}

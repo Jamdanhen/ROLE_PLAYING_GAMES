@@ -1,0 +1,20 @@
+﻿{
+    "schema_version":  "campaign_archive_mirror_manifest.v1",
+    "generated_at":  "2026-07-08T03:00:57.4850364Z",
+    "active_registry_source":  "C:\\Campaign_Archive_System\\registry",
+    "mirror_root":  "C:\\ROLE_PLAYING GAMES\\Shadowrun\\_GRAYLINE\\_CAMPAIGN_ARCHIVE_MIRROR",
+    "generated_output_only":  true,
+    "not_active_registry":  true,
+    "binaries_copied":  false,
+    "source_preservation_modified":  false,
+    "exported_sections":  [
+                              "person_cards",
+                              "relationship_webs",
+                              "location_maps",
+                              "sessions",
+                              "reports",
+                              "indexes",
+                              "materials"
+                          ],
+    "readable_export_cleaned_at":  "2026-07-08T03:14:20.2442757Z"
+}

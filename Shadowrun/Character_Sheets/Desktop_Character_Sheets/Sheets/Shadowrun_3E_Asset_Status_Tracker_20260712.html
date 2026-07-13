@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shadowrun 3E Asset Status Tracker</title>
+  <style>
+    :root {
+      --ink:#171717; --muted:#5d625d; --rule:#747a73; --soft:#eceee7;
+      --paper:#fbfbf6; --field:#fffef8; --accent:#9f2f2f; --blue:#214f77;
+      --green:#496f4a; --dark:#20231f;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#d8d9d2; color:var(--ink); font:13px Arial,Helvetica,sans-serif; }
+    button,input,textarea,select { font:inherit; }
+    .toolbar {
+      position:sticky; top:0; z-index:5; display:flex; justify-content:space-between;
+      gap:14px; align-items:center; padding:10px 16px; background:var(--dark); color:#fff;
+      box-shadow:0 2px 14px rgba(0,0,0,.25);
+    }
+    .toolbar h1 { margin:0; font-size:19px; }
+    .toolbar p { margin:2px 0 0; color:#d6d8d0; font-size:11px; }
+    .actions { display:flex; flex-wrap:wrap; gap:6px; justify-content:flex-end; }
+    .actions button,.actions label {
+      min-height:32px; border:1px solid #73786f; border-radius:4px;
+      background:#30342f; color:#fff; padding:6px 9px; cursor:pointer;
+    }
+    .actions button:hover,.actions label:hover { background:#3d443c; }
+    .actions input[type=file] { width:1px; height:1px; opacity:0; position:absolute; }
+    main { max-width:1500px; margin:14px auto; padding:0 12px 24px; }
+    .sheet { background:var(--paper); border:1px solid #aeb3a7; box-shadow:0 3px 20px rgba(0,0,0,.18); padding:14px; }
+    .identity { display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr; gap:8px; margin-bottom:10px; }
+    label.field { display:grid; gap:3px; color:var(--muted); font-size:9px; font-weight:700; text-transform:uppercase; }
+    .field input,.field select { width:100%; min-height:29px; border:1px solid var(--rule); background:var(--field); padding:4px 6px; }
+    .summary { display:grid; grid-template-columns:repeat(6,minmax(120px,1fr)); gap:7px; margin-bottom:10px; }
+    .stat { min-height:58px; border:1px solid var(--rule); background:#f4f6ef; padding:7px; }
+    .stat strong { display:block; color:var(--blue); font-size:18px; line-height:1.1; }
+    .stat small { color:var(--muted); font-size:9px; text-transform:uppercase; }
+    .table-wrap { overflow-x:auto; border:1px solid var(--rule); }
+    table { width:100%; min-width:1370px; border-collapse:collapse; table-layout:fixed; }
+    th { position:sticky; top:64px; z-index:2; background:#2c2f2b; color:#fff; padding:6px 4px; font-size:8px; text-transform:uppercase; text-align:left; }
+    td { padding:3px; border-bottom:1px solid #c7cbc2; vertical-align:top; }
+    tbody tr:nth-child(even) { background:#f2f3ee; }
+    td input,td select,td textarea { width:100%; min-height:27px; border:0; border-bottom:1px solid #9da39a; background:rgba(255,254,248,.85); padding:4px; }
+    td textarea { min-height:27px; height:27px; resize:vertical; }
+    .cycle { width:45px; } .asset { width:120px; } .dates { width:95px; }
+    .num { width:50px; } .money { width:68px; } .pressure { width:170px; } .status { width:85px; }
+    .center input,.center select { text-align:center; }
+    .gap-positive { color:var(--accent); font-weight:800; }
+    .gap-clear { color:var(--green); font-weight:800; }
+    .footer-note { margin:8px 0 0; color:var(--muted); font-size:10px; line-height:1.35; }
+    @media(max-width:760px) {
+      .toolbar { position:static; align-items:flex-start; flex-direction:column; }
+      .actions { justify-content:flex-start; }
+      .identity { grid-template-columns:1fr 1fr; }
+      .summary { grid-template-columns:1fr 1fr; }
+      th { position:static; }
+    }
+    @page { size:landscape; margin:.3in; }
+    @media print {
+      body { background:#fff; font-size:8pt; }
+      .toolbar { display:none; }
+      main { max-width:none; margin:0; padding:0; }
+      .sheet { border:0; box-shadow:none; padding:0; }
+      .table-wrap { overflow:visible; }
+      table { min-width:0; }
+      th { position:static; }
+      td input,td select,td textarea { background:#fff; padding:2px; min-height:20px; }
+      .summary { grid-template-columns:repeat(6,1fr); }
+    }
+  </style>
+</head>
+<body>
+  <header class="toolbar">
+    <div><h1>Shadowrun 3E Asset Status Tracker</h1><p>Compact month-over-month operational history for one or many assets.</p></div>
+    <div class="actions">
+      <button type="button" id="addBtn" title="Add a monthly row">+ Month</button>
+      <button type="button" id="removeBtn" title="Remove the final row">− Month</button>
+      <button type="button" id="printBtn">Print</button>
+      <button type="button" id="exportBtn">Export JSON</button>
+      <label>Import JSON<input type="file" id="importFile" accept="application/json"></label>
+      <button type="button" id="resetBtn">Reset</button>
+    </div>
+  </header>
+
+  <main><section class="sheet">
+    <div class="identity">
+      <label class="field">Campaign<input data-meta="campaign"></label>
+      <label class="field">Primary Owner / Group<input data-meta="owner"></label>
+      <label class="field">Tracking Begins<input data-meta="start"></label>
+      <label class="field">Notes<input data-meta="notes"></label>
+    </div>
+
+    <div class="summary">
+      <div class="stat"><strong id="monthsOut">0</strong><small>Tracked Months</small></div>
+      <div class="stat"><strong id="assetsOut">0</strong><small>Distinct Assets</small></div>
+      <div class="stat"><strong id="spendOut">0¥</strong><small>Total Support Spending</small></div>
+      <div class="stat"><strong id="shortfallOut">0</strong><small>Total Uncovered Shortfall</small></div>
+      <div class="stat"><strong id="conditionOut">0 / 0</strong><small>Latest Condition</small></div>
+      <div class="stat"><strong id="statusOut">No data</strong><small>Latest Status</small></div>
+    </div>
+
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th class="cycle">#</th><th class="asset">Asset</th><th class="dates">Month / Dates</th>
+        <th class="num">Hours</th><th class="num">Req</th><th class="num">Success</th>
+        <th class="num">Surplus Used</th><th class="num">Support</th><th class="num">Gap</th>
+        <th class="num">Op Start</th><th class="num">Ext Start</th><th class="num">Op End</th><th class="num">Ext End</th>
+        <th class="num">Op Surplus</th><th class="num">Social Surplus</th>
+        <th class="money">Spent ¥</th><th class="money">Cash ¥</th><th class="pressure">Pressure / Event</th><th class="status">Status</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table></div>
+    <p class="footer-note">Gap = Requirement − Successes − Surplus Used − Purchased Support, minimum zero. Condition and Surplus fields are recorded values, allowing the tracker to preserve rulings without replacing the detailed Asset Operations sheet.</p>
+  </section></main>
+
+  <script>
+    const STORAGE = "sr3-asset-status-tracker-v1";
+    const blankRow = () => ({ asset:"", dates:"", hours:"", requirement:"", successes:"", surplusUsed:"", support:"", opStart:"", extStart:"", opEnd:"", extEnd:"", opSurplus:"", socialSurplus:"", spent:"", cash:"", pressure:"", status:"" });
+    let state = { meta:{ campaign:"", owner:"", start:"", notes:"" }, rows:Array.from({length:12}, blankRow) };
+
+    const n = value => Number.isFinite(parseFloat(value)) ? parseFloat(value) : 0;
+    const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+    const money = value => `${Math.round(value).toLocaleString()}¥`;
+
+    function gap(row) { return Math.max(0, n(row.requirement) - n(row.successes) - n(row.surplusUsed) - n(row.support)); }
+    function input(i,key,type="text") { return `<input type="${type}" data-row="${i}" data-key="${key}" value="${esc(state.rows[i][key])}">`; }
+    function render() {
+      document.getElementById("rows").innerHTML = state.rows.map((r,i) => `<tr>
+        <td class="center">${i+1}</td><td>${input(i,"asset")}</td><td>${input(i,"dates")}</td>
+        <td class="center">${input(i,"hours","number")}</td><td class="center">${input(i,"requirement","number")}</td><td class="center">${input(i,"successes","number")}</td>
+        <td class="center">${input(i,"surplusUsed","number")}</td><td class="center">${input(i,"support","number")}</td>
+        <td class="center ${gap(r)>0?'gap-positive':'gap-clear'}" id="gap${i}">${gap(r)}</td>
+        <td class="center">${input(i,"opStart","number")}</td><td class="center">${input(i,"extStart","number")}</td>
+        <td class="center">${input(i,"opEnd","number")}</td><td class="center">${input(i,"extEnd","number")}</td>
+        <td class="center">${input(i,"opSurplus","number")}</td><td class="center">${input(i,"socialSurplus","number")}</td>
+        <td>${input(i,"spent","number")}</td><td>${input(i,"cash","number")}</td>
+        <td><textarea data-row="${i}" data-key="pressure">${esc(r.pressure)}</textarea></td><td>${input(i,"status")}</td>
+      </tr>`).join("");
+      bind(); calculate();
+    }
+    function bind() {
+      document.querySelectorAll("[data-row]").forEach(el => el.addEventListener("input", e => {
+        state.rows[Number(e.target.dataset.row)][e.target.dataset.key] = e.target.value;
+        save(); calculate();
+      }));
+      document.querySelectorAll("[data-meta]").forEach(el => {
+        el.value = state.meta[el.dataset.meta] || "";
+        el.addEventListener("input", e => { state.meta[e.target.dataset.meta] = e.target.value; save(); });
+      });
+    }
+    function calculate() {
+      state.rows.forEach((r,i) => { const el=document.getElementById(`gap${i}`); if(el){el.textContent=gap(r);el.className=`center ${gap(r)>0?'gap-positive':'gap-clear'}`;} });
+      const used = state.rows.filter(r => Object.values(r).some(v => String(v).trim() !== ""));
+      const assets = new Set(used.map(r => r.asset.trim()).filter(Boolean));
+      const latest = used.length ? used[used.length-1] : null;
+      document.getElementById("monthsOut").textContent = used.length;
+      document.getElementById("assetsOut").textContent = assets.size;
+      document.getElementById("spendOut").textContent = money(used.reduce((s,r)=>s+n(r.spent),0));
+      document.getElementById("shortfallOut").textContent = used.reduce((s,r)=>s+gap(r),0);
+      document.getElementById("conditionOut").textContent = latest ? `${n(latest.opEnd)} / ${n(latest.extEnd)}` : "0 / 0";
+      document.getElementById("statusOut").textContent = latest ? (latest.status || "Operating") : "No data";
+    }
+    function save(){ localStorage.setItem(STORAGE,JSON.stringify(state)); }
+    function load(){ try{const raw=localStorage.getItem(STORAGE);if(raw)state=JSON.parse(raw);}catch{} }
+    function download(){const blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="shadowrun-3e-asset-status-tracker.json";a.click();URL.revokeObjectURL(url);}
+
+    document.getElementById("addBtn").addEventListener("click",()=>{state.rows.push(blankRow());save();render();});
+    document.getElementById("removeBtn").addEventListener("click",()=>{if(state.rows.length>1){state.rows.pop();save();render();}});
+    document.getElementById("printBtn").addEventListener("click",()=>window.print());
+    document.getElementById("exportBtn").addEventListener("click",download);
+    document.getElementById("resetBtn").addEventListener("click",()=>{if(confirm("Reset this asset status tracker?")){localStorage.removeItem(STORAGE);state={meta:{},rows:Array.from({length:12},blankRow)};render();}});
+    document.getElementById("importFile").addEventListener("change",async e=>{const file=e.target.files[0];if(!file)return;state=JSON.parse(await file.text());save();render();});
+    load(); render();
+  </script>
+</body>
+</html>

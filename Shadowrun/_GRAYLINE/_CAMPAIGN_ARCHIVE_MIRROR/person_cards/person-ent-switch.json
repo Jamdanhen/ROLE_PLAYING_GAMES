@@ -1,0 +1,12 @@
+{
+  "display_mode": "person_card",
+  "category_label": "PC",
+  "link_label": "Grayline crew",
+  "role_label": "Player character",
+  "person_card_summary": "Switch is a player character in the Grayline crew.",
+  "branch_only": true,
+  "stable_authority_changed": false,
+  "source_preservation_modified": false,
+  "binary_files_copied": false,
+  "person_card_id": "ent-switch"
+}

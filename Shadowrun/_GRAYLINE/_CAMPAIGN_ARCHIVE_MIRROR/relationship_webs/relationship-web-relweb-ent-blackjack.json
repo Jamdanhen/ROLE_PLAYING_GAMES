@@ -1,0 +1,119 @@
+{
+  "title": "Blackjack Relationship Web",
+  "central_record_id": "ent-blackjack",
+  "summary": "Draft owner-facing relationship web for Blackjack, centered only on relationship ties, obligations, adversaries, providers, and relationship-specific questions.",
+  "relationship_categories": {
+    "formal_contacts": [
+      {
+        "title": "Switch",
+        "label": "Contact",
+        "summary": "Blackjack is Switch's fixer contact, rating 2/2.",
+        "route_view": "relationships",
+        "route_id": "rel-switch-blackjack-contact"
+      }
+    ],
+    "known_associates": [
+      {
+        "title": "Toggle",
+        "label": "Recovery associate",
+        "summary": "Toggle recovered and routed Blackjack after Rusty Spade fallout; this is an operational recovery association, not a formal contact.",
+        "route_view": "relationships",
+        "route_id": "rel-toggle-blackjack"
+      }
+    ],
+    "jobs_contracts": [
+      {
+        "title": "Mara / crate recovery chain",
+        "label": "Job-chain relation",
+        "summary": "Mara hired Blackjack as fixer for the crate recovery chain; this is job-chain evidence, not Switch's formal contact relationship.",
+        "route_view": "relationships",
+        "route_id": "rel-mara-blackjack"
+      },
+      {
+        "title": "Blackjack / runner job offer",
+        "label": "Fixer job-broker action",
+        "summary": "Blackjack sourced the crate recovery job to the runners, supplying the crate location, payment opportunity, and speed recovery bonus context from the session notes.",
+        "route_view": "sessions",
+        "route_id": "ses-001"
+      }
+    ],
+    "favors_obligations": [
+      {
+        "title": "The Chin medical-care obligation",
+        "label": "Open obligation",
+        "summary": "The Chin arranged medical care for Blackjack. The obligation remains open until repaid, waived, transferred, or disputed.",
+        "route_view": "relationships",
+        "route_id": "rel-switch-blackjack-contact"
+      }
+    ],
+    "adversaries": [
+      {
+        "title": "Kestrel / Rusty Spade fallout",
+        "label": "Adversary",
+        "summary": "Kestrel / Rusty Spade fallout is a hostile consequence relationship for Blackjack.",
+        "route_view": "threads",
+        "route_id": "thr-kestrel-investigation"
+      }
+    ],
+    "employers_patrons": [],
+    "memberships_affiliations": [],
+    "family_personal_ties": [],
+    "service_providers": [
+      {
+        "title": "Dr. Samuel Wong",
+        "label": "Medical provider route through The Chin",
+        "summary": "Dr. Samuel Wong is the medical-care route connected to Blackjack's recovery chain through The Chin's network.",
+        "route_view": "relationships",
+        "route_id": "rel-dr-samuel-wong-the-chin-contact"
+      }
+    ]
+  },
+  "relationship_questions": [
+    "Who resolves or repays the medical-care obligation to The Chin?",
+    "Does Kestrel fallout create a lasting adversary relationship for Blackjack or only a closed incident consequence?"
+  ],
+  "relationship_history": [
+    {
+      "session_id": "ses-002",
+      "summary": "Blackjack functions as the fixer for the crate recovery job and is confirmed as Switch's formal contact."
+    },
+    {
+      "session_id": "ses-003",
+      "summary": "The Mara / Blackjack job chain remains separate from Switch's formal contact relationship."
+    },
+    {
+      "session_id": "ses-005",
+      "summary": "Rusty Spade fallout creates the Toggle recovery chain, Dr. Wong medical route, and The Chin medical-care obligation."
+    }
+  ],
+  "pressure_candidates": [
+    {
+      "title": "Kestrel / Rusty Spade fallout",
+      "pressure_source": "Kestrel fallout",
+      "target": "Blackjack",
+      "pressure_type": "consequence / enemy pressure",
+      "current_state": "Blackjack is alive but severely beaten after Kestrel/Rusty Spade fallout.",
+      "related_relationship_record_id": "rel-switch-blackjack-contact",
+      "severity": "high",
+      "urgency": "active",
+      "open_question": "Does Kestrel fallout create a lasting adversary relationship for Blackjack or only a closed incident consequence?",
+      "possible_next_move": "Track whether Kestrel fallout limits Blackjack's fixer services or creates new pressure on Switch.",
+      "visibility": "gm_only"
+    },
+    {
+      "title": "The Chin medical-care obligation",
+      "pressure_source": "The Chin arranged medical care",
+      "target": "Blackjack",
+      "pressure_type": "favor / obligation pressure",
+      "current_state": "Blackjack's recovery leaves an open obligation to The Chin unless later repaid, waived, transferred, or disputed.",
+      "related_relationship_record_id": "rel-switch-blackjack-contact",
+      "severity": "medium",
+      "urgency": "open",
+      "open_question": "Who ultimately repays or settles the medical-care obligation?",
+      "possible_next_move": "Use the favor ledger to track repayment, waiver, transfer, or dispute.",
+      "visibility": "gm_only"
+    }
+  ],
+  "branch_only": true,
+  "relationship_web_id": "relweb-ent-blackjack"
+}

@@ -1,0 +1,1309 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shadowrun 3E Modular Character + Asset Sheet Builder</title>
+  <style>
+    :root {
+      --ink: #171717;
+      --muted: #5d625d;
+      --rule: #747a73;
+      --soft: #eceee7;
+      --paper: #fbfbf6;
+      --accent: #9f2f2f;
+      --field: #fffef8;
+      --blue: #214f77;
+      --green: #496f4a;
+    }
+
+    * { box-sizing: border-box; }
+
+    [hidden] { display: none !important; }
+
+    body {
+      margin: 0;
+      background: #d8d9d2;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+    }
+
+    button, input, textarea, select { font: inherit; }
+
+    .builder {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: minmax(300px, 1fr) auto;
+      gap: 16px;
+      padding: 12px 18px;
+      background: #20231f;
+      color: #fff;
+      box-shadow: 0 2px 16px rgba(0,0,0,.25);
+    }
+
+    .builder h1 {
+      margin: 0 0 4px;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+
+    .builder p {
+      margin: 0;
+      color: #d6d8d0;
+      font-size: 12px;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .controls button, .controls label {
+      min-height: 34px;
+      border: 1px solid #73786f;
+      border-radius: 4px;
+      background: #30342f;
+      color: #fff;
+      padding: 7px 10px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .controls button:hover, .controls label:hover { background: #3d443c; }
+    .controls input { margin-right: 5px; }
+
+    .wrap {
+      display: grid;
+      grid-template-columns: 270px minmax(780px, 8.5in);
+      gap: 18px;
+      align-items: start;
+      max-width: 1280px;
+      margin: 18px auto;
+      padding: 0 12px 24px;
+    }
+
+    .library {
+      position: sticky;
+      top: 86px;
+      background: var(--paper);
+      border: 1px solid #aeb3a7;
+      border-radius: 6px;
+      padding: 12px;
+      box-shadow: 0 2px 14px rgba(0,0,0,.12);
+    }
+
+    .library h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    .library .item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      align-items: center;
+      padding: 7px 0;
+      border-top: 1px solid #d4d7cf;
+    }
+
+    .library .item:first-of-type { border-top: 0; }
+    .library small { color: var(--muted); }
+    .library input[type="number"] { width: 58px; padding: 4px; }
+
+    .sheet {
+      width: 8.5in;
+      min-height: 11in;
+      padding: .42in;
+      background: var(--paper);
+      box-shadow: 0 3px 22px rgba(0,0,0,.22);
+    }
+
+    .page {
+      min-height: 10.15in;
+      page-break-after: always;
+    }
+
+    .titlebar {
+      display: grid;
+      grid-template-columns: 1.3fr .9fr .9fr;
+      gap: 10px;
+      align-items: end;
+      margin-bottom: 12px;
+      border-bottom: 3px solid var(--ink);
+      padding-bottom: 8px;
+    }
+
+    .brand {
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .subbrand {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .section {
+      margin: 0 0 12px;
+      border: 1px solid var(--rule);
+      background: rgba(255,255,255,.36);
+      break-inside: avoid;
+    }
+
+    .section h2 {
+      margin: 0;
+      padding: 5px 8px;
+      background: #2c2f2b;
+      color: #fff;
+      font-size: 13px;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+
+    .content { padding: 8px; }
+
+    .grid { display: grid; gap: 8px; }
+    .cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .identity { grid-template-columns: minmax(260px, 1fr) minmax(260px, 1fr) 72px; align-items: start; }
+    .identity-stack {
+      display: grid;
+      gap: 8px;
+      align-content: start;
+    }
+    .identity-compact input {
+      max-width: 6ch;
+      min-width: 6ch;
+    }
+    .attribute-grid { grid-template-columns: 1.25fr repeat(3, .62fr); }
+
+    label.field {
+      display: grid;
+      gap: 3px;
+      min-width: 0;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .field input, .field textarea, .field select {
+      width: 100%;
+      min-height: 30px;
+      border: 1px solid var(--rule);
+      border-radius: 0;
+      background: var(--field);
+      color: var(--ink);
+      padding: 5px 6px;
+      font-size: 14px;
+    }
+
+    .field textarea {
+      min-height: 76px;
+      resize: vertical;
+      line-height: 1.3;
+    }
+
+    .row-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .row-table th {
+      color: var(--muted);
+      font-size: 10px;
+      text-transform: uppercase;
+      text-align: left;
+      line-height: 1.1;
+      padding: 0 5px 5px;
+      border-bottom: 1px solid var(--rule);
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: normal;
+      vertical-align: bottom;
+    }
+
+    .row-table td {
+      padding: 4px 5px;
+      border-bottom: 1px solid #c7cbc2;
+      vertical-align: top;
+    }
+
+    .row-table input, .row-table textarea {
+      width: 100%;
+      min-height: 31px;
+      border: 0;
+      border-bottom: 1px solid var(--rule);
+      background: var(--field);
+      padding: 5px 4px;
+      font-size: 14px;
+    }
+
+    .row-table textarea {
+      min-height: 46px;
+      resize: vertical;
+      line-height: 1.25;
+    }
+
+    .narrow { width: 52px; }
+    .tiny { width: 42px; }
+    .wide-note { width: 32%; }
+    .medium { width: 74px; }
+    .long { width: 18%; }
+
+    .dense-table th { font-size: 9px; }
+    .dense-table .tiny { width: 38px; }
+    .dense-table .narrow { width: 48px; }
+    .dense-table .medium { width: 68px; }
+
+    .weapon-table .weapon-name { width: 30%; }
+    .weapon-table .weapon-type { width: 18%; }
+    .weapon-table .weapon-detail td {
+      padding: 0 5px 8px;
+      background: transparent;
+    }
+
+    .weapon-detail-grid {
+      display: grid;
+      grid-template-columns: 92px minmax(150px, 1fr) minmax(220px, 2fr);
+      gap: 8px;
+      align-items: end;
+    }
+
+    .weapon-detail-grid label {
+      display: grid;
+      gap: 2px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 400;
+    }
+
+    .weapon-detail-grid input,
+    .weapon-detail-grid textarea {
+      width: 100%;
+      min-height: 32px;
+      border: 0;
+      border-bottom: 1px solid var(--rule);
+      background: var(--field);
+      padding: 5px 4px;
+      font-size: 14px;
+    }
+
+    .weapon-detail-grid textarea {
+      min-height: 42px;
+      resize: vertical;
+      line-height: 1.25;
+    }
+
+    .calc {
+      border-left: 4px solid var(--green);
+      background: #f4f6ef;
+      padding: 8px;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .calc strong { display: block; font-size: 18px; }
+    .calc small { color: var(--muted); }
+
+    .condition-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.1fr;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .monitor {
+      display: grid;
+      gap: 6px;
+    }
+
+    .monitor-title {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .box-row {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 4px;
+    }
+
+    .box-row label {
+      display: grid;
+      place-items: center;
+      min-height: 30px;
+      border: 1px solid var(--rule);
+      background: var(--field);
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .box-row input {
+      width: 18px;
+      height: 18px;
+      margin: 0;
+    }
+
+    .level-labels {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+      color: var(--muted);
+      font-size: 10px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .section-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .section-actions button {
+      border: 1px solid #aeb3a7;
+      background: #f2f3ee;
+      border-radius: 4px;
+      padding: 5px 8px;
+      cursor: pointer;
+    }
+
+    .print-note {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 8px;
+    }
+
+    .asset-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .asset-stat {
+      min-height: 62px;
+      border: 1px solid var(--rule);
+      background: #f4f6ef;
+      padding: 7px;
+    }
+
+    .asset-stat strong {
+      display: block;
+      color: var(--blue);
+      font-size: 19px;
+      line-height: 1.1;
+    }
+
+    .asset-stat small {
+      color: var(--muted);
+      font-size: 9px;
+      text-transform: uppercase;
+    }
+
+    .asset-rating-table input,
+    .asset-week-table input { text-align: center; }
+
+    .asset-track {
+      display: grid;
+      gap: 5px;
+      padding: 7px;
+      border: 1px solid var(--rule);
+      background: #f7f7f2;
+    }
+
+    .asset-track-title {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .asset-note {
+      border-left: 4px solid var(--blue);
+      background: #eef3f7;
+      padding: 7px 9px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    @media (max-width: 1080px) {
+      .wrap { grid-template-columns: 1fr; }
+      .library { position: static; }
+      .sheet { width: 100%; }
+    }
+
+    @media print {
+      body { background: #fff; font-size: 12pt; }
+      .builder, .library, .section-actions { display: none !important; }
+      .wrap { display: block; margin: 0; padding: 0; max-width: none; }
+      .sheet { width: auto; min-height: 0; margin: 0; padding: .35in; box-shadow: none; }
+      .page { min-height: 10.2in; }
+      .field input, .field textarea, .row-table input, .row-table textarea {
+        background: #fff;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+      .section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header class="builder">
+    <div>
+      <h1>Shadowrun 3E Modular Character + Asset Builder</h1>
+      <p>Build printable character sheets and multiple independent asset records. Data stays in this browser unless exported.</p>
+    </div>
+    <div class="controls">
+      <button type="button" id="printBtn">Print</button>
+      <button type="button" id="exportBtn">Export JSON</button>
+      <label><input type="file" id="importFile" accept="application/json"> Import</label>
+      <button type="button" id="resetBtn">Reset</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <aside class="library">
+      <h2>Sheet Sections</h2>
+      <div id="sectionLibrary"></div>
+      <p class="print-note">Use counts for repeatable pages or blocks. Magic, Matrix, and Vehicles can be turned off for mundane runners.</p>
+    </aside>
+
+    <section class="sheet" id="sheet">
+      <div class="page">
+        <div class="titlebar">
+          <div>
+            <div class="brand">Shadowrun 3rd Edition</div>
+            <div class="subbrand">Modular character and asset portfolio</div>
+          </div>
+          <label class="field">Character Name<input data-key="identity.name"></label>
+          <label class="field">Player / Owner<input data-key="identity.player"></label>
+        </div>
+        <div id="sheetSections"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const sectionDefs = [
+      { id: "identity", label: "Identity", count: 1, max: 1 },
+      { id: "attributes", label: "Attributes + Calculations", count: 1, max: 1 },
+      { id: "condition", label: "Condition Modifiers", count: 1, max: 1 },
+      { id: "skills", label: "Skills", count: 1, max: 4 },
+      { id: "weapons", label: "Weapons", count: 1, max: 5 },
+      { id: "armorGear", label: "Armor + Gear", count: 1, max: 4 },
+      { id: "resources", label: "Resources / Money", count: 1, max: 3 },
+      { id: "lifestyles", label: "Lifestyles", count: 1, max: 4 },
+      { id: "sinId", label: "SINs / IDs / Credsticks", count: 1, max: 4 },
+      { id: "contacts", label: "Contacts", count: 1, max: 6 },
+      { id: "cyberware", label: "Cyberware / Bioware", count: 1, max: 4 },
+      { id: "magic", label: "Magic", count: 0, max: 4 },
+      { id: "matrix", label: "Matrix / Decker", count: 0, max: 4 },
+      { id: "vehicles", label: "Vehicles / Drones", count: 0, max: 5 },
+      { id: "assetPortfolio", label: "Asset Portfolio Summary", count: 1, max: 1 },
+      { id: "assets", label: "Asset Operations", count: 1, max: 8 },
+      { id: "assetMonthly", label: "Monthly Asset Tracker", count: 1, max: 12 },
+      { id: "advancement", label: "Karma + Advancement", count: 1, max: 3 },
+      { id: "notes", label: "Background + Notes", count: 1, max: 5 }
+    ];
+
+    const state = {
+      sections: Object.fromEntries(sectionDefs.map(s => [s.id, s.count])),
+      data: {}
+    };
+
+    const get = key => key.split(".").reduce((o, k) => o && o[k], state.data) ?? "";
+    function set(key, value) {
+      const parts = key.split(".");
+      let obj = state.data;
+      while (parts.length > 1) {
+        const part = parts.shift();
+        obj[part] ||= {};
+        obj = obj[part];
+      }
+      obj[parts[0]] = value;
+      save();
+      calculate();
+    }
+
+    function number(key) {
+      const value = parseFloat(get(key));
+      return Number.isFinite(value) ? value : 0;
+    }
+
+    function field(label, key, value = "", type = "text") {
+      const current = get(key) || value;
+      return `<label class="field">${label}<input type="${type}" data-key="${key}" value="${escapeHtml(current)}"></label>`;
+    }
+
+    function area(label, key, value = "") {
+      const current = get(key) || value;
+      return `<label class="field">${label}<textarea data-key="${key}">${escapeHtml(current)}</textarea></label>`;
+    }
+
+    function select(label, key, options) {
+      const current = get(key);
+      const choices = options.map(opt => {
+        const value = typeof opt === "string" ? opt : opt.value;
+        const text = typeof opt === "string" ? opt : opt.label;
+        return `<option value="${escapeHtml(value)}" ${current === value ? "selected" : ""}>${escapeHtml(text)}</option>`;
+      }).join("");
+      return `<label class="field">${label}<select data-key="${key}">${choices}</select></label>`;
+    }
+
+    function monitorBoxes(prefix) {
+      const boxes = Array.from({ length: 10 }, (_, i) => `<label>${i + 1}<input type="checkbox" data-key="${prefix}.box${i + 1}"></label>`).join("");
+      return `<div class="box-row">${boxes}</div><div class="level-labels"><span>Light</span><span>Moderate</span><span>Serious</span><span>Deadly</span></div>`;
+    }
+
+    function rowInputs(prefix, cols, row) {
+      return cols.map(col => `<td class="${col.cls || ""}"><input data-key="${prefix}.${row}.${col.key}"></td>`).join("");
+    }
+
+    function table(prefix, cols, rows, options = {}) {
+      const head = cols.map(col => `<th class="${col.cls || ""}">${col.label}</th>`).join("");
+      const body = Array.from({ length: rows }, (_, i) => `<tr>${rowInputs(prefix, cols, i)}</tr>`).join("");
+      const cls = options.dense ? "row-table dense-table" : "row-table";
+      return `<table class="${cls}"><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table>`;
+    }
+
+    function weaponTable(prefix, rows) {
+      const body = Array.from({ length: rows }, (_, i) => `
+        <tr>
+          <td class="weapon-name"><input data-key="${prefix}.${i}.name"></td>
+          <td class="weapon-type"><input data-key="${prefix}.${i}.type"></td>
+          <td class="tiny"><input data-key="${prefix}.${i}.conceal"></td>
+          <td class="medium"><input data-key="${prefix}.${i}.ammo"></td>
+          <td class="narrow"><input data-key="${prefix}.${i}.damage"></td>
+        </tr>
+        <tr class="weapon-detail">
+          <td colspan="5">
+            <div class="weapon-detail-grid">
+              <label>Mode<input data-key="${prefix}.${i}.mode"></label>
+              <label>Range / Reach<input data-key="${prefix}.${i}.range"></label>
+              <label>Mods / Notes<textarea data-key="${prefix}.${i}.notes"></textarea></label>
+            </div>
+          </td>
+        </tr>
+      `).join("");
+      return `<table class="row-table dense-table weapon-table"><thead><tr><th class="weapon-name">Weapon</th><th class="weapon-type">Type</th><th class="tiny">Con</th><th class="medium">Ammo</th><th class="narrow">Dmg</th></tr></thead><tbody>${body}</tbody></table>`;
+    }
+
+    const renderers = {
+      identity() {
+        return `<section class="section"><h2>Identity</h2><div class="content grid identity">
+          ${field("Character Name", "identity.name")}
+          ${field("Role", "identity.role")}
+          <div class="identity-stack identity-compact">${field("Age", "identity.age")}</div>
+          ${field("Real Name", "identity.realName")}
+          ${field("Metatype", "identity.metatype")}
+          <div class="identity-stack identity-compact">${field("Sex", "identity.sex")}</div>
+          ${field("Aliases", "identity.aliases")}
+          ${field("Location", "identity.location")}
+        </div></section>`;
+      },
+
+      attributes() {
+        const attrs = ["body", "quickness", "strength", "charisma", "intelligence", "willpower", "essence", "magic"];
+        const rows = attrs.map(a => `<tr>
+          <td>${labelize(a)}</td>
+          <td><input data-key="attributes.${a}.natural"></td>
+          <td><input data-key="attributes.${a}.modified"></td>
+          <td><input data-key="attributes.${a}.temporary"></td>
+        </tr>`).join("");
+        return `<section class="section"><h2>Attributes + Derived Numbers</h2><div class="content grid cols-2">
+          <table class="row-table"><thead><tr><th>Attribute</th><th>Natural</th><th>Modified</th><th>Temp</th></tr></thead><tbody>${rows}</tbody></table>
+          <div class="grid cols-2">
+            ${field("Reaction Mods", "derived.reactionMods", "0", "number")}
+            ${field("Initiative Dice", "derived.initiativeDice", "1", "number")}
+            ${field("Combat Pool Mods", "derived.combatPoolMods", "0", "number")}
+            ${field("Hacking Pool Mods", "derived.hackingPoolMods", "0", "number")}
+            <div class="calc"><strong id="reactionOut">0</strong><small>Reaction = (Quickness + Intelligence) / 2 + mods</small></div>
+            <div class="calc"><strong id="initiativeOut">0 + 1D6</strong><small>Initiative = Reaction + Initiative Dice</small></div>
+            <div class="calc"><strong id="combatPoolOut">0</strong><small>Combat Pool = (Quickness + Intelligence + Willpower) / 2 + mods</small></div>
+            <div class="calc"><strong id="hackingPoolOut">0</strong><small>Hacking Pool = (Intelligence + MPCP) / 3 + mods</small></div>
+          </div>
+        </div></section>`;
+      },
+
+      condition() {
+        const levels = [
+          { value: "none", label: "None" },
+          { value: "light", label: "Light (+1 TN)" },
+          { value: "moderate", label: "Moderate (+2 TN)" },
+          { value: "serious", label: "Serious (+3 TN)" },
+          { value: "deadly", label: "Deadly / Unconscious" }
+        ];
+        return `<section class="section"><h2>Condition Modifiers</h2><div class="content condition-grid">
+          <div class="monitor">
+            <div class="monitor-title">Stun Monitor</div>
+            ${monitorBoxes("condition.stun")}
+            ${select("Current Stun Level", "condition.stun.level", levels)}
+          </div>
+          <div class="monitor">
+            <div class="monitor-title">Physical Monitor</div>
+            ${monitorBoxes("condition.physical")}
+            ${select("Current Physical Level", "condition.physical.level", levels)}
+          </div>
+          <div class="grid">
+            ${field("Overflow Boxes", "condition.overflow")}
+            ${field("Manual TN Mod", "condition.manualTn", "0", "number")}
+            ${field("Manual Init Mod", "condition.manualInit", "0", "number")}
+            <div class="calc"><strong id="conditionTnOut">+0 TN</strong><small>Highest current wound/stun modifier plus manual TN modifier.</small></div>
+            <div class="calc"><strong id="conditionInitOut">+0 Init</strong><small>Initiative modifier from current condition plus manual modifier.</small></div>
+            <div class="calc"><strong id="conditionStatusOut">No condition penalty</strong><small>Use manual fields when house rules or special cases apply.</small></div>
+          </div>
+        </div></section>`;
+      },
+
+      skills(instance) {
+        return `<section class="section"><h2>Skills ${instance ? instance + 1 : ""}</h2><div class="content">
+          ${table(`skills.${instance || 0}`, [
+            { label: "Skill", key: "name" },
+            { label: "Rtg", key: "rating", cls: "narrow" },
+            { label: "Spec", key: "spec" },
+            { label: "Spec Rtg", key: "specRating", cls: "narrow" },
+            { label: "Notes", key: "notes" }
+          ], 12)}
+        </div></section>`;
+      },
+
+      weapons(instance) {
+        return `<section class="section"><h2>Weapons ${instance ? instance + 1 : ""}</h2><div class="content">
+          ${weaponTable(`weapons.${instance || 0}`, 8)}
+        </div></section>`;
+      },
+
+      armorGear(instance) {
+        return `<section class="section"><h2>Armor + Gear ${instance ? instance + 1 : ""}</h2><div class="content grid cols-2">
+          <div>${table(`armor.${instance || 0}`, [
+            { label: "Armor", key: "name" },
+            { label: "Bal", key: "ballistic", cls: "narrow" },
+            { label: "Imp", key: "impact", cls: "narrow" },
+            { label: "Notes", key: "notes" }
+          ], 5)}</div>
+          <div>${table(`gear.${instance || 0}`, [
+            { label: "Gear", key: "name" },
+            { label: "Rtg", key: "rating", cls: "narrow" },
+            { label: "Qty", key: "qty", cls: "tiny" },
+            { label: "Notes", key: "notes" }
+          ], 8)}</div>
+        </div></section>`;
+      },
+
+      resources(instance) {
+        return `<section class="section"><h2>Resources / Money ${instance ? instance + 1 : ""}</h2><div class="content grid cols-3">
+          ${field("Starting Resources", "resources.starting")}
+          ${field("Current Nuyen", "resources.current")}
+          ${field("Bank / Stored Funds", "resources.bank")}
+          <div style="grid-column: 1 / -1">${table(`resources.ledger.${instance || 0}`, [
+            { label: "Src / Exp", key: "item" },
+            { label: "Amt", key: "amount", cls: "narrow" },
+            { label: "Date", key: "date", cls: "narrow" },
+            { label: "Notes", key: "notes", cls: "wide-note" }
+          ], 8)}</div>
+        </div></section>`;
+      },
+
+      lifestyles(instance) {
+        return `<section class="section"><h2>Lifestyles ${instance ? instance + 1 : ""}</h2><div class="content">
+          ${table(`lifestyles.${instance || 0}`, [
+            { label: "Lifestyle", key: "type" },
+            { label: "Mo Cost", key: "cost", cls: "narrow" },
+            { label: "Mos Paid", key: "months", cls: "narrow" },
+            { label: "Addr / Loc", key: "address" },
+            { label: "Edges / Flaws / Notes", key: "notes", cls: "wide-note" }
+          ], 6)}
+        </div></section>`;
+      },
+
+      sinId(instance) {
+        return `<section class="section"><h2>SINs / IDs / Credsticks ${instance ? instance + 1 : ""}</h2><div class="content grid cols-2">
+          <div>${table(`sin.${instance || 0}`, [
+            { label: "SIN / ID / Lic", key: "name" },
+            { label: "Rtg", key: "rating", cls: "narrow" },
+            { label: "Status", key: "status", cls: "narrow" },
+            { label: "Notes", key: "notes" }
+          ], 8)}</div>
+          <div>${table(`credsticks.${instance || 0}`, [
+            { label: "Cred / Acct", key: "name" },
+            { label: "Type / Rtg", key: "type", cls: "narrow" },
+            { label: "Bal", key: "balance", cls: "narrow" },
+            { label: "Notes", key: "notes" }
+          ], 8)}</div>
+        </div></section>`;
+      },
+
+      contacts(instance) {
+        return `<section class="section"><h2>Contacts ${instance ? instance + 1 : ""}</h2><div class="content">
+          ${table(`contacts.${instance || 0}`, [
+            { label: "Name", key: "name" },
+            { label: "Type", key: "type" },
+            { label: "Loyal", key: "loyalty", cls: "narrow" },
+            { label: "Conn", key: "connection", cls: "narrow" },
+            { label: "Notes", key: "notes", cls: "wide-note" }
+          ], 10)}
+        </div></section>`;
+      },
+
+      cyberware(instance) {
+        return `<section class="section"><h2>Cyberware / Bioware ${instance ? instance + 1 : ""}</h2><div class="content">
+          ${table(`cyberware.${instance || 0}`, [
+            { label: "Implant", key: "name" },
+            { label: "Lvl", key: "level", cls: "narrow" },
+            { label: "Grade", key: "grade", cls: "narrow" },
+            { label: "Ess/Index", key: "essence", cls: "narrow" },
+            { label: "Effects / Notes", key: "notes", cls: "wide-note" }
+          ], 10)}
+        </div></section>`;
+      },
+
+      magic(instance) {
+        return `<section class="section"><h2>Magic ${instance ? instance + 1 : ""}</h2><div class="content grid cols-2">
+          ${area("Tradition / Totem / Lodge", `magic.${instance || 0}.profile`)}
+          ${table(`magic.${instance || 0}.spells`, [
+            { label: "Spell / Spirit / Power", key: "name" },
+            { label: "Force", key: "force", cls: "narrow" },
+            { label: "Type", key: "type", cls: "narrow" },
+            { label: "Drain / Notes", key: "notes" }
+          ], 8)}
+        </div></section>`;
+      },
+
+      matrix(instance) {
+        return `<section class="section"><h2>Matrix / Decker ${instance ? instance + 1 : ""}</h2><div class="content grid cols-2">
+          ${area("Deck / Persona", `matrix.${instance || 0}.deck`)}
+          ${table(`matrix.${instance || 0}.utilities`, [
+            { label: "Util / Program", key: "name" },
+            { label: "Rtg", key: "rating", cls: "narrow" },
+            { label: "Size", key: "size", cls: "narrow" },
+            { label: "Notes", key: "notes" }
+          ], 8)}
+        </div></section>`;
+      },
+
+      vehicles(instance) {
+        return `<section class="section"><h2>Vehicles / Drones ${instance ? instance + 1 : ""}</h2><div class="content">
+          ${table(`vehicles.${instance || 0}`, [
+            { label: "Veh / Drone", key: "name", cls: "long" },
+            { label: "Hndl", key: "handling", cls: "medium" },
+            { label: "Spd", key: "speed", cls: "narrow" },
+            { label: "Body", key: "body", cls: "tiny" },
+            { label: "Armor", key: "armor", cls: "tiny" },
+            { label: "Sig", key: "signature", cls: "medium" },
+            { label: "Notes", key: "notes", cls: "wide-note" }
+          ], 7, { dense: true })}
+        </div></section>`;
+      },
+
+      assetPortfolio() {
+        const rows = Array.from({ length: 8 }, (_, i) => `<tr>
+          <td id="portfolioName${i}">—</td>
+          <td id="portfolioLevel${i}">—</td>
+          <td id="portfolioPool${i}">0</td>
+          <td id="portfolioRequirement${i}">0</td>
+          <td id="portfolioCondition${i}">0 / 0</td>
+          <td id="portfolioSurplus${i}">0 / 0</td>
+          <td id="portfolioStatus${i}">—</td>
+        </tr>`).join("");
+        return `<section class="section"><h2>Asset Portfolio Summary</h2><div class="content">
+          <table class="row-table dense-table"><thead><tr><th>Asset</th><th>Level</th><th>Pool</th><th>Req</th><th>Condition</th><th>Surplus</th><th>Status</th></tr></thead><tbody>${rows}</tbody></table>
+          <p class="asset-note">This summary reads the repeatable Asset Operations sections below. Increase the Assets count in the section library to build and track multiple operations.</p>
+        </div></section>`;
+      },
+
+      assets(instance) {
+        const i = instance || 0;
+        const levels = ["Squatter", "Low", "Middle", "High", "Luxury", "Opulent"];
+        const ratings = [
+          ["Income", "income"], ["Comforts", "comforts"], ["Entertainment", "entertainment"],
+          ["Furnishings", "furnishings"], ["Security", "security"], ["Space", "space"]
+        ];
+        const ratingRows = ratings.map(([label, key]) => `<tr>
+          <td>${label}</td>
+          <td><input type="number" min="1" max="6" data-key="assets.${i}.ratings.${key}"></td>
+          <td><input type="number" min="0" data-key="assets.${i}.requirements.${key}"></td>
+          <td><input data-key="assets.${i}.ratingNotes.${key}"></td>
+        </tr>`).join("");
+        const roleRows = Array.from({ length: 5 }, (_, r) => `<tr>
+          <td><input data-key="assets.${i}.roles.${r}.name"></td>
+          <td><input data-key="assets.${i}.roles.${r}.worker"></td>
+          <td><input type="number" min="0" data-key="assets.${i}.roles.${r}.rating"></td>
+          <td><input type="number" min="0" max="40" data-key="assets.${i}.roles.${r}.hours"></td>
+          <td id="asset${i}RoleDice${r}">0</td>
+          <td><input data-key="assets.${i}.roles.${r}.notes"></td>
+        </tr>`).join("");
+        const weekRows = Array.from({ length: 4 }, (_, w) => `<tr>
+          <td>${w + 1}</td>
+          <td><input type="number" min="0" data-key="assets.${i}.weeks.${w}.assetDice"></td>
+          <td><input type="number" min="0" data-key="assets.${i}.weeks.${w}.roleDice"></td>
+          <td><input type="number" min="0" data-key="assets.${i}.weeks.${w}.edgeDice"></td>
+          <td><input type="number" min="2" data-key="assets.${i}.weeks.${w}.tn"></td>
+          <td><input type="number" min="0" data-key="assets.${i}.weeks.${w}.successes"></td>
+          <td><input data-key="assets.${i}.weeks.${w}.allocation"></td>
+        </tr>`).join("");
+        return `<section class="section asset-section"><h2>Asset Operations ${i + 1}</h2><div class="content grid">
+          <div class="grid cols-3">
+            ${field("Asset Name", `assets.${i}.name`)}
+            ${field("Owner / Organization", `assets.${i}.owner`)}
+            ${select("Business Level", `assets.${i}.level`, ["", ...levels])}
+            ${field("Asset Type", `assets.${i}.type`)}
+            ${field("Location", `assets.${i}.location`)}
+            ${select("Area Rating", `assets.${i}.area`, ["", "1", "2", "3", "4", "5", "6"])}
+          </div>
+
+          <div class="asset-note">
+            <strong id="asset${i}AreaPressureCount">Select an Area rating</strong>
+            <span> Area pressure adds fixed monthly requirements and never adds Asset Pool dice.</span>
+          </div>
+          <div class="grid cols-2" id="asset${i}AreaPressure1" hidden>
+            ${select("Required Pressure Category 1", `assets.${i}.areaPressures.0.category`, ["", "Income", "Comforts", "Entertainment", "Furnishings", "Security", "Space"])}
+            ${field("Narrative Cause / Consequence", `assets.${i}.areaPressures.0.effect`)}
+          </div>
+          <div class="grid cols-2" id="asset${i}AreaPressure2" hidden>
+            ${select("Required Pressure Category 2", `assets.${i}.areaPressures.1.category`, ["", "Income", "Comforts", "Entertainment", "Furnishings", "Security", "Space"])}
+            ${field("Narrative Cause / Consequence", `assets.${i}.areaPressures.1.effect`)}
+          </div>
+
+          <div class="asset-summary-grid">
+            <div class="asset-stat"><strong id="asset${i}RatingTotal">0</strong><small>Operational Rating Total</small></div>
+            <div class="asset-stat"><strong id="asset${i}Pool">0</strong><small>Weekly Asset Pool</small></div>
+            <div class="asset-stat"><strong id="asset${i}BaseTn">—</strong><small>Current Operations TN</small></div>
+            <div class="asset-stat"><strong id="asset${i}Requirement">0</strong><small>Monthly Requirement</small></div>
+          </div>
+
+          <div class="grid cols-2">
+            <div>
+              <div class="asset-track-title">Operational Ratings and Requirements</div>
+              <table class="row-table asset-rating-table"><thead><tr><th>Category</th><th>Rating</th><th>Req</th><th>Pressure / Notes</th></tr></thead><tbody>${ratingRows}</tbody></table>
+            </div>
+            <div class="grid">
+              ${area("Asset Function / Description", `assets.${i}.description`)}
+              ${area("Area Pressures", `assets.${i}.areaPressure`)}
+              ${area("Temporary Pressures", `assets.${i}.temporaryPressure`)}
+            </div>
+          </div>
+
+          <div>
+            <div class="asset-track-title">Operational Roles — Hours Are Paid Separately</div>
+            <table class="row-table dense-table"><thead><tr><th>Role / Skill</th><th>Worker</th><th>Rating</th><th>Hours</th><th>Dice</th><th>Work Performed</th></tr></thead><tbody>${roleRows}</tbody></table>
+            <div class="asset-summary-grid">
+              <div class="asset-stat"><strong id="asset${i}TotalHours">0</strong><small>Total Weekly Hours</small></div>
+              <div class="asset-stat"><strong id="asset${i}RoleDice">0</strong><small>Total Role Dice</small></div>
+              <div class="asset-stat"><strong id="asset${i}Fatigue">None</strong><small>Workload Consequence</small></div>
+              <div class="asset-stat"><strong>80</strong><small>Maximum Effective Hours</small></div>
+            </div>
+          </div>
+
+          <div class="grid cols-2">
+            <div class="asset-track">
+              <div class="asset-track-title">Operational Condition</div>
+              ${monitorBoxes(`assets.${i}.condition.operational`)}
+              ${field("Boxes Filled", `assets.${i}.condition.operationalBoxes`, "0", "number")}
+            </div>
+            <div class="asset-track">
+              <div class="asset-track-title">External Condition</div>
+              ${monitorBoxes(`assets.${i}.condition.external`)}
+              ${field("Boxes Filled", `assets.${i}.condition.externalBoxes`, "0", "number")}
+            </div>
+          </div>
+
+          <div class="grid cols-4">
+            ${field("Operational Surplus", `assets.${i}.surplus.operational`, "0", "number")}
+            ${field("Social Capital Surplus", `assets.${i}.surplus.social`, "0", "number")}
+            ${field("Purchased Support", `assets.${i}.support.purchased`, "0", "number")}
+            ${field("Support Cost (¥)", `assets.${i}.support.cost`, "0", "number")}
+          </div>
+
+          <div>
+            <div class="asset-track-title">Four-Week Operations Cycle</div>
+            <table class="row-table dense-table asset-week-table"><thead><tr><th>Week</th><th>Asset</th><th>Roles</th><th>Edges</th><th>TN</th><th>Successes</th><th>Allocation / Result</th></tr></thead><tbody>${weekRows}</tbody></table>
+          </div>
+
+          <div class="grid cols-3">
+            ${field("Successes Assigned", `assets.${i}.month.assigned`, "0", "number")}
+            ${field("Uncovered Shortfall", `assets.${i}.month.shortfall`, "0", "number")}
+            ${field("Cash Generated / Spent", `assets.${i}.month.cash`)}
+          </div>
+
+          <div class="grid cols-2">
+            ${area("Asset Edges", `assets.${i}.edges`)}
+            ${area("Asset Flaws", `assets.${i}.flaws`)}
+            ${area("Monthly Outcome / Changes", `assets.${i}.outcome`)}
+            ${area("Next Month / Unresolved Pressure", `assets.${i}.next`)}
+          </div>
+        </div></section>`;
+      },
+
+      assetMonthly(instance) {
+        const i = instance || 0;
+        const weekRows = Array.from({ length: 4 }, (_, w) => `<tr>
+          <td>${w + 1}</td>
+          <td><input type="number" min="0" max="80" data-key="assetMonthly.${i}.weeks.${w}.hours"></td>
+          <td><input type="number" min="0" data-key="assetMonthly.${i}.weeks.${w}.assetDice"></td>
+          <td><input type="number" min="0" data-key="assetMonthly.${i}.weeks.${w}.roleDice"></td>
+          <td><input type="number" min="2" data-key="assetMonthly.${i}.weeks.${w}.tn"></td>
+          <td><input type="number" min="0" data-key="assetMonthly.${i}.weeks.${w}.successes"></td>
+          <td><input data-key="assetMonthly.${i}.weeks.${w}.allocation"></td>
+        </tr>`).join("");
+        return `<section class="section monthly-asset-section"><h2>Monthly Asset Tracker ${i + 1}</h2><div class="content grid">
+          <div class="grid cols-4">
+            ${field("Asset", `assetMonthly.${i}.asset`)}
+            ${field("Month / Cycle", `assetMonthly.${i}.month`)}
+            ${field("Start Date", `assetMonthly.${i}.start`)}
+            ${field("End Date", `assetMonthly.${i}.end`)}
+          </div>
+
+          <div class="grid cols-2">
+            <div class="asset-track">
+              <div class="asset-track-title">Starting State</div>
+              <div class="grid cols-4">
+                ${field("Operational", `assetMonthly.${i}.starting.operational`, "0", "number")}
+                ${field("External", `assetMonthly.${i}.starting.external`, "0", "number")}
+                ${field("Op Surplus", `assetMonthly.${i}.starting.opSurplus`, "0", "number")}
+                ${field("Social Surplus", `assetMonthly.${i}.starting.socialSurplus`, "0", "number")}
+              </div>
+            </div>
+            <div class="asset-track">
+              <div class="asset-track-title">Ending State</div>
+              <div class="grid cols-4">
+                ${field("Operational", `assetMonthly.${i}.ending.operational`, "0", "number")}
+                ${field("External", `assetMonthly.${i}.ending.external`, "0", "number")}
+                ${field("Op Surplus", `assetMonthly.${i}.ending.opSurplus`, "0", "number")}
+                ${field("Social Surplus", `assetMonthly.${i}.ending.socialSurplus`, "0", "number")}
+              </div>
+            </div>
+          </div>
+
+          <div class="grid cols-3">
+            ${field("Base Requirement", `assetMonthly.${i}.baseRequirement`, "0", "number")}
+            ${field("Added Pressure", `assetMonthly.${i}.pressureRequirement`, "0", "number")}
+            ${field("Purchased Support", `assetMonthly.${i}.purchasedSupport`, "0", "number")}
+          </div>
+          ${area("Active Pressures / Events", `assetMonthly.${i}.pressures`)}
+
+          <table class="row-table dense-table asset-week-table"><thead><tr><th>Week</th><th>Hours</th><th>Asset</th><th>Roles</th><th>TN</th><th>Successes</th><th>Allocation / Event</th></tr></thead><tbody>${weekRows}</tbody></table>
+
+          <div class="asset-summary-grid">
+            <div class="asset-stat"><strong id="assetMonth${i}Hours">0</strong><small>Total Role Hours</small></div>
+            <div class="asset-stat"><strong id="assetMonth${i}Successes">0</strong><small>Rolled Successes</small></div>
+            <div class="asset-stat"><strong id="assetMonth${i}Requirement">0</strong><small>Total Requirement</small></div>
+            <div class="asset-stat"><strong id="assetMonth${i}Shortfall">0</strong><small>Uncovered Shortfall</small></div>
+          </div>
+
+          <div class="grid cols-4">
+            ${field("Surplus Spent", `assetMonthly.${i}.surplusSpent`, "0", "number")}
+            ${field("Support Cost (¥)", `assetMonthly.${i}.supportCost`, "0", "number")}
+            ${field("Cash Generated (¥)", `assetMonthly.${i}.cashGenerated`, "0", "number")}
+            ${field("Direct Damage", `assetMonthly.${i}.directDamage`, "0", "number")}
+          </div>
+          <div class="grid cols-2">
+            ${area("Monthly Outcome", `assetMonthly.${i}.outcome`)}
+            ${area("Carry Forward / Next Month", `assetMonthly.${i}.carryForward`)}
+          </div>
+        </div></section>`;
+      },
+
+      advancement(instance) {
+        return `<section class="section"><h2>Karma + Advancement ${instance ? instance + 1 : ""}</h2><div class="content grid cols-3">
+          ${field("Karma Pool", "karma.pool", "0", "number")}
+          ${field("Good Karma", "karma.good", "0", "number")}
+          ${field("Total Earned", "karma.total", "0", "number")}
+          <div style="grid-column: 1 / -1">${table(`karma.log.${instance || 0}`, [
+            { label: "Inc / Buy", key: "item" },
+            { label: "Karma", key: "cost", cls: "narrow" },
+            { label: "Date", key: "date", cls: "narrow" },
+            { label: "Notes", key: "notes" }
+          ], 8)}</div>
+        </div></section>`;
+      },
+
+      notes(instance) {
+        return `<section class="section"><h2>Background + Notes ${instance ? instance + 1 : ""}</h2><div class="content grid cols-2">
+          ${area("History / Concept", `notes.${instance || 0}.history`)}
+          ${area("Current Run Notes", `notes.${instance || 0}.current`)}
+          ${area("Network / Organization", `notes.${instance || 0}.network`)}
+          ${area("GM / Advancement Notes", `notes.${instance || 0}.gm`)}
+        </div></section>`;
+      }
+    };
+
+    function renderLibrary() {
+      const host = document.getElementById("sectionLibrary");
+      host.innerHTML = sectionDefs.map(def => `
+        <div class="item">
+          <label><input type="checkbox" data-section="${def.id}" ${state.sections[def.id] ? "checked" : ""}> ${def.label}<br><small>${def.max === 1 ? "single section" : "repeatable"}</small></label>
+          ${def.max > 1 ? `<input type="number" min="0" max="${def.max}" data-count="${def.id}" value="${state.sections[def.id]}">` : ""}
+        </div>
+      `).join("");
+    }
+
+    function renderSheet() {
+      const host = document.getElementById("sheetSections");
+      host.innerHTML = sectionDefs.flatMap(def => {
+        const count = state.sections[def.id] || 0;
+        return Array.from({ length: count }, (_, i) => renderers[def.id](i));
+      }).join("");
+      bindInputs();
+      hydrateInputs();
+      calculate();
+    }
+
+    function bindInputs() {
+      document.querySelectorAll("[data-key]").forEach(input => {
+        const eventName = input.type === "checkbox" || input.tagName === "SELECT" ? "change" : "input";
+        input.addEventListener(eventName, e => {
+          const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
+          set(e.target.dataset.key, value);
+        });
+      });
+    }
+
+    function hydrateInputs() {
+      document.querySelectorAll("[data-key]").forEach(input => {
+        const val = get(input.dataset.key);
+        if (input.type === "checkbox") {
+          input.checked = val === true || val === "true";
+        } else if (val !== "") {
+          input.value = val;
+        }
+      });
+    }
+
+    function calculate() {
+      const q = number("attributes.quickness.modified") || number("attributes.quickness.natural");
+      const i = number("attributes.intelligence.modified") || number("attributes.intelligence.natural");
+      const w = number("attributes.willpower.modified") || number("attributes.willpower.natural");
+      const mpcp = number("matrix.mpcp");
+      const reaction = Math.floor((q + i) / 2) + number("derived.reactionMods");
+      const combatPool = Math.floor((q + i + w) / 2) + number("derived.combatPoolMods");
+      const hackingPool = Math.floor((i + mpcp) / 3) + number("derived.hackingPoolMods");
+      const dice = Math.max(1, number("derived.initiativeDice") || 1);
+      const condition = calculateCondition();
+      text("reactionOut", reaction);
+      text("initiativeOut", `${reaction} + ${dice}D6`);
+      text("combatPoolOut", combatPool);
+      text("hackingPoolOut", hackingPool);
+      text("conditionTnOut", `${condition.tn >= 0 ? "+" : ""}${condition.tn} TN`);
+      text("conditionInitOut", `${condition.init >= 0 ? "+" : ""}${condition.init} Init`);
+      text("conditionStatusOut", condition.status);
+      calculateAssets();
+      calculateAssetMonths();
+    }
+
+    function assetNumber(index, path) {
+      const value = parseFloat(get(`assets.${index}.${path}`));
+      return Number.isFinite(value) ? value : 0;
+    }
+
+    function assetConditionModifier(boxes) {
+      if (boxes >= 6) return 3;
+      if (boxes >= 3) return 2;
+      if (boxes >= 1) return 1;
+      return 0;
+    }
+
+    function assetFatigue(hours) {
+      if (hours > 80) return "Over limit";
+      if (hours >= 71) return "Serious Physical";
+      if (hours >= 61) return "Moderate Physical";
+      if (hours >= 51) return "Serious Stun";
+      if (hours >= 41) return "Moderate Stun";
+      return "None";
+    }
+
+    function calculateAssets() {
+      const count = state.sections.assets || 0;
+      const baseTn = { Squatter: 2, Low: 3, Middle: 4, High: 5, Luxury: 6, Opulent: 7 };
+      const ratingKeys = ["income", "comforts", "entertainment", "furnishings", "security", "space"];
+
+      for (let i = 0; i < 8; i++) {
+        const active = i < count;
+        const name = active ? get(`assets.${i}.name`) : "";
+        const level = active ? get(`assets.${i}.level`) : "";
+        const ratingTotal = active ? ratingKeys.reduce((sum, key) => sum + assetNumber(i, `ratings.${key}`), 0) : 0;
+        const requirement = active ? ratingKeys.reduce((sum, key) => {
+          const explicit = get(`assets.${i}.requirements.${key}`);
+          return sum + (explicit === "" ? assetNumber(i, `ratings.${key}`) : assetNumber(i, `requirements.${key}`));
+        }, 0) : 0;
+        const pool = Math.floor(ratingTotal / 3);
+        const area = active ? assetNumber(i, "area") : 0;
+        const areaPressureCount = ({ 1: 2, 2: 1, 3: 0, 4: 0, 5: 1, 6: 2 })[area];
+        const opBoxes = active ? assetNumber(i, "condition.operationalBoxes") : 0;
+        const extBoxes = active ? assetNumber(i, "condition.externalBoxes") : 0;
+        const tn = (baseTn[level] || 0) + assetConditionModifier(opBoxes) + assetConditionModifier(extBoxes);
+        let totalHours = 0;
+        let totalRoleDice = 0;
+
+        if (active) {
+          for (let r = 0; r < 5; r++) {
+            const rating = assetNumber(i, `roles.${r}.rating`);
+            const hours = Math.max(0, Math.min(40, assetNumber(i, `roles.${r}.hours`)));
+            const dice = Math.floor(rating * (hours / 40));
+            totalHours += assetNumber(i, `roles.${r}.hours`);
+            totalRoleDice += dice;
+            text(`asset${i}RoleDice${r}`, dice);
+          }
+        }
+
+        text(`asset${i}RatingTotal`, ratingTotal);
+        text(`asset${i}Pool`, pool);
+        text(`asset${i}BaseTn`, level ? tn : "—");
+        text(`asset${i}Requirement`, requirement);
+        text(`asset${i}TotalHours`, totalHours);
+        text(`asset${i}RoleDice`, totalRoleDice);
+        text(`asset${i}Fatigue`, assetFatigue(totalHours));
+
+        const pressureOne = document.getElementById(`asset${i}AreaPressure1`);
+        const pressureTwo = document.getElementById(`asset${i}AreaPressure2`);
+        if (pressureOne) pressureOne.hidden = !(areaPressureCount >= 1);
+        if (pressureTwo) pressureTwo.hidden = !(areaPressureCount >= 2);
+        if (!area) {
+          text(`asset${i}AreaPressureCount`, "Select an Area rating.");
+        } else if (areaPressureCount === 0) {
+          text(`asset${i}AreaPressureCount`, `Area ${area}: no fixed pressure categories.`);
+        } else {
+          const selected = [get(`assets.${i}.areaPressures.0.category`), get(`assets.${i}.areaPressures.1.category`)].filter(Boolean).length;
+          text(`asset${i}AreaPressureCount`, `Area ${area}: ${areaPressureCount} fixed pressure ${areaPressureCount === 1 ? "category" : "categories"} required (${selected}/${areaPressureCount} assigned).`);
+        }
+
+        text(`portfolioName${i}`, active ? (name || `Asset ${i + 1}`) : "—");
+        text(`portfolioLevel${i}`, active ? (level || "—") : "—");
+        text(`portfolioPool${i}`, active ? pool : 0);
+        text(`portfolioRequirement${i}`, active ? requirement : 0);
+        text(`portfolioCondition${i}`, active ? `${opBoxes} / ${extBoxes}` : "0 / 0");
+        text(`portfolioSurplus${i}`, active ? `${assetNumber(i, "surplus.operational")} / ${assetNumber(i, "surplus.social")}` : "0 / 0");
+        const status = !active ? "—" : (opBoxes >= 10 && extBoxes >= 10 ? "Destroyed" : (opBoxes >= 10 || extBoxes >= 10 ? "Crippled" : "Operating"));
+        text(`portfolioStatus${i}`, status);
+      }
+    }
+
+    function monthlyNumber(index, path) {
+      const value = parseFloat(get(`assetMonthly.${index}.${path}`));
+      return Number.isFinite(value) ? value : 0;
+    }
+
+    function calculateAssetMonths() {
+      const count = state.sections.assetMonthly || 0;
+      for (let i = 0; i < count; i++) {
+        let hours = 0;
+        let successes = 0;
+        for (let w = 0; w < 4; w++) {
+          hours += monthlyNumber(i, `weeks.${w}.hours`);
+          successes += monthlyNumber(i, `weeks.${w}.successes`);
+        }
+        const requirement = monthlyNumber(i, "baseRequirement") + monthlyNumber(i, "pressureRequirement");
+        const coverage = successes + monthlyNumber(i, "purchasedSupport") + monthlyNumber(i, "surplusSpent");
+        const shortfall = Math.max(0, requirement - coverage);
+        text(`assetMonth${i}Hours`, hours);
+        text(`assetMonth${i}Successes`, successes);
+        text(`assetMonth${i}Requirement`, requirement);
+        text(`assetMonth${i}Shortfall`, shortfall);
+      }
+    }
+
+    function calculateCondition() {
+      const mods = {
+        none: { tn: 0, init: 0, status: "No condition penalty" },
+        light: { tn: 1, init: -1, status: "Light condition penalty" },
+        moderate: { tn: 2, init: -2, status: "Moderate condition penalty" },
+        serious: { tn: 3, init: -3, status: "Serious condition penalty" },
+        deadly: { tn: 3, init: -3, status: "Deadly condition: incapacitated or needs table ruling" }
+      };
+      const stun = mods[get("condition.stun.level") || "none"] || mods.none;
+      const physical = mods[get("condition.physical.level") || "none"] || mods.none;
+      const tn = Math.max(stun.tn, physical.tn) + number("condition.manualTn");
+      const init = Math.min(stun.init, physical.init) + number("condition.manualInit");
+      const statuses = [stun.status, physical.status].filter(s => s !== "No condition penalty");
+      return { tn, init, status: statuses.length ? statuses.join(" / ") : "No condition penalty" };
+    }
+
+    function text(id, value) {
+      const node = document.getElementById(id);
+      if (node) node.textContent = value;
+    }
+
+    function labelize(value) {
+      return value.replace(/([A-Z])/g, " $1").replace(/^./, c => c.toUpperCase());
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+    }
+
+    function save() {
+      localStorage.setItem("sr3-modular-character-assets-blank-v1", JSON.stringify(state));
+    }
+
+    function load() {
+      const raw = localStorage.getItem("sr3-modular-character-assets-blank-v1");
+      if (!raw) return;
+      try {
+        const parsed = JSON.parse(raw);
+        Object.assign(state.sections, parsed.sections || {});
+        state.data = parsed.data || {};
+      } catch {}
+    }
+
+    function download(filename, text) {
+      const blob = new Blob([text], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    document.addEventListener("change", e => {
+      if (e.target.dataset.section) {
+        const id = e.target.dataset.section;
+        const def = sectionDefs.find(s => s.id === id);
+        state.sections[id] = e.target.checked ? Math.max(1, state.sections[id] || def.count || 1) : 0;
+        save(); renderLibrary(); renderSheet();
+      }
+      if (e.target.dataset.count) {
+        const id = e.target.dataset.count;
+        const def = sectionDefs.find(s => s.id === id);
+        state.sections[id] = Math.max(0, Math.min(def.max, parseInt(e.target.value || "0", 10)));
+        save(); renderLibrary(); renderSheet();
+      }
+    });
+
+    document.getElementById("printBtn").addEventListener("click", () => window.print());
+    document.getElementById("exportBtn").addEventListener("click", () => download("shadowrun-3e-character-assets.json", JSON.stringify(state, null, 2)));
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      if (!confirm("Reset this local sheet builder state?")) return;
+      localStorage.removeItem("sr3-modular-character-assets-blank-v1");
+      location.reload();
+    });
+    document.getElementById("importFile").addEventListener("change", async e => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const parsed = JSON.parse(await file.text());
+      Object.assign(state.sections, parsed.sections || {});
+      state.data = parsed.data || {};
+      save(); renderLibrary(); renderSheet();
+    });
+
+    load();
+    renderLibrary();
+    renderSheet();
+  </script>
+</body>
+</html>
+

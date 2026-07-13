@@ -1,0 +1,83 @@
+{
+  "display_mode": "contact_card",
+  "primary_contact_record_id": "ent-blackjack",
+  "contact_owner_record_id": "ent-switch",
+  "category_label": "Contact",
+  "link_label": "Switch",
+  "contact_role_label": "Fixer",
+  "contact_card_summary": "Blackjack is Switch's fixer contact.",
+  "formal_contact_status": "formal_contact",
+  "loyalty": "2",
+  "connection_rating": "2",
+  "rating_basis": "Owner-reviewed 2/2 contact rating.",
+  "portrait_material_record_id": "",
+  "normal_services": [
+    "Fixer job handling",
+    "Information routing",
+    "Job coordination and handoff support"
+  ],
+  "appearance_aesthetic": "Unknown.",
+  "metatype_race": "Unknown.",
+  "current_physical_status": "Alive but severely beaten after Kestrel/Rusty Spade fallout.",
+  "last_known_location": "loc-wongs-meat-market-tacoma-district",
+  "regular_status": "Switch's fixer contact; routine social or hangout pattern is not recorded yet.",
+  "contact_availability": "Alive and reachable only through recovery/medical-care context; normal fixer availability is uncertain.",
+  "table_role": "Switch's fixer contact.",
+  "owner_notes": "",
+  "owner_facing_tags": [
+    "fixer",
+    "Switch contact",
+    "crate recovery chain"
+  ],
+  "owner_added_pending_tags": [],
+  "location_associations": [
+    {
+      "location_record_id": "loc-wongs-meat-market-tacoma-district",
+      "free_text_location": "Wong's Meat Market / Tacoma District",
+      "relationship_type": "treated at",
+      "source_session": "ses-005",
+      "visibility": "gm_only",
+      "confidence": "reviewed context",
+      "notes": "Last known recovery/medical-care context after Rusty Spade fallout."
+    }
+  ],
+  "related_relationship_record_ids": [
+    "rel-mara-blackjack",
+    "rel-toggle-blackjack"
+  ],
+  "favor_ledger": [
+    {
+      "favor_label": "Medical care arranged after Rusty Spade fallout",
+      "direction": "The Chin arranged care for Blackjack",
+      "provider": "The Chin",
+      "beneficiary": "Blackjack",
+      "owed_to": "The Chin",
+      "owed_by": "Blackjack",
+      "favor_weight": "major favor",
+      "favor_status": "open",
+      "resolution_method": "not resolved",
+      "resolved_by": "not resolved",
+      "resolved_to": "not resolved",
+      "resolved_session": "not resolved",
+      "resolution_note": "No repayment or resolution has been recorded.",
+      "source_session": "ses-005",
+      "notes": "Blackjack's recovery leaves an open obligation to The Chin unless later repaid, waived, transferred, or disputed."
+    }
+  ],
+  "edit_history": [
+    {
+      "edited_at": "2026-07-06T00:59:04.491Z",
+      "edited_by": "owner_source_truth_branch_editor",
+      "edit_scope": "full_contact_card",
+      "stable_authority_changed": false,
+      "source_preservation_modified": false,
+      "note": "Saved from the branch-only Edit Contact Card task."
+    }
+  ],
+  "branch_only": true,
+  "stable_authority_changed": false,
+  "source_preservation_modified": false,
+  "binary_files_copied": false,
+  "updated_at": "2026-07-06T00:59:04.5647931Z",
+  "contact_card_id": "rel-switch-blackjack-contact"
+}

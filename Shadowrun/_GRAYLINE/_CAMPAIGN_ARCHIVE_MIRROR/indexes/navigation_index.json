@@ -1,0 +1,15 @@
+{
+  "schema_version": "mirror_navigation_index.v1",
+  "generated_at": "2026-07-08T03:00:57.4632365Z",
+  "sections": [
+    "person_cards",
+    "relationship_webs",
+    "location_maps",
+    "sessions",
+    "reports",
+    "indexes",
+    "materials"
+  ],
+  "active_registry_source": "C:\\Campaign_Archive_System\\registry",
+  "mirror_is_authority": false
+}

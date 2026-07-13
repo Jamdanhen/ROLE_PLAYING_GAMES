@@ -1,0 +1,23 @@
+{
+  "title": "Hubcap Relationship Web",
+  "central_record_id": "ent-hubcap",
+  "summary": "Draft owner-facing relationship web for Hubcap. This test intentionally stays sparse: Hubcap session presence, scrounging details, hard-drive recovery, and food/fish-sandwich source checks belong on dossier, location, thread, or review surfaces unless a specific relationship is extracted.",
+  "relationship_categories": {
+    "formal_contacts": [],
+    "known_associates": [],
+    "jobs_contracts": [],
+    "favors_obligations": [],
+    "adversaries": [],
+    "employers_patrons": [],
+    "memberships_affiliations": [],
+    "family_personal_ties": [],
+    "service_providers": []
+  },
+  "relationship_questions": [
+    "No specific Hubcap relationship item is extracted yet; add one only when a source or owner review identifies a real tie, obligation, contact status, association, job chain, adversary relation, or service relation."
+  ],
+  "relationship_history": [],
+  "pressure_candidates": [],
+  "branch_only": true,
+  "relationship_web_id": "relweb-ent-hubcap"
+}

@@ -1,0 +1,472 @@
+{
+  "title": "Siberian Wolf Location Map",
+  "central_location_record_id": "loc-siberian-wolf",
+  "summary": "Draft owner-facing location map for the Siberian Wolf, focused on what matters at this place: identity, control, rooms/zones, people, materials, events, pressure, hooks, assets, rules, hazards, and place-specific questions.",
+  "location_categories": {
+    "place_identity": [
+      {
+        "title": "Siberian Wolf",
+        "label": "Central place",
+        "summary": "Seattle, UCAS bar and apartments used as an early crew home base and table anchor.",
+        "city": "Seattle",
+        "national_context": "UCAS - United Canadian American States",
+        "district": "Tacoma District",
+        "section": "Grayline",
+        "place_type": "Bar and apartments",
+        "venue_role": "Grayline community anchor, information hub, meeting point, and informal safehouse",
+        "route_view": "locations",
+        "route_id": "loc-siberian-wolf"
+      }
+    ],
+    "ownership_control": [
+      {
+        "title": "The Chin",
+        "label": "Owner / operator",
+        "summary": "Controls and operates the Siberian Wolf.",
+        "route_view": "entities",
+        "route_id": "ent-the-chin"
+      }
+    ],
+    "lifestyle_economy": [
+      {
+        "title": "Bar business",
+        "label": "Low lifestyle / business",
+        "summary": "The public bar operates at a low-lifestyle street-business level.",
+        "route_view": "locations",
+        "route_id": "loc-siberian-wolf"
+      },
+      {
+        "title": "Two standard apartments",
+        "label": "Low lifestyle / residence",
+        "summary": "Two upstairs apartments are low-lifestyle residential space.",
+        "route_view": "locations",
+        "route_id": "loc-siberian-wolf"
+      },
+      {
+        "title": "Master apartment",
+        "label": "Medium lifestyle / residence",
+        "summary": "The third/master apartment is at least medium lifestyle.",
+        "route_view": "locations",
+        "route_id": "loc-siberian-wolf"
+      },
+      {
+        "title": "Poker night economy",
+        "label": "Bar economy / private games",
+        "summary": "Poker night belongs under the bar economy and private-game use; owner will define earning specifics later.",
+        "route_view": "threads",
+        "route_id": "thr-session006-wolf-poker-night-social-field"
+      }
+    ],
+    "security_access": [
+      {
+        "title": "Front door and bouncer station",
+        "label": "Public access / security",
+        "summary": "Main public entry with bouncer-station control.",
+        "route_view": "locations",
+        "route_id": "loc-siberian-wolf"
+      },
+      {
+        "title": "Office access / private business boundary",
+        "label": "Controlled access",
+        "summary": "Back office is for private business. Hard-drive and confrontation scenes are events tied to the office, not the office description.",
+        "route_view": "locations",
+        "route_id": "loc-siberian-wolf-office"
+      },
+      {
+        "title": "Apartment alley stairs",
+        "label": "Residential access",
+        "summary": "Apartments can be accessed by alley stairs.",
+        "route_view": "locations",
+        "route_id": "loc-siberian-wolf"
+      },
+      {
+        "title": "Hidden interior ladder panel",
+        "label": "Hidden residential access",
+        "summary": "Interior hall has a hidden ladder access panel along the north wall of the building, descending into the bar area.",
+        "route_view": "locations",
+        "route_id": "loc-siberian-wolf"
+      },
+      {
+        "title": "Bathroom-window escape route",
+        "label": "Access / escape",
+        "summary": "Session 000 escape-route context tied to Spectre and the hard-drive event chain.",
+        "route_view": "locations",
+        "route_id": "loc-siberian-wolf"
+      }
+    ],
+    "zones_rooms_routes": [
+      {
+        "title": "Main bar floor",
+        "label": "Zone",
+        "summary": "Primary public area of the Siberian Wolf.",
+        "route_view": "locations",
+        "route_id": "loc-siberian-wolf"
+      },
+      {
+        "title": "Bar proper",
+        "label": "Zone / cover",
+        "summary": "Main bar area used as practical table geography and cover context during early Wolf violence.",
+        "route_view": "locations",
+        "route_id": "loc-siberian-wolf"
+      },
+      {
+        "title": "Side gambling room",
+        "label": "Room / private games",
+        "summary": "Side room used for private games.",
+        "route_view": "locations",
+        "route_id": "loc-siberian-wolf"
+      },
+      {
+        "title": "Siberian Wolf office",
+        "label": "Room / office",
+        "summary": "Back office for private business.",
+        "route_view": "locations",
+        "route_id": "loc-siberian-wolf-office"
+      },
+      {
+        "title": "Two standard apartments",
+        "label": "Residential rooms",
+        "summary": "Two low-lifestyle upstairs apartments.",
+        "route_view": "locations",
+        "route_id": "loc-siberian-wolf"
+      },
+      {
+        "title": "Master apartment",
+        "label": "Residential room",
+        "summary": "At least medium-lifestyle upstairs master apartment.",
+        "route_view": "locations",
+        "route_id": "loc-siberian-wolf"
+      },
+      {
+        "title": "Wolf bathroom / escape route",
+        "label": "Room / route",
+        "summary": "Session 000 escape-route context tied to Spectre and the hard-drive event chain.",
+        "route_view": "locations",
+        "route_id": "loc-siberian-wolf"
+      },
+      {
+        "title": "Alley stairs",
+        "label": "Route / residential access",
+        "summary": "Exterior stair route from alley to apartments.",
+        "route_view": "locations",
+        "route_id": "loc-siberian-wolf"
+      },
+      {
+        "title": "Hidden north-wall ladder",
+        "label": "Hidden route",
+        "summary": "Hidden ladder access panel in the interior hall along the north wall, descending into the bar area.",
+        "route_view": "locations",
+        "route_id": "loc-siberian-wolf"
+      }
+    ],
+    "people_here": [
+      {
+        "title": "The Chin",
+        "label": "Owners / controllers",
+        "summary": "Runs and anchors the Siberian Wolf.",
+        "route_view": "entities",
+        "route_id": "ent-the-chin"
+      },
+      {
+        "title": "Switch",
+        "label": "Residents / tenants",
+        "summary": "Lives upstairs and works bartender shifts when relevant.",
+        "route_view": "entities",
+        "route_id": "ent-switch"
+      },
+      {
+        "title": "Kilmer",
+        "label": "Residents / tenants",
+        "summary": "Lives upstairs and uses the Wolf as a home base.",
+        "route_view": "entities",
+        "route_id": "ent-kilmer"
+      },
+      {
+        "title": "Tonya",
+        "label": "Staff / bartender",
+        "summary": "Bartender/staff context from recovered session-log bar-state evidence; branch context only until a full dossier exists.",
+        "route_view": "",
+        "route_id": ""
+      },
+      {
+        "title": "Hubcap",
+        "label": "Patrons / regulars",
+        "summary": "Wolf regular/squatter context tied to early salvage and table continuity.",
+        "route_view": "entities",
+        "route_id": "ent-hubcap"
+      },
+      {
+        "title": "Spectre",
+        "label": "GM-only / hidden actors",
+        "summary": "Session 000 hard-drive and bathroom-window escape context.",
+        "route_view": "entities",
+        "route_id": "ent-spectre"
+      },
+      {
+        "title": "Mouse",
+        "label": "GM-only / hidden actors",
+        "summary": "Session 006 office pressure actor; keep as context/GM-only, not public Wolf staff.",
+        "route_view": "entities",
+        "route_id": "ent-mouse"
+      },
+      {
+        "title": "Ellis Rouke",
+        "label": "Visitors / guests",
+        "summary": "Session 006 office-pressure participant; contained during the office scene.",
+        "route_view": "entities",
+        "route_id": "ent-ellis-rouke"
+      }
+    ],
+    "groups_factions_here": [
+      {
+        "title": "Brigada 12",
+        "label": "Local influence / stabilizing force",
+        "summary": "Wolf/Grayline stability context through The Chin and recovered Session 000-006 source material.",
+        "route_view": "factions",
+        "route_id": "fac-brigada-12"
+      },
+      {
+        "title": "Siberian Wolf Regulars",
+        "label": "Patrons / regulars",
+        "summary": "Session 006 Poker Night social field and room attention.",
+        "route_view": "factions",
+        "route_id": "fac-siberian-wolf-regulars"
+      }
+    ],
+    "materials_maps": [
+      {
+        "title": "Siberian Wolf Bar And Apartments Map Set",
+        "label": "Map",
+        "summary": "Operational bar/residence map set for Wolf rooms, routes, residence/apartment context, and GM/player visibility review.",
+        "route_view": "materials",
+        "route_id": "mat-sm-0006"
+      }
+    ],
+    "events_at_place": [
+      {
+        "title": "Hard-drive chain",
+        "label": "Event group / arc",
+        "summary": "Hard-drive-related Wolf events should stay grouped without flattening separate incidents into one event.",
+        "why_it_matters": "This is the Wolf's hidden escalation chain: seed, violence, trace risk, office review, and handshake risk.",
+        "visibility": "GM-only / mixed",
+        "route_view": "threads",
+        "route_id": "thr-kestrel-investigation",
+        "children": [
+          {
+            "title": "Hard-drive seed",
+            "label": "Incident / seed",
+            "summary": "Spectre plants or leaves the hard-drive seed tied to the Wolf incident path.",
+            "session_id": "ses-000",
+            "zone": "Wolf bathroom / escape route",
+            "why_it_matters": "Starts the hidden hard-drive/AI/corporate pressure chain.",
+            "visibility": "GM-only",
+            "route_view": "sessions",
+            "route_id": "ses-000"
+          },
+          {
+            "title": "Wolf firefight",
+            "label": "Incident / scene",
+            "summary": "Kestrel/Spectre incident establishes early Wolf violence, reputation, and pressure.",
+            "session_id": "ses-000",
+            "zone": "Main bar floor / bar proper",
+            "why_it_matters": "Creates Wolf reputation, Kestrel pressure, and early campaign stakes.",
+            "visibility": "Mixed / contextual",
+            "route_view": "sessions",
+            "route_id": "ses-000"
+          },
+          {
+            "title": "Trace beacon risk",
+            "label": "Incident / risk",
+            "summary": "Trace/beacon risk remains tied to hard-drive access and Wolf-linked pressure.",
+            "session_id": "cross-session",
+            "zone": "Wolf / hidden hard-drive context",
+            "why_it_matters": "Keeps the Wolf in the pressure path even when no scene is actively happening there.",
+            "visibility": "GM-only",
+            "route_view": "threads",
+            "route_id": "thr-kestrel-investigation"
+          },
+          {
+            "title": "Office technical review",
+            "label": "Incident / technical review",
+            "summary": "Hard-drive/tracker review identifies tracker, telemetry, reconstruction, and larger-system risk.",
+            "session_id": "ses-006",
+            "zone": "Siberian Wolf office",
+            "why_it_matters": "Turns the hidden object into an active technical/corporate pressure problem.",
+            "visibility": "GM-only / mixed",
+            "route_view": "threads",
+            "route_id": "thr-session006-hard-drive-cradle-discovery"
+          },
+          {
+            "title": "Hard-drive/cradle handshake",
+            "label": "Incident / handshake",
+            "summary": "Branch overlay preserves owner-approved handshake evidence as GM-only technical escalation.",
+            "session_id": "ses-006",
+            "zone": "Siberian Wolf office",
+            "why_it_matters": "Connects the hard-drive/cradle interaction to the larger hidden-system risk.",
+            "visibility": "GM-only",
+            "route_view": "threads",
+            "route_id": "thr-hidden-hard-drive-ai-emergence-path"
+          }
+        ]
+      },
+      {
+        "title": "Session 006 Poker Night social field",
+        "label": "Standalone event / scene",
+        "summary": "Poker Night converges at the Siberian Wolf and creates public attention while office pressure unfolds.",
+        "session_id": "ses-006",
+        "zone": "Main bar floor",
+        "why_it_matters": "Creates social cover, witnesses, gambling/rumor texture, and room pressure.",
+        "visibility": "Player-visible with GM-only elements",
+        "route_view": "sessions",
+        "route_id": "ses-006"
+      },
+      {
+        "title": "Session 006 office confrontation",
+        "label": "Standalone event / scene",
+        "summary": "Mouse cooperates and Ellis is contained as office pressure begins.",
+        "session_id": "ses-006",
+        "zone": "Siberian Wolf office",
+        "why_it_matters": "This is the social/confrontation pressure scene, adjacent to but not identical with technical hard-drive review.",
+        "visibility": "Player-visible with GM-only elements",
+        "route_view": "threads",
+        "route_id": "thr-session006-mouse-triad-office"
+      }
+    ],
+    "threads_hooks": [
+      {
+        "title": "Wolf hard-drive / trace linkage",
+        "label": "Thread / hook",
+        "summary": "Place-specific trace risk tied to the hard drive and later fallout.",
+        "route_view": "threads",
+        "route_id": "thr-kestrel-investigation"
+      },
+      {
+        "title": "Session 006 Wolf Poker Night Social Field",
+        "label": "Thread / hook",
+        "summary": "Poker Night creates table attention, social cover, and pressure around the back-office scene.",
+        "route_view": "threads",
+        "route_id": "thr-session006-wolf-poker-night-social-field"
+      },
+      {
+        "title": "Session 006 Mouse / Triad office pressure",
+        "label": "Thread / hook",
+        "summary": "Office pressure tied to Mouse, Triad context, and private-business boundaries.",
+        "route_view": "threads",
+        "route_id": "thr-session006-mouse-triad-office"
+      },
+      {
+        "title": "Ellis / Boeing pressure thread",
+        "label": "Thread / hook",
+        "summary": "Ellis should be tracked as a separate Boeing-facing active thread, not folded into Wolf staff or general room population.",
+        "route_view": "entities",
+        "route_id": "ent-ellis-rouke"
+      }
+    ],
+    "assets_objects_here": [
+      {
+        "title": "Hard drive",
+        "label": "Object / evidence context",
+        "summary": "One hard-drive object tied to the Wolf incident path and later technical review.",
+        "route_view": "threads",
+        "route_id": "thr-session006-hard-drive-cradle-discovery",
+        "children": [
+          {
+            "title": "Hard-drive seed",
+            "label": "Sub-detail",
+            "summary": "Initial hidden hard-drive event tied to Spectre and Session 000.",
+            "session_id": "ses-000",
+            "zone": "Wolf bathroom / escape route",
+            "why_it_matters": "Starts the hidden hard-drive/AI/corporate pressure chain.",
+            "visibility": "GM-only",
+            "route_view": "sessions",
+            "route_id": "ses-000"
+          },
+          {
+            "title": "Trace / tracker risk",
+            "label": "Sub-detail",
+            "summary": "Trace or tracker behavior belongs under the hard-drive object, not as a separate object.",
+            "session_id": "cross-session",
+            "zone": "Wolf / hard-drive context",
+            "why_it_matters": "Keeps the Wolf in the pressure path when the object is investigated.",
+            "visibility": "GM-only",
+            "route_view": "threads",
+            "route_id": "thr-kestrel-investigation"
+          },
+          {
+            "title": "Technical review",
+            "label": "Sub-detail",
+            "summary": "Session 006 office review examines the hard drive and related technical risk.",
+            "session_id": "ses-006",
+            "zone": "Siberian Wolf office",
+            "why_it_matters": "Turns the hidden object into an active technical/corporate pressure problem.",
+            "visibility": "GM-only / mixed",
+            "route_view": "threads",
+            "route_id": "thr-session006-hard-drive-cradle-discovery"
+          }
+        ]
+      }
+    ],
+    "local_rules_mechanics": [
+      {
+        "title": "Hubcap scrounging table",
+        "label": "Table mechanic",
+        "summary": "Hubcap-related scrounging/table rules belong here when owner-defined or source-supported.",
+        "route_view": "entities",
+        "route_id": "ent-hubcap"
+      },
+      {
+        "title": "Poker night winning rules",
+        "label": "Table mechanic",
+        "summary": "Poker night rules, payouts, room attention, and earning specifics belong here once outlined by the owner.",
+        "route_view": "threads",
+        "route_id": "thr-session006-wolf-poker-night-social-field"
+      }
+    ],
+    "encounter_tables_hazards": [
+      {
+        "title": "Encounter table not defined yet",
+        "label": "Needs owner design",
+        "summary": "The previous entries were not the intended encounter-table model and duplicated other sections. Define actual repeatable venue encounters or hazards later.",
+        "route_view": "locations",
+        "route_id": "loc-siberian-wolf"
+      }
+    ],
+    "location_questions": [
+      "Are Wolf room/route details complete enough for table use?",
+      "What are the exact poker-night earning and winning rules?",
+      "What should the Siberian Wolf encounter table include, if one is needed?",
+      "Does Kestrel attention escalate toward the Wolf itself, or stay attached to people/events?"
+    ]
+  },
+  "pressure_candidates": [
+    {
+      "title": "Hard-drive / trace linkage risk",
+      "pressure_source": "Spectre hard-drive seed and trace chain",
+      "target": "Siberian Wolf",
+      "pressure_type": "trace / hidden pressure",
+      "current_state": "The Siberian Wolf remains tied to hard-drive/trace linkage risk through Session 000 and later fallout context.",
+      "related_location_record_id": "loc-siberian-wolf",
+      "severity": "high",
+      "urgency": "latent",
+      "open_question": "How visible is the Wolf connection to outside investigators or corporate actors?",
+      "possible_next_move": "Track whether trace evidence points back to the Wolf or its operators.",
+      "visibility": "gm_only"
+    },
+    {
+      "title": "Kestrel / Wolf fallout",
+      "pressure_source": "Kestrel pressure around Wolf incidents",
+      "target": "Siberian Wolf",
+      "pressure_type": "faction pressure / consequence",
+      "current_state": "Wolf incidents and Kestrel fallout remain active pressure context for the location and its operators.",
+      "related_location_record_id": "loc-siberian-wolf",
+      "related_faction_record_id": "fac-kestrel-defense-systems",
+      "severity": "medium",
+      "urgency": "active",
+      "open_question": "Does Kestrel attention escalate toward the Wolf, its regulars, or The Chin?",
+      "possible_next_move": "Feed later pressure-clock work if Kestrel makes a move against the location.",
+      "visibility": "gm_only"
+    }
+  ],
+  "branch_only": true,
+  "location_map_id": "locmap-loc-siberian-wolf"
+}

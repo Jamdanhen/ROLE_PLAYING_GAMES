@@ -1,0 +1,236 @@
+{
+  "title": "The Marrow Location Map",
+  "central_location_record_id": "loc-the-marrow",
+  "summary": "Draft owner-facing location map for The Marrow, a simpler downtown high-status meeting venue.",
+  "location_categories": {
+    "place_identity": [
+      {
+        "title": "The Marrow",
+        "label": "Central place",
+        "summary": "Downtown high-end elven restaurant and controlled high-status meeting site with glass-front exterior.",
+        "city": "Seattle",
+        "district": "Downtown",
+        "section": "Downtown restaurant district",
+        "place_type": "High-end elven restaurant / controlled meeting venue",
+        "venue_role": "High-status meeting site for the Bourgeoisie",
+        "route_view": "locations",
+        "route_id": "loc-the-marrow"
+      }
+    ],
+    "ownership_control": [
+      {
+        "title": "Bourgeoisie meeting control",
+        "label": "Control / patronage",
+        "summary": "Controlled high-status meeting site for Bourgeoisie use.",
+        "route_view": "factions",
+        "route_id": "fac-bourgeoisie-organization"
+      }
+    ],
+    "lifestyle_economy": [
+      {
+        "title": "Downstairs high-end restaurant",
+        "label": "Lifestyle / economy",
+        "summary": "Downstairs restaurant serving high-end elven cuisine in a controlled, high-status setting.",
+        "route_view": "locations",
+        "route_id": "loc-the-marrow"
+      }
+    ],
+    "security_access": [
+      {
+        "title": "Front entrance",
+        "label": "Public access / controlled entry",
+        "summary": "Glass-front public entrance with visible guards; visitors can be turned away or processed through security.",
+        "route_view": "locations",
+        "route_id": "loc-the-marrow"
+      },
+      {
+        "title": "Rear access from parking lot",
+        "label": "Secondary access / rear route",
+        "summary": "Rear route from the parking lot with guard presence.",
+        "route_view": "locations",
+        "route_id": "loc-the-marrow"
+      },
+      {
+        "title": "Wrought-iron staircase security",
+        "label": "Layered interior access",
+        "summary": "Security was positioned at the bottom and top of the wrought-iron staircase during the meeting event.",
+        "route_view": "locations",
+        "route_id": "loc-the-marrow"
+      },
+      {
+        "title": "Black steel door and dark hallway",
+        "label": "Controlled interior route",
+        "summary": "Escorted route through a black steel door and dark hallway toward the private dining room.",
+        "route_view": "locations",
+        "route_id": "loc-the-marrow"
+      }
+    ],
+    "zones_rooms_routes": [
+      {
+        "title": "Downstairs restaurant",
+        "label": "Zone",
+        "summary": "High-end elven cuisine restaurant level.",
+        "route_view": "locations",
+        "route_id": "loc-the-marrow"
+      },
+      {
+        "title": "Front entrance / glass-front exterior",
+        "label": "Entrance",
+        "summary": "Visible public-facing entrance and first security boundary.",
+        "route_view": "locations",
+        "route_id": "loc-the-marrow"
+      },
+      {
+        "title": "Parking-lot rear approach",
+        "label": "Route",
+        "summary": "Rear approach from the parking lot.",
+        "route_view": "locations",
+        "route_id": "loc-the-marrow"
+      },
+      {
+        "title": "Wrought-iron staircase",
+        "label": "Route / stairs",
+        "summary": "Interior stair route with controlled access points.",
+        "route_view": "locations",
+        "route_id": "loc-the-marrow"
+      },
+      {
+        "title": "Dark hallway",
+        "label": "Interior route",
+        "summary": "Escorted interior passage after the black steel door.",
+        "route_view": "locations",
+        "route_id": "loc-the-marrow"
+      },
+      {
+        "title": "Upstairs private dining room",
+        "label": "Room / meeting room",
+        "summary": "Upstairs private dining room used for the Bourgeoisie meeting.",
+        "route_view": "locations",
+        "route_id": "loc-the-marrow"
+      }
+    ],
+    "people_here": [
+      {
+        "title": "The Bourgeoisie",
+        "label": "Host / patron",
+        "summary": "Uses the venue for controlled high-status meetings.",
+        "route_view": "entities",
+        "route_id": "ent-the-bourgeoisie"
+      },
+      {
+        "title": "Switch, Kilmer, and The Chin",
+        "label": "Visitors / runners",
+        "summary": "Visitors during the Session 006 meeting event.",
+        "route_view": "sessions",
+        "route_id": "ses-006"
+      },
+      {
+        "title": "Bourgeoisie guards",
+        "label": "Security / guards",
+        "summary": "Visible layered security at front entrance, rear, staircase bottom, and staircase top during the meeting event.",
+        "route_view": "factions",
+        "route_id": "fac-bourgeoisie-organization"
+      }
+    ],
+    "groups_factions_here": [
+      {
+        "title": "Bourgeoisie Organization",
+        "label": "Patron / network",
+        "summary": "Uses the venue as a high-status controlled meeting setting.",
+        "route_view": "factions",
+        "route_id": "fac-bourgeoisie-organization"
+      }
+    ],
+    "materials_maps": [],
+    "events_at_place": [
+      {
+        "title": "Bourgeoisie meeting at The Marrow",
+        "label": "Standalone event / scene",
+        "summary": "The runners meet the Bourgeoisie, are paid, receive transfer items, and receive the Kasumi Star / Chinese riverboat cargo lead.",
+        "session_id": "ses-006",
+        "zone": "Upstairs private dining room",
+        "why_it_matters": "Closed payment and relationship-maintenance loop; creates the future cargo opportunity without turning later fallout into Marrow location pressure.",
+        "visibility": "Player-visible with GM-only implications",
+        "route_view": "sessions",
+        "route_id": "ses-006",
+        "children": [
+          {
+            "title": "Front entrance refusal / processing",
+            "label": "Access beat",
+            "summary": "The front entrance is controlled; runners were initially turned away or redirected through security processing.",
+            "session_id": "ses-006",
+            "zone": "Front entrance",
+            "why_it_matters": "Shows the venue access boundary.",
+            "visibility": "Player-visible",
+            "route_view": "sessions",
+            "route_id": "ses-006"
+          },
+          {
+            "title": "Rear parking-lot route",
+            "label": "Access beat",
+            "summary": "The group used the rear route from the parking lot as the alternate access path.",
+            "session_id": "ses-006",
+            "zone": "Rear parking-lot access",
+            "why_it_matters": "Preserves the actual route used in the scene.",
+            "visibility": "Player-visible",
+            "route_view": "sessions",
+            "route_id": "ses-006"
+          },
+          {
+            "title": "Layered security processing",
+            "label": "Security beat",
+            "summary": "Visible guards at front, rear, bottom of staircase, and top of staircase; runners were disarmed and escorted inward.",
+            "session_id": "ses-006",
+            "zone": "Entrances / staircase / hallway",
+            "why_it_matters": "Shows Bourgeoisie control of the ground and meeting terms.",
+            "visibility": "Player-visible",
+            "route_view": "sessions",
+            "route_id": "ses-006"
+          },
+          {
+            "title": "Payment and transfer items",
+            "label": "Payment beat",
+            "summary": "Runners were paid on dedicated credsticks and received transfer items such as SUV paperwork, contact phone, and related information.",
+            "session_id": "ses-006",
+            "zone": "Upstairs private dining room",
+            "why_it_matters": "Closed payment loop and relationship maintenance; not a standing Marrow asset.",
+            "visibility": "Player-visible",
+            "route_view": "sessions",
+            "route_id": "ses-006"
+          },
+          {
+            "title": "Kasumi Star / Chinese cargo lead",
+            "label": "Future opportunity beat",
+            "summary": "Bourgeoisie provided a broad lead: a Chinese riverboat carrying valuable cargo is expected within approximately one week.",
+            "session_id": "ses-006",
+            "zone": "Upstairs private dining room",
+            "why_it_matters": "Creates a future shipping/smuggling/cargo opportunity.",
+            "visibility": "Mixed / GM-only details hidden",
+            "route_view": "threads",
+            "route_id": "thr-kasumi-star-chinese-cargo-lead"
+          }
+        ]
+      }
+    ],
+    "threads_hooks": [
+      {
+        "title": "Kasumi Star / Chinese cargo lead",
+        "label": "Thread / hook",
+        "summary": "Future cargo opportunity from the Bourgeoisie lead: Chinese riverboat, valuable cargo, expected in approximately one week.",
+        "route_view": "threads",
+        "route_id": "thr-kasumi-star-chinese-cargo-lead"
+      }
+    ],
+    "assets_objects_here": [],
+    "local_rules_mechanics": [],
+    "encounter_tables_hazards": [],
+    "location_questions": [
+      "Does The Marrow need map/material support, or is it only a social meeting venue?",
+      "Should Bourgeoisie meeting-control details remain venue context or move to relationship/faction pages?"
+    ],
+    "active_location_pressure": []
+  },
+  "pressure_candidates": [],
+  "branch_only": true,
+  "location_map_id": "locmap-loc-the-marrow"
+}
