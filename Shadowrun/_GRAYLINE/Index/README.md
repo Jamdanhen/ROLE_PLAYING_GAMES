@@ -4,11 +4,26 @@ Status:
 ACTIVE LOCAL CAMPAIGN ORGANIZATION ROOT
 
 Root:
-C:\Role-Playing Games\Shadowrun\GRAYLINE
+C:\ROLE_PLAYING GAMES\Shadowrun\_GRAYLINE
 
 Purpose:
 
-This folder organizes Shadowrun Grayline campaign materials by role.
+This folder organizes Shadowrun Grayline campaign materials by role. The
+active structured source of truth is `C:\Campaign_Archive_System`; this folder
+is for source material, unpromoted work, readable outputs, visual assets, and
+generated mirrors.
+
+Do not create a second durable campaign database here.
+
+## Where New Work Goes
+
+- Unpromoted concepts: `Session Development Workspace\Unpromoted Campaign Drafts`
+- Accepted session sources: `Sessions`
+- Session-specific work and GM planning: `Session Development Workspace\Session NNN`
+- Readable dossiers and handouts: `Handouts and Dossiers`
+- Campaign rules and mechanics: `Campaign Design`
+- Historical ChatGPT-era rules: `Reference and Templates\Legacy Chat Guidance`
+- Generated mirror: `_CAMPAIGN_ARCHIVE_MIRROR`
 
 It currently contains copy-first organized materials from scattered local C and OneDrive sources. Original source files remain untouched.
 
@@ -61,4 +76,3 @@ The next meaningful work is reconciliation planning:
 - Decide the relationship between C:\CAMPAIGN_REPOSITORY and this Grayline root.
 - Decide whether staging material is active, historical, or archive-only.
 - Review duplicate/version candidates before any consolidation.
-

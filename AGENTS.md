@@ -40,3 +40,54 @@ Local project guidance controls when it is more specific.
 ## Project Boundary
 
 This folder organizes role-playing game projects. Individual campaigns and systems retain their own local authority when they have a specific project folder.
+
+## Shadowrun Utilities Saved Project Lane
+
+Codex may expose a saved local project named `Shadowrun Utilities` with this
+repository as its root:
+
+`C:\ROLE_PLAYING GAMES`
+
+That saved Codex project is a routing and working lane. It is not a declaration
+that `C:\ROLE_PLAYING GAMES` has become a standalone Role Playing Games project,
+and it does not make Shadowrun Utilities the owner of every file in this
+repository.
+
+Use this lane for Shadowrun / Grayline utility work, indexing support,
+tool-local maintenance, and handoff work that must start from the C-drive RPG
+repository.
+
+Primary authority boundaries:
+
+- Shadowrun campaign material:
+  `C:\ROLE_PLAYING GAMES\Shadowrun`
+- Shadowrun / Grayline utility scripts and tool-local guidance:
+  `C:\ROLE_PLAYING GAMES\Shadowrun\_GRAYLINE\Tools`
+- Campaign archive app, registry, schemas, tests, and runtime tooling:
+  `C:\Campaign_Archive_System`
+
+On startup in this saved Codex project:
+
+1. Treat `C:\ROLE_PLAYING GAMES` as the repository root and C-drive authority.
+2. Read this file first.
+3. For Shadowrun campaign work, also read:
+   `C:\ROLE_PLAYING GAMES\Shadowrun\AGENTS.md`
+4. For Shadowrun / Grayline utility work, also read:
+   `C:\ROLE_PLAYING GAMES\Shadowrun\_GRAYLINE\Tools\AGENTS.md`
+5. If the requested work belongs to `C:\Campaign_Archive_System`, stop and say
+   that the Campaign Archive System project owns that substance.
+
+OneDrive, OneNote, sync folders, mirrors, and old interface folders are not
+authority for this lane unless the user explicitly says otherwise. They may be
+display, access, mirror, export, or historical-reference surfaces only.
+
+When the user says `establish waypoint` or `create a waypoint` in this saved
+Codex project, perform the Registry waypoint sequence for the active authority
+boundary. Commit and push only the scoped, completed files that belong to the
+active lane. If the repository contains unrelated uncommitted Shadowrun campaign
+work, leave it untouched and report it as intentionally outside the waypoint
+scope.
+
+Do not move, rename, delete, merge, clean up, archive, restructure, or restore
+files in this repository unless the user explicitly approves that exact file
+operation.

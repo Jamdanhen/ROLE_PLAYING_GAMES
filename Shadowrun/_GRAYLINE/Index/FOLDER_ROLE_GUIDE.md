@@ -1,7 +1,35 @@
 # FOLDER ROLE GUIDE
 
 Root:
-C:\Role-Playing Games\Shadowrun\GRAYLINE
+C:\ROLE_PLAYING GAMES\Shadowrun\_GRAYLINE
+
+Current organization note:
+
+This is the actual Grayline folder on this computer. The Campaign Archive
+System at `C:\Campaign_Archive_System` is the active structured authority.
+This folder holds source material, working drafts, readable outputs, visual
+assets, and generated mirrors. Do not create a second durable NPC, faction,
+relationship, or session database here.
+
+## Current Grayline Placement Rules
+
+- New campaign entities are created in the Campaign Archive application.
+- Undeveloped NPCs, factions, locations, hooks, and future ideas belong in
+  `Session Development Workspace\Unpromoted Campaign Drafts` until the owner
+  decides they become campaign records.
+- Accepted session sources belong in `Sessions`.
+- Session-specific working notes and GM planning belong in
+  `Session Development Workspace\Session NNN`.
+- Human-readable dossiers and player/GM handouts belong in
+  `Handouts and Dossiers`.
+- Visual assets belong in `Maps` or `Character Pictures`.
+- Campaign-authored rules and mechanics belong in `Campaign Design`.
+- Historical ChatGPT-era prompt rules belong in
+  `Reference and Templates\Legacy Chat Guidance`; they are not current Codex
+  authority.
+- `Repository Staging` is historical workflow material. Do not add new
+  campaign records there.
+- `_CAMPAIGN_ARCHIVE_MIRROR` is generated output only.
 
 ======================================================================
 00_INDEX
@@ -143,4 +171,3 @@ Subfolders:
 Current status:
 
 Reserved for future review records. Do not treat review material as disposable.
-
