@@ -6,6 +6,12 @@
 
 Rules should be applied consistently. New exceptions are created only when a concrete narrative case cannot be handled by an existing standard. The Asset Network layer for organizations larger than a single Opulent asset is deferred.
 
+## Design Intent
+
+An asset can thrive under committed management, survive through preparation and money, or fail when its owner divides attention among too many dangerous obligations. Failure is an intended outcome.
+
+Owning an asset does not provide a character with a second career at no cost. A character who personally manages an asset must commit time to that work. A character who does not commit that time must rely on hired management, preparation, Surplus, or accept deterioration.
+
 ## Core Terms
 
 An **asset** is a durable operation such as a business, clinic, safehouse, warehouse, theater company, bar, route, or similar organization.
@@ -84,6 +90,8 @@ Maximum category rating: 6
 ```
 
 Monthly required successes may exceed 6 because of Area pressure, Asset Flaws, or explicit situational requirements. Rating measures built capability; requirements above the rating measure pressure on that capability.
+
+Increasing an operational rating expands the asset's capability, scale, quality, or complexity. It also increases the monthly work required to sustain that capability. An operational rating increase is not a pure reliability bonus.
 
 ### Included Baseline
 
@@ -209,6 +217,10 @@ Any skill may serve as an operational role when it genuinely applies to work per
 
 Leadership and Negotiation are broadly useful. Professional, Knowledge, social, and technical skills apply only when the work and asset support them. Intimidation is not routinely applicable merely because it exists on a character sheet.
 
+Routine staff are represented by the asset's operational ratings and Asset Pool. They do not contribute separate operational-role dice.
+
+An owner, hired manager, or other character contributes dice only when personally performing an approved operational role and committing the required hours. Hired managers use their actual applicable skills and committed hours. Compensation, availability, loyalty, authority, and other employment terms are determined through play rather than by a standardized salary schedule.
+
 Every skill is a separate role and requires its own committed hours. The same hours cannot generate dice from more than one skill. There are no free complementary-skill or synergy dice.
 
 Example: a character who spends 40 hours negotiating with vendors and customers receives the full Negotiation contribution. Receiving a full Leadership contribution during the same week requires another 40 hours of leadership and staff-management work, for 80 total hours.
@@ -310,6 +322,10 @@ One matching Surplus point covers one missing success or prevents one matching C
 
 Surplus may be cashed out at any time after it is generated. The pool does not need to reach 10. The cap only prevents additional points from being banked.
 
+The source of a Surplus point does not change its cash-out value. Earned, purchased, and Edge-generated Surplus all use the asset's current Business Level value. Cashing out Edge-generated Surplus spends the Surplus point but does not liquidate or remove the Edge. The Edge remains active and generates Surplus again at its next normal monthly cycle.
+
+If generated Surplus would raise a pool above 10, the excess cannot be banked. It must be spent during that month for a valid use or cashed out at the normal value.
+
 ### Surplus Purchase and Cash-Out
 
 ```text
@@ -334,6 +350,8 @@ One complete ten-point pool therefore costs one month of the current Business Le
 
 Asset Edges are purchased, durable improvements such as trained staff, equipment, automation, contracts, infrastructure, reputation, or institutional support.
 
+Asset Edges are discrete purchased improvements, not steps on an upgrade ladder. The point value describes the complete Edge being purchased. A 3-point Edge is not normally improved into a 4-point Edge by paying for one more point; replacing one with another requires a new fictional implementation and follows the normal purchase, implementation, and liquidation rules.
+
 ```text
 Maximum Asset Edge points: 10
 ```
@@ -356,7 +374,35 @@ Edge Points x Current Asset Point Price
 
 A 4-6 point Edge is assigned to either Operational Surplus or Social Capital Surplus when purchased. Its generated Surplus enters that pool at the beginning of each month and remains subject to the cap of 10.
 
-The generated Surplus is a guaranteed matching success equivalent against shortfalls. It does not add dice, create profit by itself, repair damage, or advance another project.
+The generated Surplus is a guaranteed matching success equivalent against shortfalls. It does not add dice, automatically become cash, repair damage, or advance another project. It may be cashed out under the normal Surplus rules, but doing so removes that protection from the pool.
+
+### Non-Exhaustive Edge Examples
+
+The following recovered concepts illustrate possible narrative identities for Asset Edges. They are examples, not fixed packages. Their final point values and mechanical effects use the normal Edge rules and depend on the specific asset and implementation.
+
+- **Gang Protection:** protection against local gang intimidation, extortion, vandalism, or street crime. It may not help against authorities, corporations, or rival gangs and may create external liabilities.
+- **Hidden Location:** protection against discovery, surveillance, and casual trouble, potentially at the cost of customer traffic or public accessibility.
+- **Prime Location:** improved traffic, visibility, and ordinary business activity, potentially at the cost of secrecy and tolerance for violence or illegal activity.
+- **Community Anchor:** durable neighborhood trust, support, recognition, or goodwill.
+- **Legitimate Front:** credible lawful identity or business activity that supports ordinary access and cover.
+- **Corporate Lease:** support for legitimate operation accompanied by corporate oversight, obligations, or scrutiny.
+
+Related concepts such as **Bad Reputation** and **Crashpad** may be represented as Asset Flaws, custom traits, or another implementation when their primary effect is a persistent vulnerability rather than a durable advantage.
+
+### Edge Threshold and Generated Surplus
+
+The change in effect between a 3-point and 4-point Edge is intentional.
+
+- A 1-3 point Edge improves routine operation through flexible but uncertain weekly dice.
+- A 4-6 point Edge provides certainty through guaranteed monthly Surplus assigned to one Condition track.
+- The guaranteed Surplus does not satisfy requirements as a rolled success. It covers matching shortfalls or prevents matching Condition damage after the Operations results are known.
+- At lower Target Numbers, weekly Edge dice tend to produce more successes. As the Target Number rises, guaranteed Surplus becomes comparatively more valuable.
+
+The higher tier therefore purchases reliable, track-specific reserve capacity rather than a larger general dice bonus. A highly trained general staff may be represented by a 3-point Edge because it improves routine operation. Hardened security infrastructure may be represented by a 4-point Operational Edge because it guarantees capacity to absorb internal disruption.
+
+Examples include Professional Security Staff 2 or Experienced General Management 3 as weekly-dice Edges, Hardened Security Infrastructure 4 as an Operational Surplus Edge, and Community Anchor 5 or Institutional Community Support 6 as Social Capital Surplus Edges.
+
+Edge-generated Surplus follows the same cash-out rule and value as Surplus from any other source. Its source does not need to be tracked separately after it enters the assigned pool. Cashing it out spends the buffer; it does not burn, liquidate, or otherwise remove the durable Edge.
 
 ### Edge Implementation
 
