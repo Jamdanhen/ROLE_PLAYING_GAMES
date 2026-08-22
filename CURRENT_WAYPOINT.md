@@ -1,6 +1,6 @@
 # Role-Playing Games Current Waypoint
 
-Date: 2026-07-26
+Date: 2026-08-22
 
 ## Active Authority
 
@@ -16,12 +16,10 @@ The approved GitHub remote remains:
 https://github.com/Jamdanhen/ROLE_PLAYING_GAMES.git
 ```
 
-The active work belongs to the Shadowrun campaign child area. Campaign rules
-remain under `C:\ROLE_PLAYING GAMES\Shadowrun\_GRAYLINE\Campaign Design`, and
-the modular character sheet remains under
-`C:\ROLE_PLAYING GAMES\Shadowrun\Character_Sheets`.
+Role Playing Games remains the umbrella repository. The work completed in this
+waypoint belongs to the Shadowrun campaign child area.
 
-## Guidance Checked
+## Guidance and Registry Freshness
 
 Waypoint creation checked:
 
@@ -33,49 +31,40 @@ C:\CRUCIBLE_REGISTRY\PROJECT_WAYPOINT_SYNCHRONIZATION_RULE.MD
 C:\CRUCIBLE_REGISTRY\entries\ROLE-PLAYING-GAMES.MD
 C:\ROLE_PLAYING GAMES\AGENTS.md
 C:\ROLE_PLAYING GAMES\Shadowrun\AGENTS.md
-C:\ROLE_PLAYING GAMES\Shadowrun\_GRAYLINE\Tools\AGENTS.md
 ```
 
-The Crucible Registry repository is clean and aligned with `origin/main`.
-The inheritance blocks in the Role-Playing Games and Shadowrun guidance files
-match the current approved Registry block; no refresh was required.
+The Registry repository and `origin/main` are aligned at commit `28d6c91`.
+The Role-Playing Games inheritance block matches the current approved Registry
+block; no root guidance refresh was required.
 
-## Completed Asset Operations Work
+## Completed Work in This Waypoint
 
-This waypoint records the completed Asset Operations rules and character-sheet
-update:
+This waypoint records the completed Shadowrun Asset Operations sheet work:
 
-- The Word rule set now includes explanatory flavor and design intent for
-  management commitment, hired management, staff representation, operational
-  ratings, purchased Edges, and the threshold between weekly dice and
-  guaranteed Surplus.
-- The authoritative Markdown rule set carries the same settled interpretation,
-  examples, and mechanics.
-- Asset Edges are explicitly discrete purchases rather than steps on an upgrade
-  ladder.
-- A non-exhaustive set of recovered Edge examples is retained as illustration,
-  not as fixed packages.
-- The July 24 modular HTML character sheet adds modifiable Edge and Flaw
-  components, status and effect controls, automatic point and effect summaries,
-  validation messages, browser-local saving, and JSON import/export.
-- The July 12 character sheet remains preserved as the prior edition.
+- `Shadowrun_3E_Modular_Character_Sheet_With_Assets_PDF_Export_20260731.html`
+  is the current modular character-and-assets sheet with browser-local saving,
+  JSON import/export, and printable PDF export.
+- `Shadowrun_3E_The_Chin_Siberian_Wolf_Six_Month_Simulation_20260814.html`
+  is a separate prefilled replay edition. It preserves the blank master and
+  contains only The Chin and Siberian Wolf information needed to reproduce the
+  six-month Asset Operations playtest at the table.
+- The replay edition records the relevant skills, asset ratings, Condition,
+  weekly availability, dice pools, Target Numbers, requirements, pressures,
+  historical rolls, support spending, outcomes, and instructions for clearing
+  the recorded results and rerunning the test.
+- The replay edition uses its own browser-storage key, so it does not overwrite
+  or interfere with the blank application.
 
 ## Verification
 
-Waypoint verification confirmed:
+- JavaScript syntax validation passed for the replay edition.
+- Browser verification confirmed The Chin, both Rating 3 operational skills,
+  the Siberian Wolf, Asset Pool 3, Requirement 10, six monthly trackers, Month
+  1's 180 total hours and 15 historical successes, and Month 6's recorded TN
+  and ending state.
+- The browser reported no page errors during the verification pass.
 
-- the DOCX package is structurally readable while open in Word
-- the intended Edge language and examples are present in the DOCX
-- the Markdown and Word interpretations are aligned
-- the HTML JavaScript passes Node syntax validation
-- the required Edge, Flaw, Surplus, storage, and JSON export components are
-  present in the HTML
-
-The in-app browser does not permit automated navigation to `file://` URLs, so a
-full automated interaction pass was not available. The user has opened the
-sheet locally and confirmed that it renders.
-
-## Git State and Waypoint Scope
+## Git Scope
 
 Branch:
 
@@ -93,32 +82,24 @@ The waypoint commit is intentionally limited to:
 
 ```text
 CURRENT_WAYPOINT.md
-Shadowrun\_GRAYLINE\Campaign Design\Asset Operations System - Working Rules.docx
-Shadowrun\_GRAYLINE\Campaign Design\Asset Operations System - Working Rules.md
-Shadowrun\Character_Sheets\Desktop_Character_Sheets\Sheets\Shadowrun_3E_Modular_Sheet_With_Assets_Blank_20260724.html
+Shadowrun\Character_Sheets\Desktop_Character_Sheets\Sheets\Shadowrun_3E_Modular_Character_Sheet_With_Assets_PDF_Export_20260731.html
+Shadowrun\Character_Sheets\Desktop_Character_Sheets\Sheets\Shadowrun_3E_The_Chin_Siberian_Wolf_Six_Month_Simulation_20260814.html
 ```
-
-The dated ZIP distribution package and the copy placed in the Windows Downloads
-folder remain local delivery artifacts rather than GitHub authority.
 
 ## Intentionally Unfinished or Outside Scope
 
-The worktree contains unrelated Shadowrun session drafts, master-note and
-repository-staging deletions, archive-mirror output, generated reports, maps,
-correction addenda, reference material, and other untracked campaign files.
-Those items were not reviewed as completed Asset Operations work and remain
-uncommitted and untouched.
+The working tree also contains a large, mixed Shadowrun change set that was not
+reviewed as one completed operation. It includes tracked deletions, reorganized
+character files, modified master notes and session drafts, correction addenda,
+campaign-reference material, maps, unpromoted drafts, legacy repository and
+archive-mirror removals, and a recovered OneDrive intake folder.
 
-The temporary Word owner file remains outside the waypoint scope while the
-document is open.
-
-No OneDrive location is an authority or synchronization target for this
-waypoint.
+Those changes remain uncommitted and unsynchronized. This waypoint does not
+approve, reverse, clean up, or otherwise decide them. OneDrive recovery material
+remains intake/reference material rather than project authority.
 
 ## Resume Point
 
-Resume Asset Operations work from the Markdown and Word rule set in
-`Shadowrun\_GRAYLINE\Campaign Design`. Use the July 24 modular HTML sheet as the
-current editable character-and-assets application. Future rules changes should
-keep the Word explanation, authoritative Markdown mechanics, and sheet behavior
-consistent.
+Resume Asset Operations play from the PDF-export modular sheet or the prefilled
+Chin/Siberian Wolf replay sheet. Resolve the remaining Shadowrun working-tree
+changes only through their owning campaign or file-organization lane.
