@@ -1,5 +1,29 @@
 # Role-Playing Games Current Waypoint
 
+## September 17, 2026 scoped checkpoint
+
+Authority remains `C:\ROLE_PLAYING GAMES`; the approved ROLE_PLAYING_GAMES
+GitHub remote and main branch are unchanged. Registry entry, inherited guidance,
+output format, waypoint rule and root AGENTS were checked. Current inheritance
+and local overrides are preserved. Live remote main matched local main.
+
+The user explicitly excluded busy Grayline work. This checkpoint therefore
+includes this root waypoint record only. The mixed Shadowrun worktree contains
+482 status entries at review, including modifications, deletions, recovered
+intake and reorganization. None is staged, restored, removed or approved here.
+No Grayline repository, worker, campaign file or utility is modified or pushed.
+
+The saved ROLE_PLAYING GAMES app route points to the Shadowrun child folder
+within this repository, not OneDrive. Root AGENTS still describes the old
+Campaign Archive System route; that historical routing discrepancy is flagged
+for an owning-project decision, not changed while Grayline is active.
+
+Prior Asset Operations checkpoint below remains the last reviewed substantive
+snapshot. This new record does not mean the mixed campaign work is synchronized.
+Final push verification is recorded in the Registry sweep report.
+
+## Historical substantive checkpoint
+
 Date: 2026-08-22
 
 ## Active Authority
