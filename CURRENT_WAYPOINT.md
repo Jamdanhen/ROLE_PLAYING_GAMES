@@ -1,5 +1,90 @@
 # Role-Playing Games Current Waypoint
 
+## September 22, 2026 coordinated RPG / Shadowrun checkpoint
+
+Dispatch: `REGISTRY-2026-09-22-rpg`.
+
+### Authority and synchronization scope
+
+- Parent authority: `C:\ROLE_PLAYING GAMES`.
+- Child authority: `C:\ROLE_PLAYING GAMES\Shadowrun`, within the same repository.
+- Existing approved remote: `https://github.com/Jamdanhen/ROLE_PLAYING_GAMES.git`.
+- Branch: `main`; one coordinated commit/push, no separate child push.
+- Pre-checkpoint local HEAD, tracking branch and live remote main matched
+  `9ad114989b9ec9dacf319ee21d66be59bfcbc3aa`.
+- This is a scoped checkpoint, not a claim that all campaign material is synced.
+  Final commit and live remote verification are reported in the task closeout
+  and returned to the dispatching Registry task after push.
+
+### Guidance and Registry freshness
+
+Reviewed both Registry entries (`ROLE-PLAYING-GAMES.MD` and
+`SHADOWRUN-CAMPAIGN.MD`), `PROJECT_WAYPOINT_SYNCHRONIZATION_RULE.MD`,
+`REGISTRY_INHERITANCE_BLOCK.MD`, `USER_OUTPUT_FORMAT_GUIDANCE.MD`, the approved
+phone-display protocol, and root, Shadowrun and Grayline local guidance.
+
+Registry HEAD, tracking branch and live remote main matched
+`13cc1489020659345165aacc0807fb2ded647176` at review. Its pending approved
+phone-display/seed rollout and registration records were reviewed as current
+local guidance; they do not contradict or block this narrow waypoint. This task
+does not edit, stage, commit or push Registry files.
+
+Both local inheritance sections retain the approved defaults and local overrides.
+The September 22 phone-display hook is already installed in the root and child
+AGENTS files and is included without duplication or substantive rewriting.
+Only that approved addition is staged from the child AGENTS file: the separate
+pre-existing session-correction-placement change is left in the working tree
+for its owning lane, not swept into this commit.
+
+### Completed table-reference work
+
+The September 19 player one-sheet and GM-screen panel are saved locally at:
+
+```text
+Shadowrun\_GRAYLINE\Table Aids\output\pdf\Grayline_Player_One_Sheet_20260919.pdf
+Shadowrun\_GRAYLINE\Table Aids\output\pdf\Grayline_GM_Screen_Panel_20260919.pdf
+```
+
+Both were rendered and visually checked when created, and validated as one-page
+portrait US Letter documents. Portrait is the user's default unless landscape
+is explicitly requested. They record the agreed skill-only, normally TN 5 rules;
+Attribute + Skill / Willpower-soak experiments are not adopted.
+
+The complete generation source is included at its existing location:
+`Shadowrun\_GRAYLINE\Table Aids\tmp\pdfs\build_table_references.py`.
+Despite the directory name, retain this tracked source for reproduction. It uses
+Python, ReportLab and pypdf; ordinary execution creates the two PDFs when absent
+and refuses to replace existing PDFs unless `--replace-generated` is supplied.
+No PDFs were regenerated during this waypoint.
+
+The existing `.gitignore` excludes all PDFs, ZIPs and System_Reference libraries.
+It is unchanged; the two generated PDFs remain local-only, with the reviewed
+generator providing reproducible repository content. No sourcebooks, reference
+archives, preview images, campaign secrets or unrelated material are staged.
+
+Local output SHA-256 at waypoint review:
+
+- Player: `BC0C85018A8A535263A32B07E0FF96065AFA9311E76D608CEB7AA4C8197275A3`
+- GM: `2297BEC8F90A2BF9A727D1FB6897599B72DA2C8AEBB33CDCAE3B2C14950F6C38`
+
+### Intentionally unfinished / excluded
+
+Initial full status contained 523 entries: 423 tracked deletions, 7 modified
+tracked files and 93 untracked files, with an empty index. Mixed campaign
+reorganization, character sheets, master notes, sessions, correction addenda,
+maps, recovered OneDrive intake, legacy removals and unpromoted drafts remain
+outside this waypoint. Existing changes are neither approved nor reverted here.
+Generated preview PNGs remain local and uncommitted.
+
+Visible task review found no competing active writer rooted in this repository.
+The active Grayline V3 application task has its own authority and read-only
+access to this legacy campaign area; it is not part of this commit/push.
+The earlier Campaign Archive System routing discrepancy remains unresolved;
+this checkpoint does not change project routing or external project authority.
+
+Resume table play from the two local portrait PDFs. Other campaign changes
+require their owning lane's scoped completion review before synchronization.
+
 ## September 17, 2026 scoped checkpoint
 
 Authority remains `C:\ROLE_PLAYING GAMES`; the approved ROLE_PLAYING_GAMES
