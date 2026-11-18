@@ -1,0 +1,172 @@
+<div id="grayline-hub-layout" class="viz-carousel" aria-label="Grayline hub layout options">
+  <section data-variant="Campaign first" aria-label="Campaign first layout">
+    <div class="gh-product" data-layout="campaign"></div>
+  </section>
+  <section data-variant="Player desk first" aria-label="Player desk first layout" hidden>
+    <div class="gh-product" data-layout="desk"></div>
+  </section>
+</div>
+<style>
+#grayline-hub-layout .gh-product {
+  --gh-bg: light-dark(#f4f5f2,#171c1c);
+  --gh-paper: light-dark(#ffffff,#222a29);
+  --gh-ink: light-dark(#1a302e,#edf3ee);
+  --gh-sub: light-dark(#526360,#b7c9c3);
+  --gh-line: light-dark(#d3ded8,#3a4a45);
+  --gh-soft: light-dark(#e5ece5,#2b3933);
+  --gh-accent: light-dark(#275d4d,#a9d4b8);
+  --gh-on-accent: light-dark(#ffffff,#15271e);
+  --gh-portrait: light-dark(#dbe3dc,#34463e);
+  --gh-radius: 10px;
+  --gh-gap: 20px;
+  color: var(--gh-ink); background: var(--gh-bg);
+  border: 1px solid var(--gh-line); border-radius: 12px;
+  font: 400 14px/1.5 system-ui, sans-serif;
+  min-height: 710px; overflow-wrap: anywhere;
+}
+#grayline-hub-layout .gh-product * { box-sizing: border-box; }
+#grayline-hub-layout .gh-product button,
+#grayline-hub-layout .gh-product input { font: inherit; }
+#grayline-hub-layout .gh-product h1,
+#grayline-hub-layout .gh-product h2,
+#grayline-hub-layout .gh-product h3,
+#grayline-hub-layout .gh-product p { margin: 0; }
+#grayline-hub-layout .gh-product h1 { font-size: 29px; font-weight: 500; line-height: 1.2; }
+#grayline-hub-layout .gh-product h2 { font-size: 18px; font-weight: 500; }
+#grayline-hub-layout .gh-product h3 { font-size: 15px; font-weight: 500; }
+#grayline-hub-layout .gh-top { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 21px 26px 16px; background: var(--gh-paper); border-radius: 12px 12px 0 0; }
+#grayline-hub-layout .gh-brand { font-size: 19px; font-weight: 500; letter-spacing: .14em; }
+#grayline-hub-layout .gh-tag { color: var(--gh-sub); font-size: 12px; padding-left: 12px; border-left: 1px solid var(--gh-line); }
+#grayline-hub-layout .gh-nav { display: flex; flex-wrap: wrap; gap: 4px; padding: 0 22px 12px; background: var(--gh-paper); border-bottom: 1px solid var(--gh-line); }
+#grayline-hub-layout .gh-nav button { background: transparent; color: var(--gh-sub); border: 0; border-radius: 6px; padding: 9px 12px; cursor: pointer; }
+#grayline-hub-layout .gh-nav button[aria-current="page"] { background: var(--gh-soft); color: var(--gh-ink); font-weight: 500; }
+#grayline-hub-layout .gh-main { padding: 26px; display: grid; gap: var(--gh-gap); }
+#grayline-hub-layout .gh-intro { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: end; gap: 16px; }
+#grayline-hub-layout .gh-intro p { margin-top: 7px; color: var(--gh-sub); }
+#grayline-hub-layout .gh-kicker { color: var(--gh-sub); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 7px; }
+#grayline-hub-layout .gh-columns { display: grid; grid-template-columns: minmax(0,2fr) minmax(210px,1fr); gap: var(--gh-gap); align-items: start; }
+#grayline-hub-layout .gh-stack { display: grid; gap: var(--gh-gap); min-width: 0; }
+#grayline-hub-layout .gh-section-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 11px; }
+#grayline-hub-layout .gh-text-button { background: transparent; color: var(--gh-accent); border: 0; padding: 5px 0; font-size: 12px; cursor: pointer; }
+#grayline-hub-layout .gh-people { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+#grayline-hub-layout .gh-person { padding: 0; min-width: 0; text-align: left; background: var(--gh-paper); color: var(--gh-ink); border: 1px solid var(--gh-line); border-radius: var(--gh-radius); overflow: hidden; cursor: pointer; }
+#grayline-hub-layout .gh-portrait { height: 112px; background: var(--gh-portrait); display: flex; flex-direction: column; gap: 8px; align-items: center; justify-content: center; color: var(--gh-sub); }
+#grayline-hub-layout .gh-portrait svg { width: 30px; height: 30px; }
+#grayline-hub-layout .gh-portrait span { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+#grayline-hub-layout .gh-person-name { display: block; padding: 12px; font-weight: 500; }
+#grayline-hub-layout .gh-panel { padding: 18px; background: var(--gh-paper); border: 1px solid var(--gh-line); border-radius: var(--gh-radius); }
+#grayline-hub-layout .gh-panel p { color: var(--gh-sub); margin: 6px 0 14px; }
+#grayline-hub-layout .gh-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--gh-accent); color: var(--gh-on-accent); border: 1px solid transparent; border-radius: 6px; padding: 9px 13px; cursor: pointer; text-align: center; }
+#grayline-hub-layout .gh-secondary { background: var(--gh-paper); color: var(--gh-ink); border-color: var(--gh-line); }
+#grayline-hub-layout .gh-wide { width: 100%; }
+#grayline-hub-layout .gh-line-item { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 0; background: transparent; color: var(--gh-ink); border: 0; border-bottom: 1px solid var(--gh-line); text-align: left; cursor: pointer; }
+#grayline-hub-layout .gh-line-item:last-child { border-bottom: 0; }
+#grayline-hub-layout .gh-line-item .gh-small-icon { padding: 9px; display: inline-flex; background: var(--gh-soft); border-radius: 6px; }
+#grayline-hub-layout .gh-line-item strong { display: block; font-weight: 500; }
+#grayline-hub-layout .gh-line-item small { display: block; color: var(--gh-sub); font-size: 12px; margin-top: 2px; }
+#grayline-hub-layout .gh-arrow { margin-left: auto; flex-shrink: 0; color: var(--gh-sub); }
+#grayline-hub-layout .gh-list { background: var(--gh-paper); border: 1px solid var(--gh-line); border-radius: var(--gh-radius); padding: 4px 16px; }
+#grayline-hub-layout .gh-preview { min-height: 90px; display: flex; gap: 18px; align-items: center; padding: 18px; background: var(--gh-soft); border-radius: var(--gh-radius); }
+#grayline-hub-layout .gh-preview p { color: var(--gh-sub); margin-top: 4px; }
+#grayline-hub-layout .gh-preview svg { flex-shrink: 0; }
+#grayline-hub-layout .gh-shortcuts { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+#grayline-hub-layout .gh-shortcut { padding: 19px; background: var(--gh-paper); color: var(--gh-ink); border: 1px solid var(--gh-line); border-radius: var(--gh-radius); cursor: pointer; text-align: left; }
+#grayline-hub-layout .gh-shortcut strong { display: block; font-weight: 500; margin-top: 12px; }
+#grayline-hub-layout .gh-shortcut small { display: block; color: var(--gh-sub); margin-top: 5px; font-size: 12px; }
+#grayline-hub-layout .gh-inline { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+#grayline-hub-layout .gh-detail { display: grid; grid-template-columns: 160px minmax(0,1fr); gap: 24px; align-items: start; }
+#grayline-hub-layout .gh-detail .gh-portrait { height: 190px; border-radius: var(--gh-radius); }
+#grayline-hub-layout .gh-detail-section { padding: 16px 0; border-bottom: 1px solid var(--gh-line); }
+#grayline-hub-layout .gh-detail-section p { color: var(--gh-sub); margin-top: 6px; }
+#grayline-hub-layout .gh-back { justify-self: start; }
+#grayline-hub-layout .gh-footer { padding: 0 26px 20px; font-size: 11px; color: var(--gh-sub); }
+#grayline-hub-layout .gh-empty { padding: 24px; background: var(--gh-paper); border: 1px dashed var(--gh-line); border-radius: var(--gh-radius); color: var(--gh-sub); }
+#grayline-hub-layout .gh-product button:hover { filter: brightness(.96); }
+#grayline-hub-layout .gh-product button:focus-visible { outline: 2px solid var(--gh-accent); outline-offset: 3px; }
+@media(max-width:700px) {
+  #grayline-hub-layout .gh-columns { grid-template-columns: 1fr; }
+  #grayline-hub-layout .gh-main { padding: 20px; }
+  #grayline-hub-layout .gh-top { padding: 18px 20px 12px; }
+  #grayline-hub-layout .gh-nav { padding: 0 12px 12px; }
+  #grayline-hub-layout .gh-product { min-height: 1100px; }
+}
+@media(max-width:420px) {
+  #grayline-hub-layout .gh-people { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  #grayline-hub-layout .gh-shortcuts { grid-template-columns: 1fr; }
+  #grayline-hub-layout .gh-shortcut { display: grid; grid-template-columns: 24px 1fr; column-gap: 12px; padding: 14px; }
+  #grayline-hub-layout .gh-shortcut strong { margin: 0; }
+  #grayline-hub-layout .gh-shortcut small { grid-column: 2; }
+  #grayline-hub-layout .gh-detail { grid-template-columns: 1fr; }
+  #grayline-hub-layout .gh-detail .gh-portrait { height: 140px; }
+  #grayline-hub-layout .gh-brand { font-size: 17px; }
+  #grayline-hub-layout .gh-product { min-height: 1330px; }
+}
+@media(pointer:coarse) { #grayline-hub-layout .gh-product button { min-height: 44px; } }
+</style>
+<script>
+(() => {
+  const root = document.getElementById('grayline-hub-layout');
+  const settings = { spacing: 'Comfortable', corners: 10 };
+  const people = ['Velvet Jones', 'Blackjack', 'Dr. Wong'];
+  const places = ['Siberian Wolf', 'Grayline docks', 'Grayline district'];
+  const navigation = [['home','Home'],['people','People'],['places','Places'],['handouts','Handouts'],['player','Player app'],['tools','Tools']];
+  const selection = { campaign: { screen: 'home', detail: '' }, desk: { screen: 'home', detail: '' } };
+  const saved = window.openai?.widgetState?.privateContent?.navigation;
+  if (saved && typeof saved === 'object') {
+    for (const k of Object.keys(selection)) {
+      const s = saved[k];
+      if (s && navigation.some(([id]) => id === s.screen)) selection[k] = { screen: s.screen, detail: typeof s.detail === 'string' ? s.detail.slice(0,100) : '' };
+    }
+  }
+  const escape = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  const icon = name => `<i data-lucide="${name}" aria-hidden="true"></i>`;
+  const go = (screen,label,cls='gh-button',detail='') => `<button type="button" class="${cls}" data-screen="${screen}"${detail ? ` data-detail="${escape(detail)}"` : ''}>${label}</button>`;
+  function portrait(name) {
+    return go('people',`<span class="gh-portrait">${icon('user-round')}<span>Portrait</span></span><span class="gh-person-name">${escape(name)}</span>`,'gh-person',name);
+  }
+  function line(screen,name,sub,ico,detail='') {
+    return go(screen,`<span class="gh-small-icon">${icon(ico)}</span><span><strong>${escape(name)}</strong><small>${escape(sub)}</small></span><span class="gh-arrow">${icon('chevron-right')}</span>`,'gh-line-item',detail);
+  }
+  function head(title,screen) { return `<div class="gh-section-head"><h2>${title}</h2>${go(screen,'Browse all →','gh-text-button')}</div>`; }
+  function peopleSection() { return `<section>${head('People you know','people')}<div class="gh-people">${people.map(portrait).join('')}</div></section>`; }
+  function placesSection() { return `<section>${head('Around Grayline','places')}<div class="gh-list">${line('places','Siberian Wolf','Images, description & familiar faces','building-2','Siberian Wolf')}${line('places','Grayline docks','Locations, maps & connections','map-pin','Grayline docks')}</div></section>`; }
+  function playerPanel() { return `<section class="gh-panel"><div class="gh-kicker">Your desk</div><h2>Character & actions</h2><p>Your character sheet, action requests, money and Karma.</p>${go('player','Open player app →','gh-button gh-wide')}</section>`; }
+  function handoutPanel() { return `<section><div class="gh-section-head"><h2>Campaign reference</h2></div><div class="gh-list">${line('handouts','Handouts','Documents, messages & clues','files')}${line('tools','Tools & references','Sheets, trackers & table aids','wrench')}</div></section>`; }
+  function home(layout) {
+    if (layout === 'desk') return `<div class="gh-intro"><div><div class="gh-kicker">Your campaign</div><h1>Your Grayline desk</h1><p>Pick up your character, then explore the world around them.</p></div></div><div class="gh-shortcuts">${go('player',`${icon('contact-round')}<strong>My character</strong><small>Sheet, equipment & contacts</small>`,'gh-shortcut','Character')}${go('player',`${icon('list-checks')}<strong>Actions</strong><small>Requests, rolls & outcomes</small>`,'gh-shortcut','Actions')}${go('player',`${icon('wallet')}<strong>Money & Karma</strong><small>Resources & history</small>`,'gh-shortcut','Money & Karma')}</div><div class="gh-columns"><div class="gh-stack">${peopleSection()}${placesSection()}</div><div class="gh-stack">${handoutPanel()}<section class="gh-panel"><h2>Campaign updates</h2><p>Revealed information and player-facing session recaps.</p>${go('handouts','Browse updates','gh-button gh-secondary','Campaign updates')}</section></div></div>`;
+    return `<div class="gh-intro"><div><div class="gh-kicker">The campaign</div><h1>Welcome to Grayline</h1><p>The people, places and discoveries that make up your world.</p></div></div><div class="gh-columns"><div class="gh-stack">${peopleSection()}${placesSection()}</div><div class="gh-stack">${playerPanel()}${handoutPanel()}</div></div><section class="gh-preview">${icon('notebook-text')}<div><h3>Keep up with the story</h3><p>Player-facing session recaps and newly revealed information.</p></div>${go('handouts','Updates →','gh-text-button','Campaign updates')}</section>`;
+  }
+  function detailScreen(kind,name) {
+    const isPerson = kind === 'people';
+    return `${go(kind,'← '+(isPerson?'People':'Places'),'gh-text-button gh-back')}<div class="gh-detail"><div class="gh-portrait">${icon(isPerson?'user-round':'image')}<span>${isPerson?'Character portrait':'Location image'}</span></div><div><div class="gh-kicker">${isPerson?'Person':'Place'}</div><h1>${escape(name)}</h1><div class="gh-detail-section"><h3>${isPerson?'What you know':'About this place'}</h3><p>${isPerson?'Appearance, introduction and information revealed to the crew.':'Description, atmosphere and images of the location.'}</p></div><div class="gh-detail-section"><h3>Connections</h3><p>${isPerson?'Known people, affiliations and associated places.':'Familiar people and nearby locations.'}</p><div class="gh-inline" style="margin-top:10px">${go(isPerson?'places':'people',isPerson?'Browse places':'Browse people','gh-button gh-secondary')}</div></div><div class="gh-detail-section"><h3>Encounters & discoveries</h3><p>Links to relevant session recaps and revealed handouts.</p>${go('handouts','Browse handouts →','gh-text-button')}</div></div></div>`;
+  }
+  function screenBody(layout,screen,detail) {
+    if (screen === 'home') return home(layout);
+    if ((screen === 'people' && people.includes(detail)) || (screen === 'places' && places.includes(detail))) return detailScreen(screen,detail);
+    if (screen === 'people') return `<div class="gh-intro"><div><div class="gh-kicker">Campaign reference</div><h1>People</h1><p>Start with a face. Follow the connections.</p></div></div><div class="gh-people">${people.map(portrait).join('')}</div><div class="gh-preview">${icon('network')}<div><h3>Organizations & affiliations</h3><p>Groups and their connections can sit alongside individual dossiers.</p></div></div>`;
+    if (screen === 'places') return `<div class="gh-intro"><div><div class="gh-kicker">Campaign reference</div><h1>Places</h1><p>Discover Grayline through its locations and images.</p></div></div><div class="gh-list">${places.map((p,i)=>line('places',p,i===2?'District overview & map':'Location images, description & people',i===2?'map':'map-pin',p)).join('')}</div>`;
+    if (screen === 'handouts') return `<div class="gh-intro"><div><div class="gh-kicker">Campaign reference</div><h1>${detail==='Campaign updates'?'Campaign updates':'Handouts & discoveries'}</h1><p>Documents, messages, images and recaps shared with the crew.</p></div></div><div class="gh-empty">A browsable library of revealed campaign material would appear here.</div><div class="gh-inline">${go('people','Explore people','gh-button gh-secondary')}${go('places','Explore places','gh-button gh-secondary')}</div>`;
+    if (screen === 'player') return `<div class="gh-intro"><div><div class="gh-kicker">Your desk</div><h1>${escape(['Character','Actions','Money & Karma'].includes(detail)?detail:'Player app')}</h1><p>The existing player app stays together within the campaign navigation.</p></div></div><div class="gh-inline">${['Character','Actions','Money & Karma'].map(t=>go('player',escape(t),'gh-button '+(t===detail?'':'gh-secondary'),t)).join('')}</div><section class="gh-panel"><h2>${escape(detail||'Character & actions')}</h2><p>${detail==='Actions'?'Action requests, GM responses, dice and published outcomes.':detail==='Money & Karma'?'Character resources, credsticks, Karma and retained history.':'Your assigned character, their sheet, skills, equipment and contacts.'}</p><div class="gh-empty">Existing app content occupies this area. This layout study does not connect to live accounts or records.</div></section>`;
+    return `<div class="gh-intro"><div><div class="gh-kicker">Campaign resources</div><h1>Tools & references</h1><p>A home for the custom utilities you already use.</p></div></div><div class="gh-list">${line('tools','Character sheets','HTML sheets and printable references','contact-round','Character sheets')}${line('tools','Asset tracker','Business and asset worksheet','clipboard-list','Asset tracker')}${line('tools','Rules & table references','Shared campaign reference material','book-open','Rules & table references')}</div>${detail?`<section class="gh-panel"><h2>${escape(detail)}</h2><p>A dedicated entry for this existing resource, with its description and access link.</p><div class="gh-empty">Tool connection is proposed; this study opens no local files or live apps.</div></section>`:''}`;
+  }
+  function render(product) {
+    const layout=product.dataset.layout, current=selection[layout];
+    product.innerHTML=`<header class="gh-top"><span class="gh-brand">GRAYLINE</span><span class="gh-tag">Campaign hub · Player view</span></header><nav class="gh-nav" aria-label="Campaign navigation">${navigation.map(([id,name])=>`<button type="button" data-screen="${id}"${id===current.screen?' aria-current="page"':''}>${name}</button>`).join('')}</nav><main class="gh-main" aria-live="polite">${screenBody(layout,current.screen,current.detail)}</main><footer class="gh-footer">Layout study · Sample entries · No live campaign connection</footer>`;
+    product.style.setProperty('--gh-radius',settings.corners+'px');
+    product.style.setProperty('--gh-gap',settings.spacing==='Compact'?'14px':'20px');
+  }
+  function icons(){if(globalThis.lucide)globalThis.lucide.createIcons({attrs:{width:18,height:18}});}
+  root.querySelectorAll('.gh-product').forEach(render);icons();
+  root.addEventListener('click',event=>{
+    const button=event.target.closest('button[data-screen]');if(!button||!root.contains(button))return;
+    const product=button.closest('.gh-product'), key=product.dataset.layout;
+    selection[key]={screen:button.dataset.screen,detail:button.dataset.detail||''};render(product);icons();
+    window.openai?.setWidgetState?.({modelContent:{lastSection:selection[key].screen,lastEntry:selection[key].detail,layout:key==='campaign'?'Campaign first':'Player desk first'},privateContent:{navigation:selection}})?.catch(()=>{});
+  });
+  if(globalThis.Tweak){
+    const tweak=new globalThis.Tweak({container:root,onChange:()=>{root.querySelectorAll('.gh-product').forEach(p=>{p.style.setProperty('--gh-radius',settings.corners+'px');p.style.setProperty('--gh-gap',settings.spacing==='Compact'?'14px':'20px');});}});
+    tweak.addSelect(settings,'spacing',{label:'Spacing',options:['Comfortable','Compact']});
+    tweak.addSlider(settings,'corners',{label:'Corner radius',min:0,max:16,step:2,unit:'px'});
+  }
+})();
+</script>

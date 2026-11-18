@@ -37,6 +37,27 @@ Inherited defaults include:
 
 Local project guidance controls when it is more specific.
 
+## OpenAI API Opportunity Review
+
+When a requested feature could benefit from the OpenAI API, explain the
+practical benefit, estimate its cost against Jamie's monthly API credits,
+and flag it before implementation. Do not create work merely to consume credits.
+
+Apply this to concrete requested features and active project needs, not
+speculative work or a standing search for ways to spend credits. Check current
+benefit eligibility, remaining credits when available, and current official
+pricing at the time of the proposal. Do not assume a fixed allowance, continued
+eligibility, or that an app subscription includes API usage. If account details
+are unavailable, say so and make the estimate conditional rather than inventing
+a balance. State usage assumptions and distinguish estimated gross cost from
+any verified eligible credit coverage.
+
+This is an opportunity-identification and explanation rule only. It does not
+authorize API activation, spending, purchase of credits, credential changes,
+data transmission, or API implementation. Obtain explicit approval for the
+proposed implementation and cost boundary before proceeding. Preserve local
+authority, privacy requirements, and overrides.
+
 ## Sparky Delegation - Included-Allocation Helper
 
 For bounded routine work inside an already-approved project lane, consider the

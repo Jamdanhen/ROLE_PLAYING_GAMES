@@ -1,5 +1,43 @@
 # Role-Playing Games Current Waypoint
 
+## November 17, 2026 campaign software discussion checkpoint
+
+Scoped to the CAMPAIGN SOFTWARE chat: the existing hub layout study, a resumable
+discussion record, and the approved inherited-guidance refresh. Local authority
+remains `C:\ROLE_PLAYING GAMES`; existing `origin` is
+`https://github.com/Jamdanhen/ROLE_PLAYING_GAMES.git`, branch `main`.
+
+Resume from:
+`Shadowrun/_GRAYLINE/Session Development Workspace/Unpromoted Campaign Drafts/CAMPAIGN_SOFTWARE_WAYPOINT_2026-11-17.md`.
+
+Current audience is three players, capacity for five, plus Jamie as GM. Working
+preference is a custom campaign hub using existing tools and database. Nested
+maps, visual pages, owner editing and controlled publishing remain unfinished.
+No live feature, purchase or cross-project write is authorized by this checkpoint.
+
+Registry freshness was checked against the RPG/Shadowrun entries and current
+waypoint, inheritance and output guidance. Registry HEAD and live remote main
+matched `8488d6ddf95cf6fb217806866cf1f2e6b6d154d2`. Reviewed pending phone-display
+and explicitly approved November 16 API opportunity guidance do not block this
+scoped waypoint. Registry files remain untouched. The exact API Opportunity
+Review section is added to root and Shadowrun AGENTS, preserving local rules.
+Only that addition is staged from already-modified Shadowrun AGENTS.
+
+RPG local HEAD, tracking and live remote main matched
+`1e8e9ddd4437eb1a1598cdeb52cb160984652fb3` before this checkpoint; the index was empty.
+Initial normal status: 520 entries (450 deletions, six modifications, 64 untracked
+entries). Unrelated campaign reorganization, sheets, sessions, maps, artwork,
+recovered intake and drafts remain outside scope. They are not accepted,
+reverted, staged or synchronized here.
+
+The initial layout HTML is included. The later artwork preview stays local-only
+at its existing app visualization path; the detailed record gives its path,
+size and hash. No copy, move or mirror was performed. V3 app/database files,
+live deployment, player access and campaign facts remain unchanged.
+Final scoped commit/push and remote alignment are verified in the chat closeout.
+This is not a claim that all Shadowrun work or external previews are synchronized.
+
+
 ## September 22, 2026 coordinated RPG / Shadowrun checkpoint
 
 Dispatch: `REGISTRY-2026-09-22-rpg`.
